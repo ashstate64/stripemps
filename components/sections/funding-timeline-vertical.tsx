@@ -103,14 +103,14 @@ export function FundingTimelineVertical() {
   const latestValuation = 300;
 
   return (
-    <Card className='hover:border-primary/50 hover:shadow-primary/20 overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300'>
+    <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
       <CardHeader className='p-6 md:p-8'>
         <div className='flex flex-col items-start text-center md:flex-row md:items-center md:text-left'>
-          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-gradient-to-br from-purple-600/20 to-blue-600/20 p-4 md:mr-6 md:mb-0 md:self-start'>
+          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-gradient-to-br from-purple-600/20 to-blue-600/20 p-4 md:mb-0 md:mr-6 md:self-start'>
             <TrendingUp className='h-10 w-10 text-purple-400' />
           </div>
           <div className='flex-grow'>
-            <CardTitle className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-3xl leading-tight font-bold text-transparent md:text-4xl'>
+            <CardTitle className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-3xl font-bold leading-tight text-transparent md:text-4xl'>
               Funding & Valuation Journey
             </CardTitle>
             <CardDescription className='mt-3 text-lg text-gray-200'>
@@ -144,7 +144,7 @@ export function FundingTimelineVertical() {
       <CardContent className='p-6 md:p-8'>
         <div className='relative'>
           {/* Enhanced vertical timeline line */}
-          <div className='absolute top-0 bottom-0 left-6 w-1 bg-gradient-to-b from-gray-600 via-blue-500 to-yellow-400 md:left-1/2 md:w-2'></div>
+          <div className='absolute bottom-0 left-6 top-0 w-1 bg-gradient-to-b from-gray-600 via-blue-500 to-yellow-400 md:left-1/2 md:w-2'></div>
 
           {fundingRounds.map((round, index) => {
             const progressPercent =
@@ -276,7 +276,7 @@ export function FundingTimelineVertical() {
                 </div>
 
                 {/* Enhanced Timeline Dot */}
-                <div className='absolute top-8 left-6 z-10 md:top-1/2 md:left-1/2 md:-translate-y-1/2'>
+                <div className='absolute left-6 top-8 z-10 md:left-1/2 md:top-1/2 md:-translate-y-1/2'>
                   <div
                     className={`h-6 w-6 -translate-x-1/2 rounded-full border-4 border-slate-800 bg-gradient-to-r ${round.color} shadow-lg transition-all duration-300 group-hover:scale-125 ${
                       round.highlight ? 'ring-2 ring-yellow-400/50' : ''

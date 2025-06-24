@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     'ChatGPT',
     'GPT-4',
     'machine learning',
-    'startup investment'
+    'startup investment',
   ],
   authors: [{ name: 'OpenAI Investment Team' }],
   creator: 'OpenAI Investment Team',
@@ -130,33 +130,61 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head>
         {/* Favicon Links */}
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+
         {/* Android Chrome Icons */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-        
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='/android-chrome-192x192.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='512x512'
+          href='/android-chrome-512x512.png'
+        />
+
         {/* Theme Color */}
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        
+        <meta name='theme-color' content='#ffffff' />
+        <meta name='msapplication-TileColor' content='#ffffff' />
+
         {/* Additional SEO */}
-        <meta name="application-name" content="OpenAI Investment" />
-        <meta name="apple-mobile-web-app-title" content="OpenAI Investment" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        
+        <meta name='application-name' content='OpenAI Investment' />
+        <meta name='apple-mobile-web-app-title' content='OpenAI Investment' />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+        <meta name='mobile-web-app-capable' content='yes' />
+
         {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+
         {/* DNS prefetch for performance */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+        <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem>

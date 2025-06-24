@@ -72,7 +72,7 @@ export function DocumentUploadStep({
         {label}
       </Label>
       <p className='mb-2 text-xs text-gray-400'>{requiredInfo}</p>
-      <div className='hover:border-primary relative flex h-32 w-full items-center justify-center rounded-lg border-2 border-dashed border-slate-500 transition-colors'>
+      <div className='relative flex h-32 w-full items-center justify-center rounded-lg border-2 border-dashed border-slate-500 transition-colors hover:border-primary'>
         <Input
           id={id}
           name={id} // Ensure name matches for FormData
@@ -138,7 +138,7 @@ export function DocumentUploadStep({
         error={errors?.proofOfAddressName}
         requiredInfo='e.g., Utility Bill, Bank Statement (dated within last 3 months, showing your name and current address)'
       />
-      <p className='mt-4 text-xs text-gray-500 italic'>
+      <p className='mt-4 text-xs italic text-gray-500'>
         Note: File uploads are simulated. In a real application, your documents
         would be securely transmitted and stored. Max file size 5MB. Accepted
         formats: PNG, JPG, PDF.

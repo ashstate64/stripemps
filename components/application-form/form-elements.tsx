@@ -61,7 +61,7 @@ export function FormField({
           onValueChange={(val) => onChange(val, fieldId)}
           required={required}
         >
-          <SelectTrigger className='focus:ring-primary w-full border-slate-600 bg-slate-700 text-gray-200'>
+          <SelectTrigger className='w-full border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'>
             <SelectValue placeholder={placeholder || 'Select an option'} />
           </SelectTrigger>
           <SelectContent className='border-slate-600 bg-slate-700 text-gray-200'>
@@ -86,7 +86,7 @@ export function FormField({
             onChange as (e: React.ChangeEvent<HTMLTextAreaElement>) => void
           }
           required={required}
-          className='focus:ring-primary min-h-[80px] border-slate-600 bg-slate-700 text-gray-200'
+          className='min-h-[80px] border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'
         />
       ) : (
         <Input
@@ -99,7 +99,7 @@ export function FormField({
             onChange as (e: React.ChangeEvent<HTMLInputElement>) => void
           }
           required={required}
-          className='focus:ring-primary border-slate-600 bg-slate-700 text-gray-200'
+          className='border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'
         />
       )}
       {error && error.length > 0 && (
@@ -140,7 +140,7 @@ export function CheckboxField({
         checked={checked}
         onCheckedChange={(val) => onChange(val as boolean, fieldId)}
         required={required}
-        className='data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground mt-1 border-slate-500'
+        className='mt-1 border-slate-500 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground'
       />
       <div className='grid gap-1.5 leading-none'>
         <Label
@@ -196,7 +196,7 @@ export function RadioGroupField({
             <RadioGroupItem
               value={option.value}
               id={`${fieldId}-${option.value}`}
-              className='text-primary focus:ring-primary border-slate-500'
+              className='border-slate-500 text-primary focus:ring-primary'
             />
             <Label
               htmlFor={`${fieldId}-${option.value}`}

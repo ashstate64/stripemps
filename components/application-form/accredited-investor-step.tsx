@@ -91,12 +91,12 @@ export function AccreditedInvestorStep({
           href='https://www.osc.ca/en/securities-law/instruments-rules-policies/4/45-106/unofficial-consolidation-national-instrument-45-106-prospectus-exemptions'
           target='_blank'
           rel='noopener noreferrer'
-          className='text-primary ml-1 inline-flex items-center hover:underline'
+          className='ml-1 inline-flex items-center text-primary hover:underline'
         >
           OSC NI 45-106 <ExternalLink className='ml-1 h-3 w-3' />
         </a>
       </p>
-      <p className='mt-2 text-xs text-gray-400 italic'>
+      <p className='mt-2 text-xs italic text-gray-400'>
         By submitting this application, you represent that your declarations
         regarding your accredited investor status are true and accurate.
       </p>

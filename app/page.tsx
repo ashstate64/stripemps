@@ -4,13 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link'; // Import Link
 import { useState, useEffect, type ReactElement } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from '@/components/ui/card';
+// Card components removed as they're not used directly in this component
 import { Separator } from '@/components/ui/separator';
 import { ValuationGrowthChart } from '@/components/charts/valuation-growth-chart';
 import { RevenueProjectionChart } from '@/components/charts/revenue-projection-chart';
@@ -24,7 +18,6 @@ import {
   Target,
   DollarSign,
   Zap,
-  Brain,
   ShieldAlert,
   Lightbulb,
   UsersRound,
@@ -36,7 +29,6 @@ import {
   Menu,
   X,
   BarChart3,
-  Award,
 } from 'lucide-react';
 
 // TypeScript interfaces for better type safety
@@ -96,7 +88,7 @@ export default function DigitalBrochurePage() {
   const sections: Section[] = [
     {
       id: 'opportunity',
-      icon: <Lightbulb className='text-primary mb-4 h-10 w-10' />,
+      icon: <Lightbulb className='mb-4 h-10 w-10 text-primary' />,
       title: 'Investment Thesis: The OpenAI Opportunity',
       content:
         'OpenAI represents a generational investment opportunity in the artificial general intelligence (AGI) sector. With breakthrough products like GPT-4, DALL·E, and Sora, the company has achieved unprecedented scale and market penetration, positioning itself as the dominant force in the $1.3 trillion AI market.',
@@ -109,7 +101,7 @@ export default function DigitalBrochurePage() {
     },
     {
       id: 'growth',
-      icon: <TrendingUp className='text-primary mb-4 h-10 w-10' />,
+      icon: <TrendingUp className='mb-4 h-10 w-10 text-primary' />,
       title: 'Financial Performance: Exceptional Growth Trajectory',
       content:
         "OpenAI's financial metrics demonstrate extraordinary growth, with revenue scaling from ~$200M in 2023 to a projected $11.6B in 2025. The company's valuation has increased 15x since 2021, reflecting strong investor confidence and market validation.",
@@ -136,7 +128,7 @@ export default function DigitalBrochurePage() {
     },
     {
       id: 'market-leadership',
-      icon: <Target className='text-primary mb-4 h-10 w-10' />,
+      icon: <Target className='mb-4 h-10 w-10 text-primary' />,
       title: 'Market Position: Dominant AI Platform Leader',
       content:
         "OpenAI maintains a commanding lead in the generative AI sector, with a market capitalization that exceeds its nearest competitor by 5x. The company's technological superiority, extensive developer ecosystem, and first-mover advantages create sustainable competitive moats.",
@@ -157,7 +149,7 @@ export default function DigitalBrochurePage() {
     },
     {
       id: 'investors',
-      icon: <UsersRound className='text-primary mb-4 h-10 w-10' />,
+      icon: <UsersRound className='mb-4 h-10 w-10 text-primary' />,
       title: 'Institutional Backing: World-Class Investor Portfolio',
       content:
         "OpenAI's investor base includes the world's most sophisticated technology and financial institutions. With $58+ billion in total funding, the company has attracted backing from Microsoft, SoftBank, Thrive Capital, and other premier investment firms, providing both capital and strategic value.",
@@ -211,7 +203,7 @@ export default function DigitalBrochurePage() {
     },
     {
       id: 'ipo-path',
-      icon: <Landmark className='text-primary mb-4 h-10 w-10' />,
+      icon: <Landmark className='mb-4 h-10 w-10 text-primary' />,
       title: 'Path to Liquidity: Strategic IPO Preparation',
       content:
         'OpenAI is strategically positioning for public markets through corporate restructuring and governance optimization. The company is transitioning to a Public Benefit Corporation structure while maintaining its mission-driven approach, setting the foundation for a landmark IPO.',
@@ -224,7 +216,7 @@ export default function DigitalBrochurePage() {
     },
     {
       id: 'why-invest',
-      icon: <DollarSign className='text-primary mb-4 h-10 w-10' />,
+      icon: <DollarSign className='mb-4 h-10 w-10 text-primary' />,
       title: 'Investment Rationale: Compelling Value Proposition',
       content:
         'Pre-IPO investment in OpenAI offers accredited investors exposure to the defining technology company of the AI era. With limited liquidity events in the AI sector, this opportunity provides early access to a generational investment before public market availability.',
@@ -277,7 +269,7 @@ export default function DigitalBrochurePage() {
                   alt='OpenAI Logo'
                   width={40}
                   height={40}
-                  className='openai-logo-image md:w-10 md:h-10'
+                  className='openai-logo-image md:h-10 md:w-10'
                 />
               </div>
               <div>
@@ -445,7 +437,7 @@ export default function DigitalBrochurePage() {
 
         {/* Floating elements for visual interest */}
         <div className='pointer-events-none absolute inset-0 overflow-hidden'>
-          <div className='absolute -top-24 -right-24 h-96 w-96 rounded-full bg-purple-600/10 blur-3xl'></div>
+          <div className='absolute -right-24 -top-24 h-96 w-96 rounded-full bg-purple-600/10 blur-3xl'></div>
           <div className='absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl'></div>
         </div>
 
@@ -487,18 +479,18 @@ export default function DigitalBrochurePage() {
             </div>
 
             {/* Enhanced Value Proposition Badge */}
-            <div className='from-primary mb-8 inline-block animate-pulse rounded-2xl bg-gradient-to-r via-purple-500 to-pink-500 p-1 shadow-lg'>
+            <div className='mb-8 inline-block animate-pulse rounded-2xl bg-gradient-to-r from-primary via-purple-500 to-pink-500 p-1 shadow-lg'>
               <div className='rounded-xl bg-slate-900/90 px-6 py-3 backdrop-blur-sm'>
-                <p className='from-primary bg-gradient-to-r via-purple-400 to-pink-400 bg-clip-text text-base font-bold text-transparent'>
+                <p className='bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-base font-bold text-transparent'>
                   🔥 Exclusive Pre-IPO Investment Opportunity • $300B Valuation
                 </p>
               </div>
             </div>
 
             {/* Main Headline with Enhanced Typography */}
-            <h1 className='mb-8 text-5xl leading-tight font-extrabold text-white md:text-7xl lg:text-8xl'>
+            <h1 className='mb-8 text-5xl font-extrabold leading-tight text-white md:text-7xl lg:text-8xl'>
               Invest in the{' '}
-              <span className='from-primary relative bg-gradient-to-r via-purple-500 to-pink-500 bg-clip-text text-transparent'>
+              <span className='relative bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent'>
                 Future of AI
                 <div className='absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-30'></div>
               </span>
@@ -557,7 +549,7 @@ export default function DigitalBrochurePage() {
             </div>
 
             {/* Enhanced CTA Section with Professional Layout */}
-            <div className='flex flex-col items-center space-y-6 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-6'>
+            <div className='flex flex-col items-center space-y-6 sm:flex-row sm:justify-center sm:space-x-6 sm:space-y-0'>
               {/* Primary CTA */}
               <Button
                 asChild
@@ -650,7 +642,7 @@ export default function DigitalBrochurePage() {
 
                   {/* Section Header */}
                   <div className='relative border-b border-slate-700/50 bg-gradient-to-r from-slate-800/90 to-slate-900/90 p-8 md:p-12'>
-                    <div className='flex flex-col items-start space-y-6 md:flex-row md:items-center md:space-y-0 md:space-x-8'>
+                    <div className='flex flex-col items-start space-y-6 md:flex-row md:items-center md:space-x-8 md:space-y-0'>
                       {/* Icon with enhanced styling */}
                       <div className='flex-shrink-0'>
                         <div className='relative'>
@@ -663,7 +655,7 @@ export default function DigitalBrochurePage() {
 
                       {/* Title and Description */}
                       <div className='flex-1 space-y-4'>
-                        <h2 className='text-3xl leading-tight font-bold text-white md:text-4xl lg:text-5xl'>
+                        <h2 className='text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl'>
                           {section.title}
                         </h2>
                         <p className='text-lg leading-relaxed text-gray-300 md:text-xl'>
@@ -687,7 +679,7 @@ export default function DigitalBrochurePage() {
                           <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-6 shadow-lg backdrop-blur-sm'>
                             {visual.component}
                           </div>
-                          <p className='mt-4 text-center text-sm leading-relaxed text-gray-400 italic md:text-left'>
+                          <p className='mt-4 text-center text-sm italic leading-relaxed text-gray-400 md:text-left'>
                             {visual.explanation}
                           </p>
                         </div>
@@ -751,12 +743,13 @@ export default function DigitalBrochurePage() {
                     {/* Professional Institutional Investors Section */}
                     {section.majorHolders && (
                       <div className='mt-8 space-y-8'>
-                        <div className='text-center space-y-3'>
+                        <div className='space-y-3 text-center'>
                           <h3 className='text-3xl font-bold text-white'>
                             World-Class Institutional Backing
                           </h3>
-                          <p className='text-lg text-gray-400 max-w-2xl mx-auto'>
-                            Leading global investors backing OpenAI's mission with over $58 billion in funding
+                          <p className='mx-auto max-w-2xl text-lg text-gray-400'>
+                            Leading global investors backing OpenAI&apos;s
+                            mission with over $58 billion in funding
                           </p>
                         </div>
 
@@ -771,10 +764,10 @@ export default function DigitalBrochurePage() {
                               >
                                 {/* Hover Effect */}
                                 <div className='absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
-                                
-                                <div className='relative p-6 h-full flex flex-col'>
+
+                                <div className='relative flex h-full flex-col p-6'>
                                   {/* Logo Container */}
-                                  <div className='mb-6 h-16 w-full overflow-hidden rounded-xl bg-white/98 p-3 shadow-sm'>
+                                  <div className='bg-white/98 mb-6 h-16 w-full overflow-hidden rounded-xl p-3 shadow-sm'>
                                     <div className='flex h-full w-full items-center justify-center'>
                                       <Image
                                         src={holder.logo! || '/placeholder.svg'}
@@ -782,27 +775,27 @@ export default function DigitalBrochurePage() {
                                         width={120}
                                         height={40}
                                         className='object-contain'
-                                        style={{ 
-                                          maxWidth: '100%', 
+                                        style={{
+                                          maxWidth: '100%',
                                           maxHeight: '100%',
                                           width: 'auto',
-                                          height: 'auto'
+                                          height: 'auto',
                                         }}
                                       />
                                     </div>
                                   </div>
-                                  
+
                                   {/* Investor Details */}
-                                  <div className='text-center space-y-3 flex-grow flex flex-col justify-between'>
+                                  <div className='flex flex-grow flex-col justify-between space-y-3 text-center'>
                                     <div>
-                                      <h4 className='text-lg font-bold text-white mb-2'>
+                                      <h4 className='mb-2 text-lg font-bold text-white'>
                                         {holder.name}
                                       </h4>
-                                      <div className='text-sm font-semibold text-blue-400 mb-3'>
+                                      <div className='mb-3 text-sm font-semibold text-blue-400'>
                                         {holder.stake}
                                       </div>
                                     </div>
-                                    <div className='text-sm text-gray-400 leading-relaxed'>
+                                    <div className='text-sm leading-relaxed text-gray-400'>
                                       {holder.entry}
                                     </div>
                                   </div>
@@ -813,16 +806,16 @@ export default function DigitalBrochurePage() {
 
                         {/* Additional Strategic Partners */}
                         <div className='rounded-2xl border border-slate-600/30 bg-slate-800/40 p-8'>
-                          <div className='text-center mb-6'>
-                            <h4 className='text-2xl font-bold text-white mb-2'>
+                          <div className='mb-6 text-center'>
+                            <h4 className='mb-2 text-2xl font-bold text-white'>
                               Additional Strategic Partners
                             </h4>
                             <p className='text-gray-400'>
                               Other world-class institutions supporting OpenAI
                             </p>
                           </div>
-                          
-                          <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-1 max-w-4xl mx-auto'>
+
+                          <div className='mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-1'>
                             {section.majorHolders
                               .filter((holder: MajorHolder) => !holder.logo)
                               .map((holder: MajorHolder, iIndex: number) => (
@@ -831,7 +824,7 @@ export default function DigitalBrochurePage() {
                                   className='flex items-center justify-between rounded-xl bg-slate-700/50 p-4 transition-all duration-300 hover:bg-slate-700/70'
                                 >
                                   <div className='flex-1'>
-                                    <p className='font-semibold text-white text-base mb-1'>
+                                    <p className='mb-1 text-base font-semibold text-white'>
                                       {holder.name}
                                     </p>
                                     <p className='text-sm text-gray-400'>
@@ -849,16 +842,25 @@ export default function DigitalBrochurePage() {
 
                           {/* Other Notable Investors */}
                           <div className='mt-6 rounded-xl bg-slate-700/30 p-6 text-center'>
-                            <h5 className='text-lg font-semibold text-white mb-3'>
+                            <h5 className='mb-3 text-lg font-semibold text-white'>
                               Plus Leading Investment Firms
                             </h5>
                             <div className='flex flex-wrap justify-center gap-3 text-sm text-gray-300'>
-                              {['Sequoia Capital', 'Andreessen Horowitz', 'Founders Fund', 'Coatue Management', 'Fidelity Investments'].map((firm, index) => (
-                                <span key={index} className='px-3 py-1 rounded-full bg-slate-600/40 text-xs font-medium'>
+                              {[
+                                'Sequoia Capital',
+                                'Andreessen Horowitz',
+                                'Founders Fund',
+                                'Coatue Management',
+                                'Fidelity Investments',
+                              ].map((firm, index) => (
+                                <span
+                                  key={index}
+                                  className='rounded-full bg-slate-600/40 px-3 py-1 text-xs font-medium'
+                                >
                                   {firm}
                                 </span>
                               ))}
-                              <span className='px-3 py-1 rounded-full bg-slate-600/40 text-xs font-medium text-gray-400'>
+                              <span className='rounded-full bg-slate-600/40 px-3 py-1 text-xs font-medium text-gray-400'>
                                 +Others
                               </span>
                             </div>
@@ -867,27 +869,33 @@ export default function DigitalBrochurePage() {
 
                         {/* Investment Summary - Prominent Display */}
                         <div className='rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20 p-8 text-center'>
-                          <div className='max-w-md mx-auto space-y-4'>
+                          <div className='mx-auto max-w-md space-y-4'>
                             <h4 className='text-2xl font-bold text-blue-300'>
                               Total Institutional Investment
                             </h4>
-                            <div className='text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent'>
+                            <div className='bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-5xl font-bold text-transparent'>
                               $58+ Billion
                             </div>
                             <p className='text-base text-gray-400'>
                               Raised across multiple funding rounds since 2019
                             </p>
-                            <div className='flex items-center justify-center space-x-6 text-sm text-gray-400 pt-2'>
+                            <div className='flex items-center justify-center space-x-6 pt-2 text-sm text-gray-400'>
                               <div className='text-center'>
-                                <div className='font-semibold text-white'>2019-2025</div>
+                                <div className='font-semibold text-white'>
+                                  2019-2025
+                                </div>
                                 <div>Funding Period</div>
                               </div>
                               <div className='text-center'>
-                                <div className='font-semibold text-white'>15+</div>
+                                <div className='font-semibold text-white'>
+                                  15+
+                                </div>
                                 <div>Major Investors</div>
                               </div>
                               <div className='text-center'>
-                                <div className='font-semibold text-white'>Multiple</div>
+                                <div className='font-semibold text-white'>
+                                  Multiple
+                                </div>
                                 <div>Funding Rounds</div>
                               </div>
                             </div>
@@ -896,7 +904,7 @@ export default function DigitalBrochurePage() {
 
                         {section.footerNote && (
                           <div className='text-center'>
-                            <p className='text-sm text-gray-500 italic max-w-3xl mx-auto leading-relaxed'>
+                            <p className='mx-auto max-w-3xl text-sm italic leading-relaxed text-gray-500'>
                               {section.footerNote}
                             </p>
                           </div>
@@ -950,19 +958,19 @@ export default function DigitalBrochurePage() {
               </h4>
               <div className='space-y-3 text-sm'>
                 <p className='flex items-center justify-center md:justify-start'>
-                  <Mail className='text-primary mr-2 h-4 w-4' />
+                  <Mail className='mr-2 h-4 w-4 text-primary' />
                   <a
                     href='mailto:accounts@cgfinancialcanada.ca'
-                    className='hover:text-primary transition-colors'
+                    className='transition-colors hover:text-primary'
                   >
                     accounts@cgfinancialcanada.ca
                   </a>
                 </p>
                 <p className='flex items-center justify-center md:justify-start'>
-                  <Phone className='text-primary mr-2 h-4 w-4' />
+                  <Phone className='mr-2 h-4 w-4 text-primary' />
                   <a
                     href='tel:+14375235816'
-                    className='hover:text-primary transition-colors'
+                    className='transition-colors hover:text-primary'
                   >
                     +1 437 523 5816
                   </a>
@@ -976,7 +984,7 @@ export default function DigitalBrochurePage() {
                 Office Address
               </h4>
               <div className='flex items-start justify-center text-sm md:justify-start'>
-                <MapPin className='text-primary mt-1 mr-2 h-4 w-4 flex-shrink-0' />
+                <MapPin className='mr-2 mt-1 h-4 w-4 flex-shrink-0 text-primary' />
                 <div>
                   <p className='font-medium'>Citi Canada</p>
                   <p>123 Front Street West, Suite 1900</p>
@@ -993,19 +1001,19 @@ export default function DigitalBrochurePage() {
               </h4>
               <div className='space-y-2 text-sm'>
                 <div className='flex items-center'>
-                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <div className='mr-2 h-2 w-2 rounded-full bg-primary'></div>
                   <span>Submit Application</span>
                 </div>
                 <div className='flex items-center'>
-                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <div className='mr-2 h-2 w-2 rounded-full bg-primary'></div>
                   <span>Accreditation Verification</span>
                 </div>
                 <div className='flex items-center'>
-                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <div className='mr-2 h-2 w-2 rounded-full bg-primary'></div>
                   <span>Investment Review</span>
                 </div>
                 <div className='flex items-center'>
-                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <div className='mr-2 h-2 w-2 rounded-full bg-primary'></div>
                   <span>Documentation & Closing</span>
                 </div>
               </div>
@@ -1083,9 +1091,11 @@ export default function DigitalBrochurePage() {
                 Toronto – Head Office
               </h4>
               <div className='flex items-start'>
-                <MapPin className='mr-3 mt-1 h-5 w-5 text-blue-400 flex-shrink-0' />
+                <MapPin className='mr-3 mt-1 h-5 w-5 flex-shrink-0 text-blue-400' />
                 <div className='text-sm text-gray-300'>
-                  <p className='font-medium'>123 Front Street West, Suite 1900</p>
+                  <p className='font-medium'>
+                    123 Front Street West, Suite 1900
+                  </p>
                   <p>Toronto, Ontario M5J 2M3</p>
                 </div>
               </div>
@@ -1096,15 +1106,26 @@ export default function DigitalBrochurePage() {
               <h4 className='mb-3 text-lg font-semibold text-white'>
                 Our Local Expertise
               </h4>
-              <p className='mb-4 text-sm text-gray-300 leading-relaxed'>
-                Citi is one of the country's largest and longest-serving foreign banks, with roots in Canada dating back to 1919. With offices in Vancouver, Calgary, Montreal, Toronto and Mississauga, Citi's key strategic focus in Canada is to serve clients through Citi Banking, Capital Markets and Advisory; Citi Commercial Bank; Citi Markets; Citi Securities Services; Citi Treasury and Trade Solutions; Citi Private Bank and Citi Cards Canada.
+              <p className='mb-4 text-sm leading-relaxed text-gray-300'>
+                Citi is one of the country&apos;s largest and longest-serving
+                foreign banks, with roots in Canada dating back to 1919. With
+                offices in Vancouver, Calgary, Montreal, Toronto and
+                Mississauga, Citi&apos;s key strategic focus in Canada is to
+                serve clients through Citi Banking, Capital Markets and
+                Advisory; Citi Commercial Bank; Citi Markets; Citi Securities
+                Services; Citi Treasury and Trade Solutions; Citi Private Bank
+                and Citi Cards Canada.
               </p>
-              
+
               <div className='rounded border border-slate-600 bg-slate-800/50 p-4'>
-                <h5 className='mb-2 text-sm font-semibold text-white'>Country Leadership</h5>
+                <h5 className='mb-2 text-sm font-semibold text-white'>
+                  Country Leadership
+                </h5>
                 <p className='text-sm text-gray-300'>
-                  <span className='font-medium'>Raymond Gatcliffe</span><br />
-                  Country Officer and Chief Executive Officer for Citibank Canada
+                  <span className='font-medium'>Raymond Gatcliffe</span>
+                  <br />
+                  Country Officer and Chief Executive Officer for Citibank
+                  Canada
                 </p>
               </div>
             </div>
@@ -1115,12 +1136,19 @@ export default function DigitalBrochurePage() {
                 <ShieldAlert className='mr-2 h-4 w-4' />
                 Important Regulatory Disclosure
               </h4>
-              <div className='space-y-3 text-xs text-gray-300 leading-relaxed'>
+              <div className='space-y-3 text-xs leading-relaxed text-gray-300'>
                 <p>
-                  Citi Canada is a trade name of Citibank Canada, which is a CDIC member. Citibank, N.A., Canadian branch and Citi Cards Canada Inc. are not CDIC members, and products offered by these entities are not eligible for the deposit insurance protection offered by the CDIC.
+                  Citi Canada is a trade name of Citibank Canada, which is a
+                  CDIC member. Citibank, N.A., Canadian branch and Citi Cards
+                  Canada Inc. are not CDIC members, and products offered by
+                  these entities are not eligible for the deposit insurance
+                  protection offered by the CDIC.
                 </p>
                 <p>
-                  For a list of deposit products offered by Citibank Canada that are eligible for the deposit insurance protection offered by the CDIC, refer to the Canada Deposit Insurance Corporation section below under Further Information.
+                  For a list of deposit products offered by Citibank Canada that
+                  are eligible for the deposit insurance protection offered by
+                  the CDIC, refer to the Canada Deposit Insurance Corporation
+                  section below under Further Information.
                 </p>
               </div>
             </div>
@@ -1178,23 +1206,27 @@ export default function DigitalBrochurePage() {
           <div className='mx-auto flex max-w-6xl items-center justify-between'>
             <div className='flex-1'>
               <p className='text-sm text-gray-300'>
-                We use cookies to enhance your experience and analyze site usage. 
-                <Link href='#' className='text-blue-400 hover:text-blue-300 ml-1'>
+                We use cookies to enhance your experience and analyze site
+                usage.
+                <Link
+                  href='#'
+                  className='ml-1 text-blue-400 hover:text-blue-300'
+                >
                   Learn more
                 </Link>
               </p>
             </div>
             <div className='ml-4 flex space-x-2'>
-              <Button 
-                size='sm' 
-                variant='outline' 
+              <Button
+                size='sm'
+                variant='outline'
                 onClick={() => setShowCookieNotice(false)}
                 className='text-xs'
               >
                 Decline
               </Button>
-              <Button 
-                size='sm' 
+              <Button
+                size='sm'
                 onClick={acceptCookies}
                 className='bg-blue-600 text-xs hover:bg-blue-700'
               >

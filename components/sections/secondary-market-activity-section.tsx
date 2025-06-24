@@ -90,14 +90,14 @@ export function SecondaryMarketActivitySection() {
   const valuationGrowth = (((157 - 29) / 29) * 100).toFixed(0); // Growth from first to latest
 
   return (
-    <Card className='hover:border-primary/50 hover:shadow-primary/20 overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300'>
+    <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
       <CardHeader className='p-6 md:p-8'>
         <div className='flex flex-col items-start text-center md:flex-row md:items-center md:text-left'>
-          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-gradient-to-br from-emerald-600/20 to-cyan-600/20 p-4 md:mr-6 md:mb-0 md:self-start'>
+          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-gradient-to-br from-emerald-600/20 to-cyan-600/20 p-4 md:mb-0 md:mr-6 md:self-start'>
             <TrendingUp className='h-10 w-10 text-emerald-400' />
           </div>
           <div className='flex-grow'>
-            <CardTitle className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-3xl leading-tight font-bold text-transparent md:text-4xl'>
+            <CardTitle className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-3xl font-bold leading-tight text-transparent md:text-4xl'>
               Secondary Market Activity
             </CardTitle>
             <CardDescription className='mt-3 text-lg text-gray-200'>
@@ -283,7 +283,7 @@ export function SecondaryMarketActivitySection() {
 
           <div className='mb-6 text-center'>
             <p className='mx-auto max-w-4xl text-lg leading-relaxed text-gray-300'>
-              OpenAI's secondary market activity demonstrates exceptional{' '}
+              OpenAI&apos;s secondary market activity demonstrates exceptional{' '}
               <span className='font-bold text-emerald-400'>
                 investor demand
               </span>{' '}
@@ -293,7 +293,7 @@ export function SecondaryMarketActivitySection() {
               <span className='font-bold text-yellow-400'>
                 {valuationGrowth}% valuation growth
               </span>{' '}
-              across secondary events validates the company's explosive
+              across secondary events validates the company&apos;s explosive
               trajectory and market leadership position.
             </p>
           </div>
@@ -352,10 +352,10 @@ export function SecondaryMarketActivitySection() {
                 <div className='text-xs leading-relaxed text-gray-400'>
                   Secondary trading has been primarily through
                   company-facilitated events due to transfer restrictions and
-                  OpenAI's unique governance structure. Official tender offers
-                  and sanctioned transactions have been the primary mechanisms
-                  for equity liquidity, ensuring controlled price discovery and
-                  regulatory compliance.
+                  OpenAI&apos;s unique governance structure. Official tender
+                  offers and sanctioned transactions have been the primary
+                  mechanisms for equity liquidity, ensuring controlled price
+                  discovery and regulatory compliance.
                 </div>
               </div>
             </div>

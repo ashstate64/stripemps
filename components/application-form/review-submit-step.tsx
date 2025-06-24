@@ -88,7 +88,7 @@ export function ReviewSubmitStep({
         )}
       </div>
 
-      <h3 className='mt-8 mb-4 text-xl font-semibold text-white'>
+      <h3 className='mb-4 mt-8 text-xl font-semibold text-white'>
         Consents & Acknowledgements
       </h3>
       <div className='space-y-4'>
@@ -121,7 +121,7 @@ export function ReviewSubmitStep({
           required
         />
       </div>
-      <p className='mt-4 text-xs text-gray-400 italic'>
+      <p className='mt-4 text-xs italic text-gray-400'>
         By clicking &quot;Review &amp; Submit Application&quot;, you are
         electronically signing and submitting your application.
       </p>

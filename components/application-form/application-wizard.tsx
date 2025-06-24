@@ -88,7 +88,7 @@ export function ApplicationWizard() {
 
   if (formState?.success && formState.submittedData) {
     return (
-      <Card className='border-green-500/30 mx-auto w-full max-w-3xl bg-slate-800/70 shadow-2xl'>
+      <Card className='mx-auto w-full max-w-3xl border-green-500/30 bg-slate-800/70 shadow-2xl'>
         <CardHeader className='border-b border-green-500/20 bg-gradient-to-r from-green-900/20 to-blue-900/20'>
           <CardTitle className='text-center text-3xl font-bold text-white'>
             ✅ Application Submitted Successfully!
@@ -99,75 +99,98 @@ export function ApplicationWizard() {
         </CardHeader>
         <CardContent className='p-8 text-center'>
           <CheckCircle2 className='mx-auto mb-6 h-20 w-20 text-green-500' />
-          
+
           {/* Submission ID Display */}
           {formState.submissionId && (
-            <div className='mb-6 rounded-xl bg-slate-700/50 p-4 border border-green-500/30'>
-              <p className='text-sm text-gray-400 mb-2'>Reference ID</p>
-              <p className='text-2xl font-bold text-green-400 font-mono tracking-wider'>
+            <div className='mb-6 rounded-xl border border-green-500/30 bg-slate-700/50 p-4'>
+              <p className='mb-2 text-sm text-gray-400'>Reference ID</p>
+              <p className='font-mono text-2xl font-bold tracking-wider text-green-400'>
                 {formState.submissionId}
               </p>
-              <p className='text-xs text-gray-500 mt-2'>
+              <p className='mt-2 text-xs text-gray-500'>
                 Please save this reference ID for your records
               </p>
             </div>
           )}
-          
-          <p className='mb-4 text-lg text-gray-200 leading-relaxed'>
+
+          <p className='mb-4 text-lg leading-relaxed text-gray-200'>
             {formState.message}
           </p>
-          
+
           {/* Next Steps */}
-          <div className='mb-6 text-left rounded-xl bg-slate-700/30 p-6'>
-            <h3 className='text-lg font-semibold text-white mb-4 text-center'>What Happens Next?</h3>
+          <div className='mb-6 rounded-xl bg-slate-700/30 p-6 text-left'>
+            <h3 className='mb-4 text-center text-lg font-semibold text-white'>
+              What Happens Next?
+            </h3>
             <div className='space-y-3 text-sm text-gray-300'>
               <div className='flex items-start space-x-3'>
-                <div className='w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5'>1</div>
+                <div className='mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white'>
+                  1
+                </div>
                 <div>
                   <p className='font-medium'>Application Review</p>
-                  <p className='text-gray-400'>Our team will review your application and verify your accredited investor status</p>
+                  <p className='text-gray-400'>
+                    Our team will review your application and verify your
+                    accredited investor status
+                  </p>
                 </div>
               </div>
               <div className='flex items-start space-x-3'>
-                <div className='w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5'>2</div>
+                <div className='mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white'>
+                  2
+                </div>
                 <div>
                   <p className='font-medium'>Initial Contact</p>
-                  <p className='text-gray-400'>A representative will contact you within 2-3 business days to discuss details</p>
+                  <p className='text-gray-400'>
+                    A representative will contact you within 2-3 business days
+                    to discuss details
+                  </p>
                 </div>
               </div>
               <div className='flex items-start space-x-3'>
-                <div className='w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5'>3</div>
+                <div className='mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white'>
+                  3
+                </div>
                 <div>
                   <p className='font-medium'>Investment Process</p>
-                  <p className='text-gray-400'>Complete final documentation and fund your investment allocation</p>
+                  <p className='text-gray-400'>
+                    Complete final documentation and fund your investment
+                    allocation
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Contact Information */}
-          <div className='text-sm text-gray-400 border-t border-slate-700 pt-4'>
+          <div className='border-t border-slate-700 pt-4 text-sm text-gray-400'>
             <p className='mb-2'>Have questions? Contact our investment team:</p>
-            <div className='flex flex-col sm:flex-row sm:justify-center sm:space-x-6 space-y-2 sm:space-y-0'>
-              <a href='tel:+14375235816' className='text-blue-400 hover:text-blue-300 transition-colors'>
+            <div className='flex flex-col space-y-2 sm:flex-row sm:justify-center sm:space-x-6 sm:space-y-0'>
+              <a
+                href='tel:+14375235816'
+                className='text-blue-400 transition-colors hover:text-blue-300'
+              >
                 📞 +1 437 523 5816
               </a>
-              <a href='mailto:accounts@cgfinancialcanada.ca' className='text-blue-400 hover:text-blue-300 transition-colors'>
+              <a
+                href='mailto:accounts@cgfinancialcanada.ca'
+                className='text-blue-400 transition-colors hover:text-blue-300'
+              >
                 ✉️ accounts@cgfinancialcanada.ca
               </a>
             </div>
           </div>
-          
-          <div className='mt-8 flex flex-col sm:flex-row gap-4 justify-center'>
-            <Button 
-              onClick={() => window.location.href = '/'} 
+
+          <div className='mt-8 flex flex-col justify-center gap-4 sm:flex-row'>
+            <Button
+              onClick={() => (window.location.href = '/')}
               variant='outline'
               className='border-gray-600 hover:bg-slate-700'
             >
               Return to Overview
             </Button>
-            <Button 
-              onClick={() => window.location.reload()} 
+            <Button
+              onClick={() => window.location.reload()}
               className='bg-gradient-to-r from-green-600 to-blue-600 hover:opacity-90'
             >
               Submit Another Application
@@ -179,7 +202,7 @@ export function ApplicationWizard() {
   }
 
   return (
-    <Card className='border-primary/30 mx-auto w-full max-w-3xl bg-slate-800/70 shadow-2xl'>
+    <Card className='mx-auto w-full max-w-3xl border-primary/30 bg-slate-800/70 shadow-2xl'>
       <CardHeader className='text-center'>
         <CardTitle className='text-3xl font-bold text-white md:text-4xl'>
           Investment Application
@@ -191,7 +214,7 @@ export function ApplicationWizard() {
         </CardDescription>
         <Progress
           value={progressValue}
-          className='[&>div]:bg-primary mt-4 h-2 w-full bg-slate-700'
+          className='mt-4 h-2 w-full bg-slate-700 [&>div]:bg-primary'
         />
       </CardHeader>
       <CardContent>
@@ -260,7 +283,7 @@ export function ApplicationWizard() {
             ) : (
               <Button
                 type='submit'
-                className='from-primary bg-gradient-to-r via-purple-600 to-pink-600 hover:opacity-90'
+                className='bg-gradient-to-r from-primary via-purple-600 to-pink-600 hover:opacity-90'
               >
                 Review & Submit Application
               </Button>

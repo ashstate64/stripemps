@@ -67,11 +67,7 @@ export function EmploymentFinancialStep({
             value={formData.occupation || ''}
             onChange={handleChange}
             error={errors?.occupation}
-            required={
-              formData.employmentStatus !== 'unemployed' &&
-              formData.employmentStatus !== 'retired' &&
-              formData.employmentStatus !== 'student'
-            }
+            required={true}
           />
           <FormField
             id='employerName'
@@ -83,16 +79,12 @@ export function EmploymentFinancialStep({
             value={formData.employerName || ''}
             onChange={handleChange}
             error={errors?.employerName}
-            required={
-              formData.employmentStatus !== 'unemployed' &&
-              formData.employmentStatus !== 'retired' &&
-              formData.employmentStatus !== 'student'
-            }
+            required={true}
           />
         </>
       )}
 
-      <h3 className='mt-8 mb-4 text-xl font-semibold text-white'>
+      <h3 className='mb-4 mt-8 text-xl font-semibold text-white'>
         Financial Profile (CAD)
       </h3>
       <FormField

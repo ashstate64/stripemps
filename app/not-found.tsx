@@ -4,16 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { 
-  Home, 
-  ArrowLeft, 
-  Search, 
-  Phone, 
-  Mail,
-  Brain,
-  TrendingUp,
-  Users
-} from 'lucide-react';
+import { Home, ArrowLeft, Phone, Mail, TrendingUp, Users } from 'lucide-react';
 
 export default function NotFound() {
   return (
@@ -53,7 +44,8 @@ export default function NotFound() {
               Page Not Found
             </h1>
             <p className='mb-8 text-xl text-gray-300'>
-              The investment page you're looking for doesn't exist or has been moved.
+              The investment page you&apos;re looking for doesn&apos;t exist or
+              has been moved.
             </p>
           </div>
 
@@ -110,7 +102,10 @@ export default function NotFound() {
                 <p className='mb-4 text-sm text-gray-400'>
                   Begin your pre-IPO investment application process.
                 </p>
-                <Button asChild className='w-full bg-gradient-to-r from-purple-600 to-blue-600'>
+                <Button
+                  asChild
+                  className='w-full bg-gradient-to-r from-purple-600 to-blue-600'
+                >
                   <Link href='/apply'>
                     <Users className='mr-2 h-4 w-4' />
                     Apply Now
@@ -123,11 +118,14 @@ export default function NotFound() {
           {/* Contact Information */}
           <Card className='border-slate-700 bg-slate-800/40'>
             <CardHeader>
-              <CardTitle className='text-white'>Need Investment Assistance?</CardTitle>
+              <CardTitle className='text-white'>
+                Need Investment Assistance?
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className='mb-6 text-gray-300'>
-                Our investment team is available to help with any questions about OpenAI pre-IPO opportunities.
+                Our investment team is available to help with any questions
+                about OpenAI pre-IPO opportunities.
               </p>
               <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
                 <Button asChild variant='outline'>
@@ -148,8 +146,8 @@ export default function NotFound() {
 
           {/* Back Navigation */}
           <div className='mt-8'>
-            <Button 
-              variant='ghost' 
+            <Button
+              variant='ghost'
               onClick={() => window.history.back()}
               className='text-gray-400 hover:text-white'
             >
@@ -161,4 +159,4 @@ export default function NotFound() {
       </main>
     </div>
   );
-} 
+}

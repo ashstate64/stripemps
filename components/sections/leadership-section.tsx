@@ -22,7 +22,8 @@ const leaders = [
     name: 'Greg Brockman',
     title: 'Co-founder & President',
     bio: 'Ex-CTO at Stripe, Brockman architected Stripe&apos;s global payments stack before co-building GPT-4 and ChatGPT. He oversees model training and product engineering.',
-    imageUrl: '/Disrupt_SF_TechCrunch_Disrupt_San_Francisco_2019_-_Day_2_(48838200316)_(cropped).jpg',
+    imageUrl:
+      '/Disrupt_SF_TechCrunch_Disrupt_San_Francisco_2019_-_Day_2_(48838200316)_(cropped).jpg',
   },
   {
     name: 'Mira Murati',
@@ -65,14 +66,14 @@ const boardMembers = [
 
 export function LeadershipSection() {
   return (
-    <Card className='hover:shadow-primary/20 hover:border-primary/50 overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300'>
+    <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
       <CardHeader className='p-6 md:p-8'>
         <div className='flex flex-col items-start text-center md:flex-row md:items-center md:text-left'>
-          <div className='bg-primary/10 mb-4 flex-shrink-0 self-center rounded-full p-3 md:mr-6 md:mb-0 md:self-start'>
-            <Briefcase className='text-primary h-10 w-10' />
+          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-primary/10 p-3 md:mb-0 md:mr-6 md:self-start'>
+            <Briefcase className='h-10 w-10 text-primary' />
           </div>
           <div className='flex-grow'>
-            <CardTitle className='text-3xl leading-tight font-bold text-white md:text-4xl'>
+            <CardTitle className='text-3xl font-bold leading-tight text-white md:text-4xl'>
               Visionary Leadership & Governance
             </CardTitle>
             <CardDescription className='mt-3 text-lg text-gray-200'>
@@ -97,21 +98,21 @@ export function LeadershipSection() {
                 alt={`Headshot of ${leader.name}`}
                 width={80}
                 height={80}
-                className='border-primary/50 mb-3 rounded-full border-2 object-cover'
-                style={{ 
-                  maxWidth: '100%', 
+                className='mb-3 rounded-full border-2 border-primary/50 object-cover'
+                style={{
+                  maxWidth: '100%',
                   maxHeight: '100%',
                   width: '80px',
-                  height: '80px'
+                  height: '80px',
                 }}
               />
               <h4 className='text-lg font-bold text-white'>{leader.name}</h4>
-              <p className='text-primary text-sm font-medium'>{leader.title}</p>
+              <p className='text-sm font-medium text-primary'>{leader.title}</p>
               <p className='mt-2 flex-grow text-xs text-gray-300'>
                 {leader.bio}
               </p>
               {leader.note && (
-                <p className='mt-2 border-t border-slate-600 pt-2 text-xs text-gray-400 italic'>
+                <p className='mt-2 border-t border-slate-600 pt-2 text-xs italic text-gray-400'>
                   {leader.note}
                 </p>
               )}
@@ -132,7 +133,7 @@ export function LeadershipSection() {
           <ul className='space-y-2'>
             {boardMembers.map((member) => (
               <li key={member.name} className='flex items-start'>
-                <ShieldCheck className='mt-0.5 mr-2 h-5 w-5 flex-shrink-0 text-green-400' />
+                <ShieldCheck className='mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-400' />
                 <div>
                   <span className='font-semibold text-gray-100'>
                     {member.name}
@@ -150,7 +151,7 @@ export function LeadershipSection() {
               href='https://openai.com/our-structure'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-primary inline-flex items-center hover:underline'
+              className='inline-flex items-center text-primary hover:underline'
             >
               OpenAI&apos;s Our Structure page{' '}
               <LinkIcon className='ml-1 h-3 w-3' />
@@ -165,7 +166,7 @@ export function LeadershipSection() {
           help mitigate key-person risk as OpenAI scales towards a potential
           IPO.
         </p>
-        <p className='mt-4 text-xs text-gray-500 italic'>
+        <p className='mt-4 text-xs italic text-gray-500'>
           Leadership biographies provided for background only; they do not
           constitute an investment guarantee.
         </p>

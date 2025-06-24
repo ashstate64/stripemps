@@ -80,7 +80,7 @@ export function PersonalInfoStep({
         />
       </div>
 
-      <h3 className='mt-6 mb-4 text-xl font-semibold text-white'>
+      <h3 className='mb-4 mt-6 text-xl font-semibold text-white'>
         Residential Address (Canada)
       </h3>
       <FormField
