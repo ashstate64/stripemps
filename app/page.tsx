@@ -245,41 +245,46 @@ export default function DigitalBrochurePage() {
     <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200'>
       <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 shadow-2xl backdrop-blur-xl'>
         <div className='mx-auto max-w-7xl'>
-          {/* Top notification bar */}
-          <div className='border-b border-slate-800/30 bg-gradient-to-r from-purple-900/20 to-blue-900/20 px-4 py-2 text-center'>
-            <p className='text-xs text-gray-300'>
-              <span className='mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-green-400'></span>
-              <strong className='text-white'>
-                Live Investment Opportunity
-              </strong>{' '}
-              - Limited allocation available for Q1 2025
-              <span className='ml-2 text-purple-300'>
-                • Minimum: $50K • Target Close: March 31st
+          {/* Top notification bar - Mobile optimized */}
+          <div className='border-b border-slate-800/30 bg-gradient-to-r from-purple-900/20 to-blue-900/20 px-2 py-1 text-center sm:px-4 sm:py-2'>
+            <p className='text-xs text-gray-300 sm:text-xs'>
+              <span className='mr-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-green-400 sm:mr-2 sm:h-2 sm:w-2'></span>
+              <strong className='text-white'>Live Opportunity</strong>
+              <span className='hidden sm:inline'>
+                {' '}
+                - Limited allocation available for Q1 2025
+              </span>
+              <span className='ml-1 text-purple-300 sm:ml-2'>
+                <span className='hidden sm:inline'>• Minimum: $50K • </span>
+                Close: Mar 31st
               </span>
             </p>
           </div>
 
-          {/* Main navigation */}
-          <div className='flex items-center justify-between px-4 py-4 md:px-8'>
-            {/* Enhanced Brand Identity with Trust Badges */}
-            <div className='flex items-center space-x-4'>
+          {/* Main navigation - Mobile optimized */}
+          <div className='flex items-center justify-between px-3 py-2 sm:px-4 sm:py-4 md:px-8'>
+            {/* Enhanced Brand Identity with Trust Badges - Mobile optimized */}
+            <div className='flex items-center space-x-2 sm:space-x-4'>
               <div className='openai-logo-container'>
                 <Image
                   src='/OpenAI_Logo.svg.png'
                   alt='OpenAI Logo'
-                  width={40}
-                  height={40}
-                  className='openai-logo-image md:h-10 md:w-10'
+                  width={32}
+                  height={32}
+                  className='openai-logo-image sm:h-10 sm:w-10 md:h-10 md:w-10'
                 />
               </div>
               <div>
-                <div className='flex items-center space-x-3'>
+                <div className='flex items-center space-x-2 sm:space-x-3'>
                   <div>
-                    <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-xl font-bold text-transparent md:text-2xl'>
+                    <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-lg font-bold text-transparent sm:text-xl md:text-2xl'>
                       OpenAI Pre-IPO
                     </h1>
                     <p className='text-xs text-gray-400 md:text-sm'>
-                      Investment Opportunity
+                      <span className='sm:hidden'>$239.80/share</span>
+                      <span className='hidden sm:inline'>
+                        Investment Opportunity
+                      </span>
                     </p>
                   </div>
                   {/* Trust Badges */}
@@ -315,114 +320,97 @@ export default function DigitalBrochurePage() {
               ))}
             </nav>
 
-            {/* Clean CTA Section */}
-            <div className='flex items-center space-x-3'>
+            {/* Clean CTA Section - Mobile optimized */}
+            <div className='flex items-center space-x-2 sm:space-x-3'>
               {/* Enhanced Primary CTA */}
               <Link
                 href='/apply'
-                className='group relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-purple-500/25 md:px-8 md:py-3 md:text-base'
+                className='group relative overflow-hidden rounded-lg bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 px-3 py-2 text-xs font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-purple-500/25 sm:rounded-xl sm:px-6 sm:py-3 sm:text-sm md:px-8 md:py-3 md:text-base'
               >
                 <div className='absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
-                <div className='relative flex items-center space-x-2'>
-                  <span>Apply Now</span>
-                  <Rocket className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                <div className='relative flex items-center space-x-1 sm:space-x-2'>
+                  <span className='sm:hidden'>Apply</span>
+                  <span className='hidden sm:inline'>Apply Now</span>
+                  <Rocket className='h-3 w-3 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4' />
                 </div>
               </Link>
 
               {/* Mobile Menu Toggle */}
               <Button
                 variant='ghost'
-                size='icon'
+                size='sm'
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className='text-gray-300 hover:bg-slate-800 hover:text-white lg:hidden'
+                className='h-8 w-8 text-gray-300 hover:bg-slate-800 hover:text-white lg:hidden'
               >
                 {isMenuOpen ? (
-                  <X className='h-6 w-6' />
+                  <X className='h-5 w-5' />
                 ) : (
-                  <Menu className='h-6 w-6' />
+                  <Menu className='h-5 w-5' />
                 )}
               </Button>
             </div>
           </div>
 
-          {/* Enhanced Mobile Menu */}
+          {/* Enhanced Mobile Menu - Compact */}
           {isMenuOpen && (
             <div className='border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl lg:hidden'>
-              <div className='px-4 py-6'>
-                {/* Mobile Trust Indicators */}
-                <div className='mb-6 flex justify-center space-x-4 text-xs'>
+              <div className='px-3 py-3'>
+                {/* Mobile Trust Indicators - Compact */}
+                <div className='mb-3 flex justify-center space-x-3 text-xs'>
                   <div className='flex items-center space-x-1 text-green-400'>
-                    <ShieldAlert className='h-3 w-3' />
-                    <span>SEC Registered</span>
+                    <ShieldAlert className='h-2.5 w-2.5' />
+                    <span>SEC</span>
                   </div>
                   <div className='flex items-center space-x-1 text-blue-400'>
-                    <Landmark className='h-3 w-3' />
-                    <span>CIRO Member</span>
+                    <Landmark className='h-2.5 w-2.5' />
+                    <span>CIRO</span>
                   </div>
                 </div>
 
-                {/* Mobile Navigation */}
-                <nav className='space-y-1'>
+                {/* Mobile Navigation - Compact */}
+                <nav className='space-y-2'>
                   {[
                     {
                       id: 'growth',
-                      label: 'Investment Overview',
+                      label: 'Overview',
                       icon: BarChart3,
-                      desc: '$300B Valuation • Financial Data',
+                      desc: '$300B Valuation',
                     },
                     {
                       id: 'investors',
-                      label: 'Institutional Investors',
+                      label: 'Investors',
                       icon: UsersRound,
-                      desc: 'Microsoft, SoftBank & More',
+                      desc: 'Microsoft, SoftBank+',
                     },
                   ].map((item) => (
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      className='flex items-center space-x-4 rounded-lg bg-slate-800/40 p-4 transition-all hover:bg-slate-700/60'
+                      className='flex items-center space-x-3 rounded-lg bg-slate-800/40 p-3 transition-all hover:bg-slate-700/60'
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <div className='flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-600 to-blue-600'>
-                        <item.icon className='h-5 w-5 text-white' />
+                      <div className='flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-600 to-blue-600'>
+                        <item.icon className='h-4 w-4 text-white' />
                       </div>
                       <div className='flex-1'>
-                        <p className='font-medium text-white'>{item.label}</p>
+                        <p className='text-sm font-medium text-white'>
+                          {item.label}
+                        </p>
                         <p className='text-xs text-gray-400'>{item.desc}</p>
-                      </div>
-                      <div className='text-gray-400'>
-                        <svg
-                          className='h-5 w-5'
-                          fill='none'
-                          stroke='currentColor'
-                          viewBox='0 0 24 24'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M9 5l7 7-7 7'
-                          />
-                        </svg>
                       </div>
                     </a>
                   ))}
                 </nav>
 
-                {/* Mobile Contact */}
-                <div className='mt-6 rounded-lg bg-slate-800/40 p-4 text-center'>
-                  <p className='mb-2 text-sm font-medium text-white'>
-                    Investment Inquiries
-                  </p>
+                {/* Mobile Contact - Compact */}
+                <div className='mt-3 rounded-lg bg-slate-800/40 p-3 text-center'>
+                  <p className='mb-1 text-xs font-medium text-white'>Support</p>
                   <a
                     href='tel:+14375235816'
-                    className='text-lg font-semibold text-purple-400 transition-colors hover:text-purple-300'
+                    className='text-sm font-semibold text-purple-400 transition-colors hover:text-purple-300'
                   >
                     +1 437 523 5816
                   </a>
-                  <p className='mt-1 text-xs text-gray-400'>
-                    Available 9 AM - 8 PM EST
-                  </p>
                 </div>
               </div>
             </div>
@@ -441,76 +429,97 @@ export default function DigitalBrochurePage() {
           <div className='absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl'></div>
         </div>
 
-        <section className='relative z-10 px-4 py-20 text-center md:px-8 md:py-32'>
+        <section className='relative z-10 px-4 py-8 text-center sm:py-12 md:px-8 md:py-20 lg:py-32'>
           <div className='mx-auto max-w-6xl'>
-            {/* Professional Trust Indicators */}
-            <div className='mb-10 flex flex-wrap items-center justify-center gap-3 text-sm text-gray-400 sm:gap-6'>
-              <div className='flex items-center rounded-xl bg-gradient-to-r from-green-900/40 to-green-800/40 px-4 py-3 backdrop-blur-sm'>
-                <ShieldAlert className='mr-2 h-4 w-4 text-green-400' />
+            {/* Professional Trust Indicators - Mobile optimized */}
+            <div className='mb-4 flex flex-wrap items-center justify-center gap-2 text-sm text-gray-400 sm:mb-6 sm:gap-3 md:mb-10 md:gap-6'>
+              <div className='flex items-center rounded-lg bg-gradient-to-r from-green-900/40 to-green-800/40 px-2 py-1.5 backdrop-blur-sm sm:rounded-xl sm:px-4 sm:py-3'>
+                <ShieldAlert className='mr-1 h-3 w-3 text-green-400 sm:mr-2 sm:h-4 sm:w-4' />
                 <span className='text-xs font-medium text-green-300 sm:text-sm'>
-                  SEC Compliant
+                  <span className='sm:hidden'>SEC</span>
+                  <span className='hidden sm:inline'>SEC Compliant</span>
                 </span>
               </div>
-              <div className='flex items-center rounded-xl bg-gradient-to-r from-blue-900/40 to-blue-800/40 px-4 py-3 backdrop-blur-sm'>
-                <UsersRound className='mr-2 h-4 w-4 text-blue-400' />
+              <div className='flex items-center rounded-lg bg-gradient-to-r from-blue-900/40 to-blue-800/40 px-2 py-1.5 backdrop-blur-sm sm:rounded-xl sm:px-4 sm:py-3'>
+                <UsersRound className='mr-1 h-3 w-3 text-blue-400 sm:mr-2 sm:h-4 sm:w-4' />
                 <span className='text-xs font-medium text-blue-300 sm:text-sm'>
-                  Accredited Investors Only
+                  <span className='sm:hidden'>Accredited</span>
+                  <span className='hidden sm:inline'>
+                    Accredited Investors Only
+                  </span>
                 </span>
               </div>
-              <div className='flex items-center rounded-xl bg-gradient-to-r from-purple-900/40 to-purple-800/40 px-4 py-3 backdrop-blur-sm'>
-                <Zap className='mr-2 h-4 w-4 text-purple-400' />
+              <div className='flex items-center rounded-lg bg-gradient-to-r from-purple-900/40 to-purple-800/40 px-2 py-1.5 backdrop-blur-sm sm:rounded-xl sm:px-4 sm:py-3'>
+                <Zap className='mr-1 h-3 w-3 text-purple-400 sm:mr-2 sm:h-4 sm:w-4' />
                 <span className='text-xs font-medium text-purple-300 sm:text-sm'>
-                  Limited Availability
+                  <span className='sm:hidden'>Limited</span>
+                  <span className='hidden sm:inline'>Limited Availability</span>
                 </span>
               </div>
             </div>
 
-            {/* OpenAI Logo - Prominent Hero Display */}
-            <div className='mb-8 flex justify-center'>
+            {/* OpenAI Logo - Mobile optimized */}
+            <div className='mb-4 flex justify-center sm:mb-6 md:mb-8'>
               <div className='openai-logo-hero-container'>
                 <Image
                   src='/OpenAI_Logo.svg.png'
                   alt='OpenAI Logo'
-                  width={120}
-                  height={120}
-                  className='openai-logo-image'
+                  width={80}
+                  height={80}
+                  className='openai-logo-image sm:h-24 sm:w-24 md:h-32 md:w-32'
                 />
               </div>
             </div>
 
-            {/* Enhanced Value Proposition Badge */}
-            <div className='mb-8 inline-block animate-pulse rounded-2xl bg-gradient-to-r from-primary via-purple-500 to-pink-500 p-1 shadow-lg'>
-              <div className='rounded-xl bg-slate-900/90 px-6 py-3 backdrop-blur-sm'>
-                <p className='bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-base font-bold text-transparent'>
-                  🔥 Exclusive Pre-IPO Investment Opportunity • $300B Valuation
+            {/* Enhanced Value Proposition Badge - Mobile optimized */}
+            <div className='mb-4 inline-block animate-pulse rounded-xl bg-gradient-to-r from-primary via-purple-500 to-pink-500 p-0.5 shadow-lg sm:mb-6 sm:rounded-2xl sm:p-1 md:mb-8'>
+              <div className='rounded-lg bg-slate-900/90 px-3 py-2 backdrop-blur-sm sm:rounded-xl sm:px-6 sm:py-3'>
+                <p className='bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-sm font-bold text-transparent sm:text-base'>
+                  <span className='sm:hidden'>🔥 OpenAI Pre-IPO • $300B</span>
+                  <span className='hidden sm:inline'>
+                    🔥 Exclusive Pre-IPO Investment Opportunity • $300B
+                    Valuation
+                  </span>
                 </p>
               </div>
             </div>
 
-            {/* Main Headline with Enhanced Typography */}
-            <h1 className='mb-8 text-5xl font-extrabold leading-tight text-white md:text-7xl lg:text-8xl'>
-              Invest in the{' '}
+            {/* Main Headline with Enhanced Typography - Mobile optimized */}
+            <h1 className='mb-4 text-3xl font-extrabold leading-tight text-white sm:mb-6 sm:text-4xl md:mb-8 md:text-6xl lg:text-7xl xl:text-8xl'>
+              <span className='sm:hidden'>Invest in AI</span>
+              <span className='hidden sm:inline'>Invest in the </span>
               <span className='relative bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent'>
-                Future of AI
-                <div className='absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-30'></div>
+                <span className='sm:hidden'>Future</span>
+                <span className='hidden sm:inline'>Future of AI</span>
+                <div className='absolute -bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 sm:-bottom-2 sm:h-1'></div>
               </span>
             </h1>
 
-            {/* Enhanced Description */}
-            <p className='mx-auto mb-10 max-w-3xl text-xl leading-relaxed text-gray-300 md:text-2xl lg:text-3xl'>
-              Join global institutions investing in OpenAI before its
-              anticipated IPO.
-              <br className='hidden md:inline' />
-              <strong className='text-white'> ~$300B valuation</strong> with
-              <strong className='text-green-400'>
-                {' '}
-                $11.6B projected 2025 revenue
-              </strong>
-              .
+            {/* Enhanced Description - Mobile optimized */}
+            <p className='mx-auto mb-6 max-w-3xl text-base leading-relaxed text-gray-300 sm:mb-8 sm:text-lg md:mb-10 md:text-xl lg:text-2xl xl:text-3xl'>
+              <span className='sm:hidden'>
+                Join global institutions in OpenAI&apos;s pre-IPO.{' '}
+                <strong className='text-white'>~$300B valuation</strong> with{' '}
+                <strong className='text-green-400'>
+                  $11.6B projected revenue
+                </strong>
+                .
+              </span>
+              <span className='hidden sm:inline'>
+                Join global institutions investing in OpenAI before its
+                anticipated IPO.
+                <br className='hidden md:inline' />
+                <strong className='text-white'> ~$300B valuation</strong> with
+                <strong className='text-green-400'>
+                  {' '}
+                  $11.6B projected 2025 revenue
+                </strong>
+                .
+              </span>
             </p>
 
-            {/* Enhanced Key Metrics with Animation */}
-            <div className='mb-12 grid grid-cols-1 gap-6 md:grid-cols-3'>
+            {/* Enhanced Key Metrics with Animation - Mobile optimized */}
+            <div className='mb-6 grid grid-cols-3 gap-3 sm:mb-8 sm:gap-4 md:mb-12 md:gap-6'>
               {[
                 {
                   value: '~$300B',
@@ -533,15 +542,20 @@ export default function DigitalBrochurePage() {
               ].map((metric, index) => (
                 <div
                   key={index}
-                  className={`group relative overflow-hidden rounded-2xl bg-slate-800/60 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-slate-700/60 ${metric.delay}`}
+                  className={`group relative overflow-hidden rounded-lg bg-slate-800/60 p-3 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-slate-700/60 sm:rounded-xl sm:p-4 md:rounded-2xl md:p-6 ${metric.delay}`}
                 >
                   <div className='absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
-                  <div className='relative'>
-                    <div className={`text-4xl font-bold ${metric.color}`}>
+                  <div className='relative text-center'>
+                    <div
+                      className={`text-lg font-bold sm:text-2xl md:text-3xl lg:text-4xl ${metric.color}`}
+                    >
                       {metric.value}
                     </div>
-                    <div className='mt-2 text-sm font-medium text-gray-400'>
-                      {metric.label}
+                    <div className='mt-1 text-xs font-medium text-gray-400 sm:mt-2 sm:text-sm'>
+                      <span className='sm:hidden'>
+                        {metric.label.split(' ')[0]}
+                      </span>
+                      <span className='hidden sm:inline'>{metric.label}</span>
                     </div>
                   </div>
                 </div>
@@ -614,8 +628,8 @@ export default function DigitalBrochurePage() {
         </section>
       </div>
 
-      <main className='relative z-10 px-4 py-12 md:px-6 md:py-16'>
-        <div className='mx-auto max-w-6xl space-y-16 md:space-y-24'>
+      <main className='relative z-10 px-4 py-6 sm:py-8 md:px-6 md:py-12 lg:py-16'>
+        <div className='mx-auto max-w-6xl space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24'>
           {orderedSections.map((sectionItem: any) => {
             if (sectionItem.component) {
               return (
