@@ -120,23 +120,34 @@ export function FundingTimelineVertical() {
           </div>
         </div>
 
-        {/* Key Metrics Summary */}
-        <div className='mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3'>
-          <div className='rounded-xl border border-green-500/30 bg-gradient-to-br from-green-900/20 to-emerald-900/20 p-4 text-center'>
-            <div className='text-2xl font-bold text-green-400'>
+        {/* Mobile-Optimized Key Metrics Summary */}
+        <div className='mt-4 grid grid-cols-3 gap-2 sm:mt-6 sm:gap-3 md:gap-4'>
+          <div className='rounded-lg border border-green-500/30 bg-gradient-to-br from-green-900/20 to-emerald-900/20 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
+            <div className='text-sm font-bold text-green-400 sm:text-lg md:text-xl lg:text-2xl'>
               ${totalRaised}B+
             </div>
-            <div className='text-sm text-gray-300'>Total Raised</div>
+            <div className='text-xs text-gray-300 sm:text-sm'>
+              <span className='sm:hidden'>Raised</span>
+              <span className='hidden sm:inline'>Total Raised</span>
+            </div>
           </div>
-          <div className='rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20 p-4 text-center'>
-            <div className='text-2xl font-bold text-blue-400'>
+          <div className='rounded-lg border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
+            <div className='text-sm font-bold text-blue-400 sm:text-lg md:text-xl lg:text-2xl'>
               ${latestValuation}B
             </div>
-            <div className='text-sm text-gray-300'>Current Valuation</div>
+            <div className='text-xs text-gray-300 sm:text-sm'>
+              <span className='sm:hidden'>Value</span>
+              <span className='hidden sm:inline'>Current Valuation</span>
+            </div>
           </div>
-          <div className='rounded-xl border border-yellow-500/30 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 p-4 text-center'>
-            <div className='text-2xl font-bold text-yellow-400'>29,900%+</div>
-            <div className='text-sm text-gray-300'>Growth Since 2019</div>
+          <div className='rounded-lg border border-yellow-500/30 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
+            <div className='text-sm font-bold text-yellow-400 sm:text-lg md:text-xl lg:text-2xl'>
+              29,900%+
+            </div>
+            <div className='text-xs text-gray-300 sm:text-sm'>
+              <span className='sm:hidden'>Growth</span>
+              <span className='hidden sm:inline'>Growth Since 2019</span>
+            </div>
           </div>
         </div>
       </CardHeader>
@@ -153,7 +164,7 @@ export function FundingTimelineVertical() {
             return (
               <div
                 key={index}
-                className='group relative mb-16 flex w-full md:items-center'
+                className='group relative mb-8 flex w-full sm:mb-10 md:mb-12 md:items-center lg:mb-16'
               >
                 {/* Content Card */}
                 <div
@@ -166,45 +177,45 @@ export function FundingTimelineVertical() {
                       round.highlight ? 'ring-2 ring-yellow-400/50' : ''
                     }`}
                   >
-                    {/* Gradient overlay */}
-                    <div className='rounded-xl bg-slate-800/95 p-6 backdrop-blur-sm'>
-                      {/* Header */}
+                    {/* Mobile-Optimized Content */}
+                    <div className='rounded-lg bg-slate-800/95 p-3 backdrop-blur-sm sm:rounded-xl sm:p-4 md:p-5 lg:p-6'>
+                      {/* Compact Header */}
                       <div
-                        className={`flex items-center justify-between ${
+                        className={`flex items-start justify-between ${
                           index % 2 === 0 ? 'md:flex-row-reverse' : ''
                         }`}
                       >
                         <div
-                          className={`${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
+                          className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                         >
-                          <div className='mb-2 flex items-center gap-2'>
-                            <round.icon className='h-5 w-5 text-white' />
-                            <span className='text-sm font-bold text-blue-400'>
+                          <div className='mb-1 flex items-center gap-2 sm:mb-2'>
+                            <round.icon className='h-4 w-4 text-white sm:h-5 sm:w-5' />
+                            <span className='text-xs font-bold text-blue-400 sm:text-sm'>
                               {round.date}
                             </span>
                           </div>
-                          <h4 className='text-xl font-bold text-white'>
+                          <h4 className='text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl'>
                             {round.event}
                           </h4>
                         </div>
                         {round.highlight && (
-                          <div className='ml-3 rounded-full bg-yellow-400/20 p-2'>
-                            <Crown className='h-5 w-5 text-yellow-400' />
+                          <div className='ml-2 rounded-full bg-yellow-400/20 p-1 sm:ml-3 sm:p-2'>
+                            <Crown className='h-3 w-3 text-yellow-400 sm:h-4 sm:w-4 md:h-5 md:w-5' />
                           </div>
                         )}
                       </div>
 
-                      {/* Key Metrics */}
+                      {/* Compact Key Metrics */}
                       <div
-                        className={`mt-4 grid grid-cols-2 gap-3 ${
+                        className={`mt-2 grid grid-cols-2 gap-2 sm:mt-3 sm:gap-3 md:mt-4 ${
                           index % 2 === 0 ? 'md:text-right' : 'md:text-left'
                         }`}
                       >
                         <div>
-                          <div className='text-sm font-medium text-gray-300'>
+                          <div className='text-xs font-medium text-gray-300 sm:text-sm'>
                             Investment
                           </div>
-                          <div className='text-lg font-bold text-white'>
+                          <div className='text-sm font-bold text-white sm:text-base md:text-lg'>
                             {round.amount}
                           </div>
                           <div className='text-xs text-gray-400'>
@@ -212,10 +223,10 @@ export function FundingTimelineVertical() {
                           </div>
                         </div>
                         <div>
-                          <div className='text-sm font-medium text-gray-300'>
+                          <div className='text-xs font-medium text-gray-300 sm:text-sm'>
                             Valuation
                           </div>
-                          <div className='text-lg font-bold text-green-400'>
+                          <div className='text-sm font-bold text-green-400 sm:text-base md:text-lg'>
                             {round.valuation}
                           </div>
                           {round.growth && (
@@ -226,16 +237,17 @@ export function FundingTimelineVertical() {
                         </div>
                       </div>
 
-                      {/* Valuation Progress Bar */}
+                      {/* Compact Progress Bar - Hidden on small mobile */}
                       {round.valuationNumeric > 0 && (
-                        <div className='mt-4'>
-                          <div className='mb-2 flex items-center justify-between text-xs text-gray-400'>
-                            <span>Valuation Progress</span>
-                            <span>
-                              {progressPercent.toFixed(0)}% of current
+                        <div className='mt-2 hidden sm:mt-3 sm:block md:mt-4'>
+                          <div className='mb-1 flex items-center justify-between text-xs text-gray-400 sm:mb-2'>
+                            <span className='hidden sm:inline'>
+                              Valuation Progress
                             </span>
+                            <span className='sm:hidden'>Progress</span>
+                            <span>{progressPercent.toFixed(0)}%</span>
                           </div>
-                          <div className='h-2 overflow-hidden rounded-full bg-slate-700'>
+                          <div className='h-1 overflow-hidden rounded-full bg-slate-700 sm:h-2'>
                             <div
                               className={`h-full bg-gradient-to-r ${round.color} transition-all duration-1000 ease-out`}
                               style={{ width: `${progressPercent}%` }}
@@ -244,30 +256,30 @@ export function FundingTimelineVertical() {
                         </div>
                       )}
 
-                      {/* Achievement */}
+                      {/* Compact Achievement */}
                       <div
-                        className={`mt-4 rounded-lg bg-slate-700/50 p-3 ${
+                        className={`mt-2 rounded-md bg-slate-700/50 p-2 sm:mt-3 sm:rounded-lg sm:p-3 md:mt-4 ${
                           index % 2 === 0 ? 'md:text-right' : 'md:text-left'
                         }`}
                       >
                         <div className='text-xs font-semibold text-purple-400'>
-                          Key Achievement
+                          Achievement
                         </div>
-                        <div className='text-sm text-gray-300'>
+                        <div className='text-xs text-gray-300 sm:text-sm'>
                           {round.achievement}
                         </div>
                       </div>
 
-                      {/* Investors */}
+                      {/* Compact Investors */}
                       <div
-                        className={`mt-3 ${
+                        className={`mt-2 sm:mt-3 ${
                           index % 2 === 0 ? 'md:text-right' : 'md:text-left'
                         }`}
                       >
                         <div className='text-xs font-medium text-gray-400'>
-                          Lead Investors
+                          Investors
                         </div>
-                        <div className='text-sm text-gray-200'>
+                        <div className='text-xs text-gray-200 sm:text-sm'>
                           {round.investors}
                         </div>
                       </div>
@@ -297,15 +309,15 @@ export function FundingTimelineVertical() {
           })}
         </div>
 
-        {/* Summary Impact */}
-        <div className='mt-12 rounded-2xl border border-yellow-500/30 bg-gradient-to-br from-yellow-900/10 via-orange-900/10 to-red-900/10 p-8 text-center'>
-          <div className='mb-4'>
-            <Crown className='mx-auto h-12 w-12 text-yellow-400' />
+        {/* Mobile-Optimized Summary Impact */}
+        <div className='mt-6 rounded-lg border border-yellow-500/30 bg-gradient-to-br from-yellow-900/10 via-orange-900/10 to-red-900/10 p-4 text-center sm:mt-8 sm:rounded-xl sm:p-6 md:mt-10 md:p-8 lg:mt-12 lg:rounded-2xl'>
+          <div className='mb-3 sm:mb-4'>
+            <Crown className='mx-auto h-8 w-8 text-yellow-400 sm:h-10 sm:w-10 md:h-12 md:w-12' />
           </div>
-          <h3 className='mb-3 text-2xl font-bold text-white'>
+          <h3 className='mb-2 text-lg font-bold text-white sm:mb-3 sm:text-xl md:text-2xl'>
             Historic Achievement
           </h3>
-          <p className='mx-auto max-w-3xl text-lg leading-relaxed text-gray-300'>
+          <p className='mx-auto max-w-3xl text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg'>
             OpenAI has achieved{' '}
             <span className='font-bold text-yellow-400'>$57.9 billion</span> in
             total funding, representing one of the largest funding totals for
@@ -317,25 +329,43 @@ export function FundingTimelineVertical() {
             showcases unprecedented growth in the AI sector.
           </p>
 
-          {/* Key Stats */}
-          <div className='mt-6 grid grid-cols-1 gap-4 md:grid-cols-4'>
+          {/* Mobile-Optimized Key Stats */}
+          <div className='mt-4 grid grid-cols-2 gap-3 sm:mt-6 sm:grid-cols-4 sm:gap-4 md:gap-6'>
             <div>
-              <div className='text-2xl font-bold text-blue-400'>10 Years</div>
-              <div className='text-sm text-gray-400'>Journey Timeline</div>
+              <div className='text-lg font-bold text-blue-400 sm:text-xl md:text-2xl'>
+                10 Years
+              </div>
+              <div className='text-xs text-gray-400 sm:text-sm'>
+                <span className='sm:hidden'>Timeline</span>
+                <span className='hidden sm:inline'>Journey Timeline</span>
+              </div>
             </div>
             <div>
-              <div className='text-2xl font-bold text-purple-400'>6 Rounds</div>
-              <div className='text-sm text-gray-400'>Major Fundings</div>
+              <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
+                6 Rounds
+              </div>
+              <div className='text-xs text-gray-400 sm:text-sm'>
+                <span className='sm:hidden'>Fundings</span>
+                <span className='hidden sm:inline'>Major Fundings</span>
+              </div>
             </div>
             <div>
-              <div className='text-2xl font-bold text-green-400'>
+              <div className='text-lg font-bold text-green-400 sm:text-xl md:text-2xl'>
                 15+ Investors
               </div>
-              <div className='text-sm text-gray-400'>World-Class Backers</div>
+              <div className='text-xs text-gray-400 sm:text-sm'>
+                <span className='sm:hidden'>Backers</span>
+                <span className='hidden sm:inline'>World-Class Backers</span>
+              </div>
             </div>
             <div>
-              <div className='text-2xl font-bold text-yellow-400'>#1 AI</div>
-              <div className='text-sm text-gray-400'>Private Valuation</div>
+              <div className='text-lg font-bold text-yellow-400 sm:text-xl md:text-2xl'>
+                #1 AI
+              </div>
+              <div className='text-xs text-gray-400 sm:text-sm'>
+                <span className='sm:hidden'>Valuation</span>
+                <span className='hidden sm:inline'>Private Valuation</span>
+              </div>
             </div>
           </div>
         </div>

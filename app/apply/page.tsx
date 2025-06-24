@@ -25,81 +25,91 @@ export default function ApplyPage() {
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200'>
-      {/* Professional Header with Back Navigation */}
+      {/* Mobile-Optimized Header */}
       <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-slate-950/95 shadow-2xl backdrop-blur-xl'>
-        <div className='mx-auto max-w-7xl px-4 py-4 md:px-8'>
-          <div className='flex items-center justify-between'>
-            {/* Back Navigation */}
-            <div className='flex items-center space-x-4'>
-              <Link href='/'>
-                <Button
-                  variant='ghost'
-                  size='sm'
-                  className='text-gray-300 hover:bg-slate-800 hover:text-white'
-                >
-                  <ArrowLeft className='mr-2 h-4 w-4' />
-                  Back to Overview
-                </Button>
-              </Link>
-            </div>
+        <div className='mx-auto max-w-7xl px-3 py-2 sm:px-4 sm:py-3 md:px-8 md:py-4'>
+          <div className='flex items-center justify-between gap-2'>
+            {/* Back Navigation - Compact on mobile */}
+            <Link href='/'>
+              <Button
+                variant='ghost'
+                size='sm'
+                className='p-1 text-gray-300 hover:bg-slate-800 hover:text-white sm:px-3 sm:py-2'
+              >
+                <ArrowLeft className='h-4 w-4 sm:mr-2' />
+                <span className='hidden sm:inline'>Back</span>
+              </Button>
+            </Link>
 
-            {/* Brand Identity */}
-            <div className='flex items-center space-x-3'>
+            {/* Compact Brand Identity */}
+            <div className='flex flex-1 items-center justify-center space-x-2 sm:space-x-3'>
               <div className='openai-logo-container'>
                 <Image
                   src='/OpenAI_Logo.svg.png'
                   alt='OpenAI Logo'
-                  width={32}
-                  height={32}
-                  className='openai-logo-image md:h-8 md:w-8'
+                  width={24}
+                  height={24}
+                  className='openai-logo-image sm:h-7 sm:w-7 md:h-8 md:w-8'
                 />
               </div>
-              <div>
-                <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-lg font-bold text-transparent md:text-xl'>
+              <div className='text-center'>
+                <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-sm font-bold text-transparent sm:text-base md:text-lg lg:text-xl'>
                   OpenAI Pre-IPO
                 </h1>
-                <p className='text-xs text-gray-400'>Investment Application</p>
+                <p className='text-xs text-gray-400 sm:block'>Application</p>
               </div>
             </div>
 
-            {/* Trust Badge */}
-            <div className='flex items-center space-x-2'>
-              <div className='flex items-center rounded-md bg-green-900/30 px-2 py-1 text-xs text-green-300'>
-                <Shield className='mr-1 h-3 w-3' />
-                <span className='hidden sm:inline'>Secure Application</span>
-                <span className='sm:hidden'>Secure</span>
-              </div>
+            {/* Compact Trust Badge */}
+            <div className='flex items-center rounded-md bg-green-900/30 px-1 py-1 text-xs text-green-300 sm:px-2'>
+              <Shield className='h-3 w-3 sm:mr-1' />
+              <span className='hidden sm:inline'>Secure</span>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className='px-4 py-12 md:px-6 md:py-16'>
-        <div className='mx-auto mb-8 max-w-4xl text-center'>
-          <div className='mb-6'>
-            <h1 className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-3xl font-bold text-transparent md:text-4xl lg:text-5xl'>
+      {/* Mobile-Optimized Main Content */}
+      <main className='px-3 py-4 sm:px-4 sm:py-6 md:px-6 md:py-12 lg:py-16'>
+        <div className='mx-auto mb-4 max-w-4xl text-center sm:mb-6 md:mb-8'>
+          <div className='mb-4 sm:mb-6'>
+            <h1 className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-xl font-bold text-transparent sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
               OpenAI Pre-IPO Investment Application
             </h1>
-            <p className='mt-4 text-lg text-gray-300 md:text-xl'>
+            <p className='mt-2 text-sm text-gray-300 sm:mt-4 sm:text-base md:text-lg lg:text-xl'>
               Secure your allocation in the most anticipated AI investment
               opportunity.
             </p>
           </div>
 
-          {/* Key Points */}
-          <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-3'>
-            <div className='rounded-lg bg-slate-800/40 p-4 text-center'>
-              <div className='text-2xl font-bold text-green-400'>$300B</div>
-              <div className='text-sm text-gray-400'>Current Valuation</div>
+          {/* Mobile-Optimized Key Points */}
+          <div className='mb-4 grid grid-cols-3 gap-2 sm:mb-6 sm:gap-3 md:mb-8 md:gap-4'>
+            <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
+              <div className='text-lg font-bold text-green-400 sm:text-xl md:text-2xl'>
+                $300B
+              </div>
+              <div className='text-xs text-gray-400 sm:text-sm'>
+                <span className='sm:hidden'>Valuation</span>
+                <span className='hidden sm:inline'>Current Valuation</span>
+              </div>
             </div>
-            <div className='rounded-lg bg-slate-800/40 p-4 text-center'>
-              <div className='text-2xl font-bold text-blue-400'>$50K</div>
-              <div className='text-sm text-gray-400'>Minimum Investment</div>
+            <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
+              <div className='text-lg font-bold text-blue-400 sm:text-xl md:text-2xl'>
+                $50K
+              </div>
+              <div className='text-xs text-gray-400 sm:text-sm'>
+                <span className='sm:hidden'>Minimum</span>
+                <span className='hidden sm:inline'>Minimum Investment</span>
+              </div>
             </div>
-            <div className='rounded-lg bg-slate-800/40 p-4 text-center'>
-              <div className='text-2xl font-bold text-purple-400'>2025</div>
-              <div className='text-sm text-gray-400'>Expected IPO</div>
+            <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
+              <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
+                2025
+              </div>
+              <div className='text-xs text-gray-400 sm:text-sm'>
+                <span className='sm:hidden'>IPO</span>
+                <span className='hidden sm:inline'>Expected IPO</span>
+              </div>
             </div>
           </div>
         </div>
