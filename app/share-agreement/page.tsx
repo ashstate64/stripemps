@@ -217,23 +217,23 @@ export default function SharePurchaseAgreement() {
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900'>
-      {/* Enhanced Mobile-First Header */}
+      {/* Ultra-Compact Mobile Header */}
       <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-slate-950/95 backdrop-blur-xl'>
-        <div className='mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4'>
-          {/* Mobile-optimized header layout */}
+        <div className='mx-auto max-w-7xl px-3 py-2 sm:px-4 sm:py-3 md:py-4'>
+          {/* Hyper-compact header layout for mobile */}
           <div className='flex items-center justify-between'>
-            <div className='flex items-center space-x-2 sm:space-x-4'>
+            <div className='flex items-center space-x-2 sm:space-x-3'>
               <div className='openai-logo-container'>
                 <Image
                   src='/OpenAI_Logo.svg.png'
                   alt='OpenAI Logo'
-                  width={32}
-                  height={32}
-                  className='openai-logo-image sm:h-10 sm:w-10'
+                  width={24}
+                  height={24}
+                  className='openai-logo-image sm:h-8 sm:w-8 md:h-10 md:w-10'
                 />
               </div>
               <div>
-                <h1 className='text-lg font-bold text-white sm:text-xl'>
+                <h1 className='text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl'>
                   OpenAI Pre-IPO
                 </h1>
                 <p className='text-xs text-gray-400 sm:text-sm'>
@@ -242,28 +242,28 @@ export default function SharePurchaseAgreement() {
               </div>
             </div>
 
-            {/* Mobile-friendly badges - stack on small screens */}
+            {/* Ultra-compact badges */}
             <div className='flex flex-col items-end space-y-1 sm:flex-row sm:items-center sm:space-x-2 sm:space-y-0'>
               <Badge
                 variant='outline'
-                className='border-green-400 px-2 py-1 text-xs text-green-400'
+                className='border-green-400 px-1 py-0.5 text-xs text-green-400 sm:px-2 sm:py-1'
               >
-                <Shield className='mr-1 h-2 w-2 sm:h-3 sm:w-3' />
+                <Shield className='mr-0.5 h-2 w-2 sm:mr-1 sm:h-3 sm:w-3' />
                 <span className='hidden sm:inline'>Bank-Grade</span> Security
               </Badge>
               <Badge
                 variant='outline'
-                className='border-blue-400 px-2 py-1 text-xs text-blue-400'
+                className='border-blue-400 px-1 py-0.5 text-xs text-blue-400 sm:px-2 sm:py-1'
               >
-                <Lock className='mr-1 h-2 w-2 sm:h-3 sm:w-3' />
+                <Lock className='mr-0.5 h-2 w-2 sm:mr-1 sm:h-3 sm:w-3' />
                 OSC Compliant
               </Badge>
             </div>
           </div>
 
-          {/* Mobile-optimized Progress Indicator */}
-          <div className='mt-3 sm:mt-4'>
-            <div className='mb-2 flex items-center justify-between'>
+          {/* Ultra-compact Progress Indicator */}
+          <div className='mt-2 sm:mt-3'>
+            <div className='mb-1 flex items-center justify-between sm:mb-2'>
               <span className='text-xs text-gray-400 sm:text-sm'>
                 Step {currentStep} of 4
               </span>
@@ -271,14 +271,14 @@ export default function SharePurchaseAgreement() {
                 {Math.round(completionPercentage)}% Complete
               </span>
             </div>
-            <Progress value={completionPercentage} className='h-2' />
+            <Progress value={completionPercentage} className='h-1.5 sm:h-2' />
 
-            {/* Mobile step indicators */}
-            <div className='mt-3 flex justify-center space-x-2 sm:hidden'>
+            {/* Ultra-compact mobile step indicators */}
+            <div className='mt-2 flex justify-center space-x-1.5 sm:hidden'>
               {[1, 2, 3, 4].map((step) => (
                 <div
                   key={step}
-                  className={`h-2 w-2 rounded-full ${
+                  className={`h-1.5 w-1.5 rounded-full ${
                     step <= currentStep ? 'bg-blue-500' : 'bg-gray-600'
                   }`}
                 />
@@ -288,33 +288,33 @@ export default function SharePurchaseAgreement() {
         </div>
       </header>
 
-      <main className='mx-auto max-w-7xl px-3 py-4 sm:px-4 sm:py-8'>
-        {/* Mobile-first grid layout - stack on mobile */}
-        <div className='flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:gap-8'>
+      <main className='mx-auto max-w-7xl px-3 py-3 sm:px-4 sm:py-4 md:py-6 lg:py-8'>
+        {/* Ultra-compact mobile layout */}
+        <div className='flex flex-col gap-4 sm:gap-5 md:gap-6 lg:grid lg:grid-cols-12 lg:gap-8'>
           {/* Main Content Area - Mobile full width */}
           <div className='order-2 lg:order-1 lg:col-span-8'>
-            {/* Step 1: Investment Overview */}
+            {/* Step 1: Investment Overview - Ultra-compact */}
             {currentStep === 1 && (
               <Card className='border-slate-700 bg-slate-800/60 shadow-2xl'>
-                <CardHeader className='pb-4 sm:pb-6'>
-                  <CardTitle className='flex items-center text-xl text-white sm:text-2xl'>
-                    <Calculator className='mr-2 h-5 w-5 sm:mr-3 sm:h-6 sm:w-6' />
+                <CardHeader className='pb-3 sm:pb-4 md:pb-6'>
+                  <CardTitle className='flex items-center text-lg text-white sm:text-xl md:text-2xl'>
+                    <Calculator className='mr-2 h-4 w-4 sm:h-5 sm:w-5 md:mr-3 md:h-6 md:w-6' />
                     Investment Overview
                   </CardTitle>
                   <p className='text-sm text-gray-300 sm:text-base'>
                     Configure your OpenAI pre-IPO investment details
                   </p>
                 </CardHeader>
-                <CardContent className='space-y-6 sm:space-y-8'>
-                  {/* Mobile-optimized Investment Calculator */}
-                  <div className='rounded-xl border border-purple-500/30 bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-4 sm:p-6'>
-                    <h3 className='mb-3 flex items-center text-lg font-semibold text-white sm:mb-4 sm:text-xl'>
-                      <DollarSign className='mr-2 h-4 w-4 sm:h-5 sm:w-5' />
+                <CardContent className='space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8'>
+                  {/* Ultra-compact Investment Calculator */}
+                  <div className='rounded-lg border border-purple-500/30 bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-3 sm:p-4 md:rounded-xl md:p-6'>
+                    <h3 className='mb-2 flex items-center text-base font-semibold text-white sm:mb-3 sm:text-lg md:mb-4 md:text-xl'>
+                      <DollarSign className='mr-1 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5' />
                       Investment Calculator
                     </h3>
 
-                    {/* Mobile-first: Stack inputs vertically on small screens */}
-                    <div className='space-y-4 sm:space-y-6'>
+                    {/* Ultra-compact mobile layout */}
+                    <div className='space-y-3 sm:space-y-4 md:space-y-6'>
                       <div>
                         <Label className='text-sm font-medium text-gray-300 sm:text-base'>
                           Number of Shares
@@ -364,30 +364,37 @@ export default function SharePurchaseAgreement() {
                     </div>
                   </div>
 
-                  {/* Mobile-optimized Key Highlights - single column on mobile */}
-                  <div className='grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4'>
-                    <div className='rounded-lg bg-slate-700/30 p-3 text-center sm:p-4'>
-                      <div className='text-xl font-bold text-green-400 sm:text-2xl'>
+                  {/* Ultra-compact Key Highlights */}
+                  <div className='grid grid-cols-3 gap-2 sm:gap-3 md:gap-4'>
+                    <div className='rounded-md bg-slate-700/30 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
+                      <div className='text-lg font-bold text-green-400 sm:text-xl md:text-2xl'>
                         $300B
                       </div>
                       <div className='text-xs text-gray-300 sm:text-sm'>
-                        Current Valuation
+                        <span className='sm:hidden'>Valuation</span>
+                        <span className='hidden sm:inline'>
+                          Current Valuation
+                        </span>
                       </div>
                     </div>
-                    <div className='rounded-lg bg-slate-700/30 p-3 text-center sm:p-4'>
-                      <div className='text-xl font-bold text-blue-400 sm:text-2xl'>
+                    <div className='rounded-md bg-slate-700/30 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
+                      <div className='text-lg font-bold text-blue-400 sm:text-xl md:text-2xl'>
                         T+2
                       </div>
                       <div className='text-xs text-gray-300 sm:text-sm'>
-                        Settlement Period
+                        <span className='sm:hidden'>Settlement</span>
+                        <span className='hidden sm:inline'>
+                          Settlement Period
+                        </span>
                       </div>
                     </div>
-                    <div className='rounded-lg bg-slate-700/30 p-3 text-center sm:p-4'>
-                      <div className='text-xl font-bold text-purple-400 sm:text-2xl'>
+                    <div className='rounded-md bg-slate-700/30 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
+                      <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
                         12mo
                       </div>
                       <div className='text-xs text-gray-300 sm:text-sm'>
-                        Lock-up Period
+                        <span className='sm:hidden'>Lock-up</span>
+                        <span className='hidden sm:inline'>Lock-up Period</span>
                       </div>
                     </div>
                   </div>
@@ -408,27 +415,27 @@ export default function SharePurchaseAgreement() {
               </Card>
             )}
 
-            {/* Step 2: Agreement Terms - Mobile-optimized */}
+            {/* Step 2: Agreement Terms - Ultra-compact */}
             {currentStep === 2 && (
               <Card className='border-slate-700 bg-slate-800/60 shadow-2xl'>
-                <CardHeader className='pb-4 sm:pb-6'>
-                  <CardTitle className='flex items-center text-xl text-white sm:text-2xl'>
-                    <FileText className='mr-2 h-5 w-5 sm:mr-3 sm:h-6 sm:w-6' />
+                <CardHeader className='pb-3 sm:pb-4 md:pb-6'>
+                  <CardTitle className='flex items-center text-lg text-white sm:text-xl md:text-2xl'>
+                    <FileText className='mr-2 h-4 w-4 sm:h-5 sm:w-5 md:mr-3 md:h-6 md:w-6' />
                     Agreement Terms
                   </CardTitle>
                   <p className='text-sm text-gray-300 sm:text-base'>
                     Key terms and conditions for your investment
                   </p>
                 </CardHeader>
-                <CardContent className='space-y-4 sm:space-y-6'>
-                  {/* Mobile-optimized Terms - better spacing and readability */}
-                  <div className='space-y-3 sm:space-y-4'>
+                <CardContent className='space-y-3 sm:space-y-4 md:space-y-6'>
+                  {/* Ultra-compact Terms - optimized for mobile reading */}
+                  <div className='space-y-2 sm:space-y-3 md:space-y-4'>
                     {/* Purchase Agreement */}
-                    <div className='rounded-lg border border-blue-500/30 bg-blue-900/20 p-3 sm:p-4'>
-                      <h3 className='mb-2 text-base font-semibold text-white sm:mb-3 sm:text-lg'>
+                    <div className='rounded-md border border-blue-500/30 bg-blue-900/20 p-2 sm:rounded-lg sm:p-3 md:p-4'>
+                      <h3 className='mb-1 text-sm font-semibold text-white sm:mb-2 sm:text-base md:mb-3 md:text-lg'>
                         Purchase Agreement
                       </h3>
-                      <ul className='space-y-1 text-xs leading-relaxed text-gray-300 sm:space-y-2 sm:text-sm'>
+                      <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
                         <li>
                           • Purchase OpenAI Class A Shares via CG Financial
                           International
@@ -442,11 +449,11 @@ export default function SharePurchaseAgreement() {
                     </div>
 
                     {/* Settlement Terms */}
-                    <div className='rounded-lg border border-green-500/30 bg-green-900/20 p-3 sm:p-4'>
-                      <h3 className='mb-2 text-base font-semibold text-white sm:mb-3 sm:text-lg'>
+                    <div className='rounded-md border border-green-500/30 bg-green-900/20 p-2 sm:rounded-lg sm:p-3 md:p-4'>
+                      <h3 className='mb-1 text-sm font-semibold text-white sm:mb-2 sm:text-base md:mb-3 md:text-lg'>
                         Settlement & Security
                       </h3>
-                      <ul className='space-y-1 text-xs leading-relaxed text-gray-300 sm:space-y-2 sm:text-sm'>
+                      <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
                         <li>• T+2 business days settlement (USD wire)</li>
                         <li>• Third-party trust account protection</li>
                         <li>• 2-4 weeks OpenAI ROFR compliance</li>
@@ -455,11 +462,11 @@ export default function SharePurchaseAgreement() {
                     </div>
 
                     {/* Legal Compliance */}
-                    <div className='rounded-lg border border-purple-500/30 bg-purple-900/20 p-3 sm:p-4'>
-                      <h3 className='mb-2 text-base font-semibold text-white sm:mb-3 sm:text-lg'>
+                    <div className='rounded-md border border-purple-500/30 bg-purple-900/20 p-2 sm:rounded-lg sm:p-3 md:p-4'>
+                      <h3 className='mb-1 text-sm font-semibold text-white sm:mb-2 sm:text-base md:mb-3 md:text-lg'>
                         Legal & Compliance
                       </h3>
-                      <ul className='space-y-1 text-xs leading-relaxed text-gray-300 sm:space-y-2 sm:text-sm'>
+                      <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
                         <li>• OSC compliant under NI 45-106</li>
                         <li>• Accredited investor requirement</li>
                         <li>• 4-month hold + 12-month lock-up</li>
@@ -864,35 +871,35 @@ export default function SharePurchaseAgreement() {
             )}
           </div>
 
-          {/* Mobile-optimized Sidebar - Show above content on mobile */}
+          {/* Ultra-compact Mobile Sidebar */}
           <div className='order-1 lg:order-2 lg:col-span-4'>
-            <div className='space-y-4 sm:space-y-6 lg:sticky lg:top-32'>
-              {/* Compact mobile investment summary */}
+            <div className='space-y-3 sm:space-y-4 md:space-y-6 lg:sticky lg:top-32'>
+              {/* Ultra-compact mobile investment summary */}
               <Card className='border-slate-700 bg-slate-800/60 shadow-xl'>
-                <CardHeader className='pb-3 sm:pb-4'>
-                  <CardTitle className='flex items-center text-base text-white sm:text-lg'>
-                    <DollarSign className='mr-2 h-4 w-4 sm:h-5 sm:w-5' />
+                <CardHeader className='pb-2 sm:pb-3 md:pb-4'>
+                  <CardTitle className='flex items-center text-sm text-white sm:text-base md:text-lg'>
+                    <DollarSign className='mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4 md:h-5 md:w-5' />
                     Investment Summary
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-3 sm:space-y-4'>
-                  <div className='space-y-2 sm:space-y-3'>
-                    <div className='flex justify-between text-sm sm:text-base'>
+                <CardContent className='space-y-2 sm:space-y-3 md:space-y-4'>
+                  <div className='space-y-1 sm:space-y-2 md:space-y-3'>
+                    <div className='flex justify-between text-xs sm:text-sm md:text-base'>
                       <span className='text-gray-300'>Shares:</span>
                       <span className='font-semibold text-white'>
                         {shareQuantity || 0}
                       </span>
                     </div>
-                    <div className='flex justify-between text-sm sm:text-base'>
+                    <div className='flex justify-between text-xs sm:text-sm md:text-base'>
                       <span className='text-gray-300'>Price:</span>
                       <span className='font-semibold text-white'>$239.80</span>
                     </div>
                     <Separator className='bg-slate-600' />
                     <div className='flex justify-between'>
-                      <span className='text-sm font-bold text-white sm:text-base'>
+                      <span className='text-xs font-bold text-white sm:text-sm md:text-base'>
                         Total:
                       </span>
-                      <span className='text-base font-bold text-green-400 sm:text-lg'>
+                      <span className='text-sm font-bold text-green-400 sm:text-base md:text-lg'>
                         ${totalInvestmentUSD.toLocaleString()}
                       </span>
                     </div>
@@ -909,45 +916,48 @@ export default function SharePurchaseAgreement() {
                 </CardContent>
               </Card>
 
-              {/* Compact security indicators - hide some on mobile */}
+              {/* Ultra-compact security indicators */}
               <Card className='border-slate-700 bg-slate-800/60 shadow-xl lg:block'>
-                <CardHeader className='pb-3 sm:pb-4'>
-                  <CardTitle className='flex items-center text-base text-white sm:text-lg'>
-                    <Shield className='mr-2 h-4 w-4 sm:h-5 sm:w-5' />
+                <CardHeader className='pb-2 sm:pb-3 md:pb-4'>
+                  <CardTitle className='flex items-center text-sm text-white sm:text-base md:text-lg'>
+                    <Shield className='mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4 md:h-5 md:w-5' />
                     Security
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-2 sm:space-y-3'>
-                  <div className='flex items-center space-x-2 text-green-400'>
-                    <CheckCircle className='h-3 w-3 sm:h-4 sm:w-4' />
+                <CardContent className='space-y-1 sm:space-y-2 md:space-y-3'>
+                  <div className='flex items-center space-x-1 text-green-400 sm:space-x-2'>
+                    <CheckCircle className='h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4' />
                     <span className='text-xs sm:text-sm'>SSL Encrypted</span>
                   </div>
-                  <div className='flex items-center space-x-2 text-green-400'>
-                    <CheckCircle className='h-3 w-3 sm:h-4 sm:w-4' />
+                  <div className='flex items-center space-x-1 text-green-400 sm:space-x-2'>
+                    <CheckCircle className='h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4' />
                     <span className='text-xs sm:text-sm'>OSC Compliant</span>
                   </div>
-                  <div className='flex items-center space-x-2 text-green-400'>
-                    <CheckCircle className='h-3 w-3 sm:h-4 sm:w-4' />
+                  <div className='flex items-center space-x-1 text-green-400 sm:space-x-2'>
+                    <CheckCircle className='h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4' />
                     <span className='text-xs sm:text-sm'>Escrow Protected</span>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Mobile-friendly support card */}
+              {/* Ultra-compact support card */}
               <Card className='border-slate-700 bg-slate-800/60 shadow-xl'>
-                <CardHeader className='pb-3 sm:pb-4'>
-                  <CardTitle className='text-base text-white sm:text-lg'>
+                <CardHeader className='pb-2 sm:pb-3 md:pb-4'>
+                  <CardTitle className='text-sm text-white sm:text-base md:text-lg'>
                     Need Help?
                   </CardTitle>
                 </CardHeader>
-                <CardContent className='space-y-2 text-xs sm:space-y-3 sm:text-sm'>
+                <CardContent className='space-y-1 text-xs sm:space-y-2 sm:text-sm md:space-y-3'>
                   <p className='text-gray-300'>
-                    Investment specialists available
+                    <span className='sm:hidden'>Specialists available</span>
+                    <span className='hidden sm:inline'>
+                      Investment specialists available
+                    </span>
                   </p>
                   <div className='space-y-1 sm:space-y-2'>
                     <a
                       href='tel:+14375235816'
-                      className='block text-sm font-semibold text-blue-400 hover:text-blue-300 sm:text-base'
+                      className='block text-xs font-semibold text-blue-400 hover:text-blue-300 sm:text-sm md:text-base'
                       style={{
                         minHeight: '44px',
                         display: 'flex',
@@ -957,7 +967,10 @@ export default function SharePurchaseAgreement() {
                       +1 437 523 5816
                     </a>
                     <div className='text-xs text-gray-400'>
-                      Mon-Fri, 9 AM - 8 PM EST
+                      <span className='sm:hidden'>Mon-Fri, 9 AM - 8 PM</span>
+                      <span className='hidden sm:inline'>
+                        Mon-Fri, 9 AM - 8 PM EST
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -967,9 +980,9 @@ export default function SharePurchaseAgreement() {
         </div>
       </main>
 
-      {/* Mobile-optimized Footer */}
-      <footer className='mt-8 border-t border-slate-800 bg-slate-950/50 sm:mt-16'>
-        <div className='mx-auto max-w-7xl space-y-1 px-3 py-6 text-center text-xs text-gray-500 sm:space-y-2 sm:px-4 sm:py-8'>
+      {/* Ultra-compact Mobile Footer */}
+      <footer className='mt-4 border-t border-slate-800 bg-slate-950/50 sm:mt-6 md:mt-8 lg:mt-16'>
+        <div className='mx-auto max-w-7xl space-y-0.5 px-3 py-3 text-center text-xs text-gray-500 sm:space-y-1 sm:px-4 sm:py-4 md:py-6 lg:space-y-2 lg:py-8'>
           <p className='font-semibold text-gray-400'>
             © 2024 CG Financial International
           </p>
