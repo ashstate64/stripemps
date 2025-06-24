@@ -1,0 +1,1209 @@
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link'; // Import Link
+import { useState, useEffect, type ReactElement } from 'react';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { ValuationGrowthChart } from '@/components/charts/valuation-growth-chart';
+import { RevenueProjectionChart } from '@/components/charts/revenue-projection-chart';
+import { PeerComparisonChart } from '@/components/charts/peer-comparison-chart';
+import { FundingTimelineVertical } from '@/components/sections/funding-timeline-vertical';
+import { SecondaryMarketActivitySection } from '@/components/sections/secondary-market-activity-section';
+import { LeadershipSection } from '@/components/sections/leadership-section';
+// Removed: import { ApplicationWizard } from "@/components/application-form/application-wizard"
+import {
+  TrendingUp,
+  Target,
+  DollarSign,
+  Zap,
+  Brain,
+  ShieldAlert,
+  Lightbulb,
+  UsersRound,
+  Rocket,
+  Landmark,
+  Mail,
+  Phone,
+  MapPin,
+  Menu,
+  X,
+  BarChart3,
+  Award,
+} from 'lucide-react';
+
+// TypeScript interfaces for better type safety
+interface Visual {
+  title: string;
+  component: ReactElement;
+  explanation: string;
+}
+
+interface Stat {
+  label: string;
+  value: string;
+}
+
+interface MajorHolder {
+  name: string;
+  logo?: string | null;
+  entry: string;
+  stake: string;
+  bgColor?: string;
+  stakeColor?: string;
+  entryColor?: string;
+}
+
+interface Section {
+  id: string;
+  icon?: ReactElement;
+  title?: string;
+  content?: string;
+  visuals?: Visual[];
+  points?: string[];
+  stats?: Stat[];
+  majorHolders?: MajorHolder[];
+  footerNote?: string;
+  benefits?: string[];
+}
+
+// Type definitions complete - ready for component
+
+export default function DigitalBrochurePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showCookieNotice, setShowCookieNotice] = useState(false);
+
+  useEffect(() => {
+    // Check if user has already accepted cookies
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    if (!cookiesAccepted) {
+      setShowCookieNotice(true);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    setShowCookieNotice(false);
+  };
+
+  const sections: Section[] = [
+    {
+      id: 'opportunity',
+      icon: <Lightbulb className='text-primary mb-4 h-10 w-10' />,
+      title: 'Investment Thesis: The OpenAI Opportunity',
+      content:
+        'OpenAI represents a generational investment opportunity in the artificial general intelligence (AGI) sector. With breakthrough products like GPT-4, DALL·E, and Sora, the company has achieved unprecedented scale and market penetration, positioning itself as the dominant force in the $1.3 trillion AI market.',
+      points: [
+        'Market-leading AGI technology with clear competitive moats and network effects',
+        'Exponential user adoption: ChatGPT reached 100M users in just 2 months',
+        'Strategic partnership with Microsoft provides $13B+ in funding and compute infrastructure',
+        'Experienced leadership team with proven track record in scaling technology companies',
+      ],
+    },
+    {
+      id: 'growth',
+      icon: <TrendingUp className='text-primary mb-4 h-10 w-10' />,
+      title: 'Financial Performance: Exceptional Growth Trajectory',
+      content:
+        "OpenAI's financial metrics demonstrate extraordinary growth, with revenue scaling from ~$200M in 2023 to a projected $11.6B in 2025. The company's valuation has increased 15x since 2021, reflecting strong investor confidence and market validation.",
+      visuals: [
+        {
+          title: 'Valuation Growth Analysis',
+          component: <ValuationGrowthChart />,
+          explanation:
+            "OpenAI's valuation trajectory shows consistent exponential growth, reaching ~$300B by March 2025. This 15x increase since 2021 demonstrates sustained investor confidence and market validation of the company's AI leadership position.",
+        },
+        {
+          title: 'Revenue Projections & Monetization',
+          component: <RevenueProjectionChart />,
+          explanation:
+            'Revenue growth from $200M (2023) to projected $11.6B (2025) represents a 58x increase over two years, driven by enterprise API adoption, ChatGPT subscriptions, and strategic partnerships.',
+        },
+      ],
+      stats: [
+        { label: 'Current Valuation (Mar 2025)', value: '~$300 Billion' },
+        { label: 'Total Capital Raised', value: '$58+ Billion' },
+        { label: '2025 Revenue Projection', value: '$11.6 Billion' },
+        { label: 'Revenue Growth (2023-2025)', value: '5,800%' },
+      ],
+    },
+    {
+      id: 'market-leadership',
+      icon: <Target className='text-primary mb-4 h-10 w-10' />,
+      title: 'Market Position: Dominant AI Platform Leader',
+      content:
+        "OpenAI maintains a commanding lead in the generative AI sector, with a market capitalization that exceeds its nearest competitor by 5x. The company's technological superiority, extensive developer ecosystem, and first-mover advantages create sustainable competitive moats.",
+      visuals: [
+        {
+          title: 'Competitive Landscape Analysis',
+          component: <PeerComparisonChart />,
+          explanation:
+            "OpenAI's ~$300B valuation significantly exceeds competitors including Anthropic (~$60B), demonstrating clear market leadership and investor preference for the company's comprehensive AI platform.",
+        },
+      ],
+      points: [
+        'Market capitalization 5x larger than nearest competitor (Anthropic)',
+        'Comprehensive developer ecosystem with 2M+ API developers',
+        'Continuous innovation pipeline ensuring sustained technological leadership',
+        'Strong regulatory relationships and compliance framework',
+      ],
+    },
+    {
+      id: 'investors',
+      icon: <UsersRound className='text-primary mb-4 h-10 w-10' />,
+      title: 'Institutional Backing: World-Class Investor Portfolio',
+      content:
+        "OpenAI's investor base includes the world's most sophisticated technology and financial institutions. With $58+ billion in total funding, the company has attracted backing from Microsoft, SoftBank, Thrive Capital, and other premier investment firms, providing both capital and strategic value.",
+      majorHolders: [
+        {
+          name: 'Microsoft Corporation',
+          logo: '/logos/microsoft-logo.jpg',
+          entry: '$1B initial + $12B+ follow-on investments + compute credits',
+          stake: '≈49% (subject to 10x return cap)',
+          bgColor: 'bg-white',
+        },
+        {
+          name: 'SoftBank Vision Fund',
+          logo: '/logos/softbank-logo.png',
+          entry: 'Up to $40B (2024-25) convertible preferred shares',
+          stake: 'Up to ≈10% (if fully converted)',
+          bgColor: 'bg-[#00402E]',
+          stakeColor: 'text-green-300',
+          entryColor: 'text-gray-300',
+        },
+        {
+          name: 'Thrive Capital',
+          logo: '/logos/thrive-capital-logo.png',
+          entry: 'Led $6.6B Series funding + $1B follow-on option',
+          stake: '≈3%',
+          bgColor: 'bg-gray-100',
+        },
+        {
+          name: 'Khosla Ventures',
+          logo: '/logos/khosla-ventures-logo.png',
+          entry: 'Series investor since early rounds',
+          stake: '≈2%',
+          bgColor: 'bg-gray-100',
+        },
+        {
+          name: 'NVIDIA Corporation',
+          logo: '/logos/nvidia-logo.jpg',
+          entry: 'Strategic technology partner and investor',
+          stake: '<2%',
+          bgColor: 'bg-white',
+        },
+        {
+          name: 'Additional Institutional Investors',
+          logo: null,
+          entry: 'Includes Altimeter, Fidelity, MGX (Abu Dhabi)',
+          stake: 'Combined single-digit percentage',
+        },
+      ],
+      footerNote:
+        '*Ownership percentages are estimates based on disclosed funding rounds and may change following corporate restructuring and IPO. Source: Public filings and press releases.',
+    },
+    {
+      id: 'ipo-path',
+      icon: <Landmark className='text-primary mb-4 h-10 w-10' />,
+      title: 'Path to Liquidity: Strategic IPO Preparation',
+      content:
+        'OpenAI is strategically positioning for public markets through corporate restructuring and governance optimization. The company is transitioning to a Public Benefit Corporation structure while maintaining its mission-driven approach, setting the foundation for a landmark IPO.',
+      points: [
+        'Active restructuring from LP to Public Benefit Corporation (PBC) for IPO readiness',
+        'Recent $40B funding round viewed by analysts as "pre-IPO" capital raising',
+        'Strong IPO market demand with institutional pre-registration of interest',
+        'Strategic alignment with Microsoft and other partners for public market transition',
+      ],
+    },
+    {
+      id: 'why-invest',
+      icon: <DollarSign className='text-primary mb-4 h-10 w-10' />,
+      title: 'Investment Rationale: Compelling Value Proposition',
+      content:
+        'Pre-IPO investment in OpenAI offers accredited investors exposure to the defining technology company of the AI era. With limited liquidity events in the AI sector, this opportunity provides early access to a generational investment before public market availability.',
+      benefits: [
+        'Exceptional growth potential in the rapidly expanding $1.3T global AI market',
+        'Pre-IPO pricing advantage with potential for significant returns upon liquidity',
+        'Portfolio diversification into transformative artificial intelligence technology',
+        'Limited availability - exclusive access for qualified accredited investors only',
+      ],
+    },
+  ];
+
+  const orderedSections = [
+    sections.find((s) => s.id === 'opportunity'),
+    sections.find((s) => s.id === 'growth'),
+    { id: 'funding-timeline', component: <FundingTimelineVertical /> },
+    { id: 'secondary-market', component: <SecondaryMarketActivitySection /> },
+    sections.find((s) => s.id === 'market-leadership'),
+    { id: 'leadership', component: <LeadershipSection /> },
+    sections.find((s) => s.id === 'investors'),
+    sections.find((s) => s.id === 'ipo-path'),
+    sections.find((s) => s.id === 'why-invest'),
+  ].filter(Boolean);
+
+  return (
+    <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200'>
+      <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 shadow-2xl backdrop-blur-xl'>
+        <div className='mx-auto max-w-7xl'>
+          {/* Top notification bar */}
+          <div className='border-b border-slate-800/30 bg-gradient-to-r from-purple-900/20 to-blue-900/20 px-4 py-2 text-center'>
+            <p className='text-xs text-gray-300'>
+              <span className='mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-green-400'></span>
+              <strong className='text-white'>
+                Live Investment Opportunity
+              </strong>{' '}
+              - Limited allocation available for Q1 2025
+              <span className='ml-2 text-purple-300'>
+                • Minimum: $50K • Target Close: March 31st
+              </span>
+            </p>
+          </div>
+
+          {/* Main navigation */}
+          <div className='flex items-center justify-between px-4 py-4 md:px-8'>
+            {/* Enhanced Brand Identity with Trust Badges */}
+            <div className='flex items-center space-x-4'>
+              <div className='openai-logo-container'>
+                <Image
+                  src='/OpenAI_Logo.svg.png'
+                  alt='OpenAI Logo'
+                  width={40}
+                  height={40}
+                  className='openai-logo-image md:w-10 md:h-10'
+                />
+              </div>
+              <div>
+                <div className='flex items-center space-x-3'>
+                  <div>
+                    <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-xl font-bold text-transparent md:text-2xl'>
+                      OpenAI Pre-IPO
+                    </h1>
+                    <p className='text-xs text-gray-400 md:text-sm'>
+                      Investment Opportunity
+                    </p>
+                  </div>
+                  {/* Trust Badges */}
+                  <div className='hidden space-x-2 lg:flex'>
+                    <div className='flex items-center rounded-md bg-green-900/30 px-2 py-1 text-xs text-green-300'>
+                      <ShieldAlert className='mr-1 h-3 w-3' />
+                      SEC Registered
+                    </div>
+                    <div className='flex items-center rounded-md bg-blue-900/30 px-2 py-1 text-xs text-blue-300'>
+                      <Landmark className='mr-1 h-3 w-3' />
+                      CIRO Member
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Simplified Navigation Menu */}
+            <nav className='hidden space-x-1 lg:flex'>
+              {[
+                { id: 'growth', label: 'Overview', icon: BarChart3 },
+                { id: 'investors', label: 'Investors', icon: UsersRound },
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className='group relative flex items-center space-x-2 rounded-lg px-4 py-3 text-sm font-medium text-gray-300 transition-all duration-300 hover:bg-slate-800/60 hover:text-white'
+                >
+                  <item.icon className='h-4 w-4' />
+                  <span>{item.label}</span>
+                  <div className='absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-3/4'></div>
+                </a>
+              ))}
+            </nav>
+
+            {/* Clean CTA Section */}
+            <div className='flex items-center space-x-3'>
+              {/* Enhanced Primary CTA */}
+              <Link
+                href='/apply'
+                className='group relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-purple-500/25 md:px-8 md:py-3 md:text-base'
+              >
+                <div className='absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
+                <div className='relative flex items-center space-x-2'>
+                  <span>Apply Now</span>
+                  <Rocket className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                </div>
+              </Link>
+
+              {/* Mobile Menu Toggle */}
+              <Button
+                variant='ghost'
+                size='icon'
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className='text-gray-300 hover:bg-slate-800 hover:text-white lg:hidden'
+              >
+                {isMenuOpen ? (
+                  <X className='h-6 w-6' />
+                ) : (
+                  <Menu className='h-6 w-6' />
+                )}
+              </Button>
+            </div>
+          </div>
+
+          {/* Enhanced Mobile Menu */}
+          {isMenuOpen && (
+            <div className='border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl lg:hidden'>
+              <div className='px-4 py-6'>
+                {/* Mobile Trust Indicators */}
+                <div className='mb-6 flex justify-center space-x-4 text-xs'>
+                  <div className='flex items-center space-x-1 text-green-400'>
+                    <ShieldAlert className='h-3 w-3' />
+                    <span>SEC Registered</span>
+                  </div>
+                  <div className='flex items-center space-x-1 text-blue-400'>
+                    <Landmark className='h-3 w-3' />
+                    <span>CIRO Member</span>
+                  </div>
+                </div>
+
+                {/* Mobile Navigation */}
+                <nav className='space-y-1'>
+                  {[
+                    {
+                      id: 'growth',
+                      label: 'Investment Overview',
+                      icon: BarChart3,
+                      desc: '$300B Valuation • Financial Data',
+                    },
+                    {
+                      id: 'investors',
+                      label: 'Institutional Investors',
+                      icon: UsersRound,
+                      desc: 'Microsoft, SoftBank & More',
+                    },
+                  ].map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className='flex items-center space-x-4 rounded-lg bg-slate-800/40 p-4 transition-all hover:bg-slate-700/60'
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className='flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-600 to-blue-600'>
+                        <item.icon className='h-5 w-5 text-white' />
+                      </div>
+                      <div className='flex-1'>
+                        <p className='font-medium text-white'>{item.label}</p>
+                        <p className='text-xs text-gray-400'>{item.desc}</p>
+                      </div>
+                      <div className='text-gray-400'>
+                        <svg
+                          className='h-5 w-5'
+                          fill='none'
+                          stroke='currentColor'
+                          viewBox='0 0 24 24'
+                        >
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth={2}
+                            d='M9 5l7 7-7 7'
+                          />
+                        </svg>
+                      </div>
+                    </a>
+                  ))}
+                </nav>
+
+                {/* Mobile Contact */}
+                <div className='mt-6 rounded-lg bg-slate-800/40 p-4 text-center'>
+                  <p className='mb-2 text-sm font-medium text-white'>
+                    Investment Inquiries
+                  </p>
+                  <a
+                    href='tel:+14375235816'
+                    className='text-lg font-semibold text-purple-400 transition-colors hover:text-purple-300'
+                  >
+                    +1 437 523 5816
+                  </a>
+                  <p className='mt-1 text-xs text-gray-400'>
+                    Available 9 AM - 8 PM EST
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+
+      <div className='relative overflow-hidden'>
+        {/* Enhanced Background Effects */}
+        <div className='bg-grid-pattern pointer-events-none absolute inset-0 opacity-5'></div>
+        <div className='absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-blue-900/10'></div>
+
+        {/* Floating elements for visual interest */}
+        <div className='pointer-events-none absolute inset-0 overflow-hidden'>
+          <div className='absolute -top-24 -right-24 h-96 w-96 rounded-full bg-purple-600/10 blur-3xl'></div>
+          <div className='absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl'></div>
+        </div>
+
+        <section className='relative z-10 px-4 py-20 text-center md:px-8 md:py-32'>
+          <div className='mx-auto max-w-6xl'>
+            {/* Professional Trust Indicators */}
+            <div className='mb-10 flex flex-wrap items-center justify-center gap-3 text-sm text-gray-400 sm:gap-6'>
+              <div className='flex items-center rounded-xl bg-gradient-to-r from-green-900/40 to-green-800/40 px-4 py-3 backdrop-blur-sm'>
+                <ShieldAlert className='mr-2 h-4 w-4 text-green-400' />
+                <span className='text-xs font-medium text-green-300 sm:text-sm'>
+                  SEC Compliant
+                </span>
+              </div>
+              <div className='flex items-center rounded-xl bg-gradient-to-r from-blue-900/40 to-blue-800/40 px-4 py-3 backdrop-blur-sm'>
+                <UsersRound className='mr-2 h-4 w-4 text-blue-400' />
+                <span className='text-xs font-medium text-blue-300 sm:text-sm'>
+                  Accredited Investors Only
+                </span>
+              </div>
+              <div className='flex items-center rounded-xl bg-gradient-to-r from-purple-900/40 to-purple-800/40 px-4 py-3 backdrop-blur-sm'>
+                <Zap className='mr-2 h-4 w-4 text-purple-400' />
+                <span className='text-xs font-medium text-purple-300 sm:text-sm'>
+                  Limited Availability
+                </span>
+              </div>
+            </div>
+
+            {/* OpenAI Logo - Prominent Hero Display */}
+            <div className='mb-8 flex justify-center'>
+              <div className='openai-logo-hero-container'>
+                <Image
+                  src='/OpenAI_Logo.svg.png'
+                  alt='OpenAI Logo'
+                  width={120}
+                  height={120}
+                  className='openai-logo-image'
+                />
+              </div>
+            </div>
+
+            {/* Enhanced Value Proposition Badge */}
+            <div className='from-primary mb-8 inline-block animate-pulse rounded-2xl bg-gradient-to-r via-purple-500 to-pink-500 p-1 shadow-lg'>
+              <div className='rounded-xl bg-slate-900/90 px-6 py-3 backdrop-blur-sm'>
+                <p className='from-primary bg-gradient-to-r via-purple-400 to-pink-400 bg-clip-text text-base font-bold text-transparent'>
+                  🔥 Exclusive Pre-IPO Investment Opportunity • $300B Valuation
+                </p>
+              </div>
+            </div>
+
+            {/* Main Headline with Enhanced Typography */}
+            <h1 className='mb-8 text-5xl leading-tight font-extrabold text-white md:text-7xl lg:text-8xl'>
+              Invest in the{' '}
+              <span className='from-primary relative bg-gradient-to-r via-purple-500 to-pink-500 bg-clip-text text-transparent'>
+                Future of AI
+                <div className='absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-30'></div>
+              </span>
+            </h1>
+
+            {/* Enhanced Description */}
+            <p className='mx-auto mb-10 max-w-3xl text-xl leading-relaxed text-gray-300 md:text-2xl lg:text-3xl'>
+              Join global institutions investing in OpenAI before its
+              anticipated IPO.
+              <br className='hidden md:inline' />
+              <strong className='text-white'> ~$300B valuation</strong> with
+              <strong className='text-green-400'>
+                {' '}
+                $11.6B projected 2025 revenue
+              </strong>
+              .
+            </p>
+
+            {/* Enhanced Key Metrics with Animation */}
+            <div className='mb-12 grid grid-cols-1 gap-6 md:grid-cols-3'>
+              {[
+                {
+                  value: '~$300B',
+                  label: 'Current Valuation',
+                  color: 'text-green-400',
+                  delay: 'delay-0',
+                },
+                {
+                  value: '$58B+',
+                  label: 'Total Funding Raised',
+                  color: 'text-blue-400',
+                  delay: 'delay-100',
+                },
+                {
+                  value: '2025',
+                  label: 'Expected IPO Timeline',
+                  color: 'text-purple-400',
+                  delay: 'delay-200',
+                },
+              ].map((metric, index) => (
+                <div
+                  key={index}
+                  className={`group relative overflow-hidden rounded-2xl bg-slate-800/60 p-6 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-slate-700/60 ${metric.delay}`}
+                >
+                  <div className='absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
+                  <div className='relative'>
+                    <div className={`text-4xl font-bold ${metric.color}`}>
+                      {metric.value}
+                    </div>
+                    <div className='mt-2 text-sm font-medium text-gray-400'>
+                      {metric.label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Enhanced CTA Section with Professional Layout */}
+            <div className='flex flex-col items-center space-y-6 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-6'>
+              {/* Primary CTA */}
+              <Button
+                asChild
+                size='lg'
+                className='group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 px-10 py-5 text-lg font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-purple-500/30 sm:w-auto md:px-12 md:py-6 md:text-xl'
+              >
+                <Link href='/apply'>
+                  <div className='absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
+                  <div className='relative flex items-center space-x-3'>
+                    <span>Start Investment Application</span>
+                    <Rocket className='h-5 w-5 transition-transform group-hover:translate-x-1 md:h-6 md:w-6' />
+                  </div>
+                </Link>
+              </Button>
+
+              {/* Secondary CTA */}
+              <Button
+                variant='outline'
+                size='lg'
+                className='group w-full border-2 border-slate-600 bg-slate-800/60 px-10 py-5 text-lg font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-purple-500 hover:bg-slate-700/60 hover:text-purple-300 sm:w-auto md:px-12 md:py-6 md:text-xl'
+                onClick={() => {
+                  const investorsSection = document.getElementById('investors');
+                  investorsSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className='flex items-center space-x-3'>
+                  <span>View Investor Backing</span>
+                  <UsersRound className='h-5 w-5 transition-transform group-hover:scale-110 md:h-6 md:w-6' />
+                </div>
+              </Button>
+            </div>
+
+            {/* Professional Risk Disclaimer */}
+            <div className='mt-12 rounded-xl border border-slate-700/50 bg-slate-800/30 p-6 backdrop-blur-sm'>
+              <p className='text-sm leading-relaxed text-gray-400'>
+                <strong className='text-amber-400'>
+                  Investment Disclaimer:
+                </strong>{' '}
+                This investment involves substantial risk, including potential
+                total loss of principal. Past performance does not guarantee
+                future results.
+                <br className='hidden sm:inline' />
+                For accredited investors only. Please read full disclosures and
+                consult with your financial advisor.
+              </p>
+            </div>
+
+            {/* Live Status Indicator */}
+            <div className='mt-8 flex items-center justify-center space-x-3 text-sm text-gray-400'>
+              <div className='flex items-center space-x-2'>
+                <div className='h-3 w-3 animate-pulse rounded-full bg-green-400'></div>
+                <span className='font-medium text-green-400'>
+                  Live Opportunity
+                </span>
+              </div>
+              <span>•</span>
+              <span>Limited spots available</span>
+              <span>•</span>
+              <span>Target close: March 31, 2025</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <main className='relative z-10 px-4 py-12 md:px-6 md:py-16'>
+        <div className='mx-auto max-w-6xl space-y-16 md:space-y-24'>
+          {orderedSections.map((sectionItem: any) => {
+            if (sectionItem.component) {
+              return (
+                <section
+                  key={sectionItem.id}
+                  id={sectionItem.id}
+                  className='scroll-mt-20'
+                >
+                  {sectionItem.component}
+                </section>
+              );
+            }
+            const section = sectionItem;
+            return (
+              <section
+                key={section.id}
+                id={section.id}
+                className='scroll-mt-20'
+              >
+                {/* Modern Financial Section Design */}
+                <div className='group relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/80 via-slate-800/60 to-slate-900/80 shadow-2xl backdrop-blur-sm transition-all duration-500 hover:border-purple-500/30 hover:shadow-purple-500/10'>
+                  {/* Animated background gradient */}
+                  <div className='absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-blue-600/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100'></div>
+
+                  {/* Section Header */}
+                  <div className='relative border-b border-slate-700/50 bg-gradient-to-r from-slate-800/90 to-slate-900/90 p-8 md:p-12'>
+                    <div className='flex flex-col items-start space-y-6 md:flex-row md:items-center md:space-y-0 md:space-x-8'>
+                      {/* Icon with enhanced styling */}
+                      <div className='flex-shrink-0'>
+                        <div className='relative'>
+                          <div className='absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-20 blur-xl'></div>
+                          <div className='relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-600 shadow-lg md:h-20 md:w-20'>
+                            {section.icon}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Title and Description */}
+                      <div className='flex-1 space-y-4'>
+                        <h2 className='text-3xl leading-tight font-bold text-white md:text-4xl lg:text-5xl'>
+                          {section.title}
+                        </h2>
+                        <p className='text-lg leading-relaxed text-gray-300 md:text-xl'>
+                          {section.content}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section Content */}
+                  <div className='relative p-8 md:p-12'>
+                    {/* Financial Visuals/Charts */}
+                    {section.visuals &&
+                      section.visuals.map((visual: Visual, vIndex: number) => (
+                        <div key={vIndex} className='mb-12 last:mb-0'>
+                          <div className='mb-6 text-center md:text-left'>
+                            <h3 className='mb-3 text-2xl font-semibold text-white'>
+                              {visual.title}
+                            </h3>
+                          </div>
+                          <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-6 shadow-lg backdrop-blur-sm'>
+                            {visual.component}
+                          </div>
+                          <p className='mt-4 text-center text-sm leading-relaxed text-gray-400 italic md:text-left'>
+                            {visual.explanation}
+                          </p>
+                        </div>
+                      ))}
+
+                    {/* Key Points */}
+                    {section.points && (
+                      <div className='mt-8'>
+                        <h3 className='mb-6 text-xl font-semibold text-white'>
+                          Key Investment Highlights
+                        </h3>
+                        <div className='grid gap-4 md:grid-cols-2'>
+                          {section.points.map(
+                            (point: string, pIndex: number) => (
+                              <div
+                                key={pIndex}
+                                className='group/item flex items-start space-x-4 rounded-lg bg-slate-700/30 p-4 transition-all duration-300 hover:bg-slate-700/50'
+                              >
+                                <div className='flex-shrink-0'>
+                                  <div className='flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-blue-500'>
+                                    <Zap className='h-4 w-4 text-white' />
+                                  </div>
+                                </div>
+                                <p className='text-gray-200 group-hover/item:text-white'>
+                                  {point}
+                                </p>
+                              </div>
+                            )
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Financial Stats */}
+                    {section.stats && (
+                      <div className='mt-8'>
+                        <h3 className='mb-6 text-xl font-semibold text-white'>
+                          Key Financial Metrics
+                        </h3>
+                        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+                          {section.stats.map((stat: Stat, sIndex: number) => (
+                            <div
+                              key={sIndex}
+                              className='group/stat relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-700/60 to-slate-800/60 p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl'
+                            >
+                              <div className='absolute inset-0 bg-gradient-to-br from-purple-600/10 to-blue-600/10 opacity-0 transition-opacity duration-300 group-hover/stat:opacity-100'></div>
+                              <div className='relative'>
+                                <p className='bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-3xl font-bold text-transparent'>
+                                  {stat.value}
+                                </p>
+                                <p className='mt-2 text-sm font-medium text-gray-300'>
+                                  {stat.label}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Professional Institutional Investors Section */}
+                    {section.majorHolders && (
+                      <div className='mt-8 space-y-8'>
+                        <div className='text-center space-y-3'>
+                          <h3 className='text-3xl font-bold text-white'>
+                            World-Class Institutional Backing
+                          </h3>
+                          <p className='text-lg text-gray-400 max-w-2xl mx-auto'>
+                            Leading global investors backing OpenAI's mission with over $58 billion in funding
+                          </p>
+                        </div>
+
+                        {/* Primary Investors - Professional Grid */}
+                        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+                          {section.majorHolders
+                            .filter((holder: MajorHolder) => holder.logo)
+                            .map((holder: MajorHolder, iIndex: number) => (
+                              <div
+                                key={iIndex}
+                                className='group relative h-full overflow-hidden rounded-2xl border border-slate-600/30 bg-gradient-to-br from-slate-800/60 to-slate-900/60 transition-all duration-300 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10'
+                              >
+                                {/* Hover Effect */}
+                                <div className='absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
+                                
+                                <div className='relative p-6 h-full flex flex-col'>
+                                  {/* Logo Container */}
+                                  <div className='mb-6 h-16 w-full overflow-hidden rounded-xl bg-white/98 p-3 shadow-sm'>
+                                    <div className='flex h-full w-full items-center justify-center'>
+                                      <Image
+                                        src={holder.logo! || '/placeholder.svg'}
+                                        alt={`${holder.name} logo`}
+                                        width={120}
+                                        height={40}
+                                        className='object-contain'
+                                        style={{ 
+                                          maxWidth: '100%', 
+                                          maxHeight: '100%',
+                                          width: 'auto',
+                                          height: 'auto'
+                                        }}
+                                      />
+                                    </div>
+                                  </div>
+                                  
+                                  {/* Investor Details */}
+                                  <div className='text-center space-y-3 flex-grow flex flex-col justify-between'>
+                                    <div>
+                                      <h4 className='text-lg font-bold text-white mb-2'>
+                                        {holder.name}
+                                      </h4>
+                                      <div className='text-sm font-semibold text-blue-400 mb-3'>
+                                        {holder.stake}
+                                      </div>
+                                    </div>
+                                    <div className='text-sm text-gray-400 leading-relaxed'>
+                                      {holder.entry}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                        </div>
+
+                        {/* Additional Strategic Partners */}
+                        <div className='rounded-2xl border border-slate-600/30 bg-slate-800/40 p-8'>
+                          <div className='text-center mb-6'>
+                            <h4 className='text-2xl font-bold text-white mb-2'>
+                              Additional Strategic Partners
+                            </h4>
+                            <p className='text-gray-400'>
+                              Other world-class institutions supporting OpenAI
+                            </p>
+                          </div>
+                          
+                          <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-1 max-w-4xl mx-auto'>
+                            {section.majorHolders
+                              .filter((holder: MajorHolder) => !holder.logo)
+                              .map((holder: MajorHolder, iIndex: number) => (
+                                <div
+                                  key={iIndex}
+                                  className='flex items-center justify-between rounded-xl bg-slate-700/50 p-4 transition-all duration-300 hover:bg-slate-700/70'
+                                >
+                                  <div className='flex-1'>
+                                    <p className='font-semibold text-white text-base mb-1'>
+                                      {holder.name}
+                                    </p>
+                                    <p className='text-sm text-gray-400'>
+                                      {holder.entry}
+                                    </p>
+                                  </div>
+                                  <div className='ml-4 text-right'>
+                                    <div className='text-sm font-semibold text-blue-400'>
+                                      {holder.stake}
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                          </div>
+
+                          {/* Other Notable Investors */}
+                          <div className='mt-6 rounded-xl bg-slate-700/30 p-6 text-center'>
+                            <h5 className='text-lg font-semibold text-white mb-3'>
+                              Plus Leading Investment Firms
+                            </h5>
+                            <div className='flex flex-wrap justify-center gap-3 text-sm text-gray-300'>
+                              {['Sequoia Capital', 'Andreessen Horowitz', 'Founders Fund', 'Coatue Management', 'Fidelity Investments'].map((firm, index) => (
+                                <span key={index} className='px-3 py-1 rounded-full bg-slate-600/40 text-xs font-medium'>
+                                  {firm}
+                                </span>
+                              ))}
+                              <span className='px-3 py-1 rounded-full bg-slate-600/40 text-xs font-medium text-gray-400'>
+                                +Others
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Investment Summary - Prominent Display */}
+                        <div className='rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20 p-8 text-center'>
+                          <div className='max-w-md mx-auto space-y-4'>
+                            <h4 className='text-2xl font-bold text-blue-300'>
+                              Total Institutional Investment
+                            </h4>
+                            <div className='text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent'>
+                              $58+ Billion
+                            </div>
+                            <p className='text-base text-gray-400'>
+                              Raised across multiple funding rounds since 2019
+                            </p>
+                            <div className='flex items-center justify-center space-x-6 text-sm text-gray-400 pt-2'>
+                              <div className='text-center'>
+                                <div className='font-semibold text-white'>2019-2025</div>
+                                <div>Funding Period</div>
+                              </div>
+                              <div className='text-center'>
+                                <div className='font-semibold text-white'>15+</div>
+                                <div>Major Investors</div>
+                              </div>
+                              <div className='text-center'>
+                                <div className='font-semibold text-white'>Multiple</div>
+                                <div>Funding Rounds</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {section.footerNote && (
+                          <div className='text-center'>
+                            <p className='text-sm text-gray-500 italic max-w-3xl mx-auto leading-relaxed'>
+                              {section.footerNote}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Benefits Section */}
+                    {section.benefits && (
+                      <div className='mt-8'>
+                        <h3 className='mb-6 text-xl font-semibold text-white'>
+                          Investment Benefits
+                        </h3>
+                        <div className='grid gap-4 md:grid-cols-2'>
+                          {section.benefits.map(
+                            (benefit: string, bIndex: number) => (
+                              <div
+                                key={bIndex}
+                                className='group/benefit flex items-start space-x-4 rounded-lg bg-gradient-to-r from-green-900/20 to-blue-900/20 p-4 transition-all duration-300 hover:from-green-800/30 hover:to-blue-800/30'
+                              >
+                                <div className='flex-shrink-0'>
+                                  <TrendingUp className='h-6 w-6 text-green-400' />
+                                </div>
+                                <p className='text-gray-200 group-hover/benefit:text-white'>
+                                  {benefit}
+                                </p>
+                              </div>
+                            )
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+
+          <Separator className='my-16 border-slate-700 md:my-24' />
+        </div>
+      </main>
+
+      <footer className='mt-16 border-t border-slate-700 bg-slate-900/95 px-4 py-12 text-center backdrop-blur-sm md:mt-24 md:px-8'>
+        <div className='mx-auto max-w-6xl text-gray-300'>
+          {/* Contact Information Grid */}
+          <div className='mb-12 grid grid-cols-1 gap-8 md:grid-cols-3'>
+            {/* Primary Contact */}
+            <div className='rounded-lg bg-slate-800/60 p-6'>
+              <h4 className='mb-4 text-lg font-semibold text-white'>
+                Investment Inquiries
+              </h4>
+              <div className='space-y-3 text-sm'>
+                <p className='flex items-center justify-center md:justify-start'>
+                  <Mail className='text-primary mr-2 h-4 w-4' />
+                  <a
+                    href='mailto:accounts@cgfinancialcanada.ca'
+                    className='hover:text-primary transition-colors'
+                  >
+                    accounts@cgfinancialcanada.ca
+                  </a>
+                </p>
+                <p className='flex items-center justify-center md:justify-start'>
+                  <Phone className='text-primary mr-2 h-4 w-4' />
+                  <a
+                    href='tel:+14375235816'
+                    className='hover:text-primary transition-colors'
+                  >
+                    +1 437 523 5816
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            {/* Office Address */}
+            <div className='rounded-lg bg-slate-800/60 p-6'>
+              <h4 className='mb-4 text-lg font-semibold text-white'>
+                Office Address
+              </h4>
+              <div className='flex items-start justify-center text-sm md:justify-start'>
+                <MapPin className='text-primary mt-1 mr-2 h-4 w-4 flex-shrink-0' />
+                <div>
+                  <p className='font-medium'>Citi Canada</p>
+                  <p>123 Front Street West, Suite 1900</p>
+                  <p>Toronto, Ontario M5J 2M3</p>
+                  <p className='mt-1 text-gray-400'>Canada</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Investment Process */}
+            <div className='rounded-lg bg-slate-800/60 p-6'>
+              <h4 className='mb-4 text-lg font-semibold text-white'>
+                Investment Process
+              </h4>
+              <div className='space-y-2 text-sm'>
+                <div className='flex items-center'>
+                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <span>Submit Application</span>
+                </div>
+                <div className='flex items-center'>
+                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <span>Accreditation Verification</span>
+                </div>
+                <div className='flex items-center'>
+                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <span>Investment Review</span>
+                </div>
+                <div className='flex items-center'>
+                  <div className='bg-primary mr-2 h-2 w-2 rounded-full'></div>
+                  <span>Documentation & Closing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Comprehensive Risk Disclosures */}
+          <div className='mb-10 rounded-lg border border-slate-700 bg-slate-800/40 p-8 text-left'>
+            <div className='mb-4 flex items-center'>
+              <ShieldAlert className='mr-3 h-6 w-6 text-amber-500' />
+              <h3 className='text-xl font-semibold text-white'>
+                Important Investment Disclosures
+              </h3>
+            </div>
+            <div className='grid grid-cols-1 gap-6 text-sm leading-relaxed md:grid-cols-2'>
+              <div>
+                <h4 className='mb-2 font-semibold text-white'>Risk Factors</h4>
+                <p className='text-gray-400'>
+                  This investment involves substantial risk, including potential
+                  total loss of principal. Pre-IPO investments are illiquid and
+                  may not be suitable for all investors. Private company
+                  investments carry additional risks including limited financial
+                  disclosure, lack of regulatory oversight, and potential for
+                  dilution in future funding rounds.
+                </p>
+              </div>
+              <div>
+                <h4 className='mb-2 font-semibold text-white'>
+                  Accredited Investor Requirements
+                </h4>
+                <p className='text-gray-400'>
+                  This opportunity is exclusively available to accredited
+                  investors as defined by securities regulations. Minimum
+                  investment amounts apply. Past performance is not indicative
+                  of future results. All financial projections are estimates and
+                  actual results may vary significantly.
+                </p>
+              </div>
+            </div>
+            <hr className='my-4 border-slate-600' />
+            <p className='text-xs text-gray-500'>
+              <strong>Legal Notice:</strong> This material is for informational
+              purposes only and does not constitute an offer to sell or a
+              solicitation of an offer to buy any securities. Any such offer or
+              solicitation will be made only through definitive offering
+              documents. Investment opportunities are subject to availability
+              and investor qualification. Consult with your financial advisor
+              before making investment decisions.
+            </p>
+          </div>
+
+          {/* Citi Canada Information */}
+          <div className='mb-10 rounded-lg border border-slate-700 bg-slate-800/40 p-8'>
+            <div className='mb-6 flex items-center justify-between'>
+              <div className='flex items-center'>
+                <Landmark className='mr-3 h-6 w-6 text-blue-500' />
+                <h3 className='text-xl font-semibold text-white'>
+                  Citi Canada Information
+                </h3>
+              </div>
+              <div className='flex items-center'>
+                <Image
+                  src='/Citigroup-Logo.wine.png'
+                  alt='Citigroup Logo'
+                  width={120}
+                  height={40}
+                  className='object-contain'
+                />
+              </div>
+            </div>
+
+            {/* Toronto Head Office */}
+            <div className='mb-6 rounded-lg bg-slate-700/30 p-6'>
+              <h4 className='mb-3 text-lg font-semibold text-white'>
+                Toronto – Head Office
+              </h4>
+              <div className='flex items-start'>
+                <MapPin className='mr-3 mt-1 h-5 w-5 text-blue-400 flex-shrink-0' />
+                <div className='text-sm text-gray-300'>
+                  <p className='font-medium'>123 Front Street West, Suite 1900</p>
+                  <p>Toronto, Ontario M5J 2M3</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Local Expertise */}
+            <div className='mb-6 rounded-lg bg-slate-700/30 p-6'>
+              <h4 className='mb-3 text-lg font-semibold text-white'>
+                Our Local Expertise
+              </h4>
+              <p className='mb-4 text-sm text-gray-300 leading-relaxed'>
+                Citi is one of the country's largest and longest-serving foreign banks, with roots in Canada dating back to 1919. With offices in Vancouver, Calgary, Montreal, Toronto and Mississauga, Citi's key strategic focus in Canada is to serve clients through Citi Banking, Capital Markets and Advisory; Citi Commercial Bank; Citi Markets; Citi Securities Services; Citi Treasury and Trade Solutions; Citi Private Bank and Citi Cards Canada.
+              </p>
+              
+              <div className='rounded border border-slate-600 bg-slate-800/50 p-4'>
+                <h5 className='mb-2 text-sm font-semibold text-white'>Country Leadership</h5>
+                <p className='text-sm text-gray-300'>
+                  <span className='font-medium'>Raymond Gatcliffe</span><br />
+                  Country Officer and Chief Executive Officer for Citibank Canada
+                </p>
+              </div>
+            </div>
+
+            {/* CDIC Disclosure */}
+            <div className='rounded-lg border border-amber-600/30 bg-amber-900/10 p-6'>
+              <h4 className='mb-3 flex items-center text-sm font-semibold text-amber-400'>
+                <ShieldAlert className='mr-2 h-4 w-4' />
+                Important Regulatory Disclosure
+              </h4>
+              <div className='space-y-3 text-xs text-gray-300 leading-relaxed'>
+                <p>
+                  Citi Canada is a trade name of Citibank Canada, which is a CDIC member. Citibank, N.A., Canadian branch and Citi Cards Canada Inc. are not CDIC members, and products offered by these entities are not eligible for the deposit insurance protection offered by the CDIC.
+                </p>
+                <p>
+                  For a list of deposit products offered by Citibank Canada that are eligible for the deposit insurance protection offered by the CDIC, refer to the Canada Deposit Insurance Corporation section below under Further Information.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Regulatory & Company Information */}
+          <div className='mb-8 grid grid-cols-1 gap-4 text-xs text-gray-500 md:grid-cols-3'>
+            <div className='text-center md:text-left'>
+              <p className='font-medium'>CG Financial Canada</p>
+              <p>Investment Advisory Services</p>
+              <p>Licensed in Canada & United States</p>
+            </div>
+            <div className='text-center'>
+              <p>Member: Canadian Investment Regulatory Organization (CIRO)</p>
+              <p>
+                Regulated by: Investment Industry Regulatory Organization of
+                Canada
+              </p>
+            </div>
+            <div className='text-center md:text-right'>
+              <p>Securities offered through registered representatives</p>
+              <p>Additional regulatory disclosures available upon request</p>
+            </div>
+          </div>
+
+          {/* Copyright & Final Disclaimers */}
+          <div className='border-t border-slate-700 pt-8'>
+            <p className='mb-2 text-sm text-gray-400'>
+              &copy; {new Date().getFullYear()} Citigroup Inc. All rights
+              reserved.
+            </p>
+            <p className='mb-4 text-xs text-gray-500'>
+              OpenAI Pre-IPO Investment Information presented by CG Financial
+              Canada. All information current as of{' '}
+              {new Date().toLocaleDateString('en-US', {
+                month: 'long',
+                year: 'numeric',
+              })}
+              .
+            </p>
+            <p className='text-xs text-gray-600'>
+              Application submission does not guarantee allocation. Investment
+              opportunities are limited and subject to availability.
+              <br className='hidden sm:inline' />
+              This presentation contains forward-looking statements that involve
+              risks and uncertainties.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Cookie Notice */}
+      {showCookieNotice && (
+        <div className='fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 p-4 shadow-lg backdrop-blur-sm'>
+          <div className='mx-auto flex max-w-6xl items-center justify-between'>
+            <div className='flex-1'>
+              <p className='text-sm text-gray-300'>
+                We use cookies to enhance your experience and analyze site usage. 
+                <Link href='#' className='text-blue-400 hover:text-blue-300 ml-1'>
+                  Learn more
+                </Link>
+              </p>
+            </div>
+            <div className='ml-4 flex space-x-2'>
+              <Button 
+                size='sm' 
+                variant='outline' 
+                onClick={() => setShowCookieNotice(false)}
+                className='text-xs'
+              >
+                Decline
+              </Button>
+              <Button 
+                size='sm' 
+                onClick={acceptCookies}
+                className='bg-blue-600 text-xs hover:bg-blue-700'
+              >
+                Accept
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

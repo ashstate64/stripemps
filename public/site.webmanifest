@@ -1,0 +1,86 @@
+{
+  "name": "OpenAI Pre-IPO Investment Opportunity",
+  "short_name": "OpenAI Investment",
+  "description": "Explore an exclusive opportunity to invest in OpenAI's private placement pre-IPO shares. Join leading institutional investors in this transformative AI investment.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["finance", "investment", "technology", "artificial-intelligence"],
+  "screenshots": [
+    {
+      "src": "/OpenAI_Logo.svg.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "OpenAI Investment Opportunity Dashboard"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "shortcuts": [
+    {
+      "name": "Investment Overview",
+      "short_name": "Overview",
+      "description": "View OpenAI investment opportunity overview",
+      "url": "/#overview",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Apply to Invest",
+      "short_name": "Apply",
+      "description": "Apply for OpenAI pre-IPO investment opportunity",
+      "url": "/apply",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
