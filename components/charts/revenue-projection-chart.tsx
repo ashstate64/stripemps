@@ -19,7 +19,7 @@ const revenueData = [
 
 export function RevenueProjectionChart() {
   return (
-    <div className='h-80 w-full rounded-lg bg-slate-50 p-4 shadow-inner dark:bg-slate-800/50'>
+    <div className='h-80 w-full rounded-lg bg-slate-50 p-2 sm:p-4 shadow-inner dark:bg-slate-800/50'>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
           data={revenueData}

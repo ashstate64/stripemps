@@ -622,7 +622,7 @@ export default function DigitalBrochurePage() {
               <span>•</span>
               <span>Limited spots available</span>
               <span>•</span>
-              <span>Target close: March 31, 2025</span>
+              <span>Target close: March 31, 2026</span>
             </div>
           </div>
         </section>
