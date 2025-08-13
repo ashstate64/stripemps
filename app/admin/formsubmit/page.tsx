@@ -155,34 +155,33 @@ export default function FormSubmitAdminPage() {
                         Recent Submissions:
                       </p>
                       <div className='max-h-40 space-y-2 overflow-y-auto'>
-                        {result.submissions
-                          .slice(0, 5)
-                          .map(
-                            (
-                              submission: {
-                                form_data?: { name?: string; email?: string };
-                                submitted_at?: { date?: string };
-                              },
-                              index: number
-                            ) => (
-                              <div
-                                key={index}
-                                className='rounded border border-slate-600 bg-slate-800/50 p-2 text-xs'
-                              >
-                                <p>
-                                  <strong>Name:</strong>{' '}
-                                  {submission.form_data?.name || 'N/A'}
-                                </p>
-                                <p>
-                                  <strong>Email:</strong>{' '}
-                                  {submission.form_data?.email || 'N/A'}
-                                </p>
-                                <p>
-                                  <strong>Date:</strong>{' '}
-                                  {submission.submitted_at?.date || 'N/A'}
-                                </p>
-                              </div>
-                          ))}
+                        {result.submissions.slice(0, 5).map(
+                          (
+                            submission: {
+                              form_data?: { name?: string; email?: string };
+                              submitted_at?: { date?: string };
+                            },
+                            index: number
+                          ) => (
+                            <div
+                              key={index}
+                              className='rounded border border-slate-600 bg-slate-800/50 p-2 text-xs'
+                            >
+                              <p>
+                                <strong>Name:</strong>{' '}
+                                {submission.form_data?.name || 'N/A'}
+                              </p>
+                              <p>
+                                <strong>Email:</strong>{' '}
+                                {submission.form_data?.email || 'N/A'}
+                              </p>
+                              <p>
+                                <strong>Date:</strong>{' '}
+                                {submission.submitted_at?.date || 'N/A'}
+                              </p>
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
                   )}
