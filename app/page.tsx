@@ -239,7 +239,7 @@ export default function DigitalBrochurePage() {
     sections.find((s) => s.id === 'investors'),
     sections.find((s) => s.id === 'ipo-path'),
     sections.find((s) => s.id === 'why-invest'),
-  ].filter(Boolean);
+  ].filter(Boolean) as Array<Section | { id: string; component: React.ReactElement }>;
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200'>
@@ -281,7 +281,9 @@ export default function DigitalBrochurePage() {
                       Maryana Capital Inc.
                     </h1>
                     <p className='text-xs text-gray-400 md:text-sm'>
-                      <span className='sm:hidden'>Investment Advisory</span>
+                      <span className='sm:hidden'>
+                        Investment Advisory
+                      </span>
                       <span className='hidden sm:inline'>Investment Advisory</span>
                     </p>
                   </div>
@@ -688,7 +690,7 @@ export default function DigitalBrochurePage() {
                               {visual.title}
                             </h3>
                           </div>
-                  <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-3 sm:p-6 shadow-lg backdrop-blur-sm'>
+                  <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-3 shadow-lg backdrop-blur-sm sm:p-6'>
                             {visual.component}
                           </div>
                           <p className='mt-4 text-center text-sm italic leading-relaxed text-gray-400 md:text-left'>

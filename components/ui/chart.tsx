@@ -106,9 +106,16 @@ const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<'div'> & {
     active?: boolean;
-    payload?: Array<{ dataKey?: string; name?: string; payload: { fill?: string } }>;
+    payload?: Array<{
+      dataKey?: string;
+      name?: string;
+      payload: { fill?: string };
+    }>;
     label?: React.ReactNode;
-    labelFormatter?: (label: React.ReactNode, payload: unknown[]) => React.ReactNode;
+    labelFormatter?: (
+      label: React.ReactNode,
+      payload: unknown[]
+    ) => React.ReactNode;
     labelClassName?: string;
     formatter?: (
       value: number,
