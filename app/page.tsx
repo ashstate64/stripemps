@@ -244,7 +244,7 @@ export default function DigitalBrochurePage() {
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200'>
       <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 shadow-2xl backdrop-blur-xl'>
-          <div className='mx-auto max-w-7xl'>
+        <div className='mx-auto max-w-7xl'>
           {/* Top notification bar - Mobile optimized */}
           <div className='border-b border-slate-800/30 bg-gradient-to-r from-purple-900/20 to-blue-900/20 px-2 py-1 text-center sm:px-4 sm:py-2'>
             <p className='text-xs text-gray-300 sm:text-xs'>
@@ -281,12 +281,8 @@ export default function DigitalBrochurePage() {
                       Maryana Capital Inc.
                     </h1>
                     <p className='text-xs text-gray-400 md:text-sm'>
-                      <span className='sm:hidden'>
-                        Investment Advisory
-                      </span>
-                      <span className='hidden sm:inline'>
-                        Investment Advisory
-                      </span>
+                      <span className='sm:hidden'>Investment Advisory</span>
+                      <span className='hidden sm:inline'>Investment Advisory</span>
                     </p>
                   </div>
                   {/* Trust Badges */}
@@ -1133,7 +1129,9 @@ export default function DigitalBrochurePage() {
               <p>Registered in Ontario, Canada</p>
             </div>
             <div className='text-center'>
-              <p>Regulated by: Financial Services Regulatory Authority of Ontario</p>
+              <p>
+                Regulated by: Financial Services Regulatory Authority of Ontario
+              </p>
               <p>BN: 747551893RC0001 • Corp. No.: 9944567</p>
             </div>
             <div className='text-center md:text-right'>
