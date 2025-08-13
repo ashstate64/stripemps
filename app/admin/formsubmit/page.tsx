@@ -27,13 +27,13 @@ interface ApiResponse {
 
 export default function FormSubmitAdminPage() {
   const [loading, setLoading] = useState<string | null>(null);
-  const [results, setResults] = useState<{ [key: string]: ApiResponse }>({});
+  const [results, setResults] = useState<Record<string, ApiResponse>>({});
   const [email, setEmail] = useState('accounts@cgfinancialcanada.ca');
 
   const handleApiCall = async (
     action: string,
     params?: Record<string, string>
-  ) => {
+  ): Promise<void> => {
     setLoading(action);
     try {
       const searchParams = new URLSearchParams({ action, ...params });
@@ -62,7 +62,7 @@ export default function FormSubmitAdminPage() {
   }: {
     title: string;
     action: string;
-    icon: any;
+    icon: React.ComponentType<{ className?: string }>;
     description: string;
   }) => {
     const result = results[action];
@@ -157,7 +157,7 @@ export default function FormSubmitAdminPage() {
                       <div className='max-h-40 space-y-2 overflow-y-auto'>
                         {result.submissions
                           .slice(0, 5)
-                          .map((submission: any, index: number) => (
+                          .map((submission: { form_data?: { name?: string; email?: string }; submitted_at?: { date?: string } }, index: number) => (
                             <div
                               key={index}
                               className='rounded border border-slate-600 bg-slate-800/50 p-2 text-xs'
@@ -187,7 +187,7 @@ export default function FormSubmitAdminPage() {
                       </p>
                       <div className='space-y-1'>
                         {result.availableActions.map(
-                          (action: any, index: number) => (
+                          (action: { action: string; description: string }, index: number) => (
                             <div
                               key={index}
                               className='rounded border border-slate-600 bg-slate-800/50 p-2 text-xs'

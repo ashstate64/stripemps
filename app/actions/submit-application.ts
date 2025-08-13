@@ -108,7 +108,10 @@ export async function getFormSubmitApiKey(
 // Helper function to get form submissions (for admin use)
 export async function getFormSubmissions(): Promise<{
   success: boolean;
-  submissions?: any[];
+  submissions?: Array<{
+    form_data?: { name?: string; email?: string };
+    submitted_at?: { date?: string };
+  }>;
   message: string;
 }> {
   if (!FORMSUBMIT_API_KEY) {
