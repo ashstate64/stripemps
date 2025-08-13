@@ -267,8 +267,8 @@ export default function DigitalBrochurePage() {
             <div className='flex items-center space-x-2 sm:space-x-4'>
               <div className='openai-logo-container'>
                 <Image
-                  src='/OpenAI_Logo.svg.png'
-                  alt='OpenAI Logo'
+                  src='/placeholder-logo.svg'
+                  alt='Maryana Capital Inc. Logo'
                   width={32}
                   height={32}
                   className='openai-logo-image sm:h-10 sm:w-10 md:h-10 md:w-10'
@@ -278,13 +278,11 @@ export default function DigitalBrochurePage() {
                 <div className='flex items-center space-x-2 sm:space-x-3'>
                   <div>
                     <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-lg font-bold text-transparent sm:text-xl md:text-2xl'>
-                      OpenAI Pre-IPO
+                      Maryana Capital Inc.
                     </h1>
                     <p className='text-xs text-gray-400 md:text-sm'>
-                      <span className='sm:hidden'>$239.80/share</span>
-                      <span className='hidden sm:inline'>
-                        Investment Opportunity
-                      </span>
+                      <span className='sm:hidden'>Investment Advisory</span>
+                      <span className='hidden sm:inline'>Investment Advisory</span>
                     </p>
                   </div>
                   {/* Trust Badges */}
@@ -462,8 +460,8 @@ export default function DigitalBrochurePage() {
             <div className='mb-4 flex justify-center sm:mb-6 md:mb-8'>
               <div className='openai-logo-hero-container'>
                 <Image
-                  src='/OpenAI_Logo.svg.png'
-                  alt='OpenAI Logo'
+                  src='/placeholder-logo.svg'
+                  alt='Maryana Capital Inc. Logo'
                   width={80}
                   height={80}
                   className='openai-logo-image sm:h-24 sm:w-24 md:h-32 md:w-32'
@@ -973,20 +971,20 @@ export default function DigitalBrochurePage() {
               <div className='space-y-3 text-sm'>
                 <p className='flex items-center justify-center md:justify-start'>
                   <Mail className='mr-2 h-4 w-4 text-primary' />
-                  <a
-                    href='mailto:accounts@cgfinancialcanada.ca'
+                   <a
+                    href='mailto:info@maryanacap.com'
                     className='transition-colors hover:text-primary'
                   >
-                    accounts@cgfinancialcanada.ca
+                    info@maryanacap.com
                   </a>
                 </p>
                 <p className='flex items-center justify-center md:justify-start'>
                   <Phone className='mr-2 h-4 w-4 text-primary' />
                   <a
-                    href='tel:+14375235816'
+                    href='tel:+14378881252'
                     className='transition-colors hover:text-primary'
                   >
-                    +1 437 523 5816
+                    +1 437 888 1252
                   </a>
                 </p>
               </div>
@@ -995,14 +993,14 @@ export default function DigitalBrochurePage() {
             {/* Office Address */}
             <div className='rounded-lg bg-slate-800/60 p-6'>
               <h4 className='mb-4 text-lg font-semibold text-white'>
-                Office Address
+                Registered Office
               </h4>
               <div className='flex items-start justify-center text-sm md:justify-start'>
                 <MapPin className='mr-2 mt-1 h-4 w-4 flex-shrink-0 text-primary' />
                 <div>
-                  <p className='font-medium'>Citi Canada</p>
-                  <p>123 Front Street West, Suite 1900</p>
-                  <p>Toronto, Ontario M5J 2M3</p>
+                  <p className='font-medium'>Maryana Capital Inc.</p>
+                  <p>50 Ardwold Gate</p>
+                  <p>Toronto, Ontario M5R 2W2</p>
                   <p className='mt-1 text-gray-400'>Canada</p>
                 </div>
               </div>
@@ -1079,91 +1077,46 @@ export default function DigitalBrochurePage() {
             </p>
           </div>
 
-          {/* Citi Canada Information */}
+          {/* Maryana Capital Inc. Information */}
           <div className='mb-10 rounded-lg border border-slate-700 bg-slate-800/40 p-8'>
-            <div className='mb-6 flex items-center justify-between'>
-              <div className='flex items-center'>
-                <Landmark className='mr-3 h-6 w-6 text-blue-500' />
-                <h3 className='text-xl font-semibold text-white'>
-                  Citi Canada Information
-                </h3>
-              </div>
-              <div className='flex items-center'>
-                <Image
-                  src='/Citigroup-Logo.wine.png'
-                  alt='Citigroup Logo'
-                  width={120}
-                  height={40}
-                  className='object-contain'
-                />
-              </div>
+            <div className='mb-6 flex items-center'>
+              <Landmark className='mr-3 h-6 w-6 text-blue-500' />
+              <h3 className='text-xl font-semibold text-white'>
+                Maryana Capital Inc. Information
+              </h3>
             </div>
 
-            {/* Toronto Head Office */}
+            {/* Registered Office */}
             <div className='mb-6 rounded-lg bg-slate-700/30 p-6'>
               <h4 className='mb-3 text-lg font-semibold text-white'>
-                Toronto – Head Office
+                Registered Office
               </h4>
               <div className='flex items-start'>
                 <MapPin className='mr-3 mt-1 h-5 w-5 flex-shrink-0 text-blue-400' />
                 <div className='text-sm text-gray-300'>
-                  <p className='font-medium'>
-                    123 Front Street West, Suite 1900
-                  </p>
-                  <p>Toronto, Ontario M5J 2M3</p>
+                  <p>50 Ardwold Gate</p>
+                  <p>Toronto, Ontario M5R 2W2, Canada</p>
                 </div>
               </div>
             </div>
 
-            {/* Local Expertise */}
-            <div className='mb-6 rounded-lg bg-slate-700/30 p-6'>
+            {/* Registration & Regulatory */}
+            <div className='rounded-lg bg-slate-700/30 p-6'>
               <h4 className='mb-3 text-lg font-semibold text-white'>
-                Our Local Expertise
+                Registration & Regulatory
               </h4>
-              <p className='mb-4 text-sm leading-relaxed text-gray-300'>
-                Citi is one of the country&apos;s largest and longest-serving
-                foreign banks, with roots in Canada dating back to 1919. With
-                offices in Vancouver, Calgary, Montreal, Toronto and
-                Mississauga, Citi&apos;s key strategic focus in Canada is to
-                serve clients through Citi Banking, Capital Markets and
-                Advisory; Citi Commercial Bank; Citi Markets; Citi Securities
-                Services; Citi Treasury and Trade Solutions; Citi Private Bank
-                and Citi Cards Canada.
-              </p>
-
-              <div className='rounded border border-slate-600 bg-slate-800/50 p-4'>
-                <h5 className='mb-2 text-sm font-semibold text-white'>
-                  Country Leadership
-                </h5>
-                <p className='text-sm text-gray-300'>
-                  <span className='font-medium'>Raymond Gatcliffe</span>
-                  <br />
-                  Country Officer and Chief Executive Officer for Citibank
-                  Canada
-                </p>
-              </div>
-            </div>
-
-            {/* CDIC Disclosure */}
-            <div className='rounded-lg border border-amber-600/30 bg-amber-900/10 p-6'>
-              <h4 className='mb-3 flex items-center text-sm font-semibold text-amber-400'>
-                <ShieldAlert className='mr-2 h-4 w-4' />
-                Important Regulatory Disclosure
-              </h4>
-              <div className='space-y-3 text-xs leading-relaxed text-gray-300'>
-                <p>
-                  Citi Canada is a trade name of Citibank Canada, which is a
-                  CDIC member. Citibank, N.A., Canadian branch and Citi Cards
-                  Canada Inc. are not CDIC members, and products offered by
-                  these entities are not eligible for the deposit insurance
-                  protection offered by the CDIC.
-                </p>
-                <p>
-                  For a list of deposit products offered by Citibank Canada that
-                  are eligible for the deposit insurance protection offered by
-                  the CDIC, refer to the Canada Deposit Insurance Corporation
-                  section below under Further Information.
-                </p>
+              <div className='grid gap-3 text-sm text-gray-300 md:grid-cols-2'>
+                <div>
+                  <p>Corp. No.: 9944567</p>
+                  <p>BN No.: 747551893RC0001</p>
+                  <p>LEI: 549300RZZXPS18AZ0G57</p>
+                </div>
+                <div>
+                  <p>
+                    Regulated by the Financial Services Regulatory Authority of
+                    Ontario (FSRA)
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -1171,32 +1124,29 @@ export default function DigitalBrochurePage() {
           {/* Regulatory & Company Information */}
           <div className='mb-8 grid grid-cols-1 gap-4 text-xs text-gray-500 md:grid-cols-3'>
             <div className='text-center md:text-left'>
-              <p className='font-medium'>CG Financial Canada</p>
+              <p className='font-medium'>Maryana Capital Inc.</p>
               <p>Investment Advisory Services</p>
-              <p>Licensed in Canada & United States</p>
+              <p>Registered in Ontario, Canada</p>
             </div>
             <div className='text-center'>
-              <p>Member: Canadian Investment Regulatory Organization (CIRO)</p>
-              <p>
-                Regulated by: Investment Industry Regulatory Organization of
-                Canada
-              </p>
+              <p>Regulated by: Financial Services Regulatory Authority of Ontario</p>
+              <p>BN: 747551893RC0001 • Corp. No.: 9944567</p>
             </div>
             <div className='text-center md:text-right'>
-              <p>Securities offered through registered representatives</p>
-              <p>Additional regulatory disclosures available upon request</p>
+              <p>LEI: 549300RZZXPS18AZ0G57</p>
+              <p>Additional disclosures available upon request</p>
             </div>
           </div>
 
           {/* Copyright & Final Disclaimers */}
           <div className='border-t border-slate-700 pt-8'>
             <p className='mb-2 text-sm text-gray-400'>
-              &copy; {new Date().getFullYear()} Citigroup Inc. All rights
+              &copy; {new Date().getFullYear()} Maryana Capital Inc. All rights
               reserved.
             </p>
             <p className='mb-4 text-xs text-gray-500'>
-              OpenAI Pre-IPO Investment Information presented by CG Financial
-              Canada. All information current as of{' '}
+              OpenAI Pre-IPO Investment Information presented by Maryana Capital
+              Inc. All information current as of{' '}
               {new Date().toLocaleDateString('en-US', {
                 month: 'long',
                 year: 'numeric',
