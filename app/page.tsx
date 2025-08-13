@@ -244,7 +244,7 @@ export default function DigitalBrochurePage() {
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200'>
       <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 shadow-2xl backdrop-blur-xl'>
-        <div className='mx-auto max-w-7xl'>
+          <div className='mx-auto max-w-7xl'>
           {/* Top notification bar - Mobile optimized */}
           <div className='border-b border-slate-800/30 bg-gradient-to-r from-purple-900/20 to-blue-900/20 px-2 py-1 text-center sm:px-4 sm:py-2'>
             <p className='text-xs text-gray-300 sm:text-xs'>
@@ -252,11 +252,11 @@ export default function DigitalBrochurePage() {
               <strong className='text-white'>Live Opportunity</strong>
               <span className='hidden sm:inline'>
                 {' '}
-                - Limited allocation available for Q1 2025
+                - Limited allocation available for Q1 2026
               </span>
               <span className='ml-1 text-purple-300 sm:ml-2'>
                 <span className='hidden sm:inline'>• Minimum: $50K • </span>
-                Close: Mar 31st
+                Close: Mar 31, 2026
               </span>
             </p>
           </div>
@@ -293,11 +293,11 @@ export default function DigitalBrochurePage() {
                   <div className='hidden space-x-2 lg:flex'>
                     <div className='flex items-center rounded-md bg-green-900/30 px-2 py-1 text-xs text-green-300'>
                       <ShieldAlert className='mr-1 h-3 w-3' />
-                      SEC Registered
+                      FSRA Regulated
                     </div>
                     <div className='flex items-center rounded-md bg-blue-900/30 px-2 py-1 text-xs text-blue-300'>
                       <Landmark className='mr-1 h-3 w-3' />
-                      CIRO Member
+                      Canadian Firm
                     </div>
                   </div>
                 </div>
@@ -361,11 +361,11 @@ export default function DigitalBrochurePage() {
                 <div className='mb-3 flex justify-center space-x-3 text-xs'>
                   <div className='flex items-center space-x-1 text-green-400'>
                     <ShieldAlert className='h-2.5 w-2.5' />
-                    <span>SEC</span>
+                    <span>FSRA</span>
                   </div>
                   <div className='flex items-center space-x-1 text-blue-400'>
                     <Landmark className='h-2.5 w-2.5' />
-                    <span>CIRO</span>
+                    <span>Canada</span>
                   </div>
                 </div>
 
@@ -434,7 +434,7 @@ export default function DigitalBrochurePage() {
         <section className='relative z-10 px-4 py-8 text-center sm:py-12 md:px-8 md:py-20 lg:py-32'>
           <div className='mx-auto max-w-6xl'>
             {/* Professional Trust Indicators - Mobile optimized */}
-            <div className='mb-4 flex flex-wrap items-center justify-center gap-2 text-sm text-gray-400 sm:mb-6 sm:gap-3 md:mb-10 md:gap-6'>
+            <div className='mb-4 flex flex-wrap items-center justify-center gap-1.5 text-xs text-gray-400 sm:mb-6 sm:gap-3 sm:text-sm md:mb-10 md:gap-6'>
               <div className='flex items-center rounded-lg bg-gradient-to-r from-green-900/40 to-green-800/40 px-2 py-1.5 backdrop-blur-sm sm:rounded-xl sm:px-4 sm:py-3'>
                 <ShieldAlert className='mr-1 h-3 w-3 text-green-400 sm:mr-2 sm:h-4 sm:w-4' />
                 <span className='text-xs font-medium text-green-300 sm:text-sm'>
@@ -475,7 +475,7 @@ export default function DigitalBrochurePage() {
 
             {/* Enhanced Value Proposition Badge - Mobile optimized */}
             <div className='mb-4 inline-block animate-pulse rounded-xl bg-gradient-to-r from-primary via-purple-500 to-pink-500 p-0.5 shadow-lg sm:mb-6 sm:rounded-2xl sm:p-1 md:mb-8'>
-              <div className='rounded-lg bg-slate-900/90 px-3 py-2 backdrop-blur-sm sm:rounded-xl sm:px-6 sm:py-3'>
+              <div className='rounded-lg bg-slate-900/90 px-2.5 py-1.5 backdrop-blur-sm sm:rounded-xl sm:px-6 sm:py-3'>
                 <p className='bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-sm font-bold text-transparent sm:text-base'>
                   <span className='sm:hidden'>🔥 OpenAI Pre-IPO • $300B</span>
                   <span className='hidden sm:inline'>
@@ -498,7 +498,7 @@ export default function DigitalBrochurePage() {
             </h1>
 
             {/* Enhanced Description - Mobile optimized */}
-            <p className='mx-auto mb-6 max-w-3xl text-base leading-relaxed text-gray-300 sm:mb-8 sm:text-lg md:mb-10 md:text-xl lg:text-2xl xl:text-3xl'>
+            <p className='mx-auto mb-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:mb-8 sm:max-w-3xl sm:text-lg md:mb-10 md:text-xl lg:text-2xl xl:text-3xl'>
               <span className='sm:hidden'>
                 Join global institutions in OpenAI&apos;s pre-IPO.{' '}
                 <strong className='text-white'>~$300B valuation</strong> with{' '}
@@ -521,7 +521,7 @@ export default function DigitalBrochurePage() {
             </p>
 
             {/* Enhanced Key Metrics with Animation - Mobile optimized */}
-            <div className='mb-6 grid grid-cols-3 gap-3 sm:mb-8 sm:gap-4 md:mb-12 md:gap-6'>
+            <div className='mb-6 grid grid-cols-3 gap-2 sm:mb-8 sm:gap-4 md:mb-12 md:gap-6'>
               {[
                 {
                   value: '~$300B',
@@ -544,16 +544,16 @@ export default function DigitalBrochurePage() {
               ].map((metric, index) => (
                 <div
                   key={index}
-                  className={`group relative overflow-hidden rounded-lg bg-slate-800/60 p-3 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-slate-700/60 sm:rounded-xl sm:p-4 md:rounded-2xl md:p-6 ${metric.delay}`}
+                  className={`group relative overflow-hidden rounded-lg bg-slate-800/60 p-2.5 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-slate-700/60 sm:rounded-xl sm:p-4 md:rounded-2xl md:p-6 ${metric.delay}`}
                 >
                   <div className='absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
                   <div className='relative text-center'>
                     <div
-                      className={`text-lg font-bold sm:text-2xl md:text-3xl lg:text-4xl ${metric.color}`}
+                      className={`text-base font-bold sm:text-2xl md:text-3xl lg:text-4xl ${metric.color}`}
                     >
                       {metric.value}
                     </div>
-                    <div className='mt-1 text-xs font-medium text-gray-400 sm:mt-2 sm:text-sm'>
+                    <div className='mt-0.5 text-[11px] font-medium text-gray-400 sm:mt-2 sm:text-sm'>
                       <span className='sm:hidden'>
                         {metric.label.split(' ')[0]}
                       </span>
@@ -692,7 +692,7 @@ export default function DigitalBrochurePage() {
                               {visual.title}
                             </h3>
                           </div>
-                          <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-6 shadow-lg backdrop-blur-sm'>
+                  <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-3 sm:p-6 shadow-lg backdrop-blur-sm'>
                             {visual.component}
                           </div>
                           <p className='mt-4 text-center text-sm italic leading-relaxed text-gray-400 md:text-left'>
