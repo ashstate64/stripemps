@@ -281,8 +281,12 @@ export default function DigitalBrochurePage() {
                       Maryana Capital Inc.
                     </h1>
                     <p className='text-xs text-gray-400 md:text-sm'>
-                      <span className='sm:hidden'>Investment Advisory</span>
-                      <span className='hidden sm:inline'>Investment Advisory</span>
+                      <span className='sm:hidden'>
+                        Investment Advisory
+                      </span>
+                      <span className='hidden sm:inline'>
+                        Investment Advisory
+                      </span>
                     </p>
                   </div>
                   {/* Trust Badges */}
@@ -971,7 +975,7 @@ export default function DigitalBrochurePage() {
               <div className='space-y-3 text-sm'>
                 <p className='flex items-center justify-center md:justify-start'>
                   <Mail className='mr-2 h-4 w-4 text-primary' />
-                   <a
+                  <a
                     href='mailto:info@maryanacap.com'
                     className='transition-colors hover:text-primary'
                   >
