@@ -630,332 +630,346 @@ export default function DigitalBrochurePage() {
 
       <main className='relative z-10 px-4 py-6 sm:py-8 md:px-6 md:py-12 lg:py-16'>
         <div className='mx-auto max-w-6xl space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24'>
-          {orderedSections.map((sectionItem: any) => {
-            if (sectionItem.component) {
+          {orderedSections
+            .filter(
+              (item): item is NonNullable<typeof item> => item !== undefined
+            )
+            .map((sectionItem) => {
+              if ('component' in sectionItem && sectionItem.component) {
+                return (
+                  <section
+                    key={sectionItem.id}
+                    id={sectionItem.id}
+                    className='scroll-mt-20'
+                  >
+                    {sectionItem.component}
+                  </section>
+                );
+              }
+
+              // Type guard to ensure we have a Section object
+              if (!('title' in sectionItem)) {
+                return null;
+              }
+
+              const section = sectionItem;
               return (
                 <section
-                  key={sectionItem.id}
-                  id={sectionItem.id}
+                  key={section.id}
+                  id={section.id}
                   className='scroll-mt-20'
                 >
-                  {sectionItem.component}
-                </section>
-              );
-            }
-            const section = sectionItem;
-            return (
-              <section
-                key={section.id}
-                id={section.id}
-                className='scroll-mt-20'
-              >
-                {/* Modern Financial Section Design */}
-                <div className='group relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/80 via-slate-800/60 to-slate-900/80 shadow-2xl backdrop-blur-sm transition-all duration-500 hover:border-purple-500/30 hover:shadow-purple-500/10'>
-                  {/* Animated background gradient */}
-                  <div className='absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-blue-600/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100'></div>
+                  {/* Modern Financial Section Design */}
+                  <div className='group relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/80 via-slate-800/60 to-slate-900/80 shadow-2xl backdrop-blur-sm transition-all duration-500 hover:border-purple-500/30 hover:shadow-purple-500/10'>
+                    {/* Animated background gradient */}
+                    <div className='absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-blue-600/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100'></div>
 
-                  {/* Section Header */}
-                  <div className='relative border-b border-slate-700/50 bg-gradient-to-r from-slate-800/90 to-slate-900/90 p-8 md:p-12'>
-                    <div className='flex flex-col items-start space-y-6 md:flex-row md:items-center md:space-x-8 md:space-y-0'>
-                      {/* Icon with enhanced styling */}
-                      <div className='flex-shrink-0'>
-                        <div className='relative'>
-                          <div className='absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-20 blur-xl'></div>
-                          <div className='relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-600 shadow-lg md:h-20 md:w-20'>
-                            {section.icon}
+                    {/* Section Header */}
+                    <div className='relative border-b border-slate-700/50 bg-gradient-to-r from-slate-800/90 to-slate-900/90 p-8 md:p-12'>
+                      <div className='flex flex-col items-start space-y-6 md:flex-row md:items-center md:space-x-8 md:space-y-0'>
+                        {/* Icon with enhanced styling */}
+                        <div className='flex-shrink-0'>
+                          <div className='relative'>
+                            <div className='absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-20 blur-xl'></div>
+                            <div className='relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-blue-600 shadow-lg md:h-20 md:w-20'>
+                              {section.icon}
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Title and Description */}
-                      <div className='flex-1 space-y-4'>
-                        <h2 className='text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl'>
-                          {section.title}
-                        </h2>
-                        <p className='text-lg leading-relaxed text-gray-300 md:text-xl'>
-                          {section.content}
-                        </p>
+                        {/* Title and Description */}
+                        <div className='flex-1 space-y-4'>
+                          <h2 className='text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl'>
+                            {section.title}
+                          </h2>
+                          <p className='text-lg leading-relaxed text-gray-300 md:text-xl'>
+                            {section.content}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Section Content */}
-                  <div className='relative p-8 md:p-12'>
-                    {/* Financial Visuals/Charts */}
-                    {section.visuals &&
-                      section.visuals.map((visual: Visual, vIndex: number) => (
-                        <div key={vIndex} className='mb-12 last:mb-0'>
-                          <div className='mb-6 text-center md:text-left'>
-                            <h3 className='mb-3 text-2xl font-semibold text-white'>
-                              {visual.title}
-                            </h3>
-                          </div>
-                          <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-3 shadow-lg backdrop-blur-sm sm:p-6'>
-                            {visual.component}
-                          </div>
-                          <p className='mt-4 text-center text-sm italic leading-relaxed text-gray-400 md:text-left'>
-                            {visual.explanation}
-                          </p>
-                        </div>
-                      ))}
-
-                    {/* Key Points */}
-                    {section.points && (
-                      <div className='mt-8'>
-                        <h3 className='mb-6 text-xl font-semibold text-white'>
-                          Key Investment Highlights
-                        </h3>
-                        <div className='grid gap-4 md:grid-cols-2'>
-                          {section.points.map(
-                            (point: string, pIndex: number) => (
-                              <div
-                                key={pIndex}
-                                className='group/item flex items-start space-x-4 rounded-lg bg-slate-700/30 p-4 transition-all duration-300 hover:bg-slate-700/50'
-                              >
-                                <div className='flex-shrink-0'>
-                                  <div className='flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-blue-500'>
-                                    <Zap className='h-4 w-4 text-white' />
-                                  </div>
-                                </div>
-                                <p className='text-gray-200 group-hover/item:text-white'>
-                                  {point}
-                                </p>
+                    {/* Section Content */}
+                    <div className='relative p-8 md:p-12'>
+                      {/* Financial Visuals/Charts */}
+                      {section.visuals &&
+                        section.visuals.map(
+                          (visual: Visual, vIndex: number) => (
+                            <div key={vIndex} className='mb-12 last:mb-0'>
+                              <div className='mb-6 text-center md:text-left'>
+                                <h3 className='mb-3 text-2xl font-semibold text-white'>
+                                  {visual.title}
+                                </h3>
                               </div>
-                            )
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Financial Stats */}
-                    {section.stats && (
-                      <div className='mt-8'>
-                        <h3 className='mb-6 text-xl font-semibold text-white'>
-                          Key Financial Metrics
-                        </h3>
-                        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
-                          {section.stats.map((stat: Stat, sIndex: number) => (
-                            <div
-                              key={sIndex}
-                              className='group/stat relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-700/60 to-slate-800/60 p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl'
-                            >
-                              <div className='absolute inset-0 bg-gradient-to-br from-purple-600/10 to-blue-600/10 opacity-0 transition-opacity duration-300 group-hover/stat:opacity-100'></div>
-                              <div className='relative'>
-                                <p className='bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-3xl font-bold text-transparent'>
-                                  {stat.value}
-                                </p>
-                                <p className='mt-2 text-sm font-medium text-gray-300'>
-                                  {stat.label}
-                                </p>
+                              <div className='rounded-xl border border-slate-600/50 bg-slate-800/40 p-3 shadow-lg backdrop-blur-sm sm:p-6'>
+                                {visual.component}
                               </div>
+                              <p className='mt-4 text-center text-sm italic leading-relaxed text-gray-400 md:text-left'>
+                                {visual.explanation}
+                              </p>
                             </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                          )
+                        )}
 
-                    {/* Professional Institutional Investors Section */}
-                    {section.majorHolders && (
-                      <div className='mt-8 space-y-8'>
-                        <div className='space-y-3 text-center'>
-                          <h3 className='text-3xl font-bold text-white'>
-                            World-Class Institutional Backing
+                      {/* Key Points */}
+                      {section.points && (
+                        <div className='mt-8'>
+                          <h3 className='mb-6 text-xl font-semibold text-white'>
+                            Key Investment Highlights
                           </h3>
-                          <p className='mx-auto max-w-2xl text-lg text-gray-400'>
-                            Leading global investors backing OpenAI&apos;s
-                            mission with over $58 billion in funding
-                          </p>
+                          <div className='grid gap-4 md:grid-cols-2'>
+                            {section.points.map(
+                              (point: string, pIndex: number) => (
+                                <div
+                                  key={pIndex}
+                                  className='group/item flex items-start space-x-4 rounded-lg bg-slate-700/30 p-4 transition-all duration-300 hover:bg-slate-700/50'
+                                >
+                                  <div className='flex-shrink-0'>
+                                    <div className='flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-blue-500'>
+                                      <Zap className='h-4 w-4 text-white' />
+                                    </div>
+                                  </div>
+                                  <p className='text-gray-200 group-hover/item:text-white'>
+                                    {point}
+                                  </p>
+                                </div>
+                              )
+                            )}
+                          </div>
                         </div>
+                      )}
 
-                        {/* Primary Investors - Professional Grid */}
-                        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-                          {section.majorHolders
-                            .filter((holder: MajorHolder) => holder.logo)
-                            .map((holder: MajorHolder, iIndex: number) => (
+                      {/* Financial Stats */}
+                      {section.stats && (
+                        <div className='mt-8'>
+                          <h3 className='mb-6 text-xl font-semibold text-white'>
+                            Key Financial Metrics
+                          </h3>
+                          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+                            {section.stats.map((stat: Stat, sIndex: number) => (
                               <div
-                                key={iIndex}
-                                className='group relative h-full overflow-hidden rounded-2xl border border-slate-600/30 bg-gradient-to-br from-slate-800/60 to-slate-900/60 transition-all duration-300 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10'
+                                key={sIndex}
+                                className='group/stat relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-700/60 to-slate-800/60 p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl'
                               >
-                                {/* Hover Effect */}
-                                <div className='absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
-
-                                <div className='relative flex h-full flex-col p-6'>
-                                  {/* Logo Container */}
-                                  <div className='bg-white/98 mb-6 h-16 w-full overflow-hidden rounded-xl p-3 shadow-sm'>
-                                    <div className='flex h-full w-full items-center justify-center'>
-                                      <Image
-                                        src={holder.logo! || '/placeholder.svg'}
-                                        alt={`${holder.name} logo`}
-                                        width={120}
-                                        height={40}
-                                        className='object-contain'
-                                        style={{
-                                          maxWidth: '100%',
-                                          maxHeight: '100%',
-                                          width: 'auto',
-                                          height: 'auto',
-                                        }}
-                                      />
-                                    </div>
-                                  </div>
-
-                                  {/* Investor Details */}
-                                  <div className='flex flex-grow flex-col justify-between space-y-3 text-center'>
-                                    <div>
-                                      <h4 className='mb-2 text-lg font-bold text-white'>
-                                        {holder.name}
-                                      </h4>
-                                      <div className='mb-3 text-sm font-semibold text-blue-400'>
-                                        {holder.stake}
-                                      </div>
-                                    </div>
-                                    <div className='text-sm leading-relaxed text-gray-400'>
-                                      {holder.entry}
-                                    </div>
-                                  </div>
+                                <div className='absolute inset-0 bg-gradient-to-br from-purple-600/10 to-blue-600/10 opacity-0 transition-opacity duration-300 group-hover/stat:opacity-100'></div>
+                                <div className='relative'>
+                                  <p className='bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-3xl font-bold text-transparent'>
+                                    {stat.value}
+                                  </p>
+                                  <p className='mt-2 text-sm font-medium text-gray-300'>
+                                    {stat.label}
+                                  </p>
                                 </div>
                               </div>
                             ))}
+                          </div>
                         </div>
+                      )}
 
-                        {/* Additional Strategic Partners */}
-                        <div className='rounded-2xl border border-slate-600/30 bg-slate-800/40 p-8'>
-                          <div className='mb-6 text-center'>
-                            <h4 className='mb-2 text-2xl font-bold text-white'>
-                              Additional Strategic Partners
-                            </h4>
-                            <p className='text-gray-400'>
-                              Other world-class institutions supporting OpenAI
+                      {/* Professional Institutional Investors Section */}
+                      {section.majorHolders && (
+                        <div className='mt-8 space-y-8'>
+                          <div className='space-y-3 text-center'>
+                            <h3 className='text-3xl font-bold text-white'>
+                              World-Class Institutional Backing
+                            </h3>
+                            <p className='mx-auto max-w-2xl text-lg text-gray-400'>
+                              Leading global investors backing OpenAI&apos;s
+                              mission with over $58 billion in funding
                             </p>
                           </div>
 
-                          <div className='mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-1'>
+                          {/* Primary Investors - Professional Grid */}
+                          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
                             {section.majorHolders
-                              .filter((holder: MajorHolder) => !holder.logo)
+                              .filter((holder: MajorHolder) => holder.logo)
                               .map((holder: MajorHolder, iIndex: number) => (
                                 <div
                                   key={iIndex}
-                                  className='flex items-center justify-between rounded-xl bg-slate-700/50 p-4 transition-all duration-300 hover:bg-slate-700/70'
+                                  className='group relative h-full overflow-hidden rounded-2xl border border-slate-600/30 bg-gradient-to-br from-slate-800/60 to-slate-900/60 transition-all duration-300 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10'
                                 >
-                                  <div className='flex-1'>
-                                    <p className='mb-1 text-base font-semibold text-white'>
-                                      {holder.name}
-                                    </p>
-                                    <p className='text-sm text-gray-400'>
-                                      {holder.entry}
-                                    </p>
-                                  </div>
-                                  <div className='ml-4 text-right'>
-                                    <div className='text-sm font-semibold text-blue-400'>
-                                      {holder.stake}
+                                  {/* Hover Effect */}
+                                  <div className='absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
+
+                                  <div className='relative flex h-full flex-col p-6'>
+                                    {/* Logo Container */}
+                                    <div className='bg-white/98 mb-6 h-16 w-full overflow-hidden rounded-xl p-3 shadow-sm'>
+                                      <div className='flex h-full w-full items-center justify-center'>
+                                        <Image
+                                          src={
+                                            holder.logo! || '/placeholder.svg'
+                                          }
+                                          alt={`${holder.name} logo`}
+                                          width={120}
+                                          height={40}
+                                          className='object-contain'
+                                          style={{
+                                            maxWidth: '100%',
+                                            maxHeight: '100%',
+                                            width: 'auto',
+                                            height: 'auto',
+                                          }}
+                                        />
+                                      </div>
+                                    </div>
+
+                                    {/* Investor Details */}
+                                    <div className='flex flex-grow flex-col justify-between space-y-3 text-center'>
+                                      <div>
+                                        <h4 className='mb-2 text-lg font-bold text-white'>
+                                          {holder.name}
+                                        </h4>
+                                        <div className='mb-3 text-sm font-semibold text-blue-400'>
+                                          {holder.stake}
+                                        </div>
+                                      </div>
+                                      <div className='text-sm leading-relaxed text-gray-400'>
+                                        {holder.entry}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               ))}
                           </div>
 
-                          {/* Other Notable Investors */}
-                          <div className='mt-6 rounded-xl bg-slate-700/30 p-6 text-center'>
-                            <h5 className='mb-3 text-lg font-semibold text-white'>
-                              Plus Leading Investment Firms
-                            </h5>
-                            <div className='flex flex-wrap justify-center gap-3 text-sm text-gray-300'>
-                              {[
-                                'Sequoia Capital',
-                                'Andreessen Horowitz',
-                                'Founders Fund',
-                                'Coatue Management',
-                                'Fidelity Investments',
-                              ].map((firm, index) => (
-                                <span
-                                  key={index}
-                                  className='rounded-full bg-slate-600/40 px-3 py-1 text-xs font-medium'
-                                >
-                                  {firm}
+                          {/* Additional Strategic Partners */}
+                          <div className='rounded-2xl border border-slate-600/30 bg-slate-800/40 p-8'>
+                            <div className='mb-6 text-center'>
+                              <h4 className='mb-2 text-2xl font-bold text-white'>
+                                Additional Strategic Partners
+                              </h4>
+                              <p className='text-gray-400'>
+                                Other world-class institutions supporting OpenAI
+                              </p>
+                            </div>
+
+                            <div className='mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-1'>
+                              {section.majorHolders
+                                .filter((holder: MajorHolder) => !holder.logo)
+                                .map((holder: MajorHolder, iIndex: number) => (
+                                  <div
+                                    key={iIndex}
+                                    className='flex items-center justify-between rounded-xl bg-slate-700/50 p-4 transition-all duration-300 hover:bg-slate-700/70'
+                                  >
+                                    <div className='flex-1'>
+                                      <p className='mb-1 text-base font-semibold text-white'>
+                                        {holder.name}
+                                      </p>
+                                      <p className='text-sm text-gray-400'>
+                                        {holder.entry}
+                                      </p>
+                                    </div>
+                                    <div className='ml-4 text-right'>
+                                      <div className='text-sm font-semibold text-blue-400'>
+                                        {holder.stake}
+                                      </div>
+                                    </div>
+                                  </div>
+                                ))}
+                            </div>
+
+                            {/* Other Notable Investors */}
+                            <div className='mt-6 rounded-xl bg-slate-700/30 p-6 text-center'>
+                              <h5 className='mb-3 text-lg font-semibold text-white'>
+                                Plus Leading Investment Firms
+                              </h5>
+                              <div className='flex flex-wrap justify-center gap-3 text-sm text-gray-300'>
+                                {[
+                                  'Sequoia Capital',
+                                  'Andreessen Horowitz',
+                                  'Founders Fund',
+                                  'Coatue Management',
+                                  'Fidelity Investments',
+                                ].map((firm, index) => (
+                                  <span
+                                    key={index}
+                                    className='rounded-full bg-slate-600/40 px-3 py-1 text-xs font-medium'
+                                  >
+                                    {firm}
+                                  </span>
+                                ))}
+                                <span className='rounded-full bg-slate-600/40 px-3 py-1 text-xs font-medium text-gray-400'>
+                                  +Others
                                 </span>
-                              ))}
-                              <span className='rounded-full bg-slate-600/40 px-3 py-1 text-xs font-medium text-gray-400'>
-                                +Others
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Investment Summary - Prominent Display */}
-                        <div className='rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20 p-8 text-center'>
-                          <div className='mx-auto max-w-md space-y-4'>
-                            <h4 className='text-2xl font-bold text-blue-300'>
-                              Total Institutional Investment
-                            </h4>
-                            <div className='bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-5xl font-bold text-transparent'>
-                              $58+ Billion
-                            </div>
-                            <p className='text-base text-gray-400'>
-                              Raised across multiple funding rounds since 2019
-                            </p>
-                            <div className='flex items-center justify-center space-x-6 pt-2 text-sm text-gray-400'>
-                              <div className='text-center'>
-                                <div className='font-semibold text-white'>
-                                  2019-2025
-                                </div>
-                                <div>Funding Period</div>
-                              </div>
-                              <div className='text-center'>
-                                <div className='font-semibold text-white'>
-                                  15+
-                                </div>
-                                <div>Major Investors</div>
-                              </div>
-                              <div className='text-center'>
-                                <div className='font-semibold text-white'>
-                                  Multiple
-                                </div>
-                                <div>Funding Rounds</div>
                               </div>
                             </div>
                           </div>
-                        </div>
 
-                        {section.footerNote && (
-                          <div className='text-center'>
-                            <p className='mx-auto max-w-3xl text-sm italic leading-relaxed text-gray-500'>
-                              {section.footerNote}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Benefits Section */}
-                    {section.benefits && (
-                      <div className='mt-8'>
-                        <h3 className='mb-6 text-xl font-semibold text-white'>
-                          Investment Benefits
-                        </h3>
-                        <div className='grid gap-4 md:grid-cols-2'>
-                          {section.benefits.map(
-                            (benefit: string, bIndex: number) => (
-                              <div
-                                key={bIndex}
-                                className='group/benefit flex items-start space-x-4 rounded-lg bg-gradient-to-r from-green-900/20 to-blue-900/20 p-4 transition-all duration-300 hover:from-green-800/30 hover:to-blue-800/30'
-                              >
-                                <div className='flex-shrink-0'>
-                                  <TrendingUp className='h-6 w-6 text-green-400' />
-                                </div>
-                                <p className='text-gray-200 group-hover/benefit:text-white'>
-                                  {benefit}
-                                </p>
+                          {/* Investment Summary - Prominent Display */}
+                          <div className='rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20 p-8 text-center'>
+                            <div className='mx-auto max-w-md space-y-4'>
+                              <h4 className='text-2xl font-bold text-blue-300'>
+                                Total Institutional Investment
+                              </h4>
+                              <div className='bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-5xl font-bold text-transparent'>
+                                $58+ Billion
                               </div>
-                            )
+                              <p className='text-base text-gray-400'>
+                                Raised across multiple funding rounds since 2019
+                              </p>
+                              <div className='flex items-center justify-center space-x-6 pt-2 text-sm text-gray-400'>
+                                <div className='text-center'>
+                                  <div className='font-semibold text-white'>
+                                    2019-2025
+                                  </div>
+                                  <div>Funding Period</div>
+                                </div>
+                                <div className='text-center'>
+                                  <div className='font-semibold text-white'>
+                                    15+
+                                  </div>
+                                  <div>Major Investors</div>
+                                </div>
+                                <div className='text-center'>
+                                  <div className='font-semibold text-white'>
+                                    Multiple
+                                  </div>
+                                  <div>Funding Rounds</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {section.footerNote && (
+                            <div className='text-center'>
+                              <p className='mx-auto max-w-3xl text-sm italic leading-relaxed text-gray-500'>
+                                {section.footerNote}
+                              </p>
+                            </div>
                           )}
                         </div>
-                      </div>
-                    )}
+                      )}
+
+                      {/* Benefits Section */}
+                      {section.benefits && (
+                        <div className='mt-8'>
+                          <h3 className='mb-6 text-xl font-semibold text-white'>
+                            Investment Benefits
+                          </h3>
+                          <div className='grid gap-4 md:grid-cols-2'>
+                            {section.benefits.map(
+                              (benefit: string, bIndex: number) => (
+                                <div
+                                  key={bIndex}
+                                  className='group/benefit flex items-start space-x-4 rounded-lg bg-gradient-to-r from-green-900/20 to-blue-900/20 p-4 transition-all duration-300 hover:from-green-800/30 hover:to-blue-800/30'
+                                >
+                                  <div className='flex-shrink-0'>
+                                    <TrendingUp className='h-6 w-6 text-green-400' />
+                                  </div>
+                                  <p className='text-gray-200 group-hover/benefit:text-white'>
+                                    {benefit}
+                                  </p>
+                                </div>
+                              )
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </section>
-            );
-          })}
+                </section>
+              );
+            })}
 
           <Separator className='my-16 border-slate-700 md:my-24' />
         </div>

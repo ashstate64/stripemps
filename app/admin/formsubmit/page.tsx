@@ -19,9 +19,21 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+interface Submission {
+  form_data?: { name?: string; email?: string };
+  submitted_at?: { date?: string };
+}
+
+interface Action {
+  action: string;
+  description: string;
+}
+
 interface ApiResponse {
   success: boolean;
   message: string;
+  submissions?: Submission[];
+  availableActions?: Action[];
   [key: string]: unknown;
 }
 
@@ -149,20 +161,15 @@ export default function FormSubmitAdminPage() {
                     {result.message}
                   </AlertDescription>
 
-                  {result.submissions && (
+                  {result.submissions && Array.isArray(result.submissions) && (
                     <div className='mt-3'>
                       <p className='mb-2 text-sm font-medium'>
                         Recent Submissions:
                       </p>
                       <div className='max-h-40 space-y-2 overflow-y-auto'>
-                        {result.submissions.slice(0, 5).map(
-                          (
-                            submission: {
-                              form_data?: { name?: string; email?: string };
-                              submitted_at?: { date?: string };
-                            },
-                            index: number
-                          ) => (
+                        {result.submissions
+                          .slice(0, 5)
+                          .map((submission: Submission, index: number) => (
                             <div
                               key={index}
                               className='rounded border border-slate-600 bg-slate-800/50 p-2 text-xs'
@@ -180,37 +187,37 @@ export default function FormSubmitAdminPage() {
                                 {submission.submitted_at?.date || 'N/A'}
                               </p>
                             </div>
-                          )
-                        )}
+                          ))}
                       </div>
                     </div>
                   )}
 
-                  {result.availableActions && (
-                    <div className='mt-3'>
-                      <p className='mb-2 text-sm font-medium'>
-                        Available Actions:
-                      </p>
-                      <div className='space-y-1'>
-                        {result.availableActions.map(
-                          (
-                            action: { action: string; description: string },
-                            index: number
-                          ) => (
-                            <div
-                              key={index}
-                              className='rounded border border-slate-600 bg-slate-800/50 p-2 text-xs'
-                            >
-                              <Badge variant='outline' className='mr-2 text-xs'>
-                                {action.action}
-                              </Badge>
-                              {action.description}
-                            </div>
-                          )
-                        )}
+                  {result.availableActions &&
+                    Array.isArray(result.availableActions) && (
+                      <div className='mt-3'>
+                        <p className='mb-2 text-sm font-medium'>
+                          Available Actions:
+                        </p>
+                        <div className='space-y-1'>
+                          {result.availableActions.map(
+                            (action: Action, index: number) => (
+                              <div
+                                key={index}
+                                className='rounded border border-slate-600 bg-slate-800/50 p-2 text-xs'
+                              >
+                                <Badge
+                                  variant='outline'
+                                  className='mr-2 text-xs'
+                                >
+                                  {action.action}
+                                </Badge>
+                                {action.description}
+                              </div>
+                            )
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
                 </div>
               </div>
             </Alert>

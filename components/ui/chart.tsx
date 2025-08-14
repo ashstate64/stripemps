@@ -207,7 +207,8 @@ const ChartTooltipContent = React.forwardRef<
           {payload.map((item, index) => {
             const key = `${nameKey || item.name || item.dataKey || 'value'}`;
             const itemConfig = getPayloadConfigFromPayload(config, item, key);
-            const indicatorColor = color || item.payload.fill || item.color;
+            const indicatorColor =
+              color || item.payload.fill || (item as { color?: string }).color;
 
             return (
               <div
@@ -217,8 +218,16 @@ const ChartTooltipContent = React.forwardRef<
                   indicator === 'dot' && 'items-center'
                 )}
               >
-                {formatter && item?.value !== undefined && item.name ? (
-                  formatter(item.value, item.name, item, index, item.payload)
+                {formatter &&
+                (item as unknown as { value?: number })?.value !== undefined &&
+                item.name ? (
+                  formatter(
+                    (item as unknown as { value: number }).value,
+                    item.name,
+                    item,
+                    index,
+                    item.payload
+                  )
                 ) : (
                   <>
                     {itemConfig?.icon ? (
@@ -257,9 +266,11 @@ const ChartTooltipContent = React.forwardRef<
                           {itemConfig?.label || item.name}
                         </span>
                       </div>
-                      {item.value && (
+                      {(item as unknown as { value?: number }).value && (
                         <span className='font-mono font-medium tabular-nums text-foreground'>
-                          {item.value.toLocaleString()}
+                          {(
+                            item as unknown as { value: number }
+                          ).value.toLocaleString()}
                         </span>
                       )}
                     </div>
@@ -311,7 +322,7 @@ const ChartLegendContent = React.forwardRef<
 
           return (
             <div
-              key={item.value}
+              key={(item as unknown as { value?: string | number }).value}
               className={cn(
                 'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground'
               )}
