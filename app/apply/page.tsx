@@ -45,11 +45,11 @@ export default function ApplyPage() {
             <div className='flex flex-1 items-center justify-center space-x-2 sm:space-x-3'>
               <div className='openai-logo-container'>
                 <Image
-                  src='/OpenAI_Logo.svg.png'
-                  alt='OpenAI Logo'
+                  src='/maryana-logo.webp'
+                  alt='Maryana Capital Inc. Logo'
                   width={24}
                   height={24}
-                  className='openai-logo-image sm:h-7 sm:w-7 md:h-8 md:w-8'
+                  className='openai-logo-image rounded-sm ring-1 ring-slate-700/50 sm:h-7 sm:w-7 md:h-8 md:w-8'
                 />
               </div>
               <div className='text-center'>

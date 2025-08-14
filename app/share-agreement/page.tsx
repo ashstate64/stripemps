@@ -225,11 +225,11 @@ export default function SharePurchaseAgreement() {
             <div className='flex items-center space-x-2 sm:space-x-3'>
               <div className='openai-logo-container'>
                 <Image
-                  src='/OpenAI_Logo.svg.png'
-                  alt='OpenAI Logo'
+                  src='/maryana-logo.webp'
+                  alt='Maryana Capital Inc. Logo'
                   width={24}
                   height={24}
-                  className='openai-logo-image sm:h-8 sm:w-8 md:h-10 md:w-10'
+                  className='openai-logo-image rounded-sm ring-1 ring-slate-700/50 sm:h-8 sm:w-8 md:h-10 md:w-10'
                 />
               </div>
               <div>

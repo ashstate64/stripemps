@@ -15,11 +15,11 @@ export default function NotFound() {
           <div className='flex items-center'>
             <div className='openai-logo-container'>
               <Image
-                src='/OpenAI_Logo.svg.png'
-                alt='OpenAI Logo'
+                src='/maryana-logo.webp'
+                alt='Maryana Capital Inc. Logo'
                 width={32}
                 height={32}
-                className='openai-logo-image'
+                className='openai-logo-image rounded-md ring-1 ring-slate-700/50'
               />
             </div>
             <div className='ml-4'>

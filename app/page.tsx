@@ -267,11 +267,12 @@ export default function DigitalBrochurePage() {
             <div className='flex items-center space-x-2 sm:space-x-4'>
               <div className='openai-logo-container'>
                 <Image
-                  src='/placeholder-logo.svg'
+                  src='/maryana-logo.webp'
                   alt='Maryana Capital Inc. Logo'
                   width={32}
                   height={32}
-                  className='openai-logo-image sm:h-10 sm:w-10 md:h-10 md:w-10'
+                  className='openai-logo-image rounded-md ring-1 ring-slate-700/50 sm:h-10 sm:w-10 md:h-10 md:w-10'
+                  priority
                 />
               </div>
               <div>
@@ -462,11 +463,12 @@ export default function DigitalBrochurePage() {
             <div className='mb-4 flex justify-center sm:mb-6 md:mb-8'>
               <div className='openai-logo-hero-container'>
                 <Image
-                  src='/placeholder-logo.svg'
+                  src='/maryana-logo.webp'
                   alt='Maryana Capital Inc. Logo'
-                  width={80}
-                  height={80}
-                  className='openai-logo-image sm:h-24 sm:w-24 md:h-32 md:w-32'
+                  width={96}
+                  height={96}
+                  className='openai-logo-image rounded-lg shadow-xl ring-1 ring-slate-700/50 sm:h-24 sm:w-24 md:h-32 md:w-32'
+                  priority
                 />
               </div>
             </div>
@@ -797,7 +799,7 @@ export default function DigitalBrochurePage() {
                                       <div className='flex h-full w-full items-center justify-center'>
                                         <Image
                                           src={
-                                            holder.logo! || '/placeholder.svg'
+                                            holder.logo! || '/maryana-logo.webp'
                                           }
                                           alt={`${holder.name} logo`}
                                           width={120}
