@@ -18,6 +18,7 @@ import {
   Settings,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Submission {
   form_data?: { name?: string; email?: string };
@@ -81,7 +82,7 @@ export default function FormSubmitAdminPage() {
     const isLoading = loading === action;
 
     return (
-      <Card className='border-slate-700 bg-slate-800/60'>
+      <Card className='border-slate-700 bg-slate-800/60 shadow-lg transition-shadow hover:shadow-xl'>
         <CardHeader>
           <CardTitle className='flex items-center text-white'>
             <Icon className='mr-2 h-5 w-5' />
@@ -246,8 +247,23 @@ export default function FormSubmitAdminPage() {
               </Link>
             </div>
             <div className='flex items-center space-x-3'>
-              <Settings className='h-6 w-6 text-gray-400' />
-              <h1 className='text-xl font-bold text-white'>FormSubmit Admin</h1>
+              <Image
+                src='/maryana-logo.webp'
+                alt='Maryana Capital'
+                width={32}
+                height={32}
+                className='h-8 w-8 rounded'
+                priority
+              />
+              <div className='flex flex-col leading-tight'>
+                <span className='text-xs font-medium tracking-wide text-gray-400'>
+                  Maryana Capital
+                </span>
+                <h1 className='text-xl font-bold text-white'>
+                  FormSubmit Admin
+                </h1>
+              </div>
+              <Settings className='ml-2 h-6 w-6 text-gray-400' />
             </div>
           </div>
         </div>
@@ -267,7 +283,7 @@ export default function FormSubmitAdminPage() {
           </div>
 
           {/* Environment Variables Info */}
-          <Card className='mb-8 border-blue-500/30 bg-blue-900/10'>
+          <Card className='mb-8 border-blue-500/30 bg-blue-900/10 shadow-md'>
             <CardHeader>
               <CardTitle className='flex items-center text-blue-300'>
                 <Settings className='mr-2 h-5 w-5' />
@@ -344,7 +360,7 @@ export default function FormSubmitAdminPage() {
           </div>
 
           {/* Instructions */}
-          <Card className='mt-8 border-slate-700 bg-slate-800/40'>
+          <Card className='mt-8 border-slate-700 bg-slate-800/40 shadow-md'>
             <CardHeader>
               <CardTitle className='text-white'>
                 How to Use This Admin Panel
