@@ -232,7 +232,7 @@ export function ApplicationWizard() {
             )}
           </Alert>
         )}
-        <form action={formAction}>
+        <form action={formAction} method="POST">
           {/* Hidden inputs to carry over data not directly part of the current step's form elements but needed for submission */}
           {Object.entries(formData).map(([key, value]) => {
             if (typeof value === 'string' || typeof value === 'number') {

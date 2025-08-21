@@ -687,7 +687,7 @@ export default function SharePurchaseAgreement() {
                   </div>
 
                   {/* Mobile-optimized Form */}
-                  <form action={formAction} className='space-y-4'>
+                  <form action={formAction} method="POST" className='space-y-4'>
                     {/* Hidden fields for FormSubmit.co integration */}
                     <input
                       type='hidden'
