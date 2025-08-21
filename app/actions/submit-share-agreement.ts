@@ -46,7 +46,7 @@ export type ShareAgreementFormState = {
 
 // FormSubmit Configuration for Share Agreements
 const FORMSUBMIT_EMAIL =
-  process.env.FORMSUBMIT_EMAIL || 'accounts@cgfinancialcanada.ca';
+  process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
 
 // Helper function to format share agreement data for FormSubmit.co
 function formatShareAgreementForSubmission(data: ShareAgreementData) {
@@ -134,7 +134,7 @@ function formatShareAgreementForSubmission(data: ShareAgreementData) {
 
     // ===== CONTACT INFORMATION =====
     '📞_URGENT_CONTACT': '+1 (437) 886-1252',
-    '📧_PRIMARY_EMAIL': 'accounts@cgfinancialcanada.ca',
+    '📧_PRIMARY_EMAIL': 'info@maryanacap.com',
     '🏢_OFFICE_ADDRESS':
       '123 Front Street West, Suite 1900, Toronto, ON M5J 2M3',
   };

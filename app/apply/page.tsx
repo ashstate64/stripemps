@@ -139,10 +139,10 @@ export default function ApplyPage() {
                 <p className='flex items-center justify-center md:justify-start'>
                   <Mail className='mr-2 h-4 w-4 text-blue-400' />
                   <a
-                    href='mailto:accounts@cgfinancialcanada.ca'
+                    href='mailto:info@maryanacap.com'
                     className='text-blue-400 hover:text-blue-300'
                   >
-                    accounts@cgfinancialcanada.ca
+                    info@maryanacap.com
                   </a>
                 </p>
               </div>

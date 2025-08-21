@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
     };
 
     const formSubmitEmail =
-      process.env.FORMSUBMIT_EMAIL || 'accounts@cgfinancialcanada.ca';
+      process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
 
     const response = await fetch(`https://formsubmit.co/${formSubmitEmail}`, {
       method: 'POST',

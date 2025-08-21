@@ -135,7 +135,7 @@ export default function NotFound() {
                   </a>
                 </Button>
                 <Button asChild variant='outline'>
-                  <a href='mailto:accounts@cgfinancialcanada.ca'>
+                  <a href='mailto:info@maryanacap.com'>
                     <Mail className='mr-2 h-4 w-4' />
                     Email Support
                   </a>

@@ -173,10 +173,10 @@ export function ApplicationWizard() {
                 📞 +1 (437) 886-1252
               </a>
               <a
-                href='mailto:accounts@cgfinancialcanada.ca'
+                href='mailto:info@maryanacap.com'
                 className='text-blue-400 transition-colors hover:text-blue-300'
               >
-                ✉️ accounts@cgfinancialcanada.ca
+                ✉️ info@maryanacap.com
               </a>
             </div>
           </div>

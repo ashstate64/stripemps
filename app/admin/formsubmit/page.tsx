@@ -41,7 +41,7 @@ interface ApiResponse {
 export default function FormSubmitAdminPage() {
   const [loading, setLoading] = useState<string | null>(null);
   const [results, setResults] = useState<Record<string, ApiResponse>>({});
-  const [email, setEmail] = useState('accounts@cgfinancialcanada.ca');
+  const [email, setEmail] = useState('info@maryanacap.com');
 
   const handleApiCall = async (
     action: string,
@@ -296,7 +296,7 @@ export default function FormSubmitAdminPage() {
                   <span className='text-gray-300'>FORMSUBMIT_EMAIL:</span>
                   <Badge variant='outline' className='font-mono'>
                     {process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL ||
-                      'accounts@cgfinancialcanada.ca'}
+                      'info@maryanacap.com'}
                   </Badge>
                 </div>
                 <div className='flex items-center justify-between'>
@@ -324,7 +324,7 @@ export default function FormSubmitAdminPage() {
                     <li>
                       Add{' '}
                       <code>
-                        FORMSUBMIT_EMAIL=accounts@cgfinancialcanada.ca
+                        FORMSUBMIT_EMAIL=info@maryanacap.com
                       </code>{' '}
                       to your <code>.env.local</code> file
                     </li>
