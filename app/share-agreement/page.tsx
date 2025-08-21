@@ -956,7 +956,7 @@ export default function SharePurchaseAgreement() {
                   </p>
                   <div className='space-y-1 sm:space-y-2'>
                     <a
-                      href='tel:+14375235816'
+                      href='tel:+14378861252'
                       className='block text-xs font-semibold text-blue-400 hover:text-blue-300 sm:text-sm md:text-base'
                       style={{
                         minHeight: '44px',
@@ -964,7 +964,7 @@ export default function SharePurchaseAgreement() {
                         alignItems: 'center',
                       }} // Touch-friendly
                     >
-                      +1 437 523 5816
+                      +1 (437) 886-1252
                     </a>
                     <div className='text-xs text-gray-400'>
                       <span className='sm:hidden'>Mon-Fri, 9 AM - 8 PM</span>

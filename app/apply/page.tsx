@@ -130,10 +130,10 @@ export default function ApplyPage() {
                 <p className='flex items-center justify-center md:justify-start'>
                   <Phone className='mr-2 h-4 w-4 text-blue-400' />
                   <a
-                    href='tel:+14375235816'
+                    href='tel:+14378861252'
                     className='text-blue-400 hover:text-blue-300'
                   >
-                    +1 437 523 5816
+                    +1 (437) 886-1252
                   </a>
                 </p>
                 <p className='flex items-center justify-center md:justify-start'>

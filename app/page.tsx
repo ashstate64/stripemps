@@ -407,10 +407,10 @@ export default function DigitalBrochurePage() {
                 <div className='mt-3 rounded-lg bg-slate-800/40 p-3 text-center'>
                   <p className='mb-1 text-xs font-medium text-white'>Support</p>
                   <a
-                    href='tel:+14375235816'
+                    href='tel:+14378861252'
                     className='text-sm font-semibold text-purple-400 transition-colors hover:text-purple-300'
                   >
-                    +1 437 523 5816
+                    +1 (437) 886-1252
                   </a>
                 </div>
               </div>
@@ -999,10 +999,10 @@ export default function DigitalBrochurePage() {
                 <p className='flex items-center justify-center md:justify-start'>
                   <Phone className='mr-2 h-4 w-4 text-primary' />
                   <a
-                    href='tel:+14378881252'
+                    href='tel:+14378861252'
                     className='transition-colors hover:text-primary'
                   >
-                    +1 437 888 1252
+                    +1 (437) 886-1252
                   </a>
                 </p>
               </div>

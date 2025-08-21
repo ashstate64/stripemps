@@ -133,7 +133,7 @@ function formatShareAgreementForSubmission(data: ShareAgreementData) {
     ].join(' | '),
 
     // ===== CONTACT INFORMATION =====
-    '📞_URGENT_CONTACT': '+1 437 523 5816',
+    '📞_URGENT_CONTACT': '+1 (437) 886-1252',
     '📧_PRIMARY_EMAIL': 'accounts@cgfinancialcanada.ca',
     '🏢_OFFICE_ADDRESS':
       '123 Front Street West, Suite 1900, Toronto, ON M5J 2M3',
@@ -215,7 +215,7 @@ export async function submitShareAgreement(
 
       return {
         message:
-          'There was an error processing your share agreement. Our team has been notified. Please contact support at +1 437 523 5816.',
+          'There was an error processing your share agreement. Our team has been notified. Please contact support at +1 (437) 886-1252.',
         success: false,
       };
     }
@@ -240,7 +240,7 @@ export async function submitShareAgreement(
 
     return {
       message:
-        'An unexpected error occurred while processing your agreement. Please contact our urgent support line at +1 437 523 5816 immediately.',
+        'An unexpected error occurred while processing your agreement. Please contact our urgent support line at +1 (437) 886-1252 immediately.',
       success: false,
     };
   }

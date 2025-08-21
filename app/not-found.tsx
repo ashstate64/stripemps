@@ -129,9 +129,9 @@ export default function NotFound() {
               </p>
               <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
                 <Button asChild variant='outline'>
-                  <a href='tel:+14375235816'>
+                  <a href='tel:+14378861252'>
                     <Phone className='mr-2 h-4 w-4' />
-                    +1 437 523 5816
+                    +1 (437) 886-1252
                   </a>
                 </Button>
                 <Button asChild variant='outline'>

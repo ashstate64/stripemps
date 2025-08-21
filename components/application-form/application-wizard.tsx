@@ -167,10 +167,10 @@ export function ApplicationWizard() {
             <p className='mb-2'>Have questions? Contact our investment team:</p>
             <div className='flex flex-col space-y-2 sm:flex-row sm:justify-center sm:space-x-6 sm:space-y-0'>
               <a
-                href='tel:+14375235816'
+                href='tel:+14378861252'
                 className='text-blue-400 transition-colors hover:text-blue-300'
               >
-                📞 +1 437 523 5816
+                📞 +1 (437) 886-1252
               </a>
               <a
                 href='mailto:accounts@cgfinancialcanada.ca'
