@@ -45,8 +45,7 @@ export type ShareAgreementFormState = {
 };
 
 // FormSubmit Configuration for Share Agreements
-const FORMSUBMIT_EMAIL =
-  process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
+const FORMSUBMIT_EMAIL = process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
 
 // Helper function to format share agreement data for FormSubmit.co
 function formatShareAgreementForSubmission(data: ShareAgreementData) {

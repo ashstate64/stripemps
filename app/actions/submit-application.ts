@@ -62,8 +62,7 @@ export type FormState = {
 };
 
 // FormSubmit API Configuration
-const FORMSUBMIT_EMAIL =
-  process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
+const FORMSUBMIT_EMAIL = process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
 const FORMSUBMIT_API_KEY = process.env.FORMSUBMIT_API_KEY;
 
 // Helper function to get FormSubmit API key

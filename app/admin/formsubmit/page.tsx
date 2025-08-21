@@ -322,11 +322,8 @@ export default function FormSubmitAdminPage() {
                       <code>.env.local</code> file
                     </li>
                     <li>
-                      Add{' '}
-                      <code>
-                        FORMSUBMIT_EMAIL=info@maryanacap.com
-                      </code>{' '}
-                      to your <code>.env.local</code> file
+                      Add <code>FORMSUBMIT_EMAIL=info@maryanacap.com</code> to
+                      your <code>.env.local</code> file
                     </li>
                     <li>Restart your Next.js development server</li>
                   </ol>
