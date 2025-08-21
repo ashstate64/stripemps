@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify FormSubmit Email - Maryana Capital</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-container { background: #f5f5f5; padding: 30px; border-radius: 10px; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #007cba; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #005a87; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>🔗 Verify FormSubmit Email for Maryana Capital</h2>
+        <p>This form will verify <strong>info@maryanacap.com</strong> with FormSubmit.co</p>
+        
+        <form action="https://formsubmit.co/info@maryanacap.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="FormSubmit Email Verification - Maryana Capital Inc.">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://formsubmit.co/thanks">
+            
+            <!-- Form Fields -->
+            <label>Your Name:</label>
+            <input type="text" name="name" value="Maryana Capital Admin" required>
+            
+            <label>Email Address (for replies):</label>
+            <input type="email" name="email" value="info@maryanacap.com" required>
+            
+            <label>Message:</label>
+            <textarea name="message" rows="4" required>
+This is an email verification submission for Maryana Capital Inc.
+
+Company: Maryana Capital Inc.
+Email: info@maryanacap.com
+Purpose: Investment application form setup
+Date: January 21, 2025
+
+Please verify this email address for FormSubmit integration.
+            </textarea>
+            
+            <button type="submit">🚀 Verify Email with FormSubmit</button>
+        </form>
+        
+        <div style="margin-top: 20px; padding: 15px; background: #e8f4fd; border-radius: 5px;">
+            <h3>📋 Next Steps:</h3>
+            <ol>
+                <li>Click "Verify Email" above</li>
+                <li>Check info@maryanacap.com for verification email</li>
+                <li>Click the verification link in the email</li>
+                <li>Request API key using: <code>curl -X GET "https://formsubmit.co/api/get-apikey/info@maryanacap.com"</code></li>
+                <li>Test the investment application form</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
