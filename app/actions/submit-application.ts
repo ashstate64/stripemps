@@ -164,7 +164,7 @@ function formatApplicationForSubmission(data: ApplicationData) {
     _subject: `OpenAI Pre-IPO Investment Application - ${data.fullName}`,
     _captcha: false,
     _template: 'table',
-    _next: `${process.env.NEXT_PUBLIC_APP_URL || 'https://openai-investment.com'}/apply?success=true`,
+    _next: `${process.env.NEXT_PUBLIC_APP_URL || 'https://openai.maryanacap.com'}/apply?success=true`,
 
     // Application timestamp
     application_submitted_at: timestamp,

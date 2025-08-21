@@ -97,20 +97,29 @@ export default function VerifyEmailPage() {
                 <Alert className='mb-6 border-blue-500/50 bg-blue-900/20'>
                   <AlertCircle className='h-4 w-4 text-blue-400' />
                   <AlertDescription className='text-blue-300'>
-                    <strong>Important:</strong> This form will verify info@maryanacap.com 
-                    with FormSubmit.co to enable investment application submissions.
+                    <strong>Important:</strong> This form will verify
+                    info@maryanacap.com with FormSubmit.co to enable investment
+                    application submissions.
                   </AlertDescription>
                 </Alert>
 
                 <form onSubmit={handleSubmit} className='space-y-4'>
                   {/* FormSubmit Configuration */}
-                  <input type='hidden' name='_subject' value='FormSubmit Email Verification - Maryana Capital Inc.' />
+                  <input
+                    type='hidden'
+                    name='_subject'
+                    value='FormSubmit Email Verification - Maryana Capital Inc.'
+                  />
                   <input type='hidden' name='_captcha' value='false' />
                   <input type='hidden' name='_template' value='table' />
-                  <input type='hidden' name='_next' value='https://formsubmit.co/thanks' />
+                  <input
+                    type='hidden'
+                    name='_next'
+                    value='https://formsubmit.co/thanks'
+                  />
                   
                   <div>
-                    <label className='block text-sm font-medium text-gray-300 mb-2'>
+                    <label className='mb-2 block text-sm font-medium text-gray-300'>
                       Your Name
                     </label>
                     <Input
@@ -123,7 +132,7 @@ export default function VerifyEmailPage() {
                   </div>
 
                   <div>
-                    <label className='block text-sm font-medium text-gray-300 mb-2'>
+                    <label className='mb-2 block text-sm font-medium text-gray-300'>
                       Email Address (for replies)
                     </label>
                     <Input
@@ -136,7 +145,7 @@ export default function VerifyEmailPage() {
                   </div>
 
                   <div>
-                    <label className='block text-sm font-medium text-gray-300 mb-2'>
+                    <label className='mb-2 block text-sm font-medium text-gray-300'>
                       Verification Message
                     </label>
                     <Textarea
@@ -208,8 +217,9 @@ Corporate Details:
                   <AlertDescription className='text-green-300'>
                     <strong>Email verification submitted successfully!</strong>
                     <br /><br />
-                    Please check <strong>info@maryanacap.com</strong> for a verification email from FormSubmit.co
-                    and click the verification link.
+                    Please check <strong>info@maryanacap.com</strong> for a
+                    verification email from FormSubmit.co and click the
+                    verification link.
                     <br /><br />
                     Once verified, you can test the investment application form.
                   </AlertDescription>
@@ -217,14 +227,10 @@ Corporate Details:
 
                 <div className='mt-6 space-y-3'>
                   <Button asChild className='w-full'>
-                    <Link href='/apply'>
-                      Test Application Form
-                    </Link>
+                    <Link href='/apply'>Test Application Form</Link>
                   </Button>
                   <Button asChild variant='outline' className='w-full'>
-                    <Link href='/admin/formsubmit'>
-                      Admin Panel
-                    </Link>
+                    <Link href='/admin/formsubmit'>Admin Panel</Link>
                   </Button>
                 </div>
               </CardContent>

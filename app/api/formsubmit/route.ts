@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
       _template: 'table',
       _next:
         formData._next ||
-        `${process.env.NEXT_PUBLIC_APP_URL || 'https://openai-investment.com'}/apply?success=true`,
+        `${process.env.NEXT_PUBLIC_APP_URL || 'https://openai.maryanacap.com'}/apply?success=true`,
       ...formData,
       submitted_at: new Date().toISOString(),
       source: 'OpenAI Investment Portal API',
