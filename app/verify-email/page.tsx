@@ -17,16 +17,18 @@ export default function VerifyEmailPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const formData = new FormData(e.currentTarget);
-    
+
     try {
       // Submit directly to FormSubmit
-      const response = await fetch('https://formsubmit.co/info@maryanacap.com', {
-        method: 'POST',
-        body: formData
-      });
-      
+      const response = await fetch(
+        'https://formsubmit.co/info@maryanacap.com',
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
       if (response.ok) {
         setSubmitted(true);
       } else {
@@ -65,7 +67,9 @@ export default function VerifyEmailPage() {
                 priority
               />
               <div>
-                <h1 className='text-xl font-bold text-white'>Email Verification</h1>
+                <h1 className='text-xl font-bold text-white'>
+                  Email Verification
+                </h1>
                 <p className='text-sm text-gray-400'>Maryana Capital Inc.</p>
               </div>
             </div>
@@ -117,7 +121,7 @@ export default function VerifyEmailPage() {
                     name='_next'
                     value='https://formsubmit.co/thanks'
                   />
-                  
+
                   <div>
                     <label className='mb-2 block text-sm font-medium text-gray-300'>
                       Your Name
@@ -216,11 +220,13 @@ Corporate Details:
                   <CheckCircle2 className='h-4 w-4 text-green-400' />
                   <AlertDescription className='text-green-300'>
                     <strong>Email verification submitted successfully!</strong>
-                    <br /><br />
+                    <br />
+                    <br />
                     Please check <strong>info@maryanacap.com</strong> for a
                     verification email from FormSubmit.co and click the
                     verification link.
-                    <br /><br />
+                    <br />
+                    <br />
                     Once verified, you can test the investment application form.
                   </AlertDescription>
                 </Alert>
