@@ -184,10 +184,10 @@ export default function ApplyPage() {
             <div className='flex-1'>
               <p className='text-sm text-gray-300'>
                 We use cookies to enhance your experience and analyze site
-                usage.
+                usage.{' '}
                 <Link
                   href='#'
-                  className='ml-1 text-blue-400 hover:text-blue-300'
+                  className='text-blue-400 hover:text-blue-300 underline'
                 >
                   Learn more
                 </Link>
@@ -198,7 +198,7 @@ export default function ApplyPage() {
                 size='sm'
                 variant='outline'
                 onClick={() => setShowCookieNotice(false)}
-                className='text-xs'
+                className='text-xs border-gray-500 text-gray-300 hover:bg-gray-700 hover:text-white'
               >
                 Decline
               </Button>
