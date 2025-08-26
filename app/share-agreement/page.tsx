@@ -56,7 +56,7 @@ export default function SharePurchaseAgreement() {
 
   // Investment calculations
   const sharePrice = 239.8;
-  const minimumShares = Math.ceil(1000 / sharePrice);
+  const minimumShares = Math.ceil(10000 / sharePrice);
   const totalInvestmentUSD = shareQuantity * sharePrice;
   const settlementDate = calculateSettlementDate();
   const completionPercentage = Math.min(((currentStep - 1) / 3) * 100, 100);
@@ -331,7 +331,7 @@ export default function SharePurchaseAgreement() {
                           style={{ fontSize: '16px' }} // Prevent zoom on iOS
                         />
                         <p className='mt-1 text-xs text-gray-500 sm:text-sm'>
-                          Minimum: USD $1,000 (≈{minimumShares} shares)
+                          Minimum: CAD $10,000 (≈{minimumShares} shares)
                         </p>
                       </div>
 

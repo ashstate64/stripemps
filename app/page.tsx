@@ -255,7 +255,7 @@ export default function DigitalBrochurePage() {
                 - Limited allocation available for Q1 2026
               </span>
               <span className='ml-1 text-purple-300 sm:ml-2'>
-                <span className='hidden sm:inline'>• Minimum: $50K • </span>
+                <span className='hidden sm:inline'>• Minimum: $10K CAD • </span>
                 Close: Mar 31, 2026
               </span>
             </p>

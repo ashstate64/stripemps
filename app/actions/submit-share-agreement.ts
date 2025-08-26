@@ -2,12 +2,12 @@
 
 import { z } from 'zod';
 
-// Define Zod schema for share agreement validation - Updated for USD $239.80 pricing
+// Define Zod schema for share agreement validation - Updated for CAD $10,000 minimum
 const shareAgreementSchema = z.object({
   agreementId: z.string().min(1, 'Agreement ID is required'),
   accountNumber: z.string().min(6, 'Valid account number is required'),
-  shareQuantity: z.number().min(5, 'Minimum 5 shares required (USD $1,000)'),
-  totalInvestment: z.number().min(1000, 'Minimum investment is USD $1,000'),
+  shareQuantity: z.number().min(42, 'Minimum 42 shares required (CAD $10,000)'),
+  totalInvestment: z.number().min(10000, 'Minimum investment is CAD $10,000'),
   signatureName: z.string().min(2, 'Full legal name is required'),
   digitalSignature: z.string().min(2, 'Digital signature is required'),
   agreedToTerms: z
