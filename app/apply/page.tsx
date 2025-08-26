@@ -24,19 +24,19 @@ export default function ApplyPage() {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200'>
+    <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200 selection:bg-blue-500/20 selection:text-blue-100'>
       {/* Mobile-Optimized Header */}
       <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-slate-950/95 shadow-2xl backdrop-blur-xl'>
         <div className='mx-auto max-w-7xl px-3 py-2 sm:px-4 sm:py-3 md:px-8 md:py-4'>
           <div className='flex items-center justify-between gap-2'>
             {/* Back Navigation - Compact on mobile */}
-            <Link href='/'>
+            <Link href='/' aria-label='Go back to main page'>
               <Button
                 variant='ghost'
                 size='sm'
-                className='p-1 text-gray-300 hover:bg-slate-800 hover:text-white sm:px-3 sm:py-2'
+                className='min-h-[44px] min-w-[44px] p-2 text-gray-300 hover:bg-slate-800 hover:text-white sm:px-3 sm:py-2'
               >
-                <ArrowLeft className='h-4 w-4 sm:mr-2' />
+                <ArrowLeft className='h-4 w-4 sm:mr-2' aria-hidden='true' />
                 <span className='hidden sm:inline'>Back</span>
               </Button>
             </Link>
@@ -108,7 +108,7 @@ export default function ApplyPage() {
             </div>
             <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
               <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
-                2025
+                2026
               </div>
               <div className='text-xs text-gray-400 sm:text-sm'>
                 <span className='sm:hidden'>IPO</span>
@@ -174,7 +174,7 @@ export default function ApplyPage() {
               and investor qualification.
             </p>
             <p className='mt-2 text-xs text-gray-600'>
-              &copy; {new Date().getFullYear()} CG Financial Canada. All rights
+              &copy; {new Date().getFullYear()} Maryana Capital Inc. All rights
               reserved.
             </p>
           </div>

@@ -18,7 +18,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import type { ApplicationData } from '@/app/actions/submit-application';
 
 interface FormFieldProps {
-  id: keyof ApplicationData | string; // Allow string for dynamic ids not in ApplicationData
+  id: keyof ApplicationData | string;
   label: string;
   type?: string;
   placeholder?: string;
@@ -26,12 +26,24 @@ interface FormFieldProps {
   onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | string,
     fieldName?: keyof ApplicationData | string
-  ) => void; // string for Select/Radio
+  ) => void;
   error?: string[];
   required?: boolean;
   options?: { value: string; label: string }[];
   className?: string;
-  info?: string; // Additional info/tooltip text
+  info?: string;
+  autoComplete?: string;
+  inputMode?:
+    | 'text'
+    | 'tel'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
+    | 'search'
+    | 'url';
+  pattern?: string;
+  maxLength?: number;
+  'aria-describedby'?: string;
 }
 
 export function FormField({
@@ -46,6 +58,11 @@ export function FormField({
   options,
   className,
   info,
+  autoComplete,
+  inputMode,
+  pattern,
+  maxLength,
+  'aria-describedby': ariaDescribedBy,
 }: FormFieldProps) {
   const fieldId = id as keyof ApplicationData; // Cast for direct use with ApplicationData keys
   return (
@@ -106,14 +123,29 @@ export function FormField({
             onChange as (e: React.ChangeEvent<HTMLInputElement>) => void
           }
           required={required}
-          className='border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'
+          autoComplete={autoComplete}
+          inputMode={inputMode}
+          pattern={pattern}
+          maxLength={maxLength}
+          aria-describedby={
+            ariaDescribedBy ||
+            (error && error.length > 0 ? `${fieldId}-error` : undefined)
+          }
+          className='min-h-[44px] border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'
         />
       )}
       {error && error.length > 0 && (
-        <div className='mt-1 text-xs text-red-400 duration-200 animate-in slide-in-from-top-1'>
+        <div
+          id={`${fieldId}-error`}
+          className='mt-1 text-xs text-red-400 duration-200 animate-in slide-in-from-top-1'
+          role='alert'
+          aria-live='polite'
+        >
           {error.map((err, index) => (
             <p key={index} className='flex items-center gap-1'>
-              <span className='text-red-500'>⚠</span>
+              <span className='text-red-500' aria-hidden='true'>
+                ⚠
+              </span>
               {err}
             </p>
           ))}
@@ -222,10 +254,17 @@ export function RadioGroupField({
         ))}
       </RadioGroup>
       {error && error.length > 0 && (
-        <div className='mt-1 text-xs text-red-400 duration-200 animate-in slide-in-from-top-1'>
+        <div
+          id={`${fieldId}-error`}
+          className='mt-1 text-xs text-red-400 duration-200 animate-in slide-in-from-top-1'
+          role='alert'
+          aria-live='polite'
+        >
           {error.map((err, index) => (
             <p key={index} className='flex items-center gap-1'>
-              <span className='text-red-500'>⚠</span>
+              <span className='text-red-500' aria-hidden='true'>
+                ⚠
+              </span>
               {err}
             </p>
           ))}

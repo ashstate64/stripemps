@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback, useTransition } from 'react';
 import { useActionState } from 'react';
 import {
   submitApplication,
@@ -16,7 +16,7 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { AlertCircle, CheckCircle2 } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 import { PersonalInfoStep } from './personal-info-step';
@@ -61,6 +61,7 @@ export function ApplicationWizard() {
   const [formData, setFormData] = useState<Partial<ApplicationData>>(
     initialApplicationData
   );
+  const [isPending, startTransition] = useTransition();
   const [formState, formAction] = useActionState<FormState | null, FormData>(
     submitApplication,
     null
@@ -71,18 +72,21 @@ export function ApplicationWizard() {
     [currentStep]
   );
 
-  const handleNext = () => {
-    // Add validation logic per step if needed before proceeding
-    setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
-  };
+  const handleNext = useCallback(() => {
+    startTransition(() => {
+      setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
+    });
+  }, []);
 
-  const handlePrevious = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0));
-  };
+  const handlePrevious = useCallback(() => {
+    startTransition(() => {
+      setCurrentStep((prev) => Math.max(prev - 1, 0));
+    });
+  }, []);
 
-  const updateFormData = (data: Partial<ApplicationData>) => {
+  const updateFormData = useCallback((data: Partial<ApplicationData>) => {
     setFormData((prev) => ({ ...prev, ...data }));
-  };
+  }, []);
 
   const CurrentStepComponent = STEPS[currentStep].component;
 
@@ -276,24 +280,34 @@ export function ApplicationWizard() {
             errors={formState?.errors}
           />
 
-          <div className='mt-8 flex items-center justify-between'>
+          <div className='mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
             <Button
               type='button'
               variant='outline'
               onClick={handlePrevious}
-              disabled={currentStep === 0}
+              disabled={currentStep === 0 || isPending}
+              className='w-full sm:w-auto'
             >
+              {isPending && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
               Previous
             </Button>
             {currentStep < STEPS.length - 1 ? (
-              <Button type='button' onClick={handleNext}>
+              <Button
+                type='button'
+                onClick={handleNext}
+                disabled={isPending}
+                className='w-full sm:w-auto'
+              >
+                {isPending && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
                 Next
               </Button>
             ) : (
               <Button
                 type='submit'
-                className='bg-gradient-to-r from-primary via-purple-600 to-pink-600 hover:opacity-90'
+                disabled={isPending}
+                className='w-full bg-gradient-to-r from-primary via-purple-600 to-pink-600 hover:opacity-90 sm:w-auto'
               >
+                {isPending && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
                 Review & Submit Application
               </Button>
             )}

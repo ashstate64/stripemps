@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link'; // Import Link
-import { useState, useEffect, type ReactElement } from 'react';
+import { useState, useEffect, useCallback, type ReactElement } from 'react';
 import { Button } from '@/components/ui/button';
 // Card components removed as they're not used directly in this component
 import { Separator } from '@/components/ui/separator';
@@ -80,10 +80,10 @@ export default function DigitalBrochurePage() {
     }
   }, []);
 
-  const acceptCookies = () => {
+  const acceptCookies = useCallback(() => {
     localStorage.setItem('cookiesAccepted', 'true');
     setShowCookieNotice(false);
-  };
+  }, []);
 
   const sections: Section[] = [
     {
@@ -104,26 +104,26 @@ export default function DigitalBrochurePage() {
       icon: <TrendingUp className='mb-4 h-10 w-10 text-primary' />,
       title: 'Financial Performance: Exceptional Growth Trajectory',
       content:
-        "OpenAI's financial metrics demonstrate extraordinary growth, with revenue scaling from ~$200M in 2023 to a projected $11.6B in 2025. The company's valuation has increased 15x since 2021, reflecting strong investor confidence and market validation.",
+        "OpenAI's financial metrics demonstrate extraordinary growth, with revenue scaling from ~$200M in 2023 to a projected $11.6B in 2026. The company's valuation has increased 15x since 2021, reflecting strong investor confidence and market validation.",
       visuals: [
         {
           title: 'Valuation Growth Analysis',
           component: <ValuationGrowthChart />,
           explanation:
-            "OpenAI's valuation trajectory shows consistent exponential growth, reaching ~$300B by March 2025. This 15x increase since 2021 demonstrates sustained investor confidence and market validation of the company's AI leadership position.",
+            "OpenAI's valuation trajectory shows consistent exponential growth, reaching ~$300B by March 2026. This 15x increase since 2021 demonstrates sustained investor confidence and market validation of the company's AI leadership position.",
         },
         {
           title: 'Revenue Projections & Monetization',
           component: <RevenueProjectionChart />,
           explanation:
-            'Revenue growth from $200M (2023) to projected $11.6B (2025) represents a 58x increase over two years, driven by enterprise API adoption, ChatGPT subscriptions, and strategic partnerships.',
+            'Revenue growth from $200M (2023) to projected $11.6B (2026) represents a 58x increase over three years, driven by enterprise API adoption, ChatGPT subscriptions, and strategic partnerships.',
         },
       ],
       stats: [
-        { label: 'Current Valuation (Mar 2025)', value: '~$300 Billion' },
+        { label: 'Current Valuation (Mar 2026)', value: '~$300 Billion' },
         { label: 'Total Capital Raised', value: '$58+ Billion' },
-        { label: '2025 Revenue Projection', value: '$11.6 Billion' },
-        { label: 'Revenue Growth (2023-2025)', value: '5,800%' },
+        { label: '2026 Revenue Projection', value: '$11.6 Billion' },
+        { label: 'Revenue Growth (2023-2026)', value: '5,800%' },
       ],
     },
     {
@@ -514,7 +514,7 @@ export default function DigitalBrochurePage() {
                 <strong className='text-white'> ~$300B valuation</strong> with
                 <strong className='text-green-400'>
                   {' '}
-                  $11.6B projected 2025 revenue
+                  $11.6B projected 2026 revenue
                 </strong>
                 .
               </span>
@@ -536,7 +536,7 @@ export default function DigitalBrochurePage() {
                   delay: 'delay-100',
                 },
                 {
-                  value: '2025',
+                  value: '2026',
                   label: 'Expected IPO Timeline',
                   color: 'text-purple-400',
                   delay: 'delay-200',
@@ -913,7 +913,7 @@ export default function DigitalBrochurePage() {
                               <div className='flex items-center justify-center space-x-6 pt-2 text-sm text-gray-400'>
                                 <div className='text-center'>
                                   <div className='font-semibold text-white'>
-                                    2019-2025
+                                    2019-2026
                                   </div>
                                   <div>Funding Period</div>
                                 </div>

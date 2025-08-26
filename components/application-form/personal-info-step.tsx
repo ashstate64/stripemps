@@ -46,6 +46,8 @@ export function PersonalInfoStep({
           error={errors?.fullName}
           required
           placeholder='As shown on your ID'
+          autoComplete='name'
+          maxLength={100}
         />
         <FormField
           id='dateOfBirth'
@@ -55,6 +57,7 @@ export function PersonalInfoStep({
           onChange={handleChange}
           error={errors?.dateOfBirth}
           required
+          autoComplete='bday'
         />
       </div>
       <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
@@ -67,6 +70,9 @@ export function PersonalInfoStep({
           error={errors?.email}
           required
           placeholder='you@example.com'
+          autoComplete='email'
+          inputMode='email'
+          maxLength={254}
         />
         <FormField
           id='phone'
@@ -77,6 +83,10 @@ export function PersonalInfoStep({
           error={errors?.phone}
           required
           placeholder='(123) 456-7890'
+          autoComplete='tel'
+          inputMode='tel'
+          pattern='[0-9\s\(\)\-\+]+'
+          maxLength={20}
         />
       </div>
 
@@ -91,6 +101,8 @@ export function PersonalInfoStep({
         error={errors?.streetAddress}
         required
         placeholder='123 Main St, Apt 4B'
+        autoComplete='street-address'
+        maxLength={200}
       />
       <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
         <FormField
@@ -101,6 +113,8 @@ export function PersonalInfoStep({
           error={errors?.city}
           required
           placeholder='Toronto'
+          autoComplete='address-level2'
+          maxLength={100}
         />
         <FormField
           id='province'
@@ -111,6 +125,7 @@ export function PersonalInfoStep({
           onChange={handleChange}
           error={errors?.province}
           required
+          autoComplete='address-level1'
         />
         <FormField
           id='postalCode'
@@ -120,6 +135,9 @@ export function PersonalInfoStep({
           error={errors?.postalCode}
           required
           placeholder='A1B 2C3'
+          autoComplete='postal-code'
+          pattern='[A-Za-z]\d[A-Za-z][\s\-]?\d[A-Za-z]\d'
+          maxLength={7}
         />
       </div>
       <FormField
@@ -131,6 +149,9 @@ export function PersonalInfoStep({
         required
         placeholder='123-456-789 or 123456789'
         info='Your SIN is required for tax reporting purposes by the Canada Revenue Agency (CRA).'
+        inputMode='numeric'
+        pattern='[0-9\-\s]+'
+        maxLength={11}
       />
     </div>
   );

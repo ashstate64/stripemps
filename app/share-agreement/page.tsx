@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useActionState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -54,12 +54,21 @@ export default function SharePurchaseAgreement() {
     FormData
   >(submitShareAgreement, null);
 
-  // Investment calculations
+  // Investment calculations - memoized for performance
   const sharePrice = 239.8;
-  const minimumShares = Math.ceil(10000 / sharePrice);
-  const totalInvestmentUSD = shareQuantity * sharePrice;
-  const settlementDate = calculateSettlementDate();
-  const completionPercentage = Math.min(((currentStep - 1) / 3) * 100, 100);
+  const minimumShares = useMemo(
+    () => Math.ceil(10000 / sharePrice),
+    [sharePrice]
+  );
+  const totalInvestmentUSD = useMemo(
+    () => shareQuantity * sharePrice,
+    [shareQuantity, sharePrice]
+  );
+  const settlementDate = useMemo(() => calculateSettlementDate(), []);
+  const completionPercentage = useMemo(
+    () => Math.min(((currentStep - 1) / 3) * 100, 100),
+    [currentStep]
+  );
 
   useEffect(() => {
     const id =
@@ -69,11 +78,14 @@ export default function SharePurchaseAgreement() {
     setCurrentTimestamp(timestamp);
   }, []);
 
-  const handleSignatureChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setSignatureData(e.target.value);
-  };
+  const handleSignatureChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setSignatureData(e.target.value);
+    },
+    []
+  );
 
-  const isFormValid = () => {
+  const isFormValid = useMemo(() => {
     return (
       shareQuantity >= minimumShares &&
       accountNumber.trim() !== '' &&
@@ -86,15 +98,27 @@ export default function SharePurchaseAgreement() {
       agreedToEndorsement &&
       agreedToEnhancedRisks
     );
-  };
+  }, [
+    shareQuantity,
+    minimumShares,
+    accountNumber,
+    signatureName,
+    signatureData,
+    agreedToTerms,
+    agreedToRisks,
+    agreedToSettlement,
+    agreedToSecurities,
+    agreedToEndorsement,
+    agreedToEnhancedRisks,
+  ]);
 
-  const nextStep = () => {
+  const nextStep = useCallback(() => {
     if (currentStep < 4) setCurrentStep(currentStep + 1);
-  };
+  }, [currentStep]);
 
-  const prevStep = () => {
+  const prevStep = useCallback(() => {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
-  };
+  }, [currentStep]);
 
   // Success state
   if (formState?.success && formState.submittedData) {
@@ -859,7 +883,7 @@ export default function SharePurchaseAgreement() {
                       </Button>
                       <Button
                         type='submit'
-                        disabled={!isFormValid()}
+                        disabled={!isFormValid}
                         className='order-1 w-full bg-gradient-to-r from-green-600 to-blue-600 px-6 py-4 text-base font-semibold text-white hover:opacity-90 sm:order-2 sm:w-auto sm:px-8 sm:py-3 sm:text-lg'
                         style={{ minHeight: '44px', minWidth: '44px' }}
                       >

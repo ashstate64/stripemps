@@ -81,7 +81,7 @@ const fundingRounds = [
     highlight: true,
   },
   {
-    date: 'Mar 2025',
+    date: 'Mar 2026',
     event: 'Series F (Mega-Round)',
     amount: '$40B',
     amountType: 'Mega-round',

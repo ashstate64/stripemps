@@ -14,7 +14,7 @@ import {
 const valuationData = [
   { date: 'Jan 2023', valuation: 29 },
   { date: 'Oct 2024', valuation: 157 },
-  { date: 'Mar 2025', valuation: 300 },
+  { date: 'Mar 2026', valuation: 300 },
 ];
 
 export function ValuationGrowthChart() {
