@@ -304,7 +304,8 @@ export default function SharePurchaseAgreement() {
                     </span>
                   </CardTitle>
                   <p className='text-sm text-gray-300 sm:text-base'>
-                    Configure your OpenAI pre-IPO investment details with confidence
+                    Configure your OpenAI pre-IPO investment details with
+                    confidence
                   </p>
                   <div className='mt-2 flex items-center gap-2 text-xs text-green-400'>
                     <Shield className='h-3 w-3' />

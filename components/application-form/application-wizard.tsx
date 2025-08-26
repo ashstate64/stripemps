@@ -210,7 +210,10 @@ export function ApplicationWizard() {
         <CardDescription className='mt-2 text-lg text-gray-300'>
           Secure your interest in OpenAI Pre-IPO shares.
           <br />
-          <span className='text-blue-400 font-medium'>Step {currentStep + 1} of {STEPS.length}:</span> {STEPS[currentStep].title}
+          <span className='font-medium text-blue-400'>
+            Step {currentStep + 1} of {STEPS.length}:
+          </span>{' '}
+          {STEPS[currentStep].title}
         </CardDescription>
         <div className='mt-4 space-y-2'>
           <Progress

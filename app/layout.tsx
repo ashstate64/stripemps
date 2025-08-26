@@ -4,7 +4,11 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
-const inter = Inter({ subsets: ['latin'], preload: true });
+const inter = Inter({
+  subsets: ['latin'],
+  preload: true,
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'OpenAI Pre-IPO Investment Opportunity | Invest in the Future of AI',

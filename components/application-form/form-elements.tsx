@@ -50,10 +50,17 @@ export function FormField({
   const fieldId = id as keyof ApplicationData; // Cast for direct use with ApplicationData keys
   return (
     <div className={`space-y-2 ${className}`}>
-      <Label htmlFor={fieldId} className='font-medium text-gray-200 transition-colors duration-200'>
+      <Label
+        htmlFor={fieldId}
+        className='font-medium text-gray-200 transition-colors duration-200'
+      >
         {label} {required && <span className='text-red-500'>*</span>}
       </Label>
-      {info && <p className='-mt-1 mb-1 text-xs text-gray-400 leading-relaxed'>{info}</p>}
+      {info && (
+        <p className='-mt-1 mb-1 text-xs leading-relaxed text-gray-400'>
+          {info}
+        </p>
+      )}
       {type === 'select' && options ? (
         <Select
           name={fieldId}
@@ -103,7 +110,7 @@ export function FormField({
         />
       )}
       {error && error.length > 0 && (
-        <div className='animate-in slide-in-from-top-1 duration-200 mt-1 text-xs text-red-400'>
+        <div className='mt-1 text-xs text-red-400 duration-200 animate-in slide-in-from-top-1'>
           {error.map((err, index) => (
             <p key={index} className='flex items-center gap-1'>
               <span className='text-red-500'>⚠</span>
@@ -215,7 +222,7 @@ export function RadioGroupField({
         ))}
       </RadioGroup>
       {error && error.length > 0 && (
-        <div className='animate-in slide-in-from-top-1 duration-200 mt-1 text-xs text-red-400'>
+        <div className='mt-1 text-xs text-red-400 duration-200 animate-in slide-in-from-top-1'>
           {error.map((err, index) => (
             <p key={index} className='flex items-center gap-1'>
               <span className='text-red-500'>⚠</span>

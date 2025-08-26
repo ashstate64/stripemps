@@ -191,7 +191,7 @@ export default function ApplyPage() {
                 usage.{' '}
                 <Link
                   href='#'
-                  className='text-blue-400 hover:text-blue-300 underline'
+                  className='text-blue-400 underline hover:text-blue-300'
                 >
                   Learn more
                 </Link>
@@ -202,7 +202,7 @@ export default function ApplyPage() {
                 size='sm'
                 variant='outline'
                 onClick={() => setShowCookieNotice(false)}
-                className='text-xs border-gray-500 text-gray-300 hover:bg-gray-700 hover:text-white'
+                className='border-gray-500 text-xs text-gray-300 hover:bg-gray-700 hover:text-white'
               >
                 Decline
               </Button>
