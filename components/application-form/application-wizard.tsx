@@ -204,18 +204,24 @@ export function ApplicationWizard() {
   return (
     <Card className='mx-auto w-full max-w-3xl border-primary/30 bg-slate-800/70 shadow-2xl'>
       <CardHeader className='text-center'>
-        <CardTitle className='text-3xl font-bold text-white md:text-4xl'>
+        <CardTitle className='bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-3xl font-bold text-transparent md:text-4xl'>
           Investment Application
         </CardTitle>
         <CardDescription className='mt-2 text-lg text-gray-300'>
           Secure your interest in OpenAI Pre-IPO shares.
           <br />
-          Step {currentStep + 1} of {STEPS.length}: {STEPS[currentStep].title}
+          <span className='text-blue-400 font-medium'>Step {currentStep + 1} of {STEPS.length}:</span> {STEPS[currentStep].title}
         </CardDescription>
-        <Progress
-          value={progressValue}
-          className='mt-4 h-2 w-full bg-slate-700 [&>div]:bg-primary'
-        />
+        <div className='mt-4 space-y-2'>
+          <Progress
+            value={progressValue}
+            className='h-3 w-full bg-slate-700 [&>div]:bg-gradient-to-r [&>div]:from-blue-500 [&>div]:to-purple-500'
+          />
+          <div className='flex justify-between text-xs text-gray-400'>
+            <span>Progress: {Math.round(progressValue)}%</span>
+            <span>{STEPS.length - (currentStep + 1)} steps remaining</span>
+          </div>
+        </div>
       </CardHeader>
       <CardContent>
         {formState && !formState.success && formState.message && (

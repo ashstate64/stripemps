@@ -297,13 +297,19 @@ export default function SharePurchaseAgreement() {
             {currentStep === 1 && (
               <Card className='border-slate-700 bg-slate-800/60 shadow-2xl'>
                 <CardHeader className='pb-3 sm:pb-4 md:pb-6'>
-                  <CardTitle className='flex items-center text-lg text-white sm:text-xl md:text-2xl'>
-                    <Calculator className='mr-2 h-4 w-4 sm:h-5 sm:w-5 md:mr-3 md:h-6 md:w-6' />
-                    Investment Overview
+                  <CardTitle className='flex items-center text-lg sm:text-xl md:text-2xl'>
+                    <Calculator className='mr-2 h-4 w-4 text-blue-400 sm:h-5 sm:w-5 md:mr-3 md:h-6 md:w-6' />
+                    <span className='bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent'>
+                      Investment Overview
+                    </span>
                   </CardTitle>
                   <p className='text-sm text-gray-300 sm:text-base'>
-                    Configure your OpenAI pre-IPO investment details
+                    Configure your OpenAI pre-IPO investment details with confidence
                   </p>
+                  <div className='mt-2 flex items-center gap-2 text-xs text-green-400'>
+                    <Shield className='h-3 w-3' />
+                    <span>Secure Transaction • Real-time Validation</span>
+                  </div>
                 </CardHeader>
                 <CardContent className='space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8'>
                   {/* Ultra-compact Investment Calculator */}

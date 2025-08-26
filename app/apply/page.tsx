@@ -73,13 +73,17 @@ export default function ApplyPage() {
       <main className='px-3 py-4 sm:px-4 sm:py-6 md:px-6 md:py-12 lg:py-16'>
         <div className='mx-auto mb-4 max-w-4xl text-center sm:mb-6 md:mb-8'>
           <div className='mb-4 sm:mb-6'>
-            <h1 className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-xl font-bold text-transparent sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
+            <h1 className='bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-xl font-bold text-transparent sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
               OpenAI Pre-IPO Investment Application
             </h1>
             <p className='mt-2 text-sm text-gray-300 sm:mt-4 sm:text-base md:text-lg lg:text-xl'>
               Secure your allocation in the most anticipated AI investment
-              opportunity.
+              opportunity of the decade.
             </p>
+            <div className='mt-4 flex items-center justify-center gap-2 text-xs text-green-400 sm:text-sm'>
+              <Shield className='h-4 w-4' />
+              <span>Secure • Encrypted • Confidential</span>
+            </div>
           </div>
 
           {/* Mobile-Optimized Key Points */}

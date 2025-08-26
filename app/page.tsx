@@ -91,7 +91,7 @@ export default function DigitalBrochurePage() {
       icon: <Lightbulb className='mb-4 h-10 w-10 text-primary' />,
       title: 'Investment Thesis: The OpenAI Opportunity',
       content:
-        'OpenAI represents a generational investment opportunity in the artificial general intelligence (AGI) sector. With breakthrough products like GPT-4, DALL·E, and Sora, the company has achieved unprecedented scale and market penetration, positioning itself as the dominant force in the $1.3 trillion AI market.',
+        'OpenAI represents a once-in-a-generation investment opportunity in the artificial general intelligence (AGI) sector. With revolutionary products like GPT-4, DALL·E, and Sora, the company has achieved unprecedented scale and market penetration, establishing itself as the undisputed leader in the rapidly expanding $1.3 trillion AI market.',
       points: [
         'Market-leading AGI technology with clear competitive moats and network effects',
         'Exponential user adoption: ChatGPT reached 100M users in just 2 months',
@@ -569,8 +569,9 @@ export default function DigitalBrochurePage() {
               {/* Primary CTA */}
               <Button
                 asChild
+                variant='premium'
                 size='lg'
-                className='group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 px-10 py-5 text-lg font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-purple-500/30 sm:w-auto md:px-12 md:py-6 md:text-xl'
+                className='group relative w-full overflow-hidden rounded-2xl px-10 py-5 text-lg font-bold shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-purple-500/30 sm:w-auto md:px-12 md:py-6 md:text-xl'
               >
                 <Link href='/apply'>
                   <div className='absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
