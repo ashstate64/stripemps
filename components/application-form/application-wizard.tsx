@@ -245,12 +245,25 @@ export function ApplicationWizard() {
             )}
           </Alert>
         )}
+        {formState && (
+          <div className='mb-4 rounded border border-yellow-500/50 bg-yellow-900/20 p-3'>
+            <p className='text-xs text-yellow-300'>
+              <strong>Debug Info:</strong> FormState ={' '}
+              {JSON.stringify(formState, null, 2)}
+            </p>
+          </div>
+        )}
         <form
           action={formAction}
           onSubmit={(e) => {
+            const formDataObj = new FormData(e.currentTarget);
             console.log(
               'Form submitting with data:',
-              Object.fromEntries(new FormData(e.currentTarget).entries())
+              Object.fromEntries(formDataObj.entries())
+            );
+            console.log(
+              'All accreditedStatus values:',
+              formDataObj.getAll('accreditedStatus')
             );
             console.log('Current formData state:', formData);
           }}

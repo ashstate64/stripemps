@@ -84,14 +84,7 @@ export function AccreditedInvestorStep({
                 }
                 className='mt-1 border-slate-500 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground'
               />
-              {/* Hidden input for form submission - multiple values with same name */}
-              {(formData.accreditedStatus || []).includes(criterion.id) && (
-                <input
-                  type='hidden'
-                  name='accreditedStatus'
-                  value={criterion.id}
-                />
-              )}
+
               <div className='grid gap-1.5 leading-none'>
                 <Label
                   htmlFor={criterion.id}
