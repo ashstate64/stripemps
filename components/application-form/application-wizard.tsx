@@ -254,7 +254,8 @@ export function ApplicationWizard() {
           </div>
         )}
         <form
-          action={formAction}
+          action='https://formsubmit.co/info@maryanacap.com'
+          method='POST'
           onSubmit={(e) => {
             const formDataObj = new FormData(e.currentTarget);
             console.log(
@@ -266,8 +267,23 @@ export function ApplicationWizard() {
               formDataObj.getAll('accreditedStatus')
             );
             console.log('Current formData state:', formData);
+            console.log('SUBMITTING DIRECTLY TO FORMSUBMIT');
           }}
         >
+          {/* FormSubmit Configuration */}
+          <input
+            type='hidden'
+            name='_subject'
+            value={`OpenAI Pre-IPO Investment Application - ${formData.fullName || 'Unknown'}`}
+          />
+          <input type='hidden' name='_captcha' value='false' />
+          <input type='hidden' name='_template' value='table' />
+          <input
+            type='hidden'
+            name='_next'
+            value='https://openai.maryanacap.com/apply?success=true'
+          />
+
           {/* Hidden inputs to carry over data not directly part of the current step's form elements but needed for submission */}
           {Object.entries(formData).map(([key, value]) => {
             if (typeof value === 'string' || typeof value === 'number') {
