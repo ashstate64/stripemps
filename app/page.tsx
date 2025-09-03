@@ -116,7 +116,7 @@ export default function DigitalBrochurePage() {
           title: 'Revenue Projections & Monetization',
           component: <RevenueProjectionChart />,
           explanation:
-            'Revenue growth from $200M (2023) to projected $11.6B (Q4 2025) represents a 58x increase over three years, driven by enterprise API adoption, ChatGPT subscriptions, and strategic partnerships.'
+            'Revenue growth from $200M (2023) to projected $11.6B (Q4 2025) represents a 58x increase over three years, driven by enterprise API adoption, ChatGPT subscriptions, and strategic partnerships.',
         },
       ],
       stats: [

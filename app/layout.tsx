@@ -178,17 +178,7 @@ export default function RootLayout({
         <meta name='apple-mobile-web-app-status-bar-style' content='default' />
         <meta name='mobile-web-app-capable' content='yes' />
 
-        {/* Preconnect to external domains for performance */}
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link
-          rel='preconnect'
-          href='https://fonts.gstatic.com'
-          crossOrigin='anonymous'
-        />
-
-        {/* DNS prefetch for performance */}
-        <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
-        <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
+        {/* Google Fonts optimization is handled automatically by next/font */}
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
