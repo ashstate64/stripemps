@@ -3,7 +3,8 @@ import type {
   ApplicationData,
   FormState,
 } from '@/app/actions/submit-application';
-import { CheckboxField } from './form-elements';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import { ExternalLink } from 'lucide-react';
 
 interface StepProps {
@@ -68,14 +69,39 @@ export function AccreditedInvestorStep({
       </p>
       <div className='space-y-3'>
         {accreditedInvestorCriteria.map((criterion) => (
-          <CheckboxField
+          <div
             key={criterion.id}
-            id={criterion.id} // Use criterion.id directly as it's unique
-            label={criterion.label}
-            checked={(formData.accreditedStatus || []).includes(criterion.id)}
-            onChange={(checked) => handleCheckboxChange(checked, criterion.id)}
             className='rounded-md border border-slate-600 bg-slate-700/30 p-3 hover:bg-slate-700/50'
-          />
+          >
+            <div className='items-top flex space-x-2'>
+              <Checkbox
+                id={criterion.id}
+                checked={(formData.accreditedStatus || []).includes(
+                  criterion.id
+                )}
+                onCheckedChange={(checked) =>
+                  handleCheckboxChange(checked as boolean, criterion.id)
+                }
+                className='mt-1 border-slate-500 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground'
+              />
+              {/* Hidden input for form submission - multiple values with same name */}
+              {(formData.accreditedStatus || []).includes(criterion.id) && (
+                <input
+                  type='hidden'
+                  name='accreditedStatus'
+                  value={criterion.id}
+                />
+              )}
+              <div className='grid gap-1.5 leading-none'>
+                <Label
+                  htmlFor={criterion.id}
+                  className='cursor-pointer text-sm font-medium text-gray-200'
+                >
+                  {criterion.label}
+                </Label>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
       {errors?.accreditedStatus && (

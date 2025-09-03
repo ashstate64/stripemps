@@ -245,7 +245,16 @@ export function ApplicationWizard() {
             )}
           </Alert>
         )}
-        <form action={formAction}>
+        <form
+          action={formAction}
+          onSubmit={(e) => {
+            console.log(
+              'Form submitting with data:',
+              Object.fromEntries(new FormData(e.currentTarget).entries())
+            );
+            console.log('Current formData state:', formData);
+          }}
+        >
           {/* Hidden inputs to carry over data not directly part of the current step's form elements but needed for submission */}
           {Object.entries(formData).map(([key, value]) => {
             if (typeof value === 'string' || typeof value === 'number') {

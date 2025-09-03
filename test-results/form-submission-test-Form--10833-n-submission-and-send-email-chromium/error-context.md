@@ -1,0 +1,136 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Go back to main page" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - button "Back" [ref=e7] [cursor=pointer]:
+            - img
+            - generic [ref=e8] [cursor=pointer]: Back
+        - generic [ref=e9]:
+          - img "Maryana Capital Inc. Logo" [ref=e11]
+          - generic [ref=e12]:
+            - heading "OpenAI Pre-IPO" [level=1] [ref=e13]
+            - paragraph [ref=e14]: Application
+        - generic [ref=e15]:
+          - img [ref=e16]
+          - generic [ref=e18]: Secure
+    - main [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - heading "OpenAI Pre-IPO Investment Application" [level=1] [ref=e22]
+          - paragraph [ref=e23]: Secure your allocation in the most anticipated AI investment opportunity of the decade.
+          - generic [ref=e24]:
+            - img [ref=e25]
+            - generic [ref=e27]: Secure • Encrypted • Confidential
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e30]: $300B
+            - generic [ref=e32]: Current Valuation
+          - generic [ref=e33]:
+            - generic [ref=e34]: $10K CAD
+            - generic [ref=e36]: Minimum Investment
+          - generic [ref=e37]:
+            - generic [ref=e38]: Q4 2025
+            - generic [ref=e40]: Expected IPO
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: Investment Application
+          - generic [ref=e44]:
+            - text: Secure your interest in OpenAI Pre-IPO shares.
+            - generic [ref=e45]: "Step 2 of 5:"
+            - text: Employment & Financial Profile
+          - generic [ref=e46]:
+            - progressbar [ref=e47]
+            - generic [ref=e49]:
+              - generic [ref=e50]: "Progress: 40%"
+              - generic [ref=e51]: 3 steps remaining
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "Employment Information" [level=3] [ref=e55]
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - text: Current Employment Status
+                - generic [ref=e58]: "*"
+              - radiogroup [ref=e59]:
+                - generic [ref=e60]:
+                  - radio "Employed" [ref=e61] [cursor=pointer]
+                  - radio
+                  - generic [ref=e62] [cursor=pointer]: Employed
+                - generic [ref=e63]:
+                  - radio "Self-Employed" [ref=e64] [cursor=pointer]
+                  - radio
+                  - generic [ref=e65] [cursor=pointer]: Self-Employed
+                - generic [ref=e66]:
+                  - radio "Unemployed" [ref=e67] [cursor=pointer]
+                  - radio
+                  - generic [ref=e68] [cursor=pointer]: Unemployed
+                - generic [ref=e69]:
+                  - radio "Retired" [ref=e70] [cursor=pointer]
+                  - radio
+                  - generic [ref=e71] [cursor=pointer]: Retired
+                - generic [ref=e72]:
+                  - radio "Student" [ref=e73] [cursor=pointer]
+                  - radio
+                  - generic [ref=e74] [cursor=pointer]: Student
+            - heading "Financial Profile (CAD)" [level=3] [ref=e75]
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - text: Estimated Annual Income (CAD)
+                - generic [ref=e78]: "*"
+              - combobox [ref=e79] [cursor=pointer]:
+                - generic: Select income range
+                - img [ref=e80] [cursor=pointer]
+              - combobox [ref=e82]
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - text: Estimated Net Financial Assets (CAD)
+                - generic [ref=e85]: "*"
+              - paragraph [ref=e86]: Net financial assets = Total financial assets (cash, stocks, bonds, etc.) minus any related debts. Do not include your primary residence.
+              - combobox [ref=e87] [cursor=pointer]:
+                - generic: Excludes primary residence, includes cash, stocks, bonds
+                - img [ref=e88] [cursor=pointer]
+              - combobox [ref=e90]
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - text: Primary Source of Funds for this Investment
+                - generic [ref=e93]: "*"
+              - textbox "Primary Source of Funds for this Investment *" [ref=e94]
+          - generic [ref=e95]:
+            - button "Previous" [ref=e96] [cursor=pointer]
+            - button "Next" [ref=e97] [cursor=pointer]
+    - contentinfo [ref=e98]:
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - heading "Need Help?" [level=4] [ref=e102]
+            - generic [ref=e103]:
+              - paragraph [ref=e104]:
+                - img [ref=e105]
+                - link "+1 (437) 886-1252" [ref=e107] [cursor=pointer]:
+                  - /url: tel:+14378861252
+              - paragraph [ref=e108]:
+                - img [ref=e109]
+                - link "info@maryanacap.com" [ref=e112] [cursor=pointer]:
+                  - /url: mailto:info@maryanacap.com
+          - generic [ref=e113]:
+            - heading "Application Security" [level=4] [ref=e114]
+            - generic [ref=e115]:
+              - paragraph [ref=e116]: All information is encrypted and securely transmitted.
+              - paragraph [ref=e117]: Protected by industry-standard SSL encryption.
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: This application does not constitute an offer to sell or purchase securities. Investment opportunities are subject to availability and investor qualification.
+          - paragraph [ref=e120]: © 2025 Maryana Capital Inc. All rights reserved.
+    - generic [ref=e122]:
+      - paragraph [ref=e124]:
+        - text: We use cookies to enhance your experience and analyze site usage.
+        - link "Learn more" [ref=e125] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e126]:
+        - button "Decline" [ref=e127] [cursor=pointer]
+        - button "Accept" [ref=e128] [cursor=pointer]
+  - alert [ref=e129]
+```

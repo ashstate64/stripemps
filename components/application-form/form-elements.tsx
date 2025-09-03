@@ -182,12 +182,13 @@ export function CheckboxField({
     <div className={`items-top flex space-x-2 ${className}`}>
       <Checkbox
         id={fieldId}
-        name={fieldId}
         checked={checked}
         onCheckedChange={(val) => onChange(val as boolean, fieldId)}
         required={required}
         className='mt-1 border-slate-500 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground'
       />
+      {/* Hidden input for form submission */}
+      <input type='hidden' name={fieldId} value={checked ? 'on' : 'off'} />
       <div className='grid gap-1.5 leading-none'>
         <Label
           htmlFor={fieldId}
@@ -231,7 +232,6 @@ export function RadioGroupField({
         {label} {required && <span className='text-red-500'>*</span>}
       </Label>
       <RadioGroup
-        name={fieldId}
         value={value}
         onValueChange={(val) => onChange(val, fieldId)}
         required={required}
@@ -253,6 +253,8 @@ export function RadioGroupField({
           </div>
         ))}
       </RadioGroup>
+      {/* Hidden input for form submission */}
+      <input type='hidden' name={fieldId} value={value || ''} />
       {error && error.length > 0 && (
         <div
           id={`${fieldId}-error`}
