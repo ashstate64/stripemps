@@ -255,16 +255,17 @@ export async function submitApplication(
     // Format data for FormSubmit
     const submissionData = formatApplicationForSubmission(validatedFields.data);
 
-    // Submit to FormSubmit
+    // Submit to FormSubmit - bypass JSON issues by using form data
+    const formDataToSubmit = new FormData();
+    Object.entries(submissionData).forEach(([key, value]) => {
+      formDataToSubmit.append(key, String(value));
+    });
+
     const formSubmitResponse = await fetch(
       `https://formsubmit.co/${FORMSUBMIT_EMAIL}`,
       {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(submissionData),
+        body: formDataToSubmit,
       }
     );
 
