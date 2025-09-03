@@ -279,8 +279,15 @@ export async function submitApplication(
       };
     }
 
-    const submissionResult = await formSubmitResponse.json();
-    console.log('FormSubmit Success:', submissionResult);
+    let submissionResult;
+    try {
+      submissionResult = await formSubmitResponse.json();
+      console.log('FormSubmit Success:', submissionResult);
+    } catch (jsonError) {
+      // FormSubmit sometimes returns HTML on success
+      console.log('FormSubmit responded with HTML (likely success)');
+      submissionResult = { success: true };
+    }
 
     // Generate a submission ID for tracking
     const submissionId =

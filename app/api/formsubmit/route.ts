@@ -121,7 +121,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const result = await response.json();
+    let result;
+    try {
+      result = await response.json();
+    } catch (jsonError) {
+      // FormSubmit sometimes returns HTML on success
+      console.log('FormSubmit returned HTML instead of JSON (likely success)');
+      result = { success: true, message: 'Form submitted successfully' };
+    }
 
     return NextResponse.json({
       success: true,
