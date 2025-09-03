@@ -256,7 +256,6 @@ export function ApplicationWizard() {
         <form
           action='https://formsubmit.co/info@maryanacap.com'
           method='POST'
-          encType='multipart/form-data'
           onSubmit={(e) => {
             const formDataObj = new FormData(e.currentTarget);
             console.log(
@@ -279,11 +278,6 @@ export function ApplicationWizard() {
           />
           <input type='hidden' name='_captcha' value='false' />
           <input type='hidden' name='_template' value='table' />
-          <input
-            type='hidden'
-            name='_next'
-            value='https://openai.maryanacap.com/'
-          />
 
           {/* Hidden inputs to carry over data not directly part of the current step's form elements but needed for submission */}
           {Object.entries(formData).map(([key, value]) => {
