@@ -282,7 +282,7 @@ export function ApplicationWizard() {
           <input
             type='hidden'
             name='_next'
-            value='https://openai.maryanacap.com/apply?success=true'
+            value='https://openai.maryanacap.com/verify-email'
           />
 
           {/* Hidden inputs to carry over data not directly part of the current step's form elements but needed for submission */}

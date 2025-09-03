@@ -41,10 +41,9 @@ export function DocumentUploadStep({
   ) => {
     const file = e.target.files?.[0];
     if (file) {
-      updateFormData({ [fieldName]: file.name });
+      // For preview only - actual file will be submitted directly
       setPreview(file.name);
     } else {
-      updateFormData({ [fieldName]: undefined });
       setPreview(null);
     }
   };
