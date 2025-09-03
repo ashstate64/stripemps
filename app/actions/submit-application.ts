@@ -230,7 +230,7 @@ export async function submitApplication(
     const processedData = {
       ...data,
       dateOfBirth: data.dateOfBirth as string,
-      sin: (data.sin as string).replace(/\s+/g, ''), // Remove spaces from SIN for validation
+      sin: (data.sin as string)?.replace(/\s+/g, '') || '', // Safely remove spaces from SIN for validation
       accreditedStatus,
       consentDataProcessing: data.consentDataProcessing === 'on',
       consentTerms: data.consentTerms === 'on',
@@ -294,6 +294,11 @@ export async function submitApplication(
     };
   } catch (error) {
     console.error('Submission Error:', error);
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : 'No stack trace',
+      formDataKeys: Object.keys(Object.fromEntries(formData.entries())),
+    });
 
     return {
       message:
