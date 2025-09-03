@@ -104,26 +104,26 @@ export default function DigitalBrochurePage() {
       icon: <TrendingUp className='mb-4 h-10 w-10 text-primary' />,
       title: 'Financial Performance: Exceptional Growth Trajectory',
       content:
-        "OpenAI's financial metrics demonstrate extraordinary growth, with revenue scaling from ~$200M in 2023 to a projected $11.6B in 2026. The company's valuation has increased 15x since 2021, reflecting strong investor confidence and market validation.",
+        "OpenAI's financial metrics demonstrate extraordinary growth, with revenue scaling from ~$200M in 2023 to a projected $11.6B in Q4 2025. The company's valuation has increased 15x since 2021, reflecting strong investor confidence and market validation.",
       visuals: [
         {
           title: 'Valuation Growth Analysis',
           component: <ValuationGrowthChart />,
           explanation:
-            "OpenAI's valuation trajectory shows consistent exponential growth, reaching ~$300B by March 2026. This 15x increase since 2021 demonstrates sustained investor confidence and market validation of the company's AI leadership position.",
+            "OpenAI's valuation trajectory shows consistent exponential growth, reaching ~$300B by Q4 2025. This 15x increase since 2021 demonstrates sustained investor confidence and market validation of the company's AI leadership position.",
         },
         {
           title: 'Revenue Projections & Monetization',
           component: <RevenueProjectionChart />,
           explanation:
-            'Revenue growth from $200M (2023) to projected $11.6B (2026) represents a 58x increase over three years, driven by enterprise API adoption, ChatGPT subscriptions, and strategic partnerships.',
+            'Revenue growth from $200M (2023) to projected $11.6B (Q4 2025) represents a 58x increase over three years, driven by enterprise API adoption, ChatGPT subscriptions, and strategic partnerships.'
         },
       ],
       stats: [
-        { label: 'Current Valuation (Mar 2026)', value: '~$300 Billion' },
+        { label: 'Current Valuation (Q4 2025)', value: '~$300 Billion' },
         { label: 'Total Capital Raised', value: '$58+ Billion' },
-        { label: '2026 Revenue Projection', value: '$11.6 Billion' },
-        { label: 'Revenue Growth (2023-2026)', value: '5,800%' },
+        { label: 'Q4 2025 Revenue Projection', value: '$11.6 Billion' },
+        { label: 'Revenue Growth (2023-Q4 2025)', value: '5,800%' },
       ],
     },
     {
@@ -252,11 +252,11 @@ export default function DigitalBrochurePage() {
               <strong className='text-white'>Live Opportunity</strong>
               <span className='hidden sm:inline'>
                 {' '}
-                - Limited allocation available for Q1 2026
+                - Limited allocation available for Q4 2025
               </span>
               <span className='ml-1 text-purple-300 sm:ml-2'>
                 <span className='hidden sm:inline'>• Minimum: $10K CAD • </span>
-                Close: Mar 31, 2026
+                Close: Q4 2025
               </span>
             </p>
           </div>
@@ -514,7 +514,7 @@ export default function DigitalBrochurePage() {
                 <strong className='text-white'> ~$300B valuation</strong> with
                 <strong className='text-green-400'>
                   {' '}
-                  $11.6B projected 2026 revenue
+                  $11.6B projected Q4 2025 revenue
                 </strong>
                 .
               </span>
@@ -536,7 +536,7 @@ export default function DigitalBrochurePage() {
                   delay: 'delay-100',
                 },
                 {
-                  value: '2026',
+                  value: 'Q4 2025',
                   label: 'Expected IPO Timeline',
                   color: 'text-purple-400',
                   delay: 'delay-200',
@@ -625,7 +625,7 @@ export default function DigitalBrochurePage() {
               <span>•</span>
               <span>Limited spots available</span>
               <span>•</span>
-              <span>Target close: March 31, 2026</span>
+              <span>Target close: Q4 2025</span>
             </div>
           </div>
         </section>
@@ -913,7 +913,7 @@ export default function DigitalBrochurePage() {
                               <div className='flex items-center justify-center space-x-6 pt-2 text-sm text-gray-400'>
                                 <div className='text-center'>
                                   <div className='font-semibold text-white'>
-                                    2019-2026
+                                    2019-Q4 2025
                                   </div>
                                   <div>Funding Period</div>
                                 </div>

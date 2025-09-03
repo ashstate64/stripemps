@@ -108,7 +108,7 @@ export default function ApplyPage() {
             </div>
             <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
               <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
-                2026
+                Q4 2025
               </div>
               <div className='text-xs text-gray-400 sm:text-sm'>
                 <span className='sm:hidden'>IPO</span>
