@@ -256,6 +256,7 @@ export function ApplicationWizard() {
         <form
           action='https://formsubmit.co/info@maryanacap.com'
           method='POST'
+          encType='multipart/form-data'
           onSubmit={(e) => {
             const formDataObj = new FormData(e.currentTarget);
             console.log(

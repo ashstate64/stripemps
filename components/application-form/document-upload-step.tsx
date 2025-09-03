@@ -57,10 +57,7 @@ export function DocumentUploadStep({
     error,
     requiredInfo,
   }: {
-    id: keyof Pick<
-      ApplicationData,
-      'idFrontName' | 'idBackName' | 'proofOfAddressName'
-    >;
+    id: string; // Changed to string for FormSubmit compatibility
     label: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     preview: string | null;
@@ -75,7 +72,7 @@ export function DocumentUploadStep({
       <div className='relative flex h-32 w-full items-center justify-center rounded-lg border-2 border-dashed border-slate-500 transition-colors hover:border-primary'>
         <Input
           id={id}
-          name={id} // Ensure name matches for FormData
+          name={id} // Real file input for FormSubmit
           type='file'
           className='absolute inset-0 h-full w-full cursor-pointer opacity-0'
           onChange={onChange}
@@ -113,7 +110,7 @@ export function DocumentUploadStep({
       </p>
 
       <FileInput
-        id='idFrontName'
+        id='id_front'
         label='Government-Issued Photo ID (Front)'
         onChange={(e) => handleFileChange(e, 'idFrontName', setIdFrontPreview)}
         preview={idFrontPreview}
@@ -121,7 +118,7 @@ export function DocumentUploadStep({
         requiredInfo="e.g., Driver's License, Passport (front side)"
       />
       <FileInput
-        id='idBackName'
+        id='id_back'
         label='Government-Issued Photo ID (Back)'
         onChange={(e) => handleFileChange(e, 'idBackName', setIdBackPreview)}
         preview={idBackPreview}
@@ -129,7 +126,7 @@ export function DocumentUploadStep({
         requiredInfo="e.g., Driver's License, Passport (back side, if applicable)"
       />
       <FileInput
-        id='proofOfAddressName'
+        id='proof_of_address'
         label='Proof of Address'
         onChange={(e) =>
           handleFileChange(e, 'proofOfAddressName', setProofOfAddressPreview)
@@ -139,9 +136,9 @@ export function DocumentUploadStep({
         requiredInfo='e.g., Utility Bill, Bank Statement (dated within last 3 months, showing your name and current address)'
       />
       <p className='mt-4 text-xs italic text-gray-500'>
-        Note: File uploads are simulated. In a real application, your documents
-        would be securely transmitted and stored. Max file size 5MB. Accepted
-        formats: PNG, JPG, PDF.
+        Note: Documents will be attached to your application email. Max total
+        file size 5MB. Accepted formats: PNG, JPG, PDF. Files are securely
+        transmitted via FormSubmit.
       </p>
     </div>
   );
