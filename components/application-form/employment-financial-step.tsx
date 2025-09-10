@@ -46,7 +46,7 @@ export function EmploymentFinancialStep({
 
   return (
     <div className='space-y-6'>
-      <h3 className='mb-4 text-xl font-semibold text-white'>
+      <h3 className='mb-4 text-2xl font-semibold text-gray-900 md:text-3xl'>
         Employment Information
       </h3>
       <RadioGroupField
@@ -84,12 +84,12 @@ export function EmploymentFinancialStep({
         </>
       )}
 
-      <h3 className='mb-4 mt-8 text-xl font-semibold text-white'>
-        Financial Profile (CAD)
+      <h3 className='mb-4 mt-8 text-2xl font-semibold text-gray-900 md:text-3xl'>
+        Financial Profile (AUD)
       </h3>
       <FormField
         id='annualIncome'
-        label='Estimated Annual Income (CAD)'
+        label='Estimated Annual Income (AUD)'
         type='select'
         options={incomeRanges}
         value={formData.annualIncome || ''}
@@ -100,7 +100,7 @@ export function EmploymentFinancialStep({
       />
       <FormField
         id='netFinancialAssets'
-        label='Estimated Net Financial Assets (CAD)'
+        label='Estimated Net Financial Assets (AUD)'
         type='select'
         options={netAssetsRanges}
         value={formData.netFinancialAssets || ''}

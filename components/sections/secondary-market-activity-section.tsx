@@ -342,20 +342,20 @@ export function SecondaryMarketActivitySection() {
           </div>
 
           {/* Important Notice */}
-          <div className='mt-6 rounded-lg border border-yellow-500/30 bg-yellow-900/10 p-4'>
+          <div className='mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4'>
             <div className='flex items-start gap-3'>
-              <Shield className='mt-0.5 h-5 w-5 text-yellow-400' />
+              <Shield className='mt-0.5 h-5 w-5 text-blue-600' />
               <div>
-                <div className='text-sm font-semibold text-yellow-400'>
+                <div className='text-sm font-semibold text-blue-700'>
                   Secondary Market Structure
                 </div>
-                <div className='text-xs leading-relaxed text-gray-400'>
+                <div className='text-xs leading-relaxed text-gray-700'>
                   Secondary trading has been primarily through
                   company-facilitated events due to transfer restrictions and
-                  OpenAI&apos;s unique governance structure. Official tender
-                  offers and sanctioned transactions have been the primary
-                  mechanisms for equity liquidity, ensuring controlled price
-                  discovery and regulatory compliance.
+                  Databricks&apos; governance structure. Official tender offers
+                  and sanctioned transactions have been the primary mechanisms
+                  for equity liquidity, ensuring controlled price discovery and
+                  regulatory compliance.
                 </div>
               </div>
             </div>

@@ -1,0 +1,12 @@
+Contact: mailto:admin@mpsfc.com
+Contact: tel:+61-3-8577-9534
+Expires: 2026-09-10T23:59:59.000Z
+Encryption: https://databricks-investment.com/pgp-key.txt
+Acknowledgments: https://databricks-investment.com/security-acknowledgments
+Policy: https://databricks-investment.com/security-policy
+Hiring: https://databricks-investment.com/careers
+
+# Security Policy for Databricks Investment Platform
+# Managed by Managed Portfolio Services Limited
+# AFSL 00233761 | ABN 77 009 549 697
+# Regulated by ASIC

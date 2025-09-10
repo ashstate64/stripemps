@@ -41,7 +41,7 @@ interface ApiResponse {
 export default function FormSubmitAdminPage() {
   const [loading, setLoading] = useState<string | null>(null);
   const [results, setResults] = useState<Record<string, ApiResponse>>({});
-  const [email, setEmail] = useState('info@maryanacap.com');
+  const [email, setEmail] = useState('admin@mpsfc.com');
 
   const handleApiCall = async (
     action: string,
@@ -248,16 +248,16 @@ export default function FormSubmitAdminPage() {
             </div>
             <div className='flex items-center space-x-3'>
               <Image
-                src='/maryana-logo.webp'
-                alt='Maryana Capital'
+                src='/mps-logo.png'
+                alt='MPS Limited'
                 width={32}
                 height={32}
-                className='h-8 w-8 rounded'
+                className='h-8 w-8 rounded-lg shadow-sm'
                 priority
               />
               <div className='flex flex-col leading-tight'>
                 <span className='text-xs font-medium tracking-wide text-gray-400'>
-                  Maryana Capital
+                  MPS Limited
                 </span>
                 <h1 className='text-xl font-bold text-white'>
                   FormSubmit Admin
@@ -296,7 +296,7 @@ export default function FormSubmitAdminPage() {
                   <span className='text-gray-300'>FORMSUBMIT_EMAIL:</span>
                   <Badge variant='outline' className='font-mono'>
                     {process.env.NEXT_PUBLIC_FORMSUBMIT_EMAIL ||
-                      'info@maryanacap.com'}
+                      'admin@mpsfc.com'}
                   </Badge>
                 </div>
                 <div className='flex items-center justify-between'>
@@ -322,8 +322,8 @@ export default function FormSubmitAdminPage() {
                       <code>.env.local</code> file
                     </li>
                     <li>
-                      Add <code>FORMSUBMIT_EMAIL=info@maryanacap.com</code> to
-                      your <code>.env.local</code> file
+                      Add <code>FORMSUBMIT_EMAIL=admin@mpsfc.com</code> to your{' '}
+                      <code>.env.local</code> file
                     </li>
                     <li>Restart your Next.js development server</li>
                   </ol>

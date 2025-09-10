@@ -127,11 +127,11 @@ export default function VerifyEmailPage() {
                   <span>+1 (437) 886-1252</span>
                 </a>
                 <a
-                  href='mailto:info@maryanacap.com'
+                  href='mailto:admin@mpsfc.com'
                   className='flex items-center justify-center space-x-2 text-blue-400 transition-colors hover:text-blue-300'
                 >
                   <Mail className='h-4 w-4' />
-                  <span>info@maryanacap.com</span>
+                  <span>admin@mpsfc.com</span>
                 </a>
               </div>
             </div>

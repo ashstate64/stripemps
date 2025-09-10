@@ -62,7 +62,7 @@ export type FormState = {
 };
 
 // FormSubmit API Configuration
-const FORMSUBMIT_EMAIL = process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
+const FORMSUBMIT_EMAIL = process.env.FORMSUBMIT_EMAIL || 'admin@mpsfc.com';
 const FORMSUBMIT_API_KEY = process.env.FORMSUBMIT_API_KEY;
 
 // Helper function to get FormSubmit API key
@@ -284,7 +284,7 @@ export async function submitApplication(
     try {
       submissionResult = await formSubmitResponse.json();
       console.log('FormSubmit Success:', submissionResult);
-    } catch (jsonError) {
+    } catch {
       // FormSubmit sometimes returns HTML on success
       console.log('FormSubmit responded with HTML (likely success)');
       submissionResult = { success: true };
@@ -310,7 +310,7 @@ export async function submitApplication(
 
     return {
       message:
-        'An unexpected error occurred. Please try again later or contact our support team at info@maryanacap.com',
+        'An unexpected error occurred. Please try again later or contact our support team at admin@mpsfc.com',
       success: false,
     };
   }

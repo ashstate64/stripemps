@@ -12,10 +12,10 @@ import {
 } from 'recharts';
 
 const peerData = [
-  { name: 'OpenAI', valuation: 300 },
-  { name: 'Anthropic', valuation: 61.5 },
-  { name: 'Mistral AI', valuation: 6.2 },
-  { name: 'Cohere', valuation: 5.5 },
+  { name: 'Salesforce', valuation: 250.39 },
+  { name: 'Snowflake', valuation: 225.54 },
+  { name: 'Palantir', valuation: 157.84 },
+  { name: 'Databricks', valuation: 149.7 },
 ];
 
 export function PeerComparisonChart() {
@@ -36,7 +36,7 @@ export function PeerComparisonChart() {
           <XAxis
             type='number'
             stroke='hsl(var(--muted-foreground))'
-            tickFormatter={(value) => `$${value}B`}
+            tickFormatter={(value) => `$${value}`}
           />
           <YAxis
             dataKey='name'
@@ -49,13 +49,13 @@ export function PeerComparisonChart() {
               backgroundColor: 'hsl(var(--background))',
               borderColor: 'hsl(var(--border))',
             }}
-            formatter={(value: number) => [`$${value} Billion`, 'Valuation']}
+            formatter={(value: number) => [`$${value}`, 'Stock Price']}
           />
           <Legend />
           <Bar
             dataKey='valuation'
             fill='hsl(var(--primary))'
-            name='Latest Valuation'
+            name='Stock Price'
             radius={[0, 4, 4, 0]}
           />
         </BarChart>

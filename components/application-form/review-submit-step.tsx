@@ -3,7 +3,7 @@ import type {
   ApplicationData,
   FormState,
 } from '@/app/actions/submit-application';
-import { CheckboxField, canadianProvinces } from './form-elements'; // Assuming canadianProvinces is exported
+import { CheckboxField, australianStates } from './form-elements';
 
 interface StepProps {
   formData: Partial<ApplicationData>;
@@ -12,7 +12,7 @@ interface StepProps {
 }
 
 const getProvinceLabel = (value?: string) => {
-  return canadianProvinces.find((p) => p.value === value)?.label || value;
+  return australianStates.find((p) => p.value === value)?.label || value;
 };
 
 export function ReviewSubmitStep({
@@ -45,8 +45,8 @@ export function ReviewSubmitStep({
     { label: 'Employment Status', value: formData.employmentStatus },
     { label: 'Occupation', value: formData.occupation || 'N/A' },
     { label: 'Employer/Business Name', value: formData.employerName || 'N/A' },
-    { label: 'Annual Income (CAD)', value: formData.annualIncome },
-    { label: 'Net Financial Assets (CAD)', value: formData.netFinancialAssets },
+    { label: 'Annual Income (AUD)', value: formData.annualIncome },
+    { label: 'Net Financial Assets (AUD)', value: formData.netFinancialAssets },
     { label: 'Source of Funds', value: formData.sourceOfFunds },
     {
       label: 'Accredited Investor Status',

@@ -11,30 +11,45 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'OpenAI Pre-IPO Investment Opportunity | Invest in the Future of AI',
+  title:
+    'Databricks Pre-IPO Investment Opportunity | Invest in the Future of Data Intelligence',
   description:
-    "Explore an exclusive opportunity to invest in OpenAI's private placement pre-IPO shares. Learn about OpenAI's market leadership, explosive growth, and path to becoming a publicly traded company. Join leading institutional investors in this transformative AI investment.",
+    "Explore an exclusive opportunity to invest in Databricks' private placement pre-IPO shares. Learn about Databricks' market leadership, explosive growth, and path to becoming a publicly traded company. Join leading institutional investors in this transformative data intelligence investment.",
   keywords: [
-    'OpenAI',
+    'Databricks',
     'pre-IPO',
     'investment',
-    'AI',
+    'data intelligence',
     'artificial intelligence',
     'private placement',
-    'OpenAI stock',
-    'invest in OpenAI',
-    'AI investment',
+    'Databricks stock',
+    'invest in Databricks',
+    'data investment',
     'technology stocks',
     'venture capital',
     'institutional investment',
-    'ChatGPT',
-    'GPT-4',
+    'data lakehouse',
+    'MLflow',
     'machine learning',
-    'startup investment',
+    'enterprise data',
+    'Apache Spark',
+    'Delta Lake',
+    'data analytics',
+    'big data',
+    'cloud computing',
+    'Australia investment',
+    'ASIC regulated',
+    'accredited investors',
+    'wholesale clients',
+    'Series J funding',
+    'unicorn company',
+    'IPO 2025',
+    'MPS Limited',
+    'AFSL',
   ],
-  authors: [{ name: 'OpenAI Investment Team' }],
-  creator: 'OpenAI Investment Team',
-  publisher: 'OpenAI',
+  authors: [{ name: 'Databricks Investment Team' }],
+  creator: 'Databricks Investment Team',
+  publisher: 'Databricks',
   robots: {
     index: true,
     follow: true,
@@ -49,30 +64,32 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://openai-investment.com',
-    title: 'OpenAI Pre-IPO Investment Opportunity | Invest in the Future of AI',
+    url: 'https://databricks-investment.com',
+    title:
+      'Databricks Pre-IPO Investment Opportunity | Invest in the Future of Data Intelligence',
     description:
-      "Explore an exclusive opportunity to invest in OpenAI's private placement pre-IPO shares. Join leading institutional investors in this transformative AI investment.",
-    siteName: 'OpenAI Investment Opportunity',
+      "Explore an exclusive opportunity to invest in Databricks' private placement pre-IPO shares. Join leading institutional investors in this transformative data intelligence investment.",
+    siteName: 'Databricks Investment Opportunity',
     images: [
       {
-        url: '/OpenAI_Logo.svg.png',
+        url: '/databricks-logo.svg',
         width: 1200,
         height: 630,
-        alt: 'OpenAI Pre-IPO Investment Opportunity',
+        alt: 'Databricks Pre-IPO Investment Opportunity',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OpenAI Pre-IPO Investment Opportunity | Invest in the Future of AI',
+    title:
+      'Databricks Pre-IPO Investment Opportunity | Invest in the Future of Data Intelligence',
     description:
-      "Explore an exclusive opportunity to invest in OpenAI's private placement pre-IPO shares. Join leading institutional investors in this transformative AI investment.",
-    images: ['/OpenAI_Logo.svg.png'],
-    creator: '@openai',
+      "Explore an exclusive opportunity to invest in Databricks' private placement pre-IPO shares. Join leading institutional investors in this transformative data intelligence investment.",
+    images: ['/databricks-logo.svg'],
+    creator: '@databricks',
   },
   alternates: {
-    canonical: 'https://openai-investment.com',
+    canonical: 'https://databricks-investment.com',
   },
   category: 'Investment',
   classification: 'Investment Opportunity',
@@ -82,7 +99,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://openai-investment.com'),
+  metadataBase: new URL('https://databricks-investment.com'),
   icons: {
     icon: [
       {
@@ -112,9 +129,13 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
+    google: 'databricks-investment-verification',
+    yandex: 'databricks-investment-yandex-verification',
+    yahoo: 'databricks-investment-yahoo-verification',
+    other: {
+      'msvalidate.01': 'databricks-investment-bing-verification',
+      'p:domain_verify': 'databricks-investment-pinterest-verification',
+    },
   },
 };
 
@@ -172,8 +193,11 @@ export default function RootLayout({
         <meta name='msapplication-TileColor' content='#ffffff' />
 
         {/* Additional SEO */}
-        <meta name='application-name' content='OpenAI Investment' />
-        <meta name='apple-mobile-web-app-title' content='OpenAI Investment' />
+        <meta name='application-name' content='Databricks Investment' />
+        <meta
+          name='apple-mobile-web-app-title'
+          content='Databricks Investment'
+        />
         <meta name='apple-mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-status-bar-style' content='default' />
         <meta name='mobile-web-app-capable' content='yes' />

@@ -12,9 +12,9 @@ import {
 } from 'recharts';
 
 const valuationData = [
-  { date: 'Jan 2023', valuation: 29 },
-  { date: 'Oct 2024', valuation: 157 },
-  { date: 'Q4 2025', valuation: 300 },
+  { date: 'Sep 2023', valuation: 43 },
+  { date: 'Dec 2024', valuation: 62 },
+  { date: 'Current', valuation: 100.44 },
 ];
 
 export function ValuationGrowthChart() {
@@ -57,7 +57,7 @@ export function ValuationGrowthChart() {
             stroke='hsl(var(--primary))'
             strokeWidth={3}
             activeDot={{ r: 8 }}
-            name='Post-Money Valuation'
+            name='Market Cap / Valuation'
           />
         </LineChart>
       </ResponsiveContainer>

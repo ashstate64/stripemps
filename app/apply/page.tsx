@@ -5,6 +5,7 @@ import { ArrowLeft, Shield, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+// Design system removed due to template literal issues
 import { useState, useEffect } from 'react';
 
 export default function ApplyPage() {
@@ -24,9 +25,9 @@ export default function ApplyPage() {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 font-sans text-gray-200 selection:bg-blue-500/20 selection:text-blue-100'>
+    <div className='min-h-screen bg-white font-sans text-base leading-relaxed text-gray-700 selection:bg-blue-100 selection:text-blue-900'>
       {/* Mobile-Optimized Header */}
-      <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-slate-950/95 shadow-2xl backdrop-blur-xl'>
+      <header className='sticky top-0 z-50 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-xl'>
         <div className='mx-auto max-w-7xl px-3 py-2 sm:px-4 sm:py-3 md:px-8 md:py-4'>
           <div className='flex items-center justify-between gap-2'>
             {/* Back Navigation - Compact on mobile */}
@@ -34,7 +35,7 @@ export default function ApplyPage() {
               <Button
                 variant='ghost'
                 size='sm'
-                className='min-h-[44px] min-w-[44px] p-2 text-gray-300 hover:bg-slate-800 hover:text-white sm:px-3 sm:py-2'
+                className='min-h-[44px] min-w-[44px] p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 sm:px-3 sm:py-2'
               >
                 <ArrowLeft className='h-4 w-4 sm:mr-2' aria-hidden='true' />
                 <span className='hidden sm:inline'>Back</span>
@@ -43,27 +44,27 @@ export default function ApplyPage() {
 
             {/* Compact Brand Identity */}
             <div className='flex flex-1 items-center justify-center space-x-2 sm:space-x-3'>
-              <div className='openai-logo-container'>
+              <div className='mps-logo-container'>
                 <Image
-                  src='/maryana-logo.webp'
-                  alt='Maryana Capital Inc. Logo'
+                  src='/mps-logo.png'
+                  alt='MPS Limited Logo'
                   width={24}
                   height={24}
-                  className='openai-logo-image rounded-sm ring-1 ring-slate-700/50 sm:h-7 sm:w-7 md:h-8 md:w-8'
+                  className='mps-logo-image rounded-lg shadow-sm sm:h-7 sm:w-7 md:h-8 md:w-8'
                 />
               </div>
               <div className='text-center'>
-                <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-sm font-bold text-transparent sm:text-base md:text-lg lg:text-xl'>
-                  OpenAI Pre-IPO
+                <h1 className='text-sm font-bold text-gray-900 sm:text-base md:text-lg lg:text-xl'>
+                  Databricks Pre-IPO
                 </h1>
-                <p className='text-xs text-gray-400 sm:block'>Application</p>
+                <p className='text-xs text-gray-500 sm:block'>Application</p>
               </div>
             </div>
 
             {/* Compact Trust Badge */}
-            <div className='flex items-center rounded-md bg-green-900/30 px-1 py-1 text-xs text-green-300 sm:px-2'>
+            <div className='flex items-center rounded-md bg-green-100 px-1 py-1 text-xs text-green-700 sm:px-2'>
               <Shield className='h-3 w-3 sm:mr-1' />
-              <span className='hidden sm:inline'>Secure</span>
+              <span className='hidden sm:inline'>ASIC</span>
             </div>
           </div>
         </div>
@@ -73,14 +74,14 @@ export default function ApplyPage() {
       <main className='px-3 py-4 sm:px-4 sm:py-6 md:px-6 md:py-12 lg:py-16'>
         <div className='mx-auto mb-4 max-w-4xl text-center sm:mb-6 md:mb-8'>
           <div className='mb-4 sm:mb-6'>
-            <h1 className='bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-xl font-bold text-transparent sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
-              OpenAI Pre-IPO Investment Application
+            <h1 className='text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl xl:text-5xl'>
+              Databricks Pre-IPO Investment Application
             </h1>
-            <p className='mt-2 text-sm text-gray-300 sm:mt-4 sm:text-base md:text-lg lg:text-xl'>
-              Secure your allocation in the most anticipated AI investment
-              opportunity of the decade.
+            <p className='mt-2 text-lg leading-relaxed text-gray-700 sm:mt-4 md:text-lg lg:text-xl'>
+              Secure your allocation in the leading data intelligence investment
+              opportunity.
             </p>
-            <div className='mt-4 flex items-center justify-center gap-2 text-xs text-green-400 sm:text-sm'>
+            <div className='mt-4 flex items-center justify-center gap-2 text-xs text-blue-600 sm:text-sm'>
               <Shield className='h-4 w-4' />
               <span>Secure • Encrypted • Confidential</span>
             </div>
@@ -88,29 +89,29 @@ export default function ApplyPage() {
 
           {/* Mobile-Optimized Key Points */}
           <div className='mb-4 grid grid-cols-3 gap-2 sm:mb-6 sm:gap-3 md:mb-8 md:gap-4'>
-            <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
-              <div className='text-lg font-bold text-green-400 sm:text-xl md:text-2xl'>
-                $300B
+            <div className='rounded-md border border-gray-200 bg-white p-2 text-center shadow-sm sm:rounded-lg sm:p-3 md:p-4'>
+              <div className='text-lg font-bold text-blue-600 sm:text-xl md:text-2xl'>
+                $149.70
               </div>
-              <div className='text-xs text-gray-400 sm:text-sm'>
-                <span className='sm:hidden'>Valuation</span>
-                <span className='hidden sm:inline'>Current Valuation</span>
+              <div className='text-xs text-gray-500 sm:text-sm'>
+                <span className='sm:hidden'>Stock Price</span>
+                <span className='hidden sm:inline'>Current Stock Price</span>
               </div>
             </div>
-            <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
-              <div className='text-lg font-bold text-blue-400 sm:text-xl md:text-2xl'>
-                $10K CAD
+            <div className='rounded-md border border-gray-200 bg-white p-2 text-center shadow-sm sm:rounded-lg sm:p-3 md:p-4'>
+              <div className='text-lg font-bold text-blue-600 sm:text-xl md:text-2xl'>
+                $10K AUD
               </div>
-              <div className='text-xs text-gray-400 sm:text-sm'>
+              <div className='text-xs text-gray-500 sm:text-sm'>
                 <span className='sm:hidden'>Minimum</span>
                 <span className='hidden sm:inline'>Minimum Investment</span>
               </div>
             </div>
-            <div className='rounded-md bg-slate-800/40 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
+            <div className='rounded-md border border-gray-200 bg-white p-2 text-center shadow-sm sm:rounded-lg sm:p-3 md:p-4'>
               <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
-                Q4 2025
+                2025
               </div>
-              <div className='text-xs text-gray-400 sm:text-sm'>
+              <div className='text-xs text-gray-500 sm:text-sm'>
                 <span className='sm:hidden'>IPO</span>
                 <span className='hidden sm:inline'>Expected IPO</span>
               </div>
@@ -134,19 +135,19 @@ export default function ApplyPage() {
                 <p className='flex items-center justify-center md:justify-start'>
                   <Phone className='mr-2 h-4 w-4 text-blue-400' />
                   <a
-                    href='tel:+14378861252'
+                    href='tel:+61385779534'
                     className='text-blue-400 hover:text-blue-300'
                   >
-                    +1 (437) 886-1252
+                    +61 3 8577 9534
                   </a>
                 </p>
                 <p className='flex items-center justify-center md:justify-start'>
                   <Mail className='mr-2 h-4 w-4 text-blue-400' />
                   <a
-                    href='mailto:info@maryanacap.com'
+                    href='mailto:admin@mpsfc.com'
                     className='text-blue-400 hover:text-blue-300'
                   >
-                    info@maryanacap.com
+                    admin@mpsfc.com
                   </a>
                 </p>
               </div>
@@ -174,8 +175,8 @@ export default function ApplyPage() {
               and investor qualification.
             </p>
             <p className='mt-2 text-xs text-gray-600'>
-              &copy; {new Date().getFullYear()} Maryana Capital Inc. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Managed Portfolio Services
+              Limited. All rights reserved.
             </p>
           </div>
         </div>

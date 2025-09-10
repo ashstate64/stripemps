@@ -8,97 +8,95 @@ import {
   CardTitle,
   CardDescription,
 } from '@/components/ui/card';
-import { ShieldCheck, Briefcase, LinkIcon } from 'lucide-react';
+import { ShieldCheck, Briefcase } from 'lucide-react';
 
 const leaders = [
   {
-    name: 'Sam Altman',
+    name: 'Ali Ghodsi',
     title: 'Co-founder & CEO',
-    bio: 'Former President of Y Combinator, Altman has guided hundreds of unicorns and now steers OpenAI&apos;s mission to ensure AGI benefits all of humanity. Consistently ranked among the world&apos;s most influential innovators.',
-    note: 'Altman personally holds no conventional equity; like all employees he participates via profit-share units, underscoring mission alignment.',
-    imageUrl: '/Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_(cropped).jpg',
+    bio: 'Former UC Berkeley professor and Apache Spark contributor, Ghodsi co-founded Databricks to democratize data and AI. Under his leadership, Databricks has grown to 10,000+ customers and $3.8B+ revenue.',
+    note: 'Ghodsi has led Databricks from startup to unicorn status, building the leading data intelligence platform.',
+    imageUrl: '/leadership/ali-ghodsi.jpeg',
   },
   {
-    name: 'Greg Brockman',
-    title: 'Co-founder & President',
-    bio: 'Ex-CTO at Stripe, Brockman architected Stripe&apos;s global payments stack before co-building GPT-4 and ChatGPT. He oversees model training and product engineering.',
-    imageUrl:
-      '/Disrupt_SF_TechCrunch_Disrupt_San_Francisco_2019_-_Day_2_(48838200316)_(cropped).jpg',
+    name: 'Matei Zaharia',
+    title: 'Co-founder & Chief Technologist',
+    bio: 'Creator of Apache Spark and Delta Lake, Zaharia is one of the most influential figures in big data. His open-source contributions power data processing at thousands of companies worldwide.',
+    imageUrl: '/leadership/matei-zaharia.jpg',
   },
   {
-    name: 'Mira Murati',
-    title: 'Chief Technology Officer',
-    bio: 'Former Tesla & Leap Motion engineer who scales research into deployable consumer products—including the ChatGPT iOS/Android apps used by 300M+ people worldwide.',
-    imageUrl: '/mria.jpg',
+    name: 'Reynold Xin',
+    title: 'Co-founder & Chief Architect',
+    bio: 'Co-creator of Apache Spark and technical architect of the Databricks platform. Xin leads the technical vision for the lakehouse architecture that has revolutionized enterprise data.',
+    imageUrl: '/leadership/reynold-xin.jpeg',
   },
   {
-    name: 'Brad Lightcap',
-    title: 'Chief Operating Officer / CFO',
-    bio: 'Ex-Dropbox finance head. Led the $40B SoftBank round and multiple tender offers, giving OpenAI one of the strongest balance-sheets in private tech.',
-    imageUrl: '/bradlightcap.webp',
+    name: 'Dave Conte',
+    title: 'Chief Financial Officer',
+    bio: 'Former CFO at Hortonworks and finance executive at multiple public tech companies. Conte brings extensive experience in scaling enterprise software companies through IPOs.',
+    imageUrl: '/leadership/dave-conte.avif',
   },
   {
-    name: 'Ilya Sutskever',
-    title: 'Co-founder & Chief Scientist (Emeritus)',
-    bio: 'A deep-learning pioneer, Sutskever co-authored ImageNet and seq-to-seq models. Stepped back from day-to-day duties in 2024 but remains an adviser and board observer.',
-    imageUrl: '/Sutskever.webp',
+    name: 'Naveen Rao',
+    title: 'VP of Generative AI',
+    bio: 'Former Intel AI executive and MosaicML founder. Rao leads Databricks AI initiatives including large language models and generative AI capabilities for enterprise customers.',
+    imageUrl: '/leadership/naveen-rao.webp',
   },
 ];
 
 const boardMembers = [
   {
-    name: 'Bret Taylor (Chair)',
-    role: 'ex-co-CEO Salesforce & former Twitter chairman',
+    name: 'Ion Stoica',
+    role: 'Executive Chairman & Co-founder',
   },
-  { name: 'Larry Summers', role: 'U.S. Treasury Secretary (1999-2001)' },
-  { name: 'Gen. Paul Nakasone', role: 'former head, U.S. NSA & Cyber Command' },
-  { name: 'Adam D&apos;Angelo', role: 'CEO, Quora / ex-Facebook CTO' },
+  { name: 'Ali Ghodsi', role: 'CEO & Co-founder' },
+  { name: 'Matei Zaharia', role: 'Chief Technologist & Co-founder' },
+  { name: 'Reynold Xin', role: 'Chief Architect & Co-founder' },
   {
-    name: 'Sue Desmond-Hellmann',
-    role: 'Former CEO, Bill & Melinda Gates Foundation',
+    name: 'Dave Conte',
+    role: 'Chief Financial Officer',
   },
   {
-    name: 'Nicole Seligman',
-    role: 'Former EVP and General Counsel, Sony Corporation',
+    name: 'Naveen Rao',
+    role: 'VP of Generative AI (ex-MosaicML)',
   },
-  { name: 'Fidji Simo', role: 'CEO, Instacart; Former Head of Facebook App' },
 ];
 
 export function LeadershipSection() {
   return (
-    <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
+    <Card className='overflow-hidden border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:border-blue-300 hover:shadow-xl'>
       <CardHeader className='p-6 md:p-8'>
         <div className='flex flex-col items-start text-center md:flex-row md:items-center md:text-left'>
-          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-primary/10 p-3 md:mb-0 md:mr-6 md:self-start'>
-            <Briefcase className='h-10 w-10 text-primary' />
+          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-blue-100 p-3 md:mb-0 md:mr-6 md:self-start'>
+            <Briefcase className='h-10 w-10 text-blue-600' />
           </div>
           <div className='flex-grow'>
-            <CardTitle className='text-3xl font-bold leading-tight text-white md:text-4xl'>
+            <CardTitle className='text-3xl font-bold leading-tight text-gray-900 md:text-4xl'>
               Visionary Leadership & Governance
             </CardTitle>
-            <CardDescription className='mt-3 text-lg text-gray-200'>
-              Meet the experienced team guiding OpenAI&apos;s mission and the
-              independent board ensuring robust oversight.
+            <CardDescription className='mt-3 text-lg text-gray-600'>
+              Meet the experienced team guiding Databricks&apos; mission and the
+              leadership ensuring robust enterprise execution.
             </CardDescription>
           </div>
         </div>
       </CardHeader>
-      <CardContent className='p-6 pt-4 text-gray-200 md:p-8'>
-        <h3 className='mb-6 text-center text-2xl font-semibold text-white md:text-left'>
+      <CardContent className='p-6 pt-4 text-gray-700 md:p-8'>
+        <h3 className='mb-6 text-center text-2xl font-semibold text-gray-900 md:text-left'>
           Executive Team
         </h3>
         <div className='mb-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
           {leaders.map((leader) => (
             <div
               key={leader.name}
-              className='flex flex-col items-center rounded-lg bg-slate-700/40 p-4 text-center shadow-lg transition-all duration-300 hover:bg-slate-700/70'
+              className='flex flex-col items-center rounded-lg border border-gray-200 bg-white p-4 text-center shadow-sm transition-all duration-300 hover:shadow-md'
             >
               <Image
                 src={leader.imageUrl || '/placeholder.svg'}
                 alt={`Headshot of ${leader.name}`}
                 width={80}
                 height={80}
-                className='mb-3 rounded-full border-2 border-primary/50 object-cover'
+                className='mb-3 rounded-full border-2 border-blue-200 object-cover'
                 style={{
                   maxWidth: '100%',
                   maxHeight: '100%',
@@ -106,13 +104,15 @@ export function LeadershipSection() {
                   height: '80px',
                 }}
               />
-              <h4 className='text-lg font-bold text-white'>{leader.name}</h4>
-              <p className='text-sm font-medium text-primary'>{leader.title}</p>
-              <p className='mt-2 flex-grow text-xs text-gray-300'>
+              <h4 className='text-lg font-bold text-gray-900'>{leader.name}</h4>
+              <p className='text-sm font-medium text-blue-600'>
+                {leader.title}
+              </p>
+              <p className='mt-2 flex-grow text-xs text-gray-600'>
                 {leader.bio}
               </p>
               {leader.note && (
-                <p className='mt-2 border-t border-slate-600 pt-2 text-xs italic text-gray-400'>
+                <p className='mt-2 border-t border-gray-200 pt-2 text-xs italic text-gray-500'>
                   {leader.note}
                 </p>
               )}
@@ -120,56 +120,42 @@ export function LeadershipSection() {
           ))}
         </div>
 
-        <h3 className='mb-6 text-center text-2xl font-semibold text-white md:text-left'>
-          Independent Board Oversight
+        <h3 className='mb-6 text-center text-2xl font-semibold text-gray-900 md:text-left'>
+          Leadership Team
         </h3>
-        <div className='mb-6 rounded-lg bg-slate-700/40 p-6 shadow-lg'>
-          <p className='mb-4 text-sm text-gray-300'>
-            OpenAI&apos;s nonprofit parent, OpenAI, Inc., is governed by a board
-            composed of a majority of independent directors who do not hold
-            equity in OpenAI. This structure ensures the organization stays true
-            to its mission of benefiting all of humanity.
+        <div className='mb-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm'>
+          <p className='mb-4 text-sm text-gray-700'>
+            Databricks&apos; leadership team combines deep technical expertise
+            with proven business execution. The founding team created Apache
+            Spark and continues to drive innovation in data intelligence and AI
+            for enterprise customers worldwide.
           </p>
           <ul className='space-y-2'>
             {boardMembers.map((member) => (
               <li key={member.name} className='flex items-start'>
-                <ShieldCheck className='mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-400' />
+                <ShieldCheck className='mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600' />
                 <div>
-                  <span className='font-semibold text-gray-100'>
+                  <span className='font-semibold text-gray-900'>
                     {member.name}
                   </span>
-                  <span className='ml-1 text-xs text-gray-400'>
+                  <span className='ml-1 text-xs text-gray-600'>
                     ({member.role})
                   </span>
                 </div>
               </li>
             ))}
           </ul>
-          <p className='mt-4 text-xs text-gray-400'>
-            For more details, visit{' '}
-            <a
-              href='https://openai.com/our-structure'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-flex items-center text-primary hover:underline'
-            >
-              OpenAI&apos;s Our Structure page{' '}
-              <LinkIcon className='ml-1 h-3 w-3' />
-            </a>
-            .
+          <p className='mt-4 text-xs text-gray-600'>
+            <strong>Why it matters for investors:</strong> Seasoned operators
+            combined with proven technical leadership aim for disciplined
+            capital allocation and help mitigate key-person risk as Databricks
+            scales towards a potential IPO.
+          </p>
+          <p className='mt-2 text-xs italic text-gray-500'>
+            Leadership biographies provided for background only; they do not
+            constitute an investment guarantee.
           </p>
         </div>
-
-        <p className='mt-8 text-sm font-semibold text-gray-300'>
-          Why it matters for investors: Seasoned operators combined with
-          mission-driven governance aim for disciplined capital allocation and
-          help mitigate key-person risk as OpenAI scales towards a potential
-          IPO.
-        </p>
-        <p className='mt-4 text-xs italic text-gray-500'>
-          Leadership biographies provided for background only; they do not
-          constitute an investment guarantee.
-        </p>
       </CardContent>
     </Card>
   );

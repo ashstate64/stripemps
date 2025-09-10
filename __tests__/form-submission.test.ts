@@ -2,7 +2,10 @@
  * @jest-environment node
  */
 
-import { submitApplication, testFormSubmitConnection } from '@/app/actions/submit-application';
+import {
+  submitApplication,
+  testFormSubmitConnection,
+} from '@/app/actions/submit-application';
 
 // Mock fetch for testing
 global.fetch = jest.fn();
@@ -31,7 +34,7 @@ describe('Form Submission Tests', () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
+            Accept: 'application/json',
           },
           body: expect.stringContaining('FormSubmit Connection Test'),
         })
@@ -49,7 +52,9 @@ describe('Form Submission Tests', () => {
       const result = await testFormSubmitConnection();
 
       expect(result.success).toBe(false);
-      expect(result.message).toBe('FormSubmit connection failed: 500 Internal Server Error');
+      expect(result.message).toBe(
+        'FormSubmit connection failed: 500 Internal Server Error'
+      );
     });
   });
 
@@ -58,7 +63,10 @@ describe('Form Submission Tests', () => {
       // Mock successful FormSubmit response
       (fetch as jest.MockedFunction<typeof fetch>).mockResolvedValueOnce({
         ok: true,
-        json: async () => ({ success: true, message: 'Form submitted successfully' }),
+        json: async () => ({
+          success: true,
+          message: 'Form submitted successfully',
+        }),
       } as Response);
 
       // Create complete form data
@@ -97,17 +105,20 @@ describe('Form Submission Tests', () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
+            Accept: 'application/json',
           },
           body: expect.stringContaining('Test User'),
         })
       );
 
       // Parse the request body to verify it contains expected data
-      const fetchCall = (fetch as jest.MockedFunction<typeof fetch>).mock.calls[0];
+      const fetchCall = (fetch as jest.MockedFunction<typeof fetch>).mock
+        .calls[0];
       const requestBody = JSON.parse(fetchCall[1]?.body as string);
-      
-      expect(requestBody._subject).toBe('OpenAI Pre-IPO Investment Application - Test User');
+
+      expect(requestBody._subject).toBe(
+        'OpenAI Pre-IPO Investment Application - Test User'
+      );
       expect(requestBody.full_name).toBe('Test User');
       expect(requestBody.email).toBe('test@example.com');
       expect(requestBody.phone).toBe('+1-555-123-4567');
@@ -136,7 +147,9 @@ describe('Form Submission Tests', () => {
       const result = await submitApplication(null, formData);
 
       expect(result.success).toBe(false);
-      expect(result.message).toBe('Please correct the highlighted errors and try again.');
+      expect(result.message).toBe(
+        'Please correct the highlighted errors and try again.'
+      );
       expect(result.errors).toBeDefined();
       expect(result.errors?.fullName).toContain('Full name is required');
       expect(result.errors?.email).toContain('Invalid email address');
@@ -177,7 +190,9 @@ describe('Form Submission Tests', () => {
       const result = await submitApplication(null, formData);
 
       expect(result.success).toBe(false);
-      expect(result.message).toBe('There was an error submitting your application. Please try again or contact support.');
+      expect(result.message).toBe(
+        'There was an error submitting your application. Please try again or contact support.'
+      );
     });
 
     it('should format application data correctly for FormSubmit', async () => {
@@ -212,11 +227,14 @@ describe('Form Submission Tests', () => {
       await submitApplication(null, formData);
 
       // Verify the formatted data sent to FormSubmit
-      const fetchCall = (fetch as jest.MockedFunction<typeof fetch>).mock.calls[0];
+      const fetchCall = (fetch as jest.MockedFunction<typeof fetch>).mock
+        .calls[0];
       const requestBody = JSON.parse(fetchCall[1]?.body as string);
 
       // Check FormSubmit-specific fields
-      expect(requestBody._subject).toBe('OpenAI Pre-IPO Investment Application - John Doe');
+      expect(requestBody._subject).toBe(
+        'OpenAI Pre-IPO Investment Application - John Doe'
+      );
       expect(requestBody._captcha).toBe(false);
       expect(requestBody._template).toBe('table');
       expect(requestBody._next).toContain('/apply?success=true');
@@ -251,7 +269,9 @@ describe('Form Submission Tests', () => {
       // Check metadata
       expect(requestBody.investment_opportunity).toBe('OpenAI Pre-IPO Shares');
       expect(requestBody.application_type).toBe('Pre-IPO Private Placement');
-      expect(requestBody.application_submitted_at).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/);
+      expect(requestBody.application_submitted_at).toMatch(
+        /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/
+      );
     });
   });
 

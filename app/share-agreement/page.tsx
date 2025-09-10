@@ -55,7 +55,7 @@ export default function SharePurchaseAgreement() {
   >(submitShareAgreement, null);
 
   // Investment calculations - memoized for performance
-  const sharePrice = 239.8;
+  const sharePrice = 149.7;
   const minimumShares = useMemo(
     () => Math.ceil(10000 / sharePrice),
     [sharePrice]
@@ -123,18 +123,18 @@ export default function SharePurchaseAgreement() {
   // Success state
   if (formState?.success && formState.submittedData) {
     return (
-      <div className='flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 p-4'>
-        <Card className='w-full max-w-4xl border-green-500/30 bg-slate-800/90 shadow-2xl'>
-          <CardHeader className='border-b border-green-500/20 bg-gradient-to-r from-green-900/20 to-blue-900/20 text-center'>
+      <div className='flex min-h-screen items-center justify-center bg-white p-4'>
+        <Card className='w-full max-w-4xl border-green-200 bg-white shadow-2xl'>
+          <CardHeader className='border-b border-green-200 bg-green-50 text-center'>
             <div className='mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500'>
               <CheckCircle2 className='h-8 w-8 text-white' />
             </div>
-            <CardTitle className='text-2xl font-bold text-white'>
+            <CardTitle className='text-2xl font-bold text-gray-900'>
               Agreement Executed Successfully
             </CardTitle>
-            <p className='text-green-300'>
-              Your OpenAI Pre-IPO Share Purchase Agreement has been digitally
-              signed
+            <p className='text-green-600'>
+              Your Databricks Pre-IPO Share Purchase Agreement has been
+              digitally signed
             </p>
           </CardHeader>
           <CardContent className='p-8'>
@@ -240,28 +240,28 @@ export default function SharePurchaseAgreement() {
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900'>
+    <div className='min-h-screen bg-white'>
       {/* Ultra-Compact Mobile Header */}
-      <header className='sticky top-0 z-50 border-b border-slate-800/50 bg-slate-950/95 backdrop-blur-xl'>
+      <header className='sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-xl'>
         <div className='mx-auto max-w-7xl px-3 py-2 sm:px-4 sm:py-3 md:py-4'>
           {/* Hyper-compact header layout for mobile */}
           <div className='flex items-center justify-between'>
             <div className='flex items-center space-x-2 sm:space-x-3'>
-              <div className='openai-logo-container'>
+              <div className='mps-logo-container'>
                 <Image
-                  src='/maryana-logo.webp'
-                  alt='Maryana Capital Inc. Logo'
+                  src='/mps-logo.png'
+                  alt='MPS Limited Logo'
                   width={24}
                   height={24}
-                  className='openai-logo-image rounded-sm ring-1 ring-slate-700/50 sm:h-8 sm:w-8 md:h-10 md:w-10'
+                  className='mps-logo-image rounded-lg shadow-sm sm:h-8 sm:w-8 md:h-10 md:w-10'
                 />
               </div>
               <div>
-                <h1 className='text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl'>
-                  OpenAI Pre-IPO
+                <h1 className='text-sm font-bold text-gray-900 sm:text-base md:text-lg lg:text-xl'>
+                  Databricks Pre-IPO
                 </h1>
-                <p className='text-xs text-gray-400 sm:text-sm'>
-                  $239.80/share
+                <p className='text-xs text-gray-500 sm:text-sm'>
+                  $149.70/share
                 </p>
               </div>
             </div>
@@ -280,7 +280,7 @@ export default function SharePurchaseAgreement() {
                 className='border-blue-400 px-1 py-0.5 text-xs text-blue-400 sm:px-2 sm:py-1'
               >
                 <Lock className='mr-0.5 h-2 w-2 sm:mr-1 sm:h-3 sm:w-3' />
-                OSC Compliant
+                ASIC Compliant
               </Badge>
             </div>
           </div>
@@ -328,7 +328,7 @@ export default function SharePurchaseAgreement() {
                     </span>
                   </CardTitle>
                   <p className='text-sm text-gray-300 sm:text-base'>
-                    Configure your OpenAI pre-IPO investment details with
+                    Configure your Databricks pre-IPO investment details with
                     confidence
                   </p>
                   <div className='mt-2 flex items-center gap-2 text-xs text-green-400'>
@@ -372,7 +372,7 @@ export default function SharePurchaseAgreement() {
                           <div className='flex justify-between text-sm sm:text-base'>
                             <span className='text-gray-300'>Share Price:</span>
                             <span className='font-semibold text-white'>
-                              $239.80
+                              $149.70
                             </span>
                           </div>
                           <div className='flex justify-between text-sm sm:text-base'>
@@ -399,12 +399,12 @@ export default function SharePurchaseAgreement() {
                   <div className='grid grid-cols-3 gap-2 sm:gap-3 md:gap-4'>
                     <div className='rounded-md bg-slate-700/30 p-2 text-center sm:rounded-lg sm:p-3 md:p-4'>
                       <div className='text-lg font-bold text-green-400 sm:text-xl md:text-2xl'>
-                        $300B
+                        $100.44B
                       </div>
                       <div className='text-xs text-gray-300 sm:text-sm'>
-                        <span className='sm:hidden'>Valuation</span>
+                        <span className='sm:hidden'>Market Cap</span>
                         <span className='hidden sm:inline'>
-                          Current Valuation
+                          Current Market Cap
                         </span>
                       </div>
                     </div>
@@ -435,7 +435,7 @@ export default function SharePurchaseAgreement() {
                     <Button
                       onClick={nextStep}
                       disabled={shareQuantity < minimumShares}
-                      className='w-full bg-gradient-to-r from-green-600 to-blue-600 px-6 py-4 text-base font-medium hover:opacity-90 sm:w-auto sm:px-8 sm:py-3'
+                      className='w-full bg-blue-600 px-6 py-4 text-base font-medium text-white transition-colors hover:bg-blue-700 sm:w-auto sm:px-8 sm:py-3'
                       style={{ minHeight: '44px', minWidth: '44px' }} // Touch-friendly 44px minimum
                     >
                       Continue to Terms
@@ -468,11 +468,11 @@ export default function SharePurchaseAgreement() {
                       </h3>
                       <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
                         <li>
-                          • Purchase OpenAI Class A Shares via CG Financial
+                          • Purchase Databricks Class A Shares via CG Financial
                           International
                         </li>
                         <li>
-                          • Fixed price: USD $239.80/share ($300B valuation)
+                          • Fixed price: USD $149.70/share ($100.44B market cap)
                         </li>
                         <li>• USD denominated transactions</li>
                         <li>• Legally binding digital execution</li>
@@ -487,7 +487,7 @@ export default function SharePurchaseAgreement() {
                       <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
                         <li>• T+2 business days settlement (USD wire)</li>
                         <li>• Third-party trust account protection</li>
-                        <li>• 2-4 weeks OpenAI ROFR compliance</li>
+                        <li>• 2-4 weeks Databricks ROFR compliance</li>
                         <li>• Full refund + 2% if delivery fails (60 days)</li>
                       </ul>
                     </div>
@@ -498,10 +498,13 @@ export default function SharePurchaseAgreement() {
                         Legal & Compliance
                       </h3>
                       <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
-                        <li>• OSC compliant under NI 45-106</li>
+                        <li>• ASIC compliant under Corporations Act</li>
                         <li>• Accredited investor requirement</li>
                         <li>• 4-month hold + 12-month lock-up</li>
-                        <li>• Valid digital signatures (Ontario Act)</li>
+                        <li>
+                          • Valid digital signatures (Electronic Transactions
+                          Act)
+                        </li>
                       </ul>
                     </div>
 
@@ -514,7 +517,7 @@ export default function SharePurchaseAgreement() {
                         </strong>
                         <ul className='mt-2 space-y-1 text-xs leading-relaxed sm:text-sm'>
                           <li>• Substantial risk of total loss</li>
-                          <li>• OpenAI may reject share transfer</li>
+                          <li>• Databricks may reject share transfer</li>
                           <li>• No IPO guarantee or positive returns</li>
                           <li>• Illiquid with no secondary market</li>
                         </ul>
@@ -622,8 +625,8 @@ export default function SharePurchaseAgreement() {
                         required
                       />
                       <p className='mt-2 text-xs leading-relaxed text-gray-500'>
-                        Your signature will be legally binding under the Ontario
-                        Electronic Commerce Act, 2000
+                        Your signature will be legally binding under the
+                        Australian Electronic Transactions Act, 1999
                       </p>
                     </div>
                   </div>
@@ -686,7 +689,7 @@ export default function SharePurchaseAgreement() {
                       </div>
                       <div className='text-center'>
                         <div className='text-lg font-bold text-blue-400 sm:text-2xl'>
-                          $239.80
+                          $149.70
                         </div>
                         <div className='text-xs text-gray-300 sm:text-sm'>
                           Per Share
@@ -923,7 +926,7 @@ export default function SharePurchaseAgreement() {
                     </div>
                     <div className='flex justify-between text-xs sm:text-sm md:text-base'>
                       <span className='text-gray-300'>Price:</span>
-                      <span className='font-semibold text-white'>$239.80</span>
+                      <span className='font-semibold text-white'>$149.70</span>
                     </div>
                     <Separator className='bg-slate-600' />
                     <div className='flex justify-between'>
@@ -962,7 +965,7 @@ export default function SharePurchaseAgreement() {
                   </div>
                   <div className='flex items-center space-x-1 text-green-400 sm:space-x-2'>
                     <CheckCircle className='h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4' />
-                    <span className='text-xs sm:text-sm'>OSC Compliant</span>
+                    <span className='text-xs sm:text-sm'>ASIC Compliant</span>
                   </div>
                   <div className='flex items-center space-x-1 text-green-400 sm:space-x-2'>
                     <CheckCircle className='h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4' />
@@ -987,7 +990,7 @@ export default function SharePurchaseAgreement() {
                   </p>
                   <div className='space-y-1 sm:space-y-2'>
                     <a
-                      href='tel:+14378861252'
+                      href='tel:+61385779534'
                       className='block text-xs font-semibold text-blue-400 hover:text-blue-300 sm:text-sm md:text-base'
                       style={{
                         minHeight: '44px',
@@ -995,12 +998,12 @@ export default function SharePurchaseAgreement() {
                         alignItems: 'center',
                       }} // Touch-friendly
                     >
-                      +1 (437) 886-1252
+                      +61 3 8577 9534
                     </a>
                     <div className='text-xs text-gray-400'>
-                      <span className='sm:hidden'>Mon-Fri, 9 AM - 8 PM</span>
+                      <span className='sm:hidden'>Mon-Fri, 9 AM - 5 PM</span>
                       <span className='hidden sm:inline'>
-                        Mon-Fri, 9 AM - 8 PM EST
+                        Mon-Fri, 9 AM - 5 PM AEST
                       </span>
                     </div>
                   </div>
@@ -1015,17 +1018,17 @@ export default function SharePurchaseAgreement() {
       <footer className='mt-4 border-t border-slate-800 bg-slate-950/50 sm:mt-6 md:mt-8 lg:mt-16'>
         <div className='mx-auto max-w-7xl space-y-0.5 px-3 py-3 text-center text-xs text-gray-500 sm:space-y-1 sm:px-4 sm:py-4 md:py-6 lg:space-y-2 lg:py-8'>
           <p className='font-semibold text-gray-400'>
-            © 2024 CG Financial International
+            © 2024 Managed Portfolio Services Limited
           </p>
-          <p>OSC Compliant • NI 45-106 Exempt Distribution</p>
+          <p>ASIC Compliant • AFSL 233761 • ABN 77 009 549 697</p>
           <p className='hidden sm:block'>
             Confidential • Accredited Investors Only
           </p>
           <p className='sm:hidden'>
-            USD Transactions • Professional Investment Advice Suggested
+            AUD Transactions • Professional Investment Advice Suggested
           </p>
           <p className='hidden sm:block'>
-            USD Transactions • North American Banking • Legal Review Recommended
+            AUD Transactions • Australian Banking • Legal Review Recommended
           </p>
         </div>
       </footer>

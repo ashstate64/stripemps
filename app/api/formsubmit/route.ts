@@ -95,8 +95,7 @@ export async function POST(request: NextRequest) {
       source: 'OpenAI Investment Portal API',
     };
 
-    const formSubmitEmail =
-      process.env.FORMSUBMIT_EMAIL || 'info@maryanacap.com';
+    const formSubmitEmail = process.env.FORMSUBMIT_EMAIL || 'admin@mpsfc.com';
 
     const response = await fetch(`https://formsubmit.co/${formSubmitEmail}`, {
       method: 'POST',
@@ -124,7 +123,7 @@ export async function POST(request: NextRequest) {
     let result;
     try {
       result = await response.json();
-    } catch (jsonError) {
+    } catch {
       // FormSubmit sometimes returns HTML on success
       console.log('FormSubmit returned HTML instead of JSON (likely success)');
       result = { success: true, message: 'Form submitted successfully' };

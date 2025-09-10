@@ -11,7 +11,7 @@ describe('Debug Form Submission Issues', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     (fetch as jest.MockedFunction<typeof fetch>).mockClear();
-    
+
     // Mock successful FormSubmit response
     (fetch as jest.MockedFunction<typeof fetch>).mockResolvedValue({
       ok: true,
@@ -22,7 +22,7 @@ describe('Debug Form Submission Issues', () => {
   it('should debug the exact form data causing the error', async () => {
     // Recreate the exact form data from the user's submission
     const formData = new FormData();
-    
+
     // Personal Information
     formData.append('fullName', 'John Michael');
     formData.append('dateOfBirth', '1985-06-15');
@@ -33,7 +33,7 @@ describe('Debug Form Submission Issues', () => {
     formData.append('province', 'ON'); // Should be 'ON' not 'Ontario'
     formData.append('postalCode', 'M5H 2Y4');
     formData.append('sin', '123-456-789');
-    
+
     // Employment & Financial
     formData.append('employmentStatus', 'employed');
     formData.append('occupation', 'Senior Software Engineer');
@@ -41,16 +41,16 @@ describe('Debug Form Submission Issues', () => {
     formData.append('annualIncome', '200k-299k');
     formData.append('netFinancialAssets', '1M-4.9M');
     formData.append('sourceOfFunds', 'Employment income and stock options');
-    
+
     // Accredited Investor Status (these IDs from the error message)
     formData.append('accreditedStatus', 'income200k');
     formData.append('accreditedStatus', 'netAssets5M');
-    
+
     // Documents (optional)
     formData.append('idFrontName', 'image(2)(1).jpg');
     formData.append('idBackName', 'image(2)(1).jpg');
     formData.append('proofOfAddressName', 'OVO Bill Wales-1.pdf');
-    
+
     // Consents (these MUST be 'on' for checkboxes)
     formData.append('consentDataProcessing', 'on');
     formData.append('consentTerms', 'on');
@@ -80,7 +80,7 @@ describe('Debug Form Submission Issues', () => {
 
   it('should test with minimal required data only', async () => {
     const formData = new FormData();
-    
+
     // Only the absolute minimum required fields
     formData.append('fullName', 'Test User');
     formData.append('dateOfBirth', '1990-01-01');
@@ -101,7 +101,7 @@ describe('Debug Form Submission Issues', () => {
     formData.append('informationAccuracy', 'on');
 
     const result = await submitApplication(null, formData);
-    
+
     console.log('=== MINIMAL DATA TEST ===');
     console.log('Success:', result.success);
     if (!result.success) {

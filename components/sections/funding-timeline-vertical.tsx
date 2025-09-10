@@ -7,64 +7,65 @@ import {
   CardTitle,
   CardDescription,
 } from '@/components/ui/card';
-import { TrendingUp, Rocket, Crown, Zap, Building, Globe } from 'lucide-react';
+import { TrendingUp, Rocket, Crown, Zap, Building } from 'lucide-react';
 
 const fundingRounds = [
   {
-    date: 'Dec 2015',
-    event: 'Initial Non-Profit Founding',
-    amount: '$1B',
-    amountType: 'Pledged',
-    investors: 'Elon Musk, Sam Altman, Peter Thiel, Reid Hoffman',
-    valuation: 'Non-Profit',
+    date: 'Oct 2013',
+    event: 'Series A',
+    amount: '$13.9M',
+    amountType: 'Series A',
+    investors: 'Andreessen Horowitz, New Enterprise Associates',
+    valuation: 'Early Stage',
     valuationNumeric: 0,
     growth: null,
     color: 'from-gray-500 to-gray-600',
     icon: Rocket,
-    achievement: 'Established OpenAI as AI safety research organization',
+    achievement:
+      'Founded by Apache Spark creators, established unified analytics',
     highlight: false,
   },
   {
-    date: 'July 2019',
-    event: 'Series A / Microsoft Partnership',
-    amount: '$1B',
-    amountType: 'Investment',
-    investors: 'Microsoft Corporation',
-    valuation: 'Undisclosed',
-    valuationNumeric: 1,
+    date: 'Jun 2014',
+    event: 'Series B',
+    amount: '$34.1M',
+    amountType: 'Series B',
+    investors: 'Andreessen Horowitz, New Enterprise Associates',
+    valuation: 'Growth Stage',
+    valuationNumeric: 0.1,
     growth: null,
     color: 'from-blue-500 to-blue-600',
     icon: Building,
-    achievement: 'Transition to capped-profit model, strategic partnership',
+    achievement: 'Expanded enterprise data platform capabilities',
     highlight: false,
   },
   {
-    date: 'Jan 2023',
-    event: 'Series B / Microsoft Expansion',
-    amount: '$10B',
-    amountType: 'Multi-year',
-    investors: 'Microsoft Corporation',
-    valuation: '$29B',
-    valuationNumeric: 29,
-    growth: '+2,800%',
+    date: 'Sep 2023',
+    event: 'Series I',
+    amount: '$549.9M',
+    amountType: 'Series I',
+    investors: 'Andreessen Horowitz, Insight Partners',
+    valuation: '$43B',
+    valuationNumeric: 43,
+    growth: '+17%',
     color: 'from-green-500 to-emerald-600',
     icon: Zap,
-    achievement: 'ChatGPT launch, consumer AI breakthrough',
+    achievement: 'AI/ML platform expansion, enterprise growth',
     highlight: false,
   },
   {
-    date: 'Apr 2023',
-    event: 'Secondary Tender Offer',
-    amount: '$300M',
-    amountType: 'Employee shares',
-    investors: 'Sequoia, a16z, Thrive Capital',
-    valuation: '$27-29B',
-    valuationNumeric: 28,
-    growth: 'Stable',
+    date: 'Dec 2024',
+    event: 'Series J',
+    amount: '$10.17B',
+    amountType: 'Series J',
+    investors: 'Andreessen Horowitz, Insight Partners, DST, GIC, WCM',
+    valuation: '$62B',
+    valuationNumeric: 62,
+    growth: '+22%',
     color: 'from-purple-500 to-purple-600',
-    icon: Globe,
-    achievement: 'Employee liquidity, institutional validation',
-    highlight: false,
+    icon: Crown,
+    achievement: 'Record funding round, pre-IPO preparation',
+    highlight: true,
   },
   {
     date: 'Oct 2024',
@@ -99,54 +100,54 @@ const fundingRounds = [
 const maxValuation = 300; // For progress bar calculations
 
 export function FundingTimelineVertical() {
-  const totalRaised = 57.9;
-  const latestValuation = 300;
+  const totalRaised = 14.29;
+  const latestValuation = 62;
 
   return (
-    <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
+    <Card className='overflow-hidden border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:border-blue-300 hover:shadow-xl'>
       <CardHeader className='p-6 md:p-8'>
         <div className='flex flex-col items-start text-center md:flex-row md:items-center md:text-left'>
-          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-gradient-to-br from-purple-600/20 to-blue-600/20 p-4 md:mb-0 md:mr-6 md:self-start'>
-            <TrendingUp className='h-10 w-10 text-purple-400' />
+          <div className='mb-4 flex-shrink-0 self-center rounded-full bg-blue-100 p-4 md:mb-0 md:mr-6 md:self-start'>
+            <TrendingUp className='h-10 w-10 text-blue-600' />
           </div>
           <div className='flex-grow'>
-            <CardTitle className='bg-gradient-to-r from-white to-gray-300 bg-clip-text text-3xl font-bold leading-tight text-transparent md:text-4xl'>
+            <CardTitle className='text-3xl font-bold leading-tight text-gray-900 md:text-4xl'>
               Funding & Valuation Journey
             </CardTitle>
-            <CardDescription className='mt-3 text-lg text-gray-200'>
-              Exponential growth from non-profit research to $300B valuation —
-              the most valuable private AI company in history
+            <CardDescription className='mt-3 text-lg text-gray-600'>
+              Consistent growth from startup to $62B valuation — the leading
+              data intelligence platform
             </CardDescription>
           </div>
         </div>
 
         {/* Mobile-Optimized Key Metrics Summary */}
         <div className='mt-4 grid grid-cols-3 gap-2 sm:mt-6 sm:gap-3 md:gap-4'>
-          <div className='rounded-lg border border-green-500/30 bg-gradient-to-br from-green-900/20 to-emerald-900/20 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
-            <div className='text-sm font-bold text-green-400 sm:text-lg md:text-xl lg:text-2xl'>
-              ${totalRaised}B+
+          <div className='rounded-lg border border-green-200 bg-green-50 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
+            <div className='text-sm font-bold text-green-700 sm:text-lg md:text-xl lg:text-2xl'>
+              ${totalRaised}B
             </div>
-            <div className='text-xs text-gray-300 sm:text-sm'>
+            <div className='text-xs text-gray-600 sm:text-sm'>
               <span className='sm:hidden'>Raised</span>
               <span className='hidden sm:inline'>Total Raised</span>
             </div>
           </div>
-          <div className='rounded-lg border border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
-            <div className='text-sm font-bold text-blue-400 sm:text-lg md:text-xl lg:text-2xl'>
+          <div className='rounded-lg border border-blue-200 bg-blue-50 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
+            <div className='text-sm font-bold text-blue-700 sm:text-lg md:text-xl lg:text-2xl'>
               ${latestValuation}B
             </div>
-            <div className='text-xs text-gray-300 sm:text-sm'>
+            <div className='text-xs text-gray-600 sm:text-sm'>
               <span className='sm:hidden'>Value</span>
-              <span className='hidden sm:inline'>Current Valuation</span>
+              <span className='hidden sm:inline'>Latest Valuation</span>
             </div>
           </div>
-          <div className='rounded-lg border border-yellow-500/30 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
-            <div className='text-sm font-bold text-yellow-400 sm:text-lg md:text-xl lg:text-2xl'>
-              29,900%+
+          <div className='rounded-lg border border-orange-200 bg-orange-50 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
+            <div className='text-sm font-bold text-orange-700 sm:text-lg md:text-xl lg:text-2xl'>
+              10,000+
             </div>
-            <div className='text-xs text-gray-300 sm:text-sm'>
-              <span className='sm:hidden'>Growth</span>
-              <span className='hidden sm:inline'>Growth Since 2019</span>
+            <div className='text-xs text-gray-600 sm:text-sm'>
+              <span className='sm:hidden'>Customers</span>
+              <span className='hidden sm:inline'>Enterprise Customers</span>
             </div>
           </div>
         </div>
@@ -310,61 +311,60 @@ export function FundingTimelineVertical() {
         </div>
 
         {/* Mobile-Optimized Summary Impact */}
-        <div className='mt-6 rounded-lg border border-yellow-500/30 bg-gradient-to-br from-yellow-900/10 via-orange-900/10 to-red-900/10 p-4 text-center sm:mt-8 sm:rounded-xl sm:p-6 md:mt-10 md:p-8 lg:mt-12 lg:rounded-2xl'>
+        <div className='mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 text-center sm:mt-8 sm:rounded-xl sm:p-6 md:mt-10 md:p-8 lg:mt-12 lg:rounded-2xl'>
           <div className='mb-3 sm:mb-4'>
-            <Crown className='mx-auto h-8 w-8 text-yellow-400 sm:h-10 sm:w-10 md:h-12 md:w-12' />
+            <Crown className='mx-auto h-8 w-8 text-blue-600 sm:h-10 sm:w-10 md:h-12 md:w-12' />
           </div>
-          <h3 className='mb-2 text-lg font-bold text-white sm:mb-3 sm:text-xl md:text-2xl'>
+          <h3 className='mb-2 text-lg font-bold text-gray-900 sm:mb-3 sm:text-xl md:text-2xl'>
             Historic Achievement
           </h3>
-          <p className='mx-auto max-w-3xl text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg'>
-            OpenAI has achieved{' '}
-            <span className='font-bold text-yellow-400'>$57.9 billion</span> in
+          <p className='mx-auto max-w-3xl text-sm leading-relaxed text-gray-700 sm:text-base md:text-lg'>
+            Databricks has achieved{' '}
+            <span className='font-bold text-blue-600'>$14.29 billion</span> in
             total funding, representing one of the largest funding totals for
-            any private company in history. The journey from non-profit research
-            organization to{' '}
-            <span className='font-bold text-green-400'>
-              $300 billion valuation
+            any data intelligence company. The journey from startup to{' '}
+            <span className='font-bold text-green-600'>
+              $62 billion valuation
             </span>
-            showcases unprecedented growth in the AI sector.
+            showcases consistent growth in the enterprise data sector.
           </p>
 
           {/* Mobile-Optimized Key Stats */}
           <div className='mt-4 grid grid-cols-2 gap-3 sm:mt-6 sm:grid-cols-4 sm:gap-4 md:gap-6'>
             <div>
-              <div className='text-lg font-bold text-blue-400 sm:text-xl md:text-2xl'>
-                10 Years
+              <div className='text-lg font-bold text-blue-600 sm:text-xl md:text-2xl'>
+                11 Years
               </div>
-              <div className='text-xs text-gray-400 sm:text-sm'>
+              <div className='text-xs text-gray-600 sm:text-sm'>
                 <span className='sm:hidden'>Timeline</span>
                 <span className='hidden sm:inline'>Journey Timeline</span>
               </div>
             </div>
             <div>
-              <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
-                6 Rounds
+              <div className='text-lg font-bold text-purple-600 sm:text-xl md:text-2xl'>
+                10 Rounds
               </div>
-              <div className='text-xs text-gray-400 sm:text-sm'>
+              <div className='text-xs text-gray-600 sm:text-sm'>
                 <span className='sm:hidden'>Fundings</span>
                 <span className='hidden sm:inline'>Major Fundings</span>
               </div>
             </div>
             <div>
-              <div className='text-lg font-bold text-green-400 sm:text-xl md:text-2xl'>
-                15+ Investors
+              <div className='text-lg font-bold text-green-600 sm:text-xl md:text-2xl'>
+                20+ Investors
               </div>
-              <div className='text-xs text-gray-400 sm:text-sm'>
+              <div className='text-xs text-gray-600 sm:text-sm'>
                 <span className='sm:hidden'>Backers</span>
                 <span className='hidden sm:inline'>World-Class Backers</span>
               </div>
             </div>
             <div>
-              <div className='text-lg font-bold text-yellow-400 sm:text-xl md:text-2xl'>
-                #1 AI
+              <div className='text-lg font-bold text-orange-600 sm:text-xl md:text-2xl'>
+                #1 Data
               </div>
-              <div className='text-xs text-gray-400 sm:text-sm'>
-                <span className='sm:hidden'>Valuation</span>
-                <span className='hidden sm:inline'>Private Valuation</span>
+              <div className='text-xs text-gray-600 sm:text-sm'>
+                <span className='sm:hidden'>Platform</span>
+                <span className='hidden sm:inline'>Intelligence Platform</span>
               </div>
             </div>
           </div>

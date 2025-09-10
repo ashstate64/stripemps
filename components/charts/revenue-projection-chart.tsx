@@ -12,9 +12,10 @@ import {
 } from 'recharts';
 
 const revenueData = [
-  { year: '2023', revenue: 0.2 }, // ~$200M
-  { year: '2024', revenue: 3.6 }, // Estimated
-  { year: '2025', revenue: 11.6 }, // Projected
+  { year: '2022', revenue: 1.27 }, // $1.27B
+  { year: '2023', revenue: 1.9 }, // $1.90B
+  { year: '2024', revenue: 3.04 }, // $3.04B
+  { year: 'TTM', revenue: 3.82 }, // $3.82B TTM
 ];
 
 export function RevenueProjectionChart() {

@@ -5,7 +5,7 @@ import type {
 } from '@/app/actions/submit-application';
 import type React from 'react';
 
-import { FormField, canadianProvinces } from './form-elements';
+import { FormField, australianStates } from './form-elements';
 
 interface StepProps {
   formData: Partial<ApplicationData>;
@@ -34,7 +34,7 @@ export function PersonalInfoStep({
 
   return (
     <div className='space-y-6'>
-      <h3 className='mb-4 text-xl font-semibold text-white'>
+      <h3 className='mb-4 text-2xl font-semibold text-gray-900 md:text-3xl'>
         Personal Details
       </h3>
       <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
@@ -82,7 +82,7 @@ export function PersonalInfoStep({
           onChange={handleChange}
           error={errors?.phone}
           required
-          placeholder='(123) 456-7890'
+          placeholder='0412 345 678'
           autoComplete='tel'
           inputMode='tel'
           pattern='[0-9\s\(\)\-\+]+'
@@ -90,8 +90,8 @@ export function PersonalInfoStep({
         />
       </div>
 
-      <h3 className='mb-4 mt-6 text-xl font-semibold text-white'>
-        Residential Address (Canada)
+      <h3 className='mb-4 mt-6 text-2xl font-semibold text-gray-900 md:text-3xl'>
+        Residential Address (Australia)
       </h3>
       <FormField
         id='streetAddress'
@@ -100,7 +100,7 @@ export function PersonalInfoStep({
         onChange={handleChange}
         error={errors?.streetAddress}
         required
-        placeholder='123 Main St, Apt 4B'
+        placeholder='123 Collins Street, Unit 4B'
         autoComplete='street-address'
         maxLength={200}
       />
@@ -112,15 +112,15 @@ export function PersonalInfoStep({
           onChange={handleChange}
           error={errors?.city}
           required
-          placeholder='Toronto'
+          placeholder='Melbourne'
           autoComplete='address-level2'
           maxLength={100}
         />
         <FormField
           id='province'
-          label='Province'
+          label='State/Territory'
           type='select'
-          options={canadianProvinces}
+          options={australianStates}
           value={formData.province || ''}
           onChange={handleChange}
           error={errors?.province}
@@ -129,28 +129,28 @@ export function PersonalInfoStep({
         />
         <FormField
           id='postalCode'
-          label='Postal Code'
+          label='Postcode'
           value={formData.postalCode || ''}
           onChange={handleChange}
           error={errors?.postalCode}
           required
-          placeholder='A1B 2C3'
+          placeholder='3000'
           autoComplete='postal-code'
-          pattern='[A-Za-z]\d[A-Za-z][\s\-]?\d[A-Za-z]\d'
-          maxLength={7}
+          pattern='\d{4}'
+          maxLength={4}
         />
       </div>
       <FormField
         id='sin'
-        label='Social Insurance Number (SIN)'
+        label='Tax File Number (TFN)'
         value={formData.sin || ''}
         onChange={handleChange}
         error={errors?.sin}
         required
-        placeholder='123-456-789 or 123456789'
-        info='Your SIN is required for tax reporting purposes by the Canada Revenue Agency (CRA).'
+        placeholder='123 456 789'
+        info='Your TFN is required for tax reporting purposes by the Australian Taxation Office (ATO).'
         inputMode='numeric'
-        pattern='[0-9\-\s]+'
+        pattern='[0-9\s]+'
         maxLength={11}
       />
     </div>

@@ -62,7 +62,7 @@ export function ApplicationWizard() {
     initialApplicationData
   );
   const [isPending, startTransition] = useTransition();
-  const [formState, formAction] = useActionState<FormState | null, FormData>(
+  const [formState] = useActionState<FormState | null, FormData>(
     submitApplication,
     null
   );
@@ -92,13 +92,13 @@ export function ApplicationWizard() {
 
   if (formState?.success && formState.submittedData) {
     return (
-      <Card className='mx-auto w-full max-w-3xl border-green-500/30 bg-slate-800/70 shadow-2xl'>
-        <CardHeader className='border-b border-green-500/20 bg-gradient-to-r from-green-900/20 to-blue-900/20'>
-          <CardTitle className='text-center text-3xl font-bold text-white'>
+      <Card className='mx-auto w-full max-w-3xl border-green-200 bg-white shadow-2xl'>
+        <CardHeader className='border-b border-green-200 bg-green-50'>
+          <CardTitle className='text-center text-3xl font-bold text-gray-900'>
             ✅ Application Submitted Successfully!
           </CardTitle>
-          <CardDescription className='text-center text-lg text-green-300'>
-            Your OpenAI Pre-IPO investment application has been received
+          <CardDescription className='text-center text-lg text-green-600'>
+            Your Databricks Pre-IPO investment application has been received
           </CardDescription>
         </CardHeader>
         <CardContent className='p-8 text-center'>
@@ -106,9 +106,9 @@ export function ApplicationWizard() {
 
           {/* Submission ID Display */}
           {formState.submissionId && (
-            <div className='mb-6 rounded-xl border border-green-500/30 bg-slate-700/50 p-4'>
-              <p className='mb-2 text-sm text-gray-400'>Reference ID</p>
-              <p className='font-mono text-2xl font-bold tracking-wider text-green-400'>
+            <div className='mb-6 rounded-xl border border-green-200 bg-green-50 p-4'>
+              <p className='mb-2 text-sm text-gray-600'>Reference ID</p>
+              <p className='font-mono text-2xl font-bold tracking-wider text-green-700'>
                 {formState.submissionId}
               </p>
               <p className='mt-2 text-xs text-gray-500'>
@@ -117,16 +117,16 @@ export function ApplicationWizard() {
             </div>
           )}
 
-          <p className='mb-4 text-lg leading-relaxed text-gray-200'>
+          <p className='mb-4 text-lg leading-relaxed text-gray-700'>
             {formState.message}
           </p>
 
           {/* Next Steps */}
-          <div className='mb-6 rounded-xl bg-slate-700/30 p-6 text-left'>
-            <h3 className='mb-4 text-center text-lg font-semibold text-white'>
+          <div className='mb-6 rounded-xl border border-gray-200 bg-gray-50 p-6 text-left'>
+            <h3 className='mb-4 text-center text-lg font-semibold text-gray-900'>
               What Happens Next?
             </h3>
-            <div className='space-y-3 text-sm text-gray-300'>
+            <div className='space-y-3 text-sm text-gray-700'>
               <div className='flex items-start space-x-3'>
                 <div className='mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white'>
                   1
@@ -171,16 +171,16 @@ export function ApplicationWizard() {
             <p className='mb-2'>Have questions? Contact our investment team:</p>
             <div className='flex flex-col space-y-2 sm:flex-row sm:justify-center sm:space-x-6 sm:space-y-0'>
               <a
-                href='tel:+14378861252'
+                href='tel:+61385779534'
                 className='text-blue-400 transition-colors hover:text-blue-300'
               >
-                📞 +1 (437) 886-1252
+                📞 +61 3 8577 9534
               </a>
               <a
-                href='mailto:info@maryanacap.com'
+                href='mailto:admin@mpsfc.com'
                 className='text-blue-400 transition-colors hover:text-blue-300'
               >
-                ✉️ info@maryanacap.com
+                ✉️ admin@mpsfc.com
               </a>
             </div>
           </div>
@@ -206,15 +206,15 @@ export function ApplicationWizard() {
   }
 
   return (
-    <Card className='mx-auto w-full max-w-3xl border-primary/30 bg-slate-800/70 shadow-2xl'>
+    <Card className='mx-auto w-full max-w-3xl border-gray-200 bg-white shadow-2xl'>
       <CardHeader className='text-center'>
-        <CardTitle className='bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-3xl font-bold text-transparent md:text-4xl'>
+        <CardTitle className='text-3xl font-bold text-gray-900 md:text-4xl'>
           Investment Application
         </CardTitle>
-        <CardDescription className='mt-2 text-lg text-gray-300'>
-          Secure your interest in OpenAI Pre-IPO shares.
+        <CardDescription className='mt-2 text-lg text-gray-600'>
+          Secure your interest in Databricks Pre-IPO shares.
           <br />
-          <span className='font-medium text-blue-400'>
+          <span className='font-medium text-blue-600'>
             Step {currentStep + 1} of {STEPS.length}:
           </span>{' '}
           {STEPS[currentStep].title}
@@ -222,9 +222,9 @@ export function ApplicationWizard() {
         <div className='mt-4 space-y-2'>
           <Progress
             value={progressValue}
-            className='h-3 w-full bg-slate-700 [&>div]:bg-gradient-to-r [&>div]:from-blue-500 [&>div]:to-purple-500'
+            className='h-3 w-full bg-gray-200 [&>div]:bg-blue-600'
           />
-          <div className='flex justify-between text-xs text-gray-400'>
+          <div className='flex justify-between text-xs text-gray-500'>
             <span>Progress: {Math.round(progressValue)}%</span>
             <span>{STEPS.length - (currentStep + 1)} steps remaining</span>
           </div>
@@ -246,15 +246,15 @@ export function ApplicationWizard() {
           </Alert>
         )}
         {formState && (
-          <div className='mb-4 rounded border border-yellow-500/50 bg-yellow-900/20 p-3'>
-            <p className='text-xs text-yellow-300'>
+          <div className='mb-4 rounded border border-orange-200 bg-orange-50 p-3'>
+            <p className='text-xs text-orange-700'>
               <strong>Debug Info:</strong> FormState ={' '}
               {JSON.stringify(formState, null, 2)}
             </p>
           </div>
         )}
         <form
-          action='https://formsubmit.co/info@maryanacap.com'
+          action='https://formsubmit.co/admin@mpsfc.com'
           method='POST'
           onSubmit={(e) => {
             const formDataObj = new FormData(e.currentTarget);
@@ -319,7 +319,7 @@ export function ApplicationWizard() {
               variant='outline'
               onClick={handlePrevious}
               disabled={currentStep === 0 || isPending}
-              className='w-full sm:w-auto'
+              className='min-h-[48px] w-full py-3 sm:w-auto'
             >
               {isPending && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
               Previous
@@ -329,7 +329,7 @@ export function ApplicationWizard() {
                 type='button'
                 onClick={handleNext}
                 disabled={isPending}
-                className='w-full sm:w-auto'
+                className='min-h-[48px] w-full py-3 sm:w-auto'
               >
                 {isPending && <Loader2 className='mr-2 h-4 w-4 animate-spin' />}
                 Next

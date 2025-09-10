@@ -2,31 +2,52 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://openai-investment.com/sitemap.xml
+Sitemap: https://databricks-investment.com/sitemap.xml
 
-# Crawl delay (optional - helps prevent server overload)
+# Crawl delay (helps prevent server overload)
 Crawl-delay: 1
 
-# Disallow specific paths if needed (currently allowing all)
-# Disallow: /admin/
-# Disallow: /private/
+# Disallow admin and private paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /verify-email
 
-# Allow specific crawlers
+# Allow specific crawlers for better SEO
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
-# Block unwanted crawlers (optional)
-User-agent: BadBot
-Disallow: /
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
 
+# Block unwanted crawlers and scrapers
 User-agent: SemrushBot
 Disallow: /
 
 User-agent: AhrefsBot
-Disallow: / 
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Block social media crawlers for private investment content
+User-agent: facebookexternalhit
+Disallow: /apply
+Disallow: /share-agreement
+
+User-agent: Twitterbot
+Disallow: /apply
+Disallow: /share-agreement

@@ -13,18 +13,18 @@ export default function NotFound() {
       <header className='border-b border-slate-800/50 bg-slate-950/95 backdrop-blur-xl'>
         <div className='mx-auto max-w-7xl px-4 py-4'>
           <div className='flex items-center'>
-            <div className='openai-logo-container'>
+            <div className='mps-logo-container'>
               <Image
-                src='/maryana-logo.webp'
-                alt='Maryana Capital Inc. Logo'
+                src='/mps-logo.png'
+                alt='MPS Limited Logo'
                 width={32}
                 height={32}
-                className='openai-logo-image rounded-md ring-1 ring-slate-700/50'
+                className='mps-logo-image rounded-lg shadow-sm'
               />
             </div>
             <div className='ml-4'>
               <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-xl font-bold text-transparent'>
-                OpenAI Pre-IPO
+                Databricks Pre-IPO
               </h1>
               <p className='text-xs text-gray-400'>Investment Opportunity</p>
             </div>
@@ -135,7 +135,7 @@ export default function NotFound() {
                   </a>
                 </Button>
                 <Button asChild variant='outline'>
-                  <a href='mailto:info@maryanacap.com'>
+                  <a href='mailto:admin@mpsfc.com'>
                     <Mail className='mr-2 h-4 w-4' />
                     Email Support
                   </a>

@@ -18,7 +18,7 @@ interface StepProps {
 
 export function DocumentUploadStep({
   formData,
-  updateFormData,
+  updateFormData: _updateFormData, // eslint-disable-line @typescript-eslint/no-unused-vars
   errors,
 }: StepProps) {
   const [idFrontPreview, setIdFrontPreview] = useState<string | null>(

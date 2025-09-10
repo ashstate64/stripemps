@@ -16,6 +16,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import type { ApplicationData } from '@/app/actions/submit-application';
+// Design system removed due to template literal issues - using direct Tailwind classes
 
 interface FormFieldProps {
   id: keyof ApplicationData | string;
@@ -69,12 +70,12 @@ export function FormField({
     <div className={`space-y-2 ${className}`}>
       <Label
         htmlFor={fieldId}
-        className='font-medium text-gray-200 transition-colors duration-200'
+        className='font-medium text-gray-900 transition-colors duration-200'
       >
-        {label} {required && <span className='text-red-500'>*</span>}
+        {label} {required && <span className='text-red-600'>*</span>}
       </Label>
       {info && (
-        <p className='-mt-1 mb-1 text-xs leading-relaxed text-gray-400'>
+        <p className='-mt-1 mb-1 text-xs leading-relaxed text-gray-600'>
           {info}
         </p>
       )}
@@ -85,15 +86,15 @@ export function FormField({
           onValueChange={(val) => onChange(val, fieldId)}
           required={required}
         >
-          <SelectTrigger className='w-full border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'>
+          <SelectTrigger className='w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500'>
             <SelectValue placeholder={placeholder || 'Select an option'} />
           </SelectTrigger>
-          <SelectContent className='border-slate-600 bg-slate-700 text-gray-200'>
+          <SelectContent className='border-gray-200 bg-white text-gray-900'>
             {options.map((option) => (
               <SelectItem
                 key={option.value}
                 value={option.value}
-                className='hover:bg-slate-600'
+                className='hover:bg-gray-100'
               >
                 {option.label}
               </SelectItem>
@@ -110,7 +111,8 @@ export function FormField({
             onChange as (e: React.ChangeEvent<HTMLTextAreaElement>) => void
           }
           required={required}
-          className='min-h-[80px] border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'
+          className='min-h-[80px] rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder-gray-500 transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500'
+          style={{ fontSize: '16px' }} // Prevents zoom on iOS
         />
       ) : (
         <Input
@@ -131,7 +133,8 @@ export function FormField({
             ariaDescribedBy ||
             (error && error.length > 0 ? `${fieldId}-error` : undefined)
           }
-          className='min-h-[44px] border-slate-600 bg-slate-700 text-gray-200 focus:ring-primary'
+          className='min-h-[44px] rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder-gray-500 transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500'
+          style={{ fontSize: '16px' }} // Prevents zoom on iOS
         />
       )}
       {error && error.length > 0 && (
@@ -276,34 +279,29 @@ export function RadioGroupField({
   );
 }
 
-export const canadianProvinces = [
-  { value: 'AB', label: 'Alberta' },
-  { value: 'BC', label: 'British Columbia' },
-  { value: 'MB', label: 'Manitoba' },
-  { value: 'NB', label: 'New Brunswick' },
-  { value: 'NL', label: 'Newfoundland and Labrador' },
-  { value: 'NS', label: 'Nova Scotia' },
-  { value: 'ON', label: 'Ontario' },
-  { value: 'PE', label: 'Prince Edward Island' },
-  { value: 'QC', label: 'Quebec' },
-  { value: 'SK', label: 'Saskatchewan' },
-  { value: 'NT', label: 'Northwest Territories' },
-  { value: 'NU', label: 'Nunavut' },
-  { value: 'YT', label: 'Yukon' },
+export const australianStates = [
+  { value: 'NSW', label: 'New South Wales' },
+  { value: 'VIC', label: 'Victoria' },
+  { value: 'QLD', label: 'Queensland' },
+  { value: 'WA', label: 'Western Australia' },
+  { value: 'SA', label: 'South Australia' },
+  { value: 'TAS', label: 'Tasmania' },
+  { value: 'ACT', label: 'Australian Capital Territory' },
+  { value: 'NT', label: 'Northern Territory' },
 ];
 
 export const incomeRanges = [
-  { value: '<50k', label: 'Under $50,000 CAD' },
-  { value: '50k-99k', label: '$50,000 - $99,999 CAD' },
-  { value: '100k-149k', label: '$100,000 - $149,999 CAD' },
-  { value: '150k-199k', label: '$150,000 - $199,999 CAD' },
-  { value: '200k-299k', label: '$200,000 - $299,999 CAD' },
-  { value: '>300k', label: '$300,000 CAD or more' },
+  { value: '<50k', label: 'Under $50,000 AUD' },
+  { value: '50k-99k', label: '$50,000 - $99,999 AUD' },
+  { value: '100k-149k', label: '$100,000 - $149,999 AUD' },
+  { value: '150k-199k', label: '$150,000 - $199,999 AUD' },
+  { value: '200k-299k', label: '$200,000 - $299,999 AUD' },
+  { value: '>300k', label: '$300,000 AUD or more' },
 ];
 
 export const netAssetsRanges = [
-  { value: '<250k', label: 'Under $250,000 CAD' },
-  { value: '250k-999k', label: '$250,000 - $999,999 CAD' },
-  { value: '1M-4.9M', label: '$1,000,000 - $4,999,999 CAD' },
-  { value: '>5M', label: '$5,000,000 CAD or more' },
+  { value: '<250k', label: 'Under $250,000 AUD' },
+  { value: '250k-999k', label: '$250,000 - $999,999 AUD' },
+  { value: '1M-4.9M', label: '$1,000,000 - $4,999,999 AUD' },
+  { value: '>5M', label: '$5,000,000 AUD or more' },
 ];
