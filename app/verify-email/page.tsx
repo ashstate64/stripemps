@@ -43,7 +43,7 @@ export default function VerifyEmailPage() {
               ✅ Application Submitted Successfully!
             </CardTitle>
             <CardDescription className='text-lg text-green-300'>
-              Your OpenAI Pre-IPO investment application has been received
+              Your Databricks Pre-IPO investment application has been received
             </CardDescription>
           </CardHeader>
 

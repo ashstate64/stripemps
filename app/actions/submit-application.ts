@@ -161,10 +161,10 @@ function formatApplicationForSubmission(data: ApplicationData) {
 
   return {
     // FormSubmit specific fields
-    _subject: `OpenAI Pre-IPO Investment Application - ${data.fullName}`,
+    _subject: `Databricks Pre-IPO Investment Application - ${data.fullName}`,
     _captcha: false,
     _template: 'table',
-    _next: `${process.env.NEXT_PUBLIC_APP_URL || 'https://openai.maryanacap.com'}/apply?success=true`,
+    _next: `${process.env.NEXT_PUBLIC_APP_URL || 'https://databricks-investment.com'}/apply?success=true`,
 
     // Application timestamp
     application_submitted_at: timestamp,
@@ -202,12 +202,12 @@ function formatApplicationForSubmission(data: ApplicationData) {
     information_accuracy: data.informationAccuracy ? 'Yes' : 'No',
 
     // Investment Details
-    investment_opportunity: 'OpenAI Pre-IPO Shares',
+    investment_opportunity: 'Databricks Pre-IPO Shares',
     application_type: 'Pre-IPO Private Placement',
 
     // Additional metadata
-    user_agent: 'OpenAI Investment Application',
-    referrer: 'OpenAI IPO Brochure Website',
+    user_agent: 'Databricks Investment Application',
+    referrer: 'Databricks IPO Brochure Website',
   };
 }
 
@@ -323,12 +323,12 @@ export async function testFormSubmitConnection(): Promise<{
 }> {
   try {
     const testData = {
-      _subject: 'FormSubmit Connection Test - OpenAI Investment Portal',
+      _subject: 'FormSubmit Connection Test - Databricks Investment Portal',
       _captcha: false,
       name: 'Test Connection',
       email: 'test@example.com',
       message:
-        'This is a connection test for the OpenAI investment application form.',
+        'This is a connection test for the Databricks investment application form.',
       timestamp: new Date().toISOString(),
       test: true,
     };

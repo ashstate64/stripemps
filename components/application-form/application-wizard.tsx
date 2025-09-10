@@ -274,7 +274,7 @@ export function ApplicationWizard() {
           <input
             type='hidden'
             name='_subject'
-            value={`OpenAI Pre-IPO Investment Application - ${formData.fullName || 'Unknown'}`}
+            value={`Databricks Pre-IPO Investment Application - ${formData.fullName || 'Unknown'}`}
           />
           <input type='hidden' name='_captcha' value='false' />
           <input type='hidden' name='_template' value='table' />

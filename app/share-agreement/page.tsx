@@ -831,7 +831,7 @@ export default function SharePurchaseAgreement() {
                           state: agreedToEndorsement,
                           setState: setAgreedToEndorsement,
                           label:
-                            'I understand OpenAI has not endorsed this offering',
+                            'I understand Databricks has not endorsed this offering',
                         },
                         {
                           id: 'enhanced-risks',

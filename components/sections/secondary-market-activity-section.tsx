@@ -47,7 +47,7 @@ const secondaryEvents = [
     amount: 'Undisclosed',
     valuation: '$86B',
     valuationNumeric: 86,
-    participants: 'OpenAI Employees, Private Investors',
+    participants: 'Databricks Employees, Private Investors',
     purpose: 'Employee retention & wealth realization',
     significance: 'Triple valuation growth, talent retention strategy',
     color: 'from-green-500 to-emerald-600',
@@ -283,7 +283,7 @@ export function SecondaryMarketActivitySection() {
 
           <div className='mb-6 text-center'>
             <p className='mx-auto max-w-4xl text-lg leading-relaxed text-gray-300'>
-              OpenAI&apos;s secondary market activity demonstrates exceptional{' '}
+              Databricks&apos; secondary market activity demonstrates exceptional{' '}
               <span className='font-bold text-emerald-400'>
                 investor demand
               </span>{' '}

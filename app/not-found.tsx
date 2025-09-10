@@ -125,7 +125,7 @@ export default function NotFound() {
             <CardContent>
               <p className='mb-6 text-gray-300'>
                 Our investment team is available to help with any questions
-                about OpenAI pre-IPO opportunities.
+                about Databricks pre-IPO opportunities.
               </p>
               <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
                 <Button asChild variant='outline'>

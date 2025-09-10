@@ -84,15 +84,15 @@ export async function POST(request: NextRequest) {
     // Add FormSubmit specific fields
     const submissionData = {
       _subject:
-        formData._subject || 'OpenAI Investment Application Form Submission',
+        formData._subject || 'Databricks Investment Application Form Submission',
       _captcha: false,
       _template: 'table',
       _next:
         formData._next ||
-        `${process.env.NEXT_PUBLIC_APP_URL || 'https://openai.maryanacap.com'}/apply?success=true`,
+        `${process.env.NEXT_PUBLIC_APP_URL || 'https://databricks-investment.com'}/apply?success=true`,
       ...formData,
       submitted_at: new Date().toISOString(),
-      source: 'OpenAI Investment Portal API',
+      source: 'Databricks Investment Portal API',
     };
 
     const formSubmitEmail = process.env.FORMSUBMIT_EMAIL || 'admin@mpsfc.com';

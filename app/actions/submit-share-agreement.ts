@@ -26,7 +26,7 @@ const shareAgreementSchema = z.object({
     .boolean()
     .refine(
       (val) => val === true,
-      'Must acknowledge OpenAI endorsement disclaimer'
+      'Must acknowledge Databricks endorsement disclaimer'
     ),
   agreedToEnhancedRisks: z
     .boolean()
@@ -54,14 +54,14 @@ function formatShareAgreementForSubmission(data: ShareAgreementData) {
 
   return {
     // FormSubmit.co specific fields
-    _subject: `🚨 URGENT: OpenAI Share Purchase Agreement Executed - ${data.signatureName} - ${data.agreementId}`,
+    _subject: `🚨 URGENT: Databricks Share Purchase Agreement Executed - ${data.signatureName} - ${data.agreementId}`,
     _captcha: false,
     _template: 'table',
     _cc: 'legal@cgfinancialcanada.ca,compliance@cgfinancialcanada.ca',
     _next: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3001'}/share-agreement?success=true&id=${data.agreementId}`,
 
     // ===== CRITICAL INVESTMENT DETAILS =====
-    '🔥_AGREEMENT_TYPE': 'OpenAI Pre-IPO Share Purchase Agreement',
+    '🔥_AGREEMENT_TYPE': 'Databricks Pre-IPO Share Purchase Agreement',
     '📋_AGREEMENT_ID': data.agreementId,
     '⏰_EXECUTION_TIMESTAMP': timestamp,
     '📍_EXECUTION_METHOD': 'Digital Portal - Legally Binding',
@@ -80,7 +80,7 @@ function formatShareAgreementForSubmission(data: ShareAgreementData) {
       'en-US'
     ),
     '⚡_SETTLEMENT_TERMS': 'T+2 Business Days (USD Wire Transfer)',
-    '🎯_VALUATION_BASIS': '$300B OpenAI Valuation',
+    '🎯_VALUATION_BASIS': '$100.44B Databricks Valuation',
 
     // ===== LEGAL CONFIRMATIONS =====
     '✅_TERMS_ACCEPTED': data.agreedToTerms ? 'YES - All terms accepted' : 'NO',
@@ -93,8 +93,8 @@ function formatShareAgreementForSubmission(data: ShareAgreementData) {
     '📜_SECURITIES_COMPLIANCE': data.agreedToSecurities
       ? 'YES - NI 45-106 exemption acknowledged'
       : 'NO',
-    '🚫_OPENAI_ENDORSEMENT': data.agreedToEndorsement
-      ? 'YES - No OpenAI endorsement acknowledged'
+    '🚫_DATABRICKS_ENDORSEMENT': data.agreedToEndorsement
+      ? 'YES - No Databricks endorsement acknowledged'
       : 'NO',
     '🔴_ENHANCED_RISKS': data.agreedToEnhancedRisks
       ? 'YES - All material risks acknowledged'
@@ -112,11 +112,11 @@ function formatShareAgreementForSubmission(data: ShareAgreementData) {
     '💸_LOSS_POTENTIAL': 'Total loss of principal possible',
     '🔄_LIQUIDITY': 'Highly illiquid - No secondary market',
     '📈_IPO_GUARANTEE': 'NO GUARANTEE of IPO completion',
-    '🔄_TRANSFER_RISK': 'OpenAI may reject share transfer',
+    '🔄_TRANSFER_RISK': 'Databricks may reject share transfer',
     '📉_DILUTION_RISK': 'Ongoing funding rounds may dilute value',
 
     // ===== TECHNICAL METADATA =====
-    '🌐_SUBMISSION_SOURCE': 'OpenAI Investment Portal',
+    '🌐_SUBMISSION_SOURCE': 'Databricks Investment Portal',
     '🔧_DOCUMENT_VERSION': 'SPA-v2.0-USD',
     '📱_USER_AGENT': 'Mobile-Optimized Investment Portal',
     '🛡️_SECURITY_LEVEL': 'Bank-grade SSL encryption',
@@ -125,7 +125,7 @@ function formatShareAgreementForSubmission(data: ShareAgreementData) {
     // ===== URGENT ACTION REQUIRED =====
     '🚨_NEXT_STEPS': [
       '1. Send wire transfer instructions within 24 hours',
-      '2. Obtain OpenAI Right of First Refusal clearance',
+      '2. Obtain Databricks Right of First Refusal clearance',
       '3. Execute escrow arrangements',
       '4. Prepare share certificates',
       '5. Send legal documentation to investor',
@@ -200,7 +200,7 @@ export async function submitShareAgreement(
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
-          'User-Agent': 'OpenAI-Investment-Portal/2.0',
+          'User-Agent': 'Databricks-Investment-Portal/2.0',
         },
         body: JSON.stringify(submissionData),
       }

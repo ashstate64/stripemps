@@ -278,7 +278,7 @@ export default function FormSubmitAdminPage() {
             </h1>
             <p className='mx-auto max-w-2xl text-lg text-gray-300'>
               Test your FormSubmit integration, manage API keys, and view form
-              submissions for the OpenAI investment application.
+              submissions for the Databricks investment application.
             </p>
           </div>
 
@@ -391,7 +391,7 @@ export default function FormSubmitAdminPage() {
                 </h3>
                 <p className='text-sm'>
                   Once you have an API key configured, you can retrieve and view
-                  all form submissions made through your OpenAI investment
+                  all form submissions made through your Databricks investment
                   application.
                 </p>
               </div>
