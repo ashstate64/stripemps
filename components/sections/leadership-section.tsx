@@ -90,8 +90,8 @@ export function LeadershipSection() {
               key={leader.name}
               className='flex flex-col items-center rounded-lg border border-gray-200 bg-white p-4 text-center shadow-sm transition-all duration-300 hover:shadow-md'
             >
-              <Image
-                src={leader.imageUrl || '/placeholder.svg'}
+              <img
+                src={leader.imageUrl || '/placeholder-user.jpg'}
                 alt={`Headshot of ${leader.name}`}
                 width={80}
                 height={80}
