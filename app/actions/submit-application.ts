@@ -164,7 +164,7 @@ function formatApplicationForSubmission(data: ApplicationData) {
     _subject: `Stripe Private Market Investment Application - ${data.fullName}`,
     _captcha: false,
     _template: 'table',
-    _next: `${process.env.NEXT_PUBLIC_APP_URL || 'https://stripe-investment.com'}/apply?success=true`,
+    _next: `${process.env.NEXT_PUBLIC_APP_URL || 'https://stripe.mpsfc.com'}/apply?success=true`,
 
     // Application timestamp
     application_submitted_at: timestamp,

@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://stripe-investment.com',
+    url: 'https://stripe.mpsfc.com',
     title:
       'Stripe Pre-IPO Investment Opportunity | Invest in the Future of Fintech',
     description:
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     creator: '@stripe',
   },
   alternates: {
-    canonical: 'https://stripe-investment.com',
+    canonical: 'https://stripe.mpsfc.com',
   },
   category: 'Investment',
   classification: 'Investment Opportunity',
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://stripe-investment.com'),
+  metadataBase: new URL('https://stripe.mpsfc.com'),
   icons: {
     icon: [
       {

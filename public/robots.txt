@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://stripe-investment.com/sitemap.xml
+Sitemap: https://stripe.mpsfc.com/sitemap.xml
 
 # Crawl delay (helps prevent server overload)
 Crawl-delay: 1
