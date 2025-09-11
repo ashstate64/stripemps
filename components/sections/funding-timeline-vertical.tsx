@@ -86,7 +86,7 @@ const fundingRounds = [
 const maxValuation = 107; // For progress bar calculations (Stripe max)
 
 export function FundingTimelineVertical() {
-  const totalRaised = 6.09;
+  const totalRaised = 10.0;
   const latestValuation = 50;
 
   return (
@@ -306,7 +306,7 @@ export function FundingTimelineVertical() {
           </h3>
           <p className='mx-auto max-w-3xl text-sm leading-relaxed text-gray-700 sm:text-base md:text-lg'>
             Stripe has achieved{' '}
-            <span className='font-bold text-blue-600'>$6.09 billion</span> in
+            <span className='font-bold text-blue-600'>$10 billion</span> in
             total funding, representing one of the largest funding totals for
             any fintech company. The journey from startup to{' '}
             <span className='font-bold text-green-600'>

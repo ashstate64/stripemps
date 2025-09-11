@@ -123,7 +123,7 @@ export default function DigitalBrochurePage() {
       ],
       stats: [
         { label: 'Latest Tender Offer', value: '$91.5 Billion' },
-        { label: 'Total Funding Raised', value: '~$9.8 Billion' },
+        { label: 'Total Funding Raised', value: '~$10B (tracker-estimated)' },
         { label: '2024 Payment Volume', value: '$1.4 Trillion' },
         { label: 'Profitability Status', value: 'Since 2024' },
       ],
@@ -154,7 +154,7 @@ export default function DigitalBrochurePage() {
       icon: <UsersRound className='mb-4 h-10 w-10 text-primary' />,
       title: 'Institutional Backing: World-Class Investor Portfolio',
       content:
-        "Stripe's investor base includes the world's most sophisticated technology and financial institutions. Publicly confirmed primary raises include $600M (2021) and $6.5B (2023), with trackers estimating ~$9.8B total across all funding rounds. The company has attracted backing from Andreessen Horowitz, Sequoia Capital, Tiger Global, General Catalyst, and other premier investment firms.",
+        "Stripe's investor base includes the world's most sophisticated technology and financial institutions. Publicly confirmed primary raises include $600M (2021) and $6.5B (2023), with trackers estimating ~$10B total across all funding rounds. The company has attracted backing from Andreessen Horowitz, Sequoia Capital, Tiger Global, General Catalyst, and other premier investment firms.",
       majorHolders: [
         {
           name: 'Andreessen Horowitz',
@@ -515,7 +515,7 @@ export default function DigitalBrochurePage() {
                   delay: 'delay-0',
                 },
                 {
-                  value: '~$9.8B',
+                  value: '~$10B',
                   label: 'Total Funding Raised',
                   color: 'text-gray-700',
                   delay: 'delay-100',
@@ -761,7 +761,7 @@ export default function DigitalBrochurePage() {
                             </h3>
                             <p className='mx-auto max-w-2xl text-lg text-gray-600'>
                               Leading global investors backing Stripe&apos;s
-                              mission with ~$9.8 billion in total funding
+                              mission with ~$10 billion in total funding
                             </p>
                           </div>
 
@@ -887,7 +887,7 @@ export default function DigitalBrochurePage() {
                                 Total Institutional Investment
                               </h4>
                               <div className='text-5xl font-bold text-blue-600'>
-                                ~$9.8 Billion
+                                ~$10 Billion
                               </div>
                               <p className='text-base text-gray-600'>
                                 Estimated total across funding rounds since 2009
