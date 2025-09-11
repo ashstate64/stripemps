@@ -9,6 +9,10 @@
 [functions]
   node_bundler = "esbuild"
 
+# Next.js plugin for proper integration
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 # Security headers
 [[headers]]
   for = "/*"
