@@ -1,5 +1,3 @@
-'use server';
-
 import { z } from 'zod';
 
 // Define Zod schema for validation (simplified for brevity)

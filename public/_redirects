@@ -1,1 +1,10 @@
+# Redirects for common paths
+/home    /    301
+/invest    /apply    301
+/investment    /apply    301
+/openai    /    301
+/about    /#opportunity    302
+/contact    /#investors    302
+
+# SPA fallback
 /*    /index.html   200

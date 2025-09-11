@@ -1,5 +1,3 @@
-'use server';
-
 import { z } from 'zod';
 
 // Define Zod schema for share agreement validation - Updated for CAD $10,000 minimum
