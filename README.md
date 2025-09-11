@@ -4,7 +4,7 @@ A professional investment platform for Stripe private market opportunities, mana
 
 ## 🚀 Overview
 
-This Next.js application provides accredited investors with access to exclusive Stripe private market investment opportunities. The platform features comprehensive company information, financial data, leadership profiles, and a complete investment application process.
+This Next.js application provides wholesale clients with access to exclusive Stripe private market investment opportunities. The platform features comprehensive company information, financial data, leadership profiles, and a complete investment application process.
 
 ## 📊 Key Features
 
@@ -163,10 +163,10 @@ This project is proprietary and confidential. All rights reserved by Managed Por
 
 ## ⚠️ Investment Disclaimer
 
-This investment involves substantial risk, including potential total loss of principal. Past performance does not guarantee future results. This opportunity is exclusively available to accredited investors as defined by securities regulations. Please read full disclosures and consult with your financial advisor before making investment decisions.
+This investment involves substantial risk, including potential total loss of principal. Past performance does not guarantee future results. This opportunity is exclusively available to wholesale clients as defined in the Corporations Act. Please read full disclosures and consult with your financial advisor before making investment decisions.
 
 ---
 
 **© 2025 Managed Portfolio Services Limited**  
-AFSL 00233761 | ABN 77 009 549 697 | AFCA Member #10872  
+AFSL 233761 | ABN 77 009 549 697 | AFCA Member #10872  
 Regulated by the Australian Securities and Investments Commission (ASIC)

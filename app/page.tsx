@@ -93,7 +93,7 @@ export default function DigitalBrochurePage() {
       icon: <Lightbulb className='mb-4 h-10 w-10 text-primary' />,
       title: 'Investment Thesis: The Stripe Opportunity',
       content:
-        'Stripe represents a unique private market investment opportunity in the fintech and payments sector. As a private company valued at $91.5B in its latest Feb 2025 tender offer, Stripe has achieved unprecedented scale processing $1.4T in payment volume during 2024 while maintaining profitability, establishing itself as the leading digital payments infrastructure platform.',
+        'Stripe represents a unique private market investment opportunity in the fintech and payments sector. As a private company valued at $91.5B in its latest Feb 2025 tender offer, Stripe has achieved unprecedented scale processing $1.4T in payment volume during 2024 (as confirmed in the 2025 tender announcement) while maintaining profitability, establishing itself as the leading digital payments infrastructure platform.',
       points: [
         'Market-leading payment processing technology serving millions of businesses globally',
         'Strong financial performance: $1.4T total payment volume in 2024 and profitable since 2024',
@@ -123,7 +123,7 @@ export default function DigitalBrochurePage() {
       ],
       stats: [
         { label: 'Latest Tender Offer', value: '$91.5 Billion' },
-        { label: 'Total Funding Raised', value: '~$10B (tracker-estimated)' },
+        { label: 'Total Funding Raised', value: '~$9.6B (tracker-estimated)' },
         { label: '2024 Payment Volume', value: '$1.4 Trillion' },
         { label: 'Profitability Status', value: 'Since 2024' },
       ],
@@ -154,7 +154,7 @@ export default function DigitalBrochurePage() {
       icon: <UsersRound className='mb-4 h-10 w-10 text-primary' />,
       title: 'Institutional Backing: World-Class Investor Portfolio',
       content:
-        "Stripe's investor base includes the world's most sophisticated technology and financial institutions. Publicly confirmed primary raises include $600M (2021) and $6.5B (2023), with trackers estimating ~$10B total across all funding rounds. The company has attracted backing from Andreessen Horowitz, Sequoia Capital, Tiger Global, General Catalyst, and other premier investment firms.",
+        "Stripe's investor base includes the world's most sophisticated technology and financial institutions. Publicly confirmed primary raises include $600M Series H (2021) and $6.5B Series I (2023), with trackers estimating ~$9.6B total across all funding rounds. The company has attracted backing from Andreessen Horowitz, Sequoia Capital, Tiger Global, General Catalyst, and other premier investment firms.",
       majorHolders: [
         {
           name: 'Andreessen Horowitz',
@@ -166,7 +166,7 @@ export default function DigitalBrochurePage() {
         {
           name: 'Sequoia Capital',
           logo: '/logos/sequoia-capital-logo.png',
-          entry: 'Major investor in Series I $4.6B round in March 2023',
+          entry: 'Major investor in Series I $6.5B round in March 2023',
           stake: 'Major institutional holder',
           bgColor: 'bg-white',
         },
@@ -220,7 +220,7 @@ export default function DigitalBrochurePage() {
       icon: <DollarSign className='mb-4 h-10 w-10 text-primary' />,
       title: 'Investment Rationale: Private Market Opportunity',
       content:
-        'Private market investment in Stripe offers accredited investors exposure to a leading fintech platform with proven profitability and massive scale. Stripe is a private company - there is no official stock price or public market cap. The most recent price signal is the Feb 2025 tender offer valuing Stripe at ~$91.5B.',
+        'Private market investment in Stripe offers wholesale clients exposure to a leading fintech platform with proven profitability and massive scale. Stripe is a private company - there is no official stock price or public market cap. The most recent price signal is the Feb 2025 tender offer valuing Stripe at ~$91.5B.',
       benefits: [
         'Access to profitable fintech leader: $1.4T payment volume processed in 2024',
         'Private market exposure to proven business model with sustainable competitive advantages',
@@ -424,9 +424,9 @@ export default function DigitalBrochurePage() {
               <div className='flex items-center rounded-full border border-blue-200 bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700'>
                 <UsersRound className='mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4' />
                 <span className='text-xs font-medium sm:text-sm'>
-                  <span className='sm:hidden'>Accredited</span>
+                  <span className='sm:hidden'>Wholesale</span>
                   <span className='hidden sm:inline'>
-                    Accredited Investors Only
+                    Wholesale Clients Only
                   </span>
                 </span>
               </div>
@@ -521,7 +521,7 @@ export default function DigitalBrochurePage() {
                   delay: 'delay-0',
                 },
                 {
-                  value: '~$10B',
+                  value: '~$9.6B',
                   label: 'Total Funding Raised',
                   color: 'text-gray-700',
                   delay: 'delay-100',
@@ -1236,7 +1236,7 @@ export default function DigitalBrochurePage() {
               <p className='font-medium'>
                 Regulated by: Australian Securities and Investments Commission
               </p>
-              <p className='mt-1'>ABN: 77 009 549 697 • AFSL: 00233761</p>
+              <p className='mt-1'>ABN: 77 009 549 697 • AFSL: 233761</p>
             </div>
             <div className='text-center sm:col-span-2 lg:col-span-1 lg:text-right'>
               <p className='font-medium'>AFCA: #10872</p>

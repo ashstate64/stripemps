@@ -44,7 +44,7 @@ const secondaryEvents = [
     quarter: 'Q1 2023',
     event: 'Series I Funding',
     type: 'Down Round with Focus',
-    amount: '$4.6B',
+    amount: '$6.5B',
     valuation: '$50B',
     valuationNumeric: 50,
     participants: 'Founders Fund, Temasek, GIC, General Catalyst',

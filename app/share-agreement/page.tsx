@@ -1022,7 +1022,7 @@ export default function SharePurchaseAgreement() {
           </p>
           <p>ASIC Compliant • AFSL 233761 • ABN 77 009 549 697</p>
           <p className='hidden sm:block'>
-            Confidential • Accredited Investors Only
+            Confidential • Wholesale Clients Only
           </p>
           <p className='sm:hidden'>
             AUD Transactions • Professional Investment Advice Suggested

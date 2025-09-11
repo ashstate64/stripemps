@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     'financial services',
     'Australia investment',
     'ASIC regulated',
-    'accredited investors',
+    'wholesale clients',
     'wholesale clients',
     'Series I funding',
     'unicorn company',

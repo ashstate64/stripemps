@@ -42,7 +42,7 @@ const fundingRounds = [
   {
     date: 'Mar 2021',
     event: 'Series H',
-    amount: '$875.1M',
+    amount: '$600M',
     amountType: 'Series H',
     investors: 'Founders Fund, Sequoia Capital, Tiger Global',
     valuation: '$95B',
@@ -56,7 +56,7 @@ const fundingRounds = [
   {
     date: 'Mar 2023',
     event: 'Series I',
-    amount: '$4.6B',
+    amount: '$6.5B',
     amountType: 'Series I',
     investors: 'Founders Fund, Temasek, GIC, General Catalyst',
     valuation: '$50B',
