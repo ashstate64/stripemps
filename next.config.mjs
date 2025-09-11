@@ -6,41 +6,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  // Add redirects to handle common 404s
-  async redirects() {
-    return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/invest',
-        destination: '/apply',
-        permanent: true,
-      },
-      {
-        source: '/investment',
-        destination: '/apply',
-        permanent: true,
-      },
-      {
-        source: '/openai',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/about',
-        destination: '/#opportunity',
-        permanent: false,
-      },
-      {
-        source: '/contact',
-        destination: '/#investors',
-        permanent: false,
-      },
-    ];
-  },
+  // Redirects removed - handled by _redirects file for static export compatibility
 
   // Optimize images and performance
   images: {

@@ -6,5 +6,5 @@
 /about    /#opportunity    302
 /contact    /#investors    302
 
-# SPA fallback
+# SPA fallback for Next.js
 /*    /index.html   200
