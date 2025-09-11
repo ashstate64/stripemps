@@ -1,17 +1,46 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
   eslint: {
     ignoreDuringBuilds: false,
   },
   typescript: {
     ignoreBuildErrors: false,
   },
-  // Redirects are handled by Netlify _redirects file for static export
+  // Add redirects to handle common 404s
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/invest',
+        destination: '/apply',
+        permanent: true,
+      },
+      {
+        source: '/investment',
+        destination: '/apply',
+        permanent: true,
+      },
+      {
+        source: '/openai',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/about',
+        destination: '/#opportunity',
+        permanent: false,
+      },
+      {
+        source: '/contact',
+        destination: '/#investors',
+        permanent: false,
+      },
+    ];
+  },
 
   // Optimize images and performance
   images: {

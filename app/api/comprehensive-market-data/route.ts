@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export const dynamic = 'force-static';
-
 // Simple in-memory rate limiting
 const requestCounts = new Map<string, { count: number; resetTime: number }>();
 
