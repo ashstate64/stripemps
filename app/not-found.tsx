@@ -14,7 +14,7 @@ export default function NotFound() {
         <div className='mx-auto max-w-7xl px-4 py-4'>
           <div className='flex items-center'>
             <div className='mps-logo-container'>
-              <Image
+              <img
                 src='/mps-logo.png'
                 alt='MPS Limited Logo'
                 width={32}

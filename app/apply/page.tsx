@@ -45,7 +45,7 @@ export default function ApplyPage() {
             {/* Compact Brand Identity */}
             <div className='flex flex-1 items-center justify-center space-x-2 sm:space-x-3'>
               <div className='mps-logo-container'>
-                <Image
+                <img
                   src='/mps-logo.png'
                   alt='MPS Limited Logo'
                   width={24}

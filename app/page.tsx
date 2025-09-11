@@ -267,14 +267,13 @@ export default function DigitalBrochurePage() {
             {/* Enhanced Brand Identity with Trust Badges - Mobile optimized */}
             <div className='flex items-center space-x-2 sm:space-x-4'>
               <div className='mps-logo-container'>
-                <Image
+                <img
                   src='/mps-logo.png'
                   alt='MPS Limited Logo'
                   width={40}
                   height={32}
                   className='mps-logo-image rounded-lg object-contain shadow-sm sm:h-10 md:h-10'
                   style={{ width: 'auto', maxWidth: '120px' }}
-                  priority
                 />
               </div>
               {/* Trust Badges */}

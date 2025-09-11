@@ -248,7 +248,7 @@ export default function SharePurchaseAgreement() {
           <div className='flex items-center justify-between'>
             <div className='flex items-center space-x-2 sm:space-x-3'>
               <div className='mps-logo-container'>
-                <Image
+                <img
                   src='/mps-logo.png'
                   alt='MPS Limited Logo'
                   width={24}

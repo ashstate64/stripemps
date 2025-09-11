@@ -247,13 +247,12 @@ export default function FormSubmitAdminPage() {
               </Link>
             </div>
             <div className='flex items-center space-x-3'>
-              <Image
+              <img
                 src='/mps-logo.png'
                 alt='MPS Limited'
                 width={32}
                 height={32}
                 className='h-8 w-8 rounded-lg shadow-sm'
-                priority
               />
               <div className='flex flex-col leading-tight'>
                 <span className='text-xs font-medium tracking-wide text-gray-400'>
