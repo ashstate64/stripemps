@@ -283,7 +283,8 @@ export function SecondaryMarketActivitySection() {
 
           <div className='mb-6 text-center'>
             <p className='mx-auto max-w-4xl text-lg leading-relaxed text-gray-300'>
-              Databricks&apos; secondary market activity demonstrates exceptional{' '}
+              Databricks&apos; secondary market activity demonstrates
+              exceptional{' '}
               <span className='font-bold text-emerald-400'>
                 investor demand
               </span>{' '}

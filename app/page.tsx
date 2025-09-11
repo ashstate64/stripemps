@@ -1143,7 +1143,8 @@ export default function DigitalBrochurePage() {
                     {/* Business Hours */}
                     <div className='mt-3 rounded-md bg-green-100/50 p-2'>
                       <p className='text-xs text-gray-600'>
-                        <strong>Business Hours:</strong> Mon-Fri, 9 AM - 5 PM AEST
+                        <strong>Business Hours:</strong> Mon-Fri, 9 AM - 5 PM
+                        AEST
                       </p>
                     </div>
                   </div>
@@ -1222,7 +1223,9 @@ export default function DigitalBrochurePage() {
           {/* Regulatory & Company Information - Mobile Optimized */}
           <div className='mb-8 grid grid-cols-1 gap-6 text-sm text-gray-600 sm:grid-cols-2 lg:grid-cols-3'>
             <div className='text-center sm:text-left'>
-              <p className='font-semibold text-gray-900'>Managed Portfolio Services Limited</p>
+              <p className='font-semibold text-gray-900'>
+                Managed Portfolio Services Limited
+              </p>
               <p className='mt-1'>Financial Advisory Services</p>
               <p className='mt-1'>Registered in Victoria, Australia</p>
             </div>
@@ -1234,7 +1237,9 @@ export default function DigitalBrochurePage() {
             </div>
             <div className='text-center sm:col-span-2 lg:col-span-1 lg:text-right'>
               <p className='font-medium'>AFCA: #10872</p>
-              <p className='mt-1'>Additional disclosures available upon request</p>
+              <p className='mt-1'>
+                Additional disclosures available upon request
+              </p>
             </div>
           </div>
 

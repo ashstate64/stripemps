@@ -84,7 +84,8 @@ export async function POST(request: NextRequest) {
     // Add FormSubmit specific fields
     const submissionData = {
       _subject:
-        formData._subject || 'Databricks Investment Application Form Submission',
+        formData._subject ||
+        'Databricks Investment Application Form Submission',
       _captcha: false,
       _template: 'table',
       _next:

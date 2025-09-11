@@ -9,6 +9,7 @@ This Next.js application provides accredited investors with access to exclusive 
 ## 📊 Key Features
 
 ### Investment Information
+
 - **Current Stock Price**: $149.70
 - **Market Cap**: $100.44B
 - **Total Funding**: $14.29B
@@ -16,6 +17,7 @@ This Next.js application provides accredited investors with access to exclusive 
 - **Expected IPO**: 2025
 
 ### Platform Features
+
 - 🏢 **Professional Investment Portal**
 - 📱 **Mobile-Responsive Design**
 - 🔒 **ASIC Compliant & Secure**
@@ -39,12 +41,14 @@ This Next.js application provides accredited investors with access to exclusive 
 ## 🏢 Company Information
 
 **Managed Portfolio Services Limited**
+
 - **AFSL**: 00233761
 - **ABN**: 77 009 549 697
 - **AFCA Member**: #10872
 - **Regulated by**: Australian Securities and Investments Commission (ASIC)
 
 **Contact**
+
 - **Address**: Level 1, 800 Bourke Street, Docklands, Victoria 3008, Australia
 - **Phone**: +61 3 8577 9534
 - **Email**: admin@mpsfc.com
@@ -52,13 +56,15 @@ This Next.js application provides accredited investors with access to exclusive 
 ## 🎯 Investment Opportunity
 
 ### Databricks Leadership Team
+
 - **Ali Ghodsi** - Co-founder & CEO
-- **Matei Zaharia** - Co-founder & Chief Technologist  
+- **Matei Zaharia** - Co-founder & Chief Technologist
 - **Reynold Xin** - Co-founder & Chief Architect
 - **Dave Conte** - Chief Financial Officer
 - **Naveen Rao** - VP of Generative AI
 
 ### Major Investors
+
 - Andreessen Horowitz (a16z)
 - Insight Partners
 - DST Global
@@ -68,7 +74,8 @@ This Next.js application provides accredited investors with access to exclusive 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - pnpm (recommended) or npm
 
 ### Installation
