@@ -87,7 +87,7 @@ const maxValuation = 157; // For progress calculations
 
 export function SecondaryMarketActivitySection() {
   const totalLiquidity = 300; // Disclosed amount
-  const valuationGrowth = (((157 - 29) / 29) * 100).toFixed(0); // Growth from first to latest
+  const valuationGrowth = (((157 - 29) / 29) * 100).toFixed(0); // Growth from first to latest (Databricks only)
 
   return (
     <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
