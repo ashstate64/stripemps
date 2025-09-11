@@ -19,75 +19,75 @@ import {
 
 const secondaryEvents = [
   {
-    date: 'January 2023',
-    quarter: 'Q1 2023',
-    event: 'VC Tender Offer',
-    type: 'Early Shareholder Liquidity',
-    amount: '$300M',
-    valuation: '$29B',
-    valuationNumeric: 29,
-    participants: 'Thrive Capital, Founders Fund, Sequoia, a16z',
-    purpose: 'Early investor liquidity & new VC onboarding',
-    significance: 'First major secondary event, established price discovery',
+    date: 'December 2023',
+    quarter: 'Q4 2023',
+    event: 'Series I Funding',
+    type: 'Primary & Secondary Components',
+    amount: '$500M',
+    valuation: '$43B',
+    valuationNumeric: 43,
+    participants: 'T. Rowe Price, Baillie Gifford, Existing Investors',
+    purpose: 'Growth capital & limited secondary liquidity',
+    significance: 'Strong institutional backing, pre-AI boom valuation',
     color: 'from-blue-500 to-cyan-600',
     icon: Users,
     highlight: false,
     outcomes: [
-      'Provided liquidity to early shareholders',
-      'Brought in tier-1 VCs (Sequoia, a16z)',
-      'Established secondary market price',
-      'Validated $29B valuation with market demand',
+      'Established institutional investor base',
+      'Funded AI product development',
+      'Provided limited employee liquidity',
+      'Set foundation for AI revenue growth',
     ],
   },
   {
-    date: 'Early 2024',
-    quarter: 'Q1 2024',
-    event: 'Employee Liquidity Event',
-    type: 'Staff Share Sale Program',
-    amount: 'Undisclosed',
-    valuation: '$86B',
-    valuationNumeric: 86,
-    participants: 'Databricks Employees, Private Investors',
-    purpose: 'Employee retention & wealth realization',
-    significance: 'Triple valuation growth, talent retention strategy',
+    date: 'December 2024',
+    quarter: 'Q4 2024',
+    event: 'Series J Funding',
+    type: 'Growth Round with Secondary',
+    amount: '$1B+',
+    valuation: '$62B',
+    valuationNumeric: 62,
+    participants: 'Thrive Capital, Databricks Employees, Existing VCs',
+    purpose: 'AI expansion & employee wealth realization',
+    significance: '44% valuation increase driven by AI revenue surge',
     color: 'from-green-500 to-emerald-600',
     icon: HandCoins,
     highlight: true,
     outcomes: [
-      '196% valuation increase in 12 months',
-      'Employee retention through equity realization',
-      'Demonstrated explosive growth trajectory',
-      'Enhanced talent acquisition competitiveness',
+      'AI products reached $1B+ revenue run-rate',
+      'Employee equity realization program',
+      'Validated AI-first transformation',
+      'Enhanced talent retention through liquidity',
     ],
   },
   {
-    date: 'Late 2024',
-    quarter: 'Q4 2024',
-    event: 'Planned Corporate Buyback',
-    type: 'Company-Sponsored Tender',
-    amount: 'TBD',
-    valuation: '$157B+',
-    valuationNumeric: 157,
-    participants: 'Employees, Early Investors',
-    purpose: 'Pre-IPO liquidity via corporate treasury',
-    significance: 'Company-funded liquidity, IPO preparation signal',
+    date: 'August 2025',
+    quarter: 'Q3 2025',
+    event: 'Series K Funding',
+    type: 'Pre-IPO Round',
+    amount: '$1B',
+    valuation: '$100B+',
+    valuationNumeric: 100,
+    participants: 'New Strategic Investors, Existing Shareholders',
+    purpose: 'IPO preparation & strategic partnerships',
+    significance: '61% valuation increase, unicorn to centaur status',
     color: 'from-purple-500 to-violet-600',
     icon: Banknote,
     highlight: true,
     outcomes: [
-      'Company-funded buyback program',
-      'Pre-IPO liquidity without dilution',
-      'Signal of IPO readiness and cash generation',
-      'Institutional-grade treasury management',
+      '$4B+ annualized revenue achieved',
+      'Crossed $100B valuation milestone',
+      'Pre-IPO positioning established',
+      'Strategic AI partnerships expanded',
     ],
   },
 ];
 
-const maxValuation = 157; // For progress calculations
+const maxValuation = 100; // For progress calculations (Databricks $100B+)
 
 export function SecondaryMarketActivitySection() {
-  const totalLiquidity = 300; // Disclosed amount
-  const valuationGrowth = (((157 - 29) / 29) * 100).toFixed(0); // Growth from first to latest (Databricks only)
+  const totalLiquidity = 2500; // Estimated total across all rounds (millions)
+  const valuationGrowth = (((100 - 43) / 43) * 100).toFixed(0); // Growth from Series I to Series K (Databricks)
 
   return (
     <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
@@ -111,9 +111,9 @@ export function SecondaryMarketActivitySection() {
         <div className='mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3'>
           <div className='rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-900/20 to-green-900/20 p-4 text-center'>
             <div className='text-2xl font-bold text-emerald-400'>
-              ${totalLiquidity}M+
+              ${(totalLiquidity / 1000).toFixed(1)}B+
             </div>
-            <div className='text-sm text-gray-300'>Secondary Volume</div>
+            <div className='text-sm text-gray-300'>Total Funding</div>
           </div>
           <div className='rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-900/20 to-blue-900/20 p-4 text-center'>
             <div className='text-2xl font-bold text-cyan-400'>
@@ -123,7 +123,7 @@ export function SecondaryMarketActivitySection() {
           </div>
           <div className='rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-900/20 to-violet-900/20 p-4 text-center'>
             <div className='text-2xl font-bold text-purple-400'>3</div>
-            <div className='text-sm text-gray-300'>Liquidity Events</div>
+            <div className='text-sm text-gray-300'>Major Rounds</div>
           </div>
         </div>
       </CardHeader>
@@ -294,8 +294,8 @@ export function SecondaryMarketActivitySection() {
               <span className='font-bold text-yellow-400'>
                 {valuationGrowth}% valuation growth
               </span>{' '}
-              across secondary events validates the company&apos;s explosive
-              trajectory and market leadership position.
+              from $43B to $100B+ validates Databricks&apos; transformation into
+              an AI-first platform and market leadership in data intelligence.
             </p>
           </div>
 
