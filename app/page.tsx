@@ -146,7 +146,7 @@ export default function DigitalBrochurePage() {
         'Leading position in global payments infrastructure with $1.4T payment volume processed in 2024',
         'Comprehensive merchant ecosystem serving millions of businesses worldwide',
         'Strategic acquisitions including Payable, Paystack, and OpenChannel expanding global reach',
-        'BNPL capabilities via partnerships with Affirm, Klarna, Afterpay/Clearpay, and Zip',
+        'Stripe supports BNPL methods (Affirm, Klarna, Afterpay/Clearpay, Zip) via Stripe\'s payment methods—not a Stripe-branded BNPL product',
       ],
     },
     {
