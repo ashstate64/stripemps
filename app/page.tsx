@@ -243,7 +243,7 @@ export default function DigitalBrochurePage() {
   ].filter(Boolean);
 
   return (
-    <div className='min-h-screen bg-white font-sans text-base leading-relaxed text-gray-700'>
+    <div className='min-h-screen w-full overflow-x-hidden bg-white font-sans text-base leading-relaxed text-gray-700'>
       <header className='sticky top-0 z-50 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-xl'>
         <div className='mx-auto max-w-7xl'>
           {/* Top notification bar - Mobile optimized */}
@@ -263,26 +263,26 @@ export default function DigitalBrochurePage() {
           </div>
 
           {/* Main navigation - Mobile optimized */}
-          <div className='flex items-center justify-between px-3 py-2 sm:px-4 sm:py-4 md:px-8'>
+          <div className='flex w-full items-center justify-between px-3 py-2 sm:px-4 sm:py-4 md:px-8'>
             {/* Enhanced Brand Identity with Trust Badges - Mobile optimized */}
-            <div className='flex items-center space-x-2 sm:space-x-4'>
-              <div className='mps-logo-container'>
+            <div className='flex min-w-0 flex-1 items-center space-x-1 sm:space-x-2'>
+              <div className='mps-logo-container flex-shrink-0'>
                 <img
                   src='/mps-logo.png'
                   alt='MPS Limited Logo'
                   width={40}
                   height={32}
                   className='mps-logo-image rounded-lg object-contain shadow-sm sm:h-10 md:h-10'
-                  style={{ width: 'auto', maxWidth: '120px' }}
+                  style={{ width: 'auto', maxWidth: '80px' }}
                 />
               </div>
-              {/* Trust Badges */}
-              <div className='flex space-x-2'>
-                <div className='flex items-center rounded-full border border-green-200 bg-green-100 px-3 py-1 text-sm font-medium text-green-700'>
+              {/* Trust Badges - Hidden on very small screens */}
+              <div className='hidden space-x-1 sm:flex'>
+                <div className='flex items-center rounded-full border border-green-200 bg-green-100 px-2 py-1 text-xs font-medium text-green-700'>
                   <ShieldAlert className='mr-1 h-3 w-3' />
                   <span className='hidden sm:inline'>ASIC </span>Regulated
                 </div>
-                <div className='flex items-center rounded-full border border-blue-200 bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700'>
+                <div className='flex items-center rounded-full border border-blue-200 bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700'>
                   <Landmark className='mr-1 h-3 w-3' />
                   <span className='hidden sm:inline'>Australian </span>AFSL
                 </div>
@@ -308,17 +308,16 @@ export default function DigitalBrochurePage() {
             </nav>
 
             {/* Clean CTA Section - Mobile optimized */}
-            <div className='flex items-center space-x-2 sm:space-x-3'>
+            <div className='flex flex-shrink-0 items-center space-x-1 sm:space-x-2'>
               {/* Enhanced Primary CTA */}
               <Link
                 href='/apply'
-                className='group relative overflow-hidden rounded-lg bg-blue-600 px-6 py-3 text-xs font-semibold text-white shadow-sm transition-all transition-colors duration-300 hover:scale-105 hover:bg-blue-700 sm:rounded-xl sm:text-sm md:px-8 md:py-3 md:text-base'
+                className='group relative overflow-hidden rounded-lg bg-blue-600 px-3 py-2 text-xs font-semibold text-white shadow-sm transition-all transition-colors duration-300 hover:scale-105 hover:bg-blue-700 sm:rounded-xl sm:px-4 sm:py-2 sm:text-sm md:px-6 md:py-3 md:text-base'
               >
                 <div className='absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
-                <div className='relative flex items-center space-x-1 sm:space-x-2'>
-                  <span className='sm:hidden'>Apply</span>
-                  <span className='hidden sm:inline'>Apply Now</span>
-                  <Rocket className='h-3 w-3 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4' />
+                <div className='relative flex items-center space-x-1'>
+                  <span className='text-xs sm:text-sm'>Apply</span>
+                  <Rocket className='h-3 w-3 transition-transform group-hover:translate-x-1' />
                 </div>
               </Link>
 
@@ -327,12 +326,12 @@ export default function DigitalBrochurePage() {
                 variant='ghost'
                 size='sm'
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className='h-12 w-12 text-gray-600 hover:bg-gray-100 hover:text-gray-900 lg:hidden'
+                className='h-8 w-8 text-gray-600 hover:bg-gray-100 hover:text-gray-900 lg:hidden'
               >
                 {isMenuOpen ? (
-                  <X className='h-5 w-5' />
+                  <X className='h-4 w-4' />
                 ) : (
-                  <Menu className='h-5 w-5' />
+                  <Menu className='h-4 w-4' />
                 )}
               </Button>
             </div>

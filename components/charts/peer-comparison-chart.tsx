@@ -20,15 +20,15 @@ const peerData = [
 
 export function PeerComparisonChart() {
   return (
-    <div className='h-96 w-full rounded-lg bg-slate-50 p-2 shadow-inner dark:bg-slate-800/50 sm:p-4'>
+    <div className='h-80 w-full rounded-lg bg-slate-50 p-2 shadow-inner dark:bg-slate-800/50 sm:h-96 sm:p-4'>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
           data={peerData}
           layout='vertical'
           margin={{
             top: 5,
-            right: 30,
-            left: 20,
+            right: 10,
+            left: 10,
             bottom: 5,
           }}
         >
