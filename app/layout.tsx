@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     siteName: 'Stripe Investment Opportunity',
     images: [
       {
-        url: '/stripe-logo.webp',
+        url: '/stripe-logo.png',
         width: 1200,
         height: 630,
         alt: 'Stripe Pre-IPO Investment Opportunity',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
       'Stripe Pre-IPO Investment Opportunity | Invest in the Future of Fintech',
     description:
       "Explore an exclusive opportunity to invest in Stripe's private placement pre-IPO shares. Join leading institutional investors in this transformative fintech investment.",
-    images: ['/stripe-logo.webp'],
+    images: ['/stripe-logo.png'],
     creator: '@stripe',
   },
   alternates: {

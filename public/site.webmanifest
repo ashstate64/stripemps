@@ -41,7 +41,7 @@
   "categories": ["finance", "investment", "business"],
   "screenshots": [
     {
-      "src": "/stripe-logo.webp",
+      "src": "/stripe-logo.png",
       "sizes": "1200x630",
       "type": "image/webp",
       "label": "Stripe Investment Opportunity"

@@ -444,8 +444,8 @@ export default function DigitalBrochurePage() {
             {/* Stripe Logo - Mobile optimized */}
             <div className='mb-4 flex justify-center sm:mb-6 md:mb-8'>
               <div className='stripe-logo-hero-container'>
-                <Image
-                  src='/stripe-logo.webp'
+                <img
+                  src='/stripe-logo.png'
                   alt='Stripe Logo'
                   width={96}
                   height={96}
@@ -453,7 +453,6 @@ export default function DigitalBrochurePage() {
                   style={{
                     filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))',
                   }}
-                  priority
                 />
               </div>
             </div>
