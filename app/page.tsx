@@ -788,7 +788,7 @@ export default function DigitalBrochurePage() {
                                     {/* Logo Container */}
                                     <div className='bg-white/98 mb-6 h-16 w-full overflow-hidden rounded-xl p-3 shadow-sm'>
                                       <div className='flex h-full w-full items-center justify-center'>
-                                        <Image
+                                        <img
                                           src={holder.logo! || '/mps-logo.png'}
                                           alt={`${holder.name} logo`}
                                           width={120}
