@@ -43,7 +43,7 @@ export default function VerifyEmailPage() {
               ✅ Application Submitted Successfully!
             </CardTitle>
             <CardDescription className='text-lg text-green-300'>
-              Your Databricks Pre-IPO investment application has been received
+              Your Stripe private market investment application has been received
             </CardDescription>
           </CardHeader>
 

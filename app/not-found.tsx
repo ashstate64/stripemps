@@ -24,7 +24,7 @@ export default function NotFound() {
             </div>
             <div className='ml-4'>
               <h1 className='bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-xl font-bold text-transparent'>
-                Databricks Pre-IPO
+                Stripe Private Market
               </h1>
               <p className='text-xs text-gray-400'>Investment Opportunity</p>
             </div>
@@ -125,7 +125,7 @@ export default function NotFound() {
             <CardContent>
               <p className='mb-6 text-gray-300'>
                 Our investment team is available to help with any questions
-                about Databricks pre-IPO opportunities.
+                about Stripe private market opportunities.
               </p>
               <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
                 <Button asChild variant='outline'>

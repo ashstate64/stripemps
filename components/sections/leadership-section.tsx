@@ -12,53 +12,49 @@ import { ShieldCheck, Briefcase } from 'lucide-react';
 
 const leaders = [
   {
-    name: 'Ali Ghodsi',
+    name: 'Patrick Collison',
     title: 'Co-founder & CEO',
-    bio: 'Former UC Berkeley professor and Apache Spark contributor, Ghodsi co-founded Databricks to democratize data and AI. Under his leadership, Databricks has grown to 10,000+ customers and $3.8B+ revenue.',
-    note: 'Ghodsi has led Databricks from startup to unicorn status, building the leading data intelligence platform.',
-    imageUrl: '/leadership/ali-ghodsi.jpeg',
+    bio: 'Irish entrepreneur who co-founded Stripe in 2010. Under his leadership, Stripe has grown to process $1.4T in payment volume during 2024 and achieved profitability, revolutionizing online payments infrastructure.',
+    note: 'Patrick has led Stripe from startup to becoming one of the world\'s most valuable private fintech companies.',
+    imageUrl: '/leadership/patrick-collison.jpeg',
   },
   {
-    name: 'Matei Zaharia',
-    title: 'Co-founder & Chief Technologist',
-    bio: 'Creator of Apache Spark and Delta Lake, Zaharia is one of the most influential figures in big data. His open-source contributions power data processing at thousands of companies worldwide.',
-    imageUrl: '/leadership/matei-zaharia.jpg',
+    name: 'John Collison',
+    title: 'Co-founder & President',
+    bio: 'Co-founder and President of Stripe, John focuses on product development and business operations. Together with Patrick, he has built Stripe into the leading payments infrastructure company.',
+    imageUrl: '/leadership/john-collison.jpg',
   },
   {
-    name: 'Reynold Xin',
-    title: 'Co-founder & Chief Architect',
-    bio: 'Co-creator of Apache Spark and technical architect of the Databricks platform. Xin leads the technical vision for the lakehouse architecture that has revolutionized enterprise data.',
-    imageUrl: '/leadership/reynold-xin.jpeg',
+    name: 'Rahul Patil',
+    title: 'Chief Technology Officer',
+    bio: 'Current CTO since August 2024. Patil leads Stripe\'s engineering and technical strategy, overseeing the platform that processes trillions in payment volume annually.',
+    imageUrl: '/leadership/rahul-patil.jpeg',
   },
   {
-    name: 'Dave Conte',
+    name: 'Steffan Tomlinson',
     title: 'Chief Financial Officer',
-    bio: 'Former CFO at Hortonworks and finance executive at multiple public tech companies. Conte brings extensive experience in scaling enterprise software companies through IPOs.',
-    imageUrl: '/leadership/dave-conte.avif',
+    bio: 'CFO since August 2023. Tomlinson brings extensive financial leadership experience, guiding Stripe to profitability in 2024 and managing the company\'s strategic financial operations.',
+    imageUrl: '/leadership/steffan-tomlinson.avif',
   },
   {
-    name: 'Naveen Rao',
-    title: 'VP of Generative AI',
-    bio: 'Former Intel AI executive and MosaicML founder. Rao leads Databricks AI initiatives including large language models and generative AI capabilities for enterprise customers.',
-    imageUrl: '/leadership/naveen-rao.webp',
+    name: 'Eileen O\'Mara',
+    title: 'Chief Revenue Officer',
+    bio: 'CRO appointed in October 2023. O\'Mara drives Stripe\'s global revenue strategy and enterprise customer growth across the company\'s expanding product portfolio.',
+    imageUrl: '/leadership/eileen-omara.webp',
   },
 ];
 
 const boardMembers = [
   {
-    name: 'Ion Stoica',
-    role: 'Executive Chairman & Co-founder',
+    name: 'Patrick Collison',
+    role: 'CEO & Co-founder',
   },
-  { name: 'Ali Ghodsi', role: 'CEO & Co-founder' },
-  { name: 'Matei Zaharia', role: 'Chief Technologist & Co-founder' },
-  { name: 'Reynold Xin', role: 'Chief Architect & Co-founder' },
+  { name: 'John Collison', role: 'President & Co-founder' },
+  { name: 'Rahul Patil', role: 'Chief Technology Officer (since Aug 2024)' },
+  { name: 'Steffan Tomlinson', role: 'Chief Financial Officer (since Aug 2023)' },
   {
-    name: 'Dave Conte',
-    role: 'Chief Financial Officer',
-  },
-  {
-    name: 'Naveen Rao',
-    role: 'VP of Generative AI (ex-MosaicML)',
+    name: 'Eileen O\'Mara',
+    role: 'Chief Revenue Officer (since Oct 2023)',
   },
 ];
 
@@ -75,7 +71,7 @@ export function LeadershipSection() {
               Visionary Leadership & Governance
             </CardTitle>
             <CardDescription className='mt-3 text-lg text-gray-600'>
-              Meet the experienced team guiding Databricks&apos; mission and the
+              Meet the experienced team guiding Stripe&apos;s mission and the
               leadership ensuring robust enterprise execution.
             </CardDescription>
           </div>
@@ -125,9 +121,9 @@ export function LeadershipSection() {
         </h3>
         <div className='mb-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm'>
           <p className='mb-4 text-sm text-gray-700'>
-            Databricks&apos; leadership team combines deep technical expertise
-            with proven business execution. The founding team created Apache
-            Spark and continues to drive innovation in data intelligence and AI
+            Stripe&apos;s leadership team combines deep technical expertise
+            with proven business execution. The founding team created the modern
+            payments infrastructure and continues to drive innovation in fintech
             for enterprise customers worldwide.
           </p>
           <ul className='space-y-2'>
@@ -148,7 +144,7 @@ export function LeadershipSection() {
           <p className='mt-4 text-xs text-gray-600'>
             <strong>Why it matters for investors:</strong> Seasoned operators
             combined with proven technical leadership aim for disciplined
-            capital allocation and help mitigate key-person risk as Databricks
+            capital allocation and help mitigate key-person risk as Stripe
             scales towards a potential IPO.
           </p>
           <p className='mt-2 text-xs italic text-gray-500'>

@@ -19,75 +19,75 @@ import {
 
 const secondaryEvents = [
   {
-    date: 'December 2023',
-    quarter: 'Q4 2023',
-    event: 'Series I Funding',
+    date: 'March 2021',
+    quarter: 'Q1 2021',
+    event: 'Series H Funding',
     type: 'Primary & Secondary Components',
-    amount: '$500M',
-    valuation: '$43B',
-    valuationNumeric: 43,
-    participants: 'T. Rowe Price, Baillie Gifford, Existing Investors',
+    amount: '$875M',
+    valuation: '$95B',
+    valuationNumeric: 95,
+    participants: 'Founders Fund, Sequoia Capital, Tiger Global',
     purpose: 'Growth capital & limited secondary liquidity',
-    significance: 'Strong institutional backing, pre-AI boom valuation',
+    significance: 'Peak valuation during fintech boom, global expansion',
     color: 'from-blue-500 to-cyan-600',
     icon: Users,
     highlight: false,
     outcomes: [
       'Established institutional investor base',
-      'Funded AI product development',
+      'Funded global payment expansion',
       'Provided limited employee liquidity',
-      'Set foundation for AI revenue growth',
+      'Set foundation for enterprise growth',
     ],
   },
   {
-    date: 'December 2024',
-    quarter: 'Q4 2024',
-    event: 'Series J Funding',
-    type: 'Growth Round with Secondary',
-    amount: '$1B+',
-    valuation: '$62B',
-    valuationNumeric: 62,
-    participants: 'Thrive Capital, Databricks Employees, Existing VCs',
-    purpose: 'AI expansion & employee wealth realization',
-    significance: '44% valuation increase driven by AI revenue surge',
-    color: 'from-green-500 to-emerald-600',
+    date: 'March 2023',
+    quarter: 'Q1 2023',
+    event: 'Series I Funding',
+    type: 'Down Round with Focus',
+    amount: '$4.6B',
+    valuation: '$50B',
+    valuationNumeric: 50,
+    participants: 'Founders Fund, Temasek, GIC, General Catalyst',
+    purpose: 'Efficiency focus & strategic positioning',
+    significance: '47% valuation decrease, focus on profitability',
+    color: 'from-orange-500 to-red-600',
     icon: HandCoins,
     highlight: true,
     outcomes: [
-      'AI products reached $1B+ revenue run-rate',
-      'Employee equity realization program',
-      'Validated AI-first transformation',
-      'Enhanced talent retention through liquidity',
+      'Focused on path to profitability',
+      'Strategic cost optimization program',
+      'Enhanced operational efficiency',
+      'Maintained market leadership position',
     ],
   },
   {
-    date: 'August 2025',
+    date: 'Current 2025',
     quarter: 'Q3 2025',
-    event: 'Series K Funding',
-    type: 'Pre-IPO Round',
-    amount: '$1B',
-    valuation: '$100B+',
-    valuationNumeric: 100,
-    participants: 'New Strategic Investors, Existing Shareholders',
-    purpose: 'IPO preparation & strategic partnerships',
-    significance: '61% valuation increase, unicorn to centaur status',
-    color: 'from-purple-500 to-violet-600',
+    event: 'Market Recovery',
+    type: 'Public Market Valuation',
+    amount: 'Market Consensus',
+    valuation: '$106.87B',
+    valuationNumeric: 106.87,
+    participants: 'Public Market Investors, Analysts',
+    purpose: 'Pre-IPO market validation & positioning',
+    significance: '114% recovery, strong revenue growth validation',
+    color: 'from-green-500 to-emerald-600',
     icon: Banknote,
     highlight: true,
     outcomes: [
-      '$4B+ annualized revenue achieved',
-      'Crossed $100B valuation milestone',
+      '$5.1B TTM revenue achieved',
+      'Market cap recovery above 2021 peak',
       'Pre-IPO positioning established',
-      'Strategic AI partnerships expanded',
+      'Strong fintech market leadership',
     ],
   },
 ];
 
-const maxValuation = 100; // For progress calculations (Databricks $100B+)
+const maxValuation = 107; // For progress calculations (Stripe max)
 
 export function SecondaryMarketActivitySection() {
-  const totalLiquidity = 2500; // Estimated total across all rounds (millions)
-  const valuationGrowth = (((100 - 43) / 43) * 100).toFixed(0); // Growth from Series I to Series K (Databricks)
+  const totalLiquidity = 6090; // Estimated total across all rounds (millions)
+  const valuationGrowth = (((106.87 - 50) / 50) * 100).toFixed(0); // Growth from Series I to Current (Stripe)
 
   return (
     <Card className='overflow-hidden border border-slate-700 bg-slate-800/60 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20'>
@@ -283,7 +283,7 @@ export function SecondaryMarketActivitySection() {
 
           <div className='mb-6 text-center'>
             <p className='mx-auto max-w-4xl text-lg leading-relaxed text-gray-300'>
-              Databricks&apos; secondary market activity demonstrates
+              Stripe&apos;s secondary market activity demonstrates
               exceptional{' '}
               <span className='font-bold text-emerald-400'>
                 investor demand
@@ -292,10 +292,10 @@ export function SecondaryMarketActivitySection() {
               <span className='font-bold text-cyan-400'>price discovery</span>{' '}
               ahead of a public offering. The{' '}
               <span className='font-bold text-yellow-400'>
-                {valuationGrowth}% valuation growth
+                {valuationGrowth}% valuation recovery
               </span>{' '}
-              from $43B to $100B+ validates Databricks&apos; transformation into
-              an AI-first platform and market leadership in data intelligence.
+              from $50B to $106.87B validates Stripe&apos;s resilience and
+              market leadership in fintech payments.
             </p>
           </div>
 
@@ -353,7 +353,7 @@ export function SecondaryMarketActivitySection() {
                 <div className='text-xs leading-relaxed text-gray-700'>
                   Secondary trading has been primarily through
                   company-facilitated events due to transfer restrictions and
-                  Databricks&apos; governance structure. Official tender offers
+                  Stripe&apos;s governance structure. Official tender offers
                   and sanctioned transactions have been the primary mechanisms
                   for equity liquidity, ensuring controlled price discovery and
                   regulatory compliance.

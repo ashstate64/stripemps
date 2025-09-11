@@ -1,7 +1,7 @@
 {
-  "name": "Databricks Pre-IPO Investment Opportunity",
-  "short_name": "Databricks Investment",
-  "description": "Exclusive pre-IPO investment opportunity in Databricks - the leading data intelligence platform",
+  "name": "Stripe Private Market Investment Opportunity",
+  "short_name": "Stripe Investment",
+  "description": "Exclusive private market investment opportunity in Stripe - the leading fintech payments platform",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -41,10 +41,10 @@
   "categories": ["finance", "investment", "business"],
   "screenshots": [
     {
-      "src": "/databricks-logo.svg",
+      "src": "/stripe-logo.webp",
       "sizes": "1200x630",
-      "type": "image/svg+xml",
-      "label": "Databricks Investment Opportunity"
+      "type": "image/webp",
+      "label": "Stripe Investment Opportunity"
     }
   ]
 }

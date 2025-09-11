@@ -91,14 +91,14 @@ export default function DigitalBrochurePage() {
     {
       id: 'opportunity',
       icon: <Lightbulb className='mb-4 h-10 w-10 text-primary' />,
-      title: 'Investment Thesis: The Databricks Opportunity',
+      title: 'Investment Thesis: The Stripe Opportunity',
       content:
-        'Databricks represents a once-in-a-generation investment opportunity in the data intelligence and AI sector. With revolutionary products like the Databricks Data Intelligence Platform, MLflow, and Delta Lake, the company has achieved unprecedented scale and market penetration, establishing itself as the undisputed leader in the rapidly expanding data and AI market.',
+        'Stripe represents a unique private market investment opportunity in the fintech and payments sector. As a private company valued at $91.5B in its latest Feb 2025 tender offer, Stripe has achieved unprecedented scale processing $1.4T in payment volume during 2024 while maintaining profitability, establishing itself as the leading digital payments infrastructure platform.',
       points: [
-        'Market-leading data lakehouse technology with clear competitive moats and network effects',
-        'Exponential customer adoption: Over 10,000 customers with 150% net retention rate',
-        'Strategic partnerships with major cloud providers and enterprise customers like Apple, Disney, H&M',
-        'Experienced leadership team with proven track record in scaling enterprise technology companies',
+        'Market-leading payment processing technology serving millions of businesses globally',
+        'Strong financial performance: $1.4T total payment volume in 2024 and profitable since 2024',
+        'Strategic partnerships with major platforms and customers including Amazon (strategic payments partner since 2023)',
+        'Experienced leadership team: CEO Patrick Collison, President John Collison, with proven track record in scaling fintech',
       ],
     },
     {
@@ -106,47 +106,47 @@ export default function DigitalBrochurePage() {
       icon: <TrendingUp className='mb-4 h-10 w-10 text-primary' />,
       title: 'Financial Performance: Exceptional Growth Trajectory',
       content:
-        "Databricks' financial metrics demonstrate extraordinary growth, with revenue scaling from $1.9B in 2023 to a projected $3.82B TTM. The company's valuation has reached $62B in its latest funding round, with a current market cap of $100.44B, reflecting strong investor confidence and market validation.",
+        "Stripe's financial performance demonstrates extraordinary scale and profitability. The company processed $1.4T in total payment volume during 2024 and has been profitable since 2024. Recent tender offers valued the company at $65B (Apr 2024) and $91.5B (Feb 2025), reflecting strong investor confidence in controlled secondary market transactions.",
       visuals: [
         {
           title: 'Valuation Growth Analysis',
           component: <ValuationGrowthChart />,
           explanation:
-            "Databricks' valuation trajectory shows consistent growth, reaching $62B in the latest funding round with a market cap premium of +62%. This growth demonstrates sustained investor confidence and market validation of the company's data intelligence leadership position.",
+            "Stripe's tender offer valuations show recovery from the 2023 down round, with recent Feb 2025 tender offer at $91.5B demonstrating investor confidence in the company's path to profitability and market leadership position.",
         },
         {
-          title: 'Revenue Projections & Monetization',
+          title: 'Payment Volume & Scale',
           component: <RevenueProjectionChart />,
           explanation:
-            'Revenue growth from $800M (2021) to projected $3.82B (TTM) represents consistent 60%+ YoY growth, driven by enterprise data platform adoption, AI/ML workloads, and expanding customer base.',
+            'Stripe processed $1.4T in total payment volume during 2024, demonstrating massive scale in the global payments infrastructure. The company has achieved profitability since 2024 while maintaining growth.',
         },
       ],
       stats: [
-        { label: 'Current Market Cap', value: '$100.44 Billion' },
-        { label: 'Total Capital Raised', value: '$14.29 Billion' },
-        { label: 'TTM Revenue', value: '$3.82 Billion' },
-        { label: 'YoY Revenue Growth', value: '60%+' },
+        { label: 'Latest Tender Offer', value: '$91.5 Billion' },
+        { label: 'Total Funding Raised', value: '~$9.8 Billion' },
+        { label: '2024 Payment Volume', value: '$1.4 Trillion' },
+        { label: 'Profitability Status', value: 'Since 2024' },
       ],
     },
     {
       id: 'market-leadership',
       icon: <Target className='mb-4 h-10 w-10 text-primary' />,
-      title: 'Market Position: Dominant Data Intelligence Platform Leader',
+      title: 'Market Position: Leading Private Fintech Platform',
       content:
-        "Databricks maintains a commanding lead in the data intelligence sector, with a market capitalization that significantly exceeds traditional data companies. The company's technological superiority in data lakehouse architecture, extensive enterprise ecosystem, and first-mover advantages create sustainable competitive moats.",
+        "Stripe maintains a commanding position in the global payments infrastructure sector. As a private company with a $91.5B tender offer valuation, Stripe's technological superiority in payment processing, extensive merchant ecosystem, and proven profitability create sustainable competitive advantages in the digital payments market.",
       visuals: [
         {
-          title: 'Competitive Landscape Analysis',
+          title: 'Secondary Market vs Public Peers',
           component: <PeerComparisonChart />,
           explanation:
-            "Databricks' $100.44B market cap positions it competitively against industry leaders like Snowflake ($225B), Palantir ($158B), and Salesforce ($250B), demonstrating strong market positioning and investor confidence in the company's unified data and AI platform.",
+            "Note: Stripe is private - this compares secondary market implied pricing with public company valuations. Stripe's $91.5B tender offer valuation reflects investor confidence, while public peers like PayPal and Shopify trade on public markets with different liquidity and valuation dynamics.",
         },
       ],
       points: [
-        'Leading position in the rapidly growing data lakehouse market',
-        'Comprehensive enterprise ecosystem with 10,000+ customers globally',
-        'Continuous innovation pipeline with acquisitions like MosaicML ($1.3B) and Tabular',
-        'Strong partnerships with AWS, Azure, and Google Cloud Platform',
+        'Leading position in global payments infrastructure with $1.4T payment volume processed in 2024',
+        'Comprehensive merchant ecosystem serving millions of businesses worldwide',
+        'Strategic acquisitions including Payable, Paystack, and OpenChannel expanding global reach',
+        'BNPL capabilities via partnerships with Affirm, Klarna, Afterpay/Clearpay, and Zip',
       ],
     },
     {
@@ -154,40 +154,40 @@ export default function DigitalBrochurePage() {
       icon: <UsersRound className='mb-4 h-10 w-10 text-primary' />,
       title: 'Institutional Backing: World-Class Investor Portfolio',
       content:
-        "Databricks' investor base includes the world's most sophisticated technology and financial institutions. With $14.29 billion in total funding, the company has attracted backing from Andreessen Horowitz, Insight Partners, DST, GIC, and other premier investment firms, providing both capital and strategic value.",
+        "Stripe's investor base includes the world's most sophisticated technology and financial institutions. Publicly confirmed primary raises include $600M (2021) and $6.5B (2023), with trackers estimating ~$9.8B total across all funding rounds. The company has attracted backing from Andreessen Horowitz, Sequoia Capital, Tiger Global, General Catalyst, and other premier investment firms.",
       majorHolders: [
         {
           name: 'Andreessen Horowitz',
           logo: '/logos/a16z-logo.svg',
-          entry: 'Lead investor across multiple rounds including Series J',
+          entry: 'Lead investor across multiple rounds including Series I',
           stake: 'Significant early investor',
           bgColor: 'bg-white',
         },
         {
-          name: 'Insight Partners',
-          logo: '/logos/insight-partners-logo.svg',
-          entry: 'Co-led Series J $10.17B round in December 2024',
+          name: 'Sequoia Capital',
+          logo: '/logos/sequoia-logo.svg',
+          entry: 'Major investor in Series I $4.6B round in March 2023',
           stake: 'Major institutional holder',
           bgColor: 'bg-white',
         },
         {
-          name: 'DST Global',
-          logo: '/logos/dst-logo.svg',
-          entry: 'Co-led Series J and previous growth rounds',
+          name: 'Tiger Global',
+          logo: '/logos/tiger-global-logo.svg',
+          entry: 'Co-led Series I and previous growth rounds',
           stake: 'Significant growth investor',
           bgColor: 'bg-gray-100',
         },
         {
-          name: 'GIC (Singapore)',
-          logo: '/logos/gic-logo.svg',
-          entry: 'Series J participant and long-term investor',
-          stake: 'Sovereign wealth fund backing',
+          name: 'General Catalyst',
+          logo: '/logos/general-catalyst-logo.svg',
+          entry: 'Series I participant and long-term investor',
+          stake: 'Strategic venture backing',
           bgColor: 'bg-gray-100',
         },
         {
-          name: 'WCM Investment Management',
-          logo: '/logos/wcm-logo.svg',
-          entry: 'Series J co-investor',
+          name: 'Founders Fund',
+          logo: '/logos/founders-fund-logo.svg',
+          entry: 'Series I co-investor with strategic backing',
           stake: 'Institutional growth investor',
           bgColor: 'bg-white',
         },
@@ -195,7 +195,7 @@ export default function DigitalBrochurePage() {
           name: 'Additional Institutional Investors',
           logo: null,
           entry:
-            'Includes T. Rowe Price, BlackRock, Fidelity, NEA, Coatue, Battery Ventures',
+            'Includes Temasek, GIC, Goldman Sachs, MSD Partners, Thrive Capital, Baillie Gifford',
           stake: 'Combined institutional backing',
         },
       ],
@@ -205,27 +205,27 @@ export default function DigitalBrochurePage() {
     {
       id: 'ipo-path',
       icon: <Landmark className='mb-4 h-10 w-10 text-primary' />,
-      title: 'Path to Liquidity: Strategic IPO Preparation',
+      title: 'Liquidity Strategy: Controlled Secondary Market Access',
       content:
-        'Databricks is strategically positioning for public markets with strong financial performance and governance optimization. The company has established a solid foundation with consistent revenue growth, strong unit economics, and expanding market leadership, setting the stage for a successful public debut.',
+        'Stripe has provided liquidity through company-facilitated tender offers rather than pursuing immediate public markets. Employee and early-holder liquidity has been provided through company-run tender offers (Apr 2024 at ~$65B; Feb 2025 at $91.5B). The company maintains control over secondary transactions and has not filed an S-1 for public listing.',
       points: [
-        'Strong financial metrics with 60%+ revenue growth and improving unit economics',
-        'Recent $10.17B Series J round demonstrates strong institutional demand and IPO readiness',
-        'Established enterprise customer base with 150% net retention rate providing revenue visibility',
-        'Strategic market position in high-growth data intelligence and AI sectors',
+        'Strong financial foundation: $1.4T payment volume processed in 2024 and profitable since 2024',
+        'Controlled liquidity via tender offers: $65B (Apr 2024) and $91.5B (Feb 2025) valuations',
+        'Established global payments infrastructure serving millions of businesses worldwide',
+        'Strategic focus on private market growth rather than immediate IPO timeline',
       ],
     },
     {
       id: 'why-invest',
       icon: <DollarSign className='mb-4 h-10 w-10 text-primary' />,
-      title: 'Investment Rationale: Compelling Value Proposition',
+      title: 'Investment Rationale: Private Market Opportunity',
       content:
-        'Pre-IPO investment in Databricks offers accredited investors exposure to the defining data intelligence company of the AI era. With limited liquidity events in the enterprise data sector, this opportunity provides early access to a market leader before public market availability.',
+        'Private market investment in Stripe offers accredited investors exposure to a leading fintech platform with proven profitability and massive scale. Stripe is a private company - there is no official stock price or public market cap. The most recent price signal is the Feb 2025 tender offer valuing Stripe at ~$91.5B.',
       benefits: [
-        'Exceptional growth potential in the rapidly expanding data intelligence and AI market',
-        'Pre-IPO pricing advantage with current stock price of $149.70 and potential upside',
-        'Portfolio diversification into transformative data lakehouse and AI technology',
-        'Limited availability - exclusive access for qualified accredited investors only',
+        'Access to profitable fintech leader: $1.4T payment volume processed in 2024',
+        'Private market exposure to proven business model with sustainable competitive advantages',
+        'Portfolio diversification into essential payments infrastructure technology',
+        'Wholesale/accredited investor only access - limited availability through controlled secondary market',
       ],
     },
   ];
@@ -441,15 +441,15 @@ export default function DigitalBrochurePage() {
               </div>
             </div>
 
-            {/* Databricks Logo - Mobile optimized */}
+            {/* Stripe Logo - Mobile optimized */}
             <div className='mb-4 flex justify-center sm:mb-6 md:mb-8'>
-              <div className='databricks-logo-hero-container'>
+              <div className='stripe-logo-hero-container'>
                 <Image
-                  src='/databricks-logo.svg'
-                  alt='Databricks Logo'
+                  src='/stripe-logo.webp'
+                  alt='Stripe Logo'
                   width={96}
                   height={96}
-                  className='databricks-logo-image object-contain sm:h-24 sm:w-24 md:h-32 md:w-32'
+                  className='stripe-logo-image object-contain sm:h-24 sm:w-24 md:h-32 md:w-32'
                   style={{
                     filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))',
                   }}
@@ -463,11 +463,10 @@ export default function DigitalBrochurePage() {
               <div className='rounded-lg bg-blue-50 px-2.5 py-1.5 sm:rounded-xl sm:px-6 sm:py-3'>
                 <p className='text-sm font-bold text-blue-700 sm:text-base'>
                   <span className='sm:hidden'>
-                    ● Databricks Pre-IPO • $149.70
+                    ● Stripe Pre-IPO • $91.5B Valuation
                   </span>
                   <span className='hidden sm:inline'>
-                    ● Exclusive Pre-IPO Investment Opportunity • $149.70 Stock
-                    Price
+                    ● Exclusive Pre-IPO Investment Opportunity • $91.5B Latest Tender Offer
                   </span>
                 </p>
               </div>
@@ -475,12 +474,12 @@ export default function DigitalBrochurePage() {
 
             {/* Main Headline with Enhanced Typography - Mobile optimized */}
             <h1 className='mb-4 text-5xl font-bold leading-tight text-gray-900 sm:mb-6 sm:text-6xl md:mb-8 md:text-7xl lg:text-8xl'>
-              <span className='sm:hidden'>Invest in Data</span>
+              <span className='sm:hidden'>Invest in Fintech</span>
               <span className='hidden sm:inline'>Invest in the </span>
               <span className='relative text-blue-600'>
-                <span className='sm:hidden'>Intelligence</span>
+                <span className='sm:hidden'>Revolution</span>
                 <span className='hidden sm:inline'>
-                  Future of Data Intelligence
+                  Future of Financial Technology
                 </span>
                 <div className='absolute -bottom-1 left-0 h-0.5 w-full bg-blue-600 opacity-60 sm:-bottom-2 sm:h-1'></div>
               </span>
@@ -489,21 +488,20 @@ export default function DigitalBrochurePage() {
             {/* Enhanced Description - Mobile optimized */}
             <p className='mx-auto mb-6 max-w-2xl text-xl leading-relaxed text-gray-700 sm:mb-8 sm:max-w-3xl sm:text-2xl md:mb-10 md:text-3xl lg:text-4xl'>
               <span className='sm:hidden'>
-                Join global institutions in Databricks&apos; pre-IPO.{' '}
-                <strong className='text-gray-900'>$100.44B market cap</strong>{' '}
+                Access Stripe&apos;s private market opportunity.{' '}
+                <strong className='text-gray-900'>$91.5B tender offer valuation</strong>{' '}
                 with{' '}
-                <strong className='text-blue-600'>$3.82B TTM revenue</strong>.
+                <strong className='text-blue-600'>$1.4T payment volume</strong> in 2024.
               </span>
               <span className='hidden sm:inline'>
-                Join global institutions investing in Databricks before its
-                anticipated IPO.
+                Access exclusive pre-IPO investment opportunity in Stripe, the leading fintech platform.
                 <br className='hidden md:inline' />
                 <strong className='text-gray-900'>
                   {' '}
-                  $100.44B market cap
+                  $91.5B latest tender offer
                 </strong>{' '}
                 with
-                <strong className='text-blue-600'> $3.82B TTM revenue</strong>.
+                <strong className='text-blue-600'> $1.4T total payment volume in 2024</strong>.
               </span>
             </p>
 
@@ -511,21 +509,21 @@ export default function DigitalBrochurePage() {
             <div className='mb-6 grid grid-cols-3 gap-2 sm:mb-8 sm:gap-4 md:mb-12 md:gap-6'>
               {[
                 {
-                  value: '$149.70',
-                  label: 'Stock Price',
+                  value: '$91.5B',
+                  label: 'Tender Offer Valuation',
                   color: 'text-blue-600',
                   delay: 'delay-0',
                 },
                 {
-                  value: '$14.29B',
+                  value: '~$9.8B',
                   label: 'Total Funding Raised',
                   color: 'text-gray-700',
                   delay: 'delay-100',
                 },
                 {
-                  value: '2025',
-                  label: 'Expected IPO Timeline',
-                  color: 'text-gray-700',
+                  value: 'Profitable',
+                  label: 'Since 2024',
+                  color: 'text-green-600',
                   delay: 'delay-200',
                 },
               ].map((metric, index) => (
@@ -762,8 +760,8 @@ export default function DigitalBrochurePage() {
                               World-Class Institutional Backing
                             </h3>
                             <p className='mx-auto max-w-2xl text-lg text-gray-600'>
-                              Leading global investors backing Databricks&apos;
-                              mission with over $14.29 billion in funding
+                              Leading global investors backing Stripe&apos;s
+                              mission with ~$9.8 billion in total funding
                             </p>
                           </div>
 
@@ -826,7 +824,7 @@ export default function DigitalBrochurePage() {
                               </h4>
                               <p className='text-gray-600'>
                                 Other world-class institutions supporting
-                                Databricks
+                                Stripe
                               </p>
                             </div>
 
@@ -889,27 +887,27 @@ export default function DigitalBrochurePage() {
                                 Total Institutional Investment
                               </h4>
                               <div className='text-5xl font-bold text-blue-600'>
-                                $14.29 Billion
+                                ~$9.8 Billion
                               </div>
                               <p className='text-base text-gray-600'>
-                                Raised across multiple funding rounds since 2013
+                                Estimated total across funding rounds since 2009
                               </p>
                               <div className='flex items-center justify-center space-x-6 pt-2 text-sm text-gray-600'>
                                 <div className='text-center'>
                                   <div className='font-semibold text-gray-900'>
-                                    2013-2024
+                                    2009-2023
                                   </div>
                                   <div>Funding Period</div>
                                 </div>
                                 <div className='text-center'>
                                   <div className='font-semibold text-gray-900'>
-                                    20+
+                                    15+
                                   </div>
                                   <div>Major Investors</div>
                                 </div>
                                 <div className='text-center'>
                                   <div className='font-semibold text-gray-900'>
-                                    Series J
+                                    Series I
                                   </div>
                                   <div>Latest Round</div>
                                 </div>
@@ -1250,8 +1248,8 @@ export default function DigitalBrochurePage() {
               Limited. All rights reserved.
             </p>
             <p className='mb-4 text-xs text-gray-500'>
-              Databricks Pre-IPO Investment Information presented by Managed
-              Portfolio Services Limited. All information current as of{' '}
+              Stripe Private Market Investment Information presented by Managed
+              Portfolio Services Limited. Stripe is a private company. All information current as of{' '}
               {new Date().toLocaleDateString('en-US', {
                 month: 'long',
                 year: 'numeric',

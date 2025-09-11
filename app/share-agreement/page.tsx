@@ -133,7 +133,7 @@ export default function SharePurchaseAgreement() {
               Agreement Executed Successfully
             </CardTitle>
             <p className='text-green-600'>
-              Your Databricks Pre-IPO Share Purchase Agreement has been
+              Your Stripe Private Market Share Purchase Agreement has been
               digitally signed
             </p>
           </CardHeader>
@@ -258,10 +258,10 @@ export default function SharePurchaseAgreement() {
               </div>
               <div>
                 <h1 className='text-sm font-bold text-gray-900 sm:text-base md:text-lg lg:text-xl'>
-                  Databricks Pre-IPO
+                  Stripe Private Market
                 </h1>
                 <p className='text-xs text-gray-500 sm:text-sm'>
-                  $149.70/share
+                  Private Market
                 </p>
               </div>
             </div>
@@ -328,7 +328,7 @@ export default function SharePurchaseAgreement() {
                     </span>
                   </CardTitle>
                   <p className='text-sm text-gray-300 sm:text-base'>
-                    Configure your Databricks pre-IPO investment details with
+                    Configure your Stripe private market investment details with
                     confidence
                   </p>
                   <div className='mt-2 flex items-center gap-2 text-xs text-green-400'>
@@ -468,11 +468,11 @@ export default function SharePurchaseAgreement() {
                       </h3>
                       <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
                         <li>
-                          • Purchase Databricks Class A Shares via CG Financial
+                          • Purchase Stripe Class A Shares via CG Financial
                           International
                         </li>
                         <li>
-                          • Fixed price: USD $149.70/share ($100.44B market cap)
+                          • Based on $91.5B tender offer valuation (Feb 2025)
                         </li>
                         <li>• USD denominated transactions</li>
                         <li>• Legally binding digital execution</li>
@@ -487,7 +487,7 @@ export default function SharePurchaseAgreement() {
                       <ul className='space-y-0.5 text-xs leading-relaxed text-gray-300 sm:space-y-1 sm:text-sm md:space-y-2'>
                         <li>• T+2 business days settlement (USD wire)</li>
                         <li>• Third-party trust account protection</li>
-                        <li>• 2-4 weeks Databricks ROFR compliance</li>
+                        <li>• 2-4 weeks Stripe ROFR compliance</li>
                         <li>• Full refund + 2% if delivery fails (60 days)</li>
                       </ul>
                     </div>
@@ -517,7 +517,7 @@ export default function SharePurchaseAgreement() {
                         </strong>
                         <ul className='mt-2 space-y-1 text-xs leading-relaxed sm:text-sm'>
                           <li>• Substantial risk of total loss</li>
-                          <li>• Databricks may reject share transfer</li>
+                          <li>• Stripe may reject share transfer</li>
                           <li>• No IPO guarantee or positive returns</li>
                           <li>• Illiquid with no secondary market</li>
                         </ul>
@@ -831,7 +831,7 @@ export default function SharePurchaseAgreement() {
                           state: agreedToEndorsement,
                           setState: setAgreedToEndorsement,
                           label:
-                            'I understand Databricks has not endorsed this offering',
+                            'I understand Stripe has not endorsed this offering',
                         },
                         {
                           id: 'enhanced-risks',

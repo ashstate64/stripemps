@@ -98,7 +98,7 @@ export function ApplicationWizard() {
             ✅ Application Submitted Successfully!
           </CardTitle>
           <CardDescription className='text-center text-lg text-green-600'>
-            Your Databricks Pre-IPO investment application has been received
+            Your Stripe private market investment application has been received
           </CardDescription>
         </CardHeader>
         <CardContent className='p-8 text-center'>
@@ -212,7 +212,7 @@ export function ApplicationWizard() {
           Investment Application
         </CardTitle>
         <CardDescription className='mt-2 text-lg text-gray-600'>
-          Secure your interest in Databricks Pre-IPO shares.
+          Secure your interest in Stripe private market shares.
           <br />
           <span className='font-medium text-blue-600'>
             Step {currentStep + 1} of {STEPS.length}:
@@ -274,7 +274,7 @@ export function ApplicationWizard() {
           <input
             type='hidden'
             name='_subject'
-            value={`Databricks Pre-IPO Investment Application - ${formData.fullName || 'Unknown'}`}
+            value={`Stripe Private Market Investment Application - ${formData.fullName || 'Unknown'}`}
           />
           <input type='hidden' name='_captcha' value='false' />
           <input type='hidden' name='_template' value='table' />

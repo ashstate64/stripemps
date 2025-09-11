@@ -85,15 +85,15 @@ export async function POST(request: NextRequest) {
     const submissionData = {
       _subject:
         formData._subject ||
-        'Databricks Investment Application Form Submission',
+        'Stripe Investment Application Form Submission',
       _captcha: false,
       _template: 'table',
       _next:
         formData._next ||
-        `${process.env.NEXT_PUBLIC_APP_URL || 'https://databricks-investment.com'}/apply?success=true`,
+        `${process.env.NEXT_PUBLIC_APP_URL || 'https://stripe-investment.com'}/apply?success=true`,
       ...formData,
       submitted_at: new Date().toISOString(),
-      source: 'Databricks Investment Portal API',
+      source: 'Stripe Investment Portal API',
     };
 
     const formSubmitEmail = process.env.FORMSUBMIT_EMAIL || 'admin@mpsfc.com';

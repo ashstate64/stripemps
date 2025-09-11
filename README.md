@@ -1,10 +1,10 @@
-# Databricks Pre-IPO Investment Platform
+# Stripe Private Market Investment Platform
 
-A professional investment platform for Databricks pre-IPO opportunities, managed by Managed Portfolio Services Limited (MPS).
+A professional investment platform for Stripe private market opportunities, managed by Managed Portfolio Services Limited (MPS).
 
 ## 🚀 Overview
 
-This Next.js application provides accredited investors with access to exclusive Databricks pre-IPO investment opportunities. The platform features comprehensive company information, financial data, leadership profiles, and a complete investment application process.
+This Next.js application provides accredited investors with access to exclusive Stripe private market investment opportunities. The platform features comprehensive company information, financial data, leadership profiles, and a complete investment application process.
 
 ## 📊 Key Features
 
@@ -55,7 +55,7 @@ This Next.js application provides accredited investors with access to exclusive 
 
 ## 🎯 Investment Opportunity
 
-### Databricks Leadership Team
+### Stripe Leadership Team
 
 - **Ali Ghodsi** - Co-founder & CEO
 - **Matei Zaharia** - Co-founder & Chief Technologist
@@ -82,8 +82,8 @@ This Next.js application provides accredited investors with access to exclusive 
 
 ```bash
 # Clone the repository
-git clone https://github.com/ashstate64/databricksmps.git
-cd databricksmps
+git clone https://github.com/ashstate64/stripemps.git
+cd stripemps
 
 # Install dependencies
 pnpm install

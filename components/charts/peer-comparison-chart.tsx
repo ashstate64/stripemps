@@ -12,10 +12,10 @@ import {
 } from 'recharts';
 
 const peerData = [
-  { name: 'Salesforce', valuation: 250.39 },
-  { name: 'Snowflake', valuation: 225.54 },
-  { name: 'Palantir', valuation: 157.84 },
-  { name: 'Databricks', valuation: 149.7 },
+  { name: 'Shopify (Public)', valuation: 143.75, type: 'public' },
+  { name: 'Stripe (Private)', valuation: 91.5, type: 'private' },
+  { name: 'PayPal (Public)', valuation: 67.72, type: 'public' },
+  { name: 'Toast (Public)', valuation: 40.80, type: 'public' },
 ];
 
 export function PeerComparisonChart() {
@@ -49,13 +49,16 @@ export function PeerComparisonChart() {
               backgroundColor: 'hsl(var(--background))',
               borderColor: 'hsl(var(--border))',
             }}
-            formatter={(value: number) => [`$${value}`, 'Stock Price']}
+            formatter={(value: number, name: string, props: any) => [
+              `$${value}${props.payload.type === 'private' ? 'B Tender Offer' : ' Stock Price'}`, 
+              props.payload.type === 'private' ? 'Valuation' : 'Market Cap'
+            ]}
           />
           <Legend />
           <Bar
             dataKey='valuation'
             fill='hsl(var(--primary))'
-            name='Stock Price'
+            name='Valuation Comparison'
             radius={[0, 4, 4, 0]}
           />
         </BarChart>

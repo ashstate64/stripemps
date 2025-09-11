@@ -12,44 +12,44 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title:
-    'Databricks Pre-IPO Investment Opportunity | Invest in the Future of Data Intelligence',
+    'Stripe Pre-IPO Investment Opportunity | Invest in the Future of Fintech',
   description:
-    "Explore an exclusive opportunity to invest in Databricks' private placement pre-IPO shares. Learn about Databricks' market leadership, explosive growth, and path to becoming a publicly traded company. Join leading institutional investors in this transformative data intelligence investment.",
+    "Explore an exclusive opportunity to invest in Stripe's private placement pre-IPO shares. Learn about Stripe's market leadership, explosive growth, and path to becoming a publicly traded company. Join leading institutional investors in this transformative fintech investment.",
   keywords: [
-    'Databricks',
+    'Stripe',
     'pre-IPO',
     'investment',
-    'data intelligence',
-    'artificial intelligence',
+    'fintech',
+    'financial technology',
     'private placement',
-    'Databricks stock',
-    'invest in Databricks',
-    'data investment',
+    'Stripe stock',
+    'invest in Stripe',
+    'fintech investment',
     'technology stocks',
     'venture capital',
     'institutional investment',
-    'data lakehouse',
-    'MLflow',
-    'machine learning',
-    'enterprise data',
-    'Apache Spark',
-    'Delta Lake',
-    'data analytics',
-    'big data',
-    'cloud computing',
+    'payment processing',
+    'digital payments',
+    'BNPL',
+    'buy now pay later',
+    'API payments',
+    'merchant services',
+    'e-commerce',
+    'online payments',
+    'financial services',
     'Australia investment',
     'ASIC regulated',
     'accredited investors',
     'wholesale clients',
-    'Series J funding',
+    'Series I funding',
     'unicorn company',
     'IPO 2025',
     'MPS Limited',
     'AFSL',
   ],
-  authors: [{ name: 'Databricks Investment Team' }],
-  creator: 'Databricks Investment Team',
-  publisher: 'Databricks',
+  authors: [{ name: 'Stripe Investment Team' }],
+  creator: 'Stripe Investment Team',
+  publisher: 'Stripe',
   robots: {
     index: true,
     follow: true,
@@ -64,32 +64,32 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://databricks-investment.com',
+    url: 'https://stripe-investment.com',
     title:
-      'Databricks Pre-IPO Investment Opportunity | Invest in the Future of Data Intelligence',
+      'Stripe Pre-IPO Investment Opportunity | Invest in the Future of Fintech',
     description:
-      "Explore an exclusive opportunity to invest in Databricks' private placement pre-IPO shares. Join leading institutional investors in this transformative data intelligence investment.",
-    siteName: 'Databricks Investment Opportunity',
+      "Explore an exclusive opportunity to invest in Stripe's private placement pre-IPO shares. Join leading institutional investors in this transformative fintech investment.",
+    siteName: 'Stripe Investment Opportunity',
     images: [
       {
-        url: '/databricks-logo.svg',
+        url: '/stripe-logo.webp',
         width: 1200,
         height: 630,
-        alt: 'Databricks Pre-IPO Investment Opportunity',
+        alt: 'Stripe Pre-IPO Investment Opportunity',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title:
-      'Databricks Pre-IPO Investment Opportunity | Invest in the Future of Data Intelligence',
+      'Stripe Pre-IPO Investment Opportunity | Invest in the Future of Fintech',
     description:
-      "Explore an exclusive opportunity to invest in Databricks' private placement pre-IPO shares. Join leading institutional investors in this transformative data intelligence investment.",
-    images: ['/databricks-logo.svg'],
-    creator: '@databricks',
+      "Explore an exclusive opportunity to invest in Stripe's private placement pre-IPO shares. Join leading institutional investors in this transformative fintech investment.",
+    images: ['/stripe-logo.webp'],
+    creator: '@stripe',
   },
   alternates: {
-    canonical: 'https://databricks-investment.com',
+    canonical: 'https://stripe-investment.com',
   },
   category: 'Investment',
   classification: 'Investment Opportunity',
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://databricks-investment.com'),
+  metadataBase: new URL('https://stripe-investment.com'),
   icons: {
     icon: [
       {
@@ -129,12 +129,12 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   verification: {
-    google: 'databricks-investment-verification',
-    yandex: 'databricks-investment-yandex-verification',
-    yahoo: 'databricks-investment-yahoo-verification',
+    google: 'stripe-investment-verification',
+    yandex: 'stripe-investment-yandex-verification',
+    yahoo: 'stripe-investment-yahoo-verification',
     other: {
-      'msvalidate.01': 'databricks-investment-bing-verification',
-      'p:domain_verify': 'databricks-investment-pinterest-verification',
+      'msvalidate.01': 'stripe-investment-bing-verification',
+      'p:domain_verify': 'stripe-investment-pinterest-verification',
     },
   },
 };
@@ -193,10 +193,10 @@ export default function RootLayout({
         <meta name='msapplication-TileColor' content='#ffffff' />
 
         {/* Additional SEO */}
-        <meta name='application-name' content='Databricks Investment' />
+        <meta name='application-name' content='Stripe Investment' />
         <meta
           name='apple-mobile-web-app-title'
-          content='Databricks Investment'
+          content='Stripe Investment'
         />
         <meta name='apple-mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-status-bar-style' content='default' />

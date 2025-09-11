@@ -55,7 +55,7 @@ export default function ApplyPage() {
               </div>
               <div className='text-center'>
                 <h1 className='text-sm font-bold text-gray-900 sm:text-base md:text-lg lg:text-xl'>
-                  Databricks Pre-IPO
+                  Stripe Pre-IPO
                 </h1>
                 <p className='text-xs text-gray-500 sm:block'>Application</p>
               </div>
@@ -75,11 +75,11 @@ export default function ApplyPage() {
         <div className='mx-auto mb-4 max-w-4xl text-center sm:mb-6 md:mb-8'>
           <div className='mb-4 sm:mb-6'>
             <h1 className='text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl xl:text-5xl'>
-              Databricks Pre-IPO Investment Application
+              Stripe Private Market Investment Application
             </h1>
             <p className='mt-2 text-lg leading-relaxed text-gray-700 sm:mt-4 md:text-lg lg:text-xl'>
-              Secure your allocation in the leading data intelligence investment
-              opportunity.
+              Access exclusive private market allocation in the leading fintech platform.
+              Stripe is private - no official stock price exists.
             </p>
             <div className='mt-4 flex items-center justify-center gap-2 text-xs text-blue-600 sm:text-sm'>
               <Shield className='h-4 w-4' />
@@ -91,11 +91,11 @@ export default function ApplyPage() {
           <div className='mb-4 grid grid-cols-3 gap-2 sm:mb-6 sm:gap-3 md:mb-8 md:gap-4'>
             <div className='rounded-md border border-gray-200 bg-white p-2 text-center shadow-sm sm:rounded-lg sm:p-3 md:p-4'>
               <div className='text-lg font-bold text-blue-600 sm:text-xl md:text-2xl'>
-                $149.70
+                $91.5B
               </div>
               <div className='text-xs text-gray-500 sm:text-sm'>
-                <span className='sm:hidden'>Stock Price</span>
-                <span className='hidden sm:inline'>Current Stock Price</span>
+                <span className='sm:hidden'>Tender Offer</span>
+                <span className='hidden sm:inline'>Latest Tender Offer</span>
               </div>
             </div>
             <div className='rounded-md border border-gray-200 bg-white p-2 text-center shadow-sm sm:rounded-lg sm:p-3 md:p-4'>
@@ -108,12 +108,12 @@ export default function ApplyPage() {
               </div>
             </div>
             <div className='rounded-md border border-gray-200 bg-white p-2 text-center shadow-sm sm:rounded-lg sm:p-3 md:p-4'>
-              <div className='text-lg font-bold text-purple-400 sm:text-xl md:text-2xl'>
-                2025
+              <div className='text-lg font-bold text-green-600 sm:text-xl md:text-2xl'>
+                Private
               </div>
               <div className='text-xs text-gray-500 sm:text-sm'>
-                <span className='sm:hidden'>IPO</span>
-                <span className='hidden sm:inline'>Expected IPO</span>
+                <span className='sm:hidden'>Company</span>
+                <span className='hidden sm:inline'>Private Company</span>
               </div>
             </div>
           </div>

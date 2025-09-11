@@ -11,97 +11,83 @@ import { TrendingUp, Rocket, Crown, Zap, Building } from 'lucide-react';
 
 const fundingRounds = [
   {
-    date: 'Oct 2013',
+    date: 'Nov 2011',
     event: 'Series A',
-    amount: '$13.9M',
+    amount: '$18.0M',
     amountType: 'Series A',
-    investors: 'Andreessen Horowitz, New Enterprise Associates',
-    valuation: 'Early Stage',
-    valuationNumeric: 0,
+    investors: 'Sequoia Capital, SV Angel',
+    valuation: '$100M',
+    valuationNumeric: 0.1,
     growth: null,
     color: 'from-gray-500 to-gray-600',
     icon: Rocket,
     achievement:
-      'Founded by Apache Spark creators, established unified analytics',
+      'Founded by Collison brothers, established payment infrastructure',
     highlight: false,
   },
   {
-    date: 'Jun 2014',
+    date: 'Jul 2012',
     event: 'Series B',
-    amount: '$34.1M',
+    amount: '$20.0M',
     amountType: 'Series B',
-    investors: 'Andreessen Horowitz, New Enterprise Associates',
-    valuation: 'Growth Stage',
-    valuationNumeric: 0.1,
-    growth: null,
+    investors: 'Sequoia Capital, General Catalyst, Redpoint',
+    valuation: '$500M',
+    valuationNumeric: 0.5,
+    growth: '+400%',
     color: 'from-blue-500 to-blue-600',
     icon: Building,
-    achievement: 'Expanded enterprise data platform capabilities',
+    achievement: 'Expanded payment processing capabilities',
     highlight: false,
   },
   {
-    date: 'Sep 2023',
-    event: 'Series I',
-    amount: '$549.9M',
-    amountType: 'Series I',
-    investors: 'Andreessen Horowitz, Insight Partners',
-    valuation: '$43B',
-    valuationNumeric: 43,
-    growth: '+17%',
+    date: 'Mar 2021',
+    event: 'Series H',
+    amount: '$875.1M',
+    amountType: 'Series H',
+    investors: 'Founders Fund, Sequoia Capital, Tiger Global',
+    valuation: '$95B',
+    valuationNumeric: 95,
+    growth: '+1800%',
     color: 'from-green-500 to-emerald-600',
     icon: Zap,
-    achievement: 'AI/ML platform expansion, enterprise growth',
+    achievement: 'Payment platform expansion, global growth',
     highlight: false,
   },
   {
-    date: 'Dec 2024',
-    event: 'Series J',
-    amount: '$10.17B',
-    amountType: 'Series J',
-    investors: 'Andreessen Horowitz, Insight Partners, DST, GIC, WCM',
-    valuation: '$62B',
-    valuationNumeric: 62,
-    growth: '+22%',
+    date: 'Mar 2023',
+    event: 'Series I',
+    amount: '$4.6B',
+    amountType: 'Series I',
+    investors: 'Founders Fund, Temasek, GIC, General Catalyst',
+    valuation: '$50B',
+    valuationNumeric: 50,
+    growth: '-47%',
     color: 'from-purple-500 to-purple-600',
     icon: Crown,
-    achievement: 'Record funding round, pre-IPO preparation',
+    achievement: 'Down round, focus on profitability and efficiency',
     highlight: true,
   },
   {
-    date: 'Oct 2024',
-    event: 'Series E (Convertible Note)',
-    amount: '$6.6B',
-    amountType: 'Convertible',
-    investors: 'Thrive, Khosla, Microsoft, NVIDIA',
-    valuation: '$157B',
-    valuationNumeric: 157,
-    growth: '+442%',
+    date: 'Current',
+    event: 'Market Cap',
+    amount: 'Public Valuation',
+    amountType: 'Market Value',
+    investors: 'Public Markets Consensus',
+    valuation: '$106.87B',
+    valuationNumeric: 106.87,
+    growth: '+114%',
     color: 'from-orange-500 to-red-600',
     icon: TrendingUp,
-    achievement: 'GPT-4o, advanced reasoning models, enterprise adoption',
-    highlight: true,
-  },
-  {
-    date: 'Q4 2025',
-    event: 'Series F (Mega-Round)',
-    amount: '$40B',
-    amountType: 'Mega-round',
-    investors: 'SoftBank (lead), Microsoft, Coatue',
-    valuation: '$300B',
-    valuationNumeric: 300,
-    growth: '+91%',
-    color: 'from-yellow-400 via-orange-500 to-red-600',
-    icon: Crown,
-    achievement: 'AGI development, compute infrastructure, global expansion',
+    achievement: 'Market recovery, strong revenue growth to $5.1B TTM',
     highlight: true,
   },
 ];
 
-const maxValuation = 300; // For progress bar calculations
+const maxValuation = 107; // For progress bar calculations (Stripe max)
 
 export function FundingTimelineVertical() {
-  const totalRaised = 14.29;
-  const latestValuation = 62;
+  const totalRaised = 6.09;
+  const latestValuation = 50;
 
   return (
     <Card className='overflow-hidden border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:border-blue-300 hover:shadow-xl'>
@@ -115,8 +101,8 @@ export function FundingTimelineVertical() {
               Funding & Valuation Journey
             </CardTitle>
             <CardDescription className='mt-3 text-lg text-gray-600'>
-              Consistent growth from startup to $62B valuation — the leading
-              data intelligence platform
+              Consistent growth from startup to $50B valuation — the leading
+              fintech payments platform
             </CardDescription>
           </div>
         </div>
@@ -143,11 +129,11 @@ export function FundingTimelineVertical() {
           </div>
           <div className='rounded-lg border border-orange-200 bg-orange-50 p-2 text-center sm:rounded-xl sm:p-3 md:p-4'>
             <div className='text-sm font-bold text-orange-700 sm:text-lg md:text-xl lg:text-2xl'>
-              10,000+
+              Millions
             </div>
             <div className='text-xs text-gray-600 sm:text-sm'>
-              <span className='sm:hidden'>Customers</span>
-              <span className='hidden sm:inline'>Enterprise Customers</span>
+              <span className='sm:hidden'>Merchants</span>
+              <span className='hidden sm:inline'>Global Merchants</span>
             </div>
           </div>
         </div>
@@ -319,21 +305,21 @@ export function FundingTimelineVertical() {
             Historic Achievement
           </h3>
           <p className='mx-auto max-w-3xl text-sm leading-relaxed text-gray-700 sm:text-base md:text-lg'>
-            Databricks has achieved{' '}
-            <span className='font-bold text-blue-600'>$14.29 billion</span> in
+            Stripe has achieved{' '}
+            <span className='font-bold text-blue-600'>$6.09 billion</span> in
             total funding, representing one of the largest funding totals for
-            any data intelligence company. The journey from startup to{' '}
+            any fintech company. The journey from startup to{' '}
             <span className='font-bold text-green-600'>
-              $62 billion valuation
+              $50 billion valuation
             </span>
-            showcases consistent growth in the enterprise data sector.
+            showcases consistent growth in the digital payments sector.
           </p>
 
           {/* Mobile-Optimized Key Stats */}
           <div className='mt-4 grid grid-cols-2 gap-3 sm:mt-6 sm:grid-cols-4 sm:gap-4 md:gap-6'>
             <div>
               <div className='text-lg font-bold text-blue-600 sm:text-xl md:text-2xl'>
-                11 Years
+                14 Years
               </div>
               <div className='text-xs text-gray-600 sm:text-sm'>
                 <span className='sm:hidden'>Timeline</span>
@@ -342,7 +328,7 @@ export function FundingTimelineVertical() {
             </div>
             <div>
               <div className='text-lg font-bold text-purple-600 sm:text-xl md:text-2xl'>
-                10 Rounds
+                19 Rounds
               </div>
               <div className='text-xs text-gray-600 sm:text-sm'>
                 <span className='sm:hidden'>Fundings</span>
@@ -351,7 +337,7 @@ export function FundingTimelineVertical() {
             </div>
             <div>
               <div className='text-lg font-bold text-green-600 sm:text-xl md:text-2xl'>
-                20+ Investors
+                15+ Investors
               </div>
               <div className='text-xs text-gray-600 sm:text-sm'>
                 <span className='sm:hidden'>Backers</span>
@@ -360,11 +346,11 @@ export function FundingTimelineVertical() {
             </div>
             <div>
               <div className='text-lg font-bold text-orange-600 sm:text-xl md:text-2xl'>
-                #1 Data
+                #1 Fintech
               </div>
               <div className='text-xs text-gray-600 sm:text-sm'>
                 <span className='sm:hidden'>Platform</span>
-                <span className='hidden sm:inline'>Intelligence Platform</span>
+                <span className='hidden sm:inline'>Payments Platform</span>
               </div>
             </div>
           </div>

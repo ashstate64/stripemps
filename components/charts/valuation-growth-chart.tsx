@@ -12,9 +12,10 @@ import {
 } from 'recharts';
 
 const valuationData = [
-  { date: 'Sep 2023', valuation: 43 },
-  { date: 'Dec 2024', valuation: 62 },
-  { date: 'Current', valuation: 100.44 },
+  { date: 'Mar 2021', valuation: 95, label: 'Series H Peak' },
+  { date: 'Mar 2023', valuation: 50, label: 'Series I Down Round' },
+  { date: 'Apr 2024', valuation: 65, label: 'Tender Offer' },
+  { date: 'Feb 2025', valuation: 91.5, label: 'Latest Tender Offer' },
 ];
 
 export function ValuationGrowthChart() {

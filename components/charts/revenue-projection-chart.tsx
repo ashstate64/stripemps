@@ -11,11 +11,11 @@ import {
   Legend,
 } from 'recharts';
 
-const revenueData = [
-  { year: '2022', revenue: 1.27 }, // $1.27B
-  { year: '2023', revenue: 1.9 }, // $1.90B
-  { year: '2024', revenue: 3.04 }, // $3.04B
-  { year: 'TTM', revenue: 3.82 }, // $3.82B TTM
+const paymentVolumeData = [
+  { year: '2021', volume: 640 }, // $640B estimated
+  { year: '2022', volume: 817 }, // $817B estimated  
+  { year: '2023', volume: 1000 }, // ~$1T estimated
+  { year: '2024', volume: 1400 }, // $1.4T confirmed
 ];
 
 export function RevenueProjectionChart() {
@@ -23,7 +23,7 @@ export function RevenueProjectionChart() {
     <div className='h-80 w-full rounded-lg bg-slate-50 p-2 shadow-inner dark:bg-slate-800/50 sm:p-4'>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
-          data={revenueData}
+          data={paymentVolumeData}
           margin={{
             top: 5,
             right: 30,
@@ -35,7 +35,7 @@ export function RevenueProjectionChart() {
           <XAxis dataKey='year' stroke='hsl(var(--muted-foreground))' />
           <YAxis
             label={{
-              value: 'Revenue ($B)',
+              value: 'Payment Volume ($B)',
               angle: -90,
               position: 'insideLeft',
               fill: 'hsl(var(--muted-foreground))',
@@ -49,13 +49,13 @@ export function RevenueProjectionChart() {
               backgroundColor: 'hsl(var(--background))',
               borderColor: 'hsl(var(--border))',
             }}
-            formatter={(value: number) => [`$${value} Billion`, 'Revenue']}
+            formatter={(value: number) => [`$${value} Billion`, 'Payment Volume']}
           />
           <Legend />
           <Bar
-            dataKey='revenue'
+            dataKey='volume'
             fill='hsl(var(--primary))'
-            name='Annual Revenue'
+            name='Total Payment Volume'
             radius={[4, 4, 0, 0]}
           />
         </BarChart>
