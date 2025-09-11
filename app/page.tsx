@@ -146,7 +146,7 @@ export default function DigitalBrochurePage() {
         'Leading position in global payments infrastructure with $1.4T payment volume processed in 2024',
         'Comprehensive merchant ecosystem serving millions of businesses worldwide',
         'Strategic acquisitions including Payable, Paystack, and OpenChannel expanding global reach',
-        'Stripe supports BNPL methods (Affirm, Klarna, Afterpay/Clearpay, Zip) via Stripe\'s payment methods—not a Stripe-branded BNPL product',
+        "Stripe supports BNPL methods (Affirm, Klarna, Afterpay/Clearpay, Zip) via Stripe's payment methods—not a Stripe-branded BNPL product",
       ],
     },
     {
@@ -466,7 +466,8 @@ export default function DigitalBrochurePage() {
                     ● Stripe Pre-IPO • $91.5B Valuation
                   </span>
                   <span className='hidden sm:inline'>
-                    ● Exclusive Pre-IPO Investment Opportunity • $91.5B Latest Tender Offer
+                    ● Exclusive Pre-IPO Investment Opportunity • $91.5B Latest
+                    Tender Offer
                   </span>
                 </p>
               </div>
@@ -489,19 +490,27 @@ export default function DigitalBrochurePage() {
             <p className='mx-auto mb-6 max-w-2xl text-xl leading-relaxed text-gray-700 sm:mb-8 sm:max-w-3xl sm:text-2xl md:mb-10 md:text-3xl lg:text-4xl'>
               <span className='sm:hidden'>
                 Access Stripe&apos;s private market opportunity.{' '}
-                <strong className='text-gray-900'>$91.5B tender offer valuation</strong>{' '}
+                <strong className='text-gray-900'>
+                  $91.5B tender offer valuation
+                </strong>{' '}
                 with{' '}
-                <strong className='text-blue-600'>$1.4T payment volume</strong> in 2024.
+                <strong className='text-blue-600'>$1.4T payment volume</strong>{' '}
+                in 2024.
               </span>
               <span className='hidden sm:inline'>
-                Access exclusive pre-IPO investment opportunity in Stripe, the leading fintech platform.
+                Access exclusive pre-IPO investment opportunity in Stripe, the
+                leading fintech platform.
                 <br className='hidden md:inline' />
                 <strong className='text-gray-900'>
                   {' '}
                   $91.5B latest tender offer
                 </strong>{' '}
                 with
-                <strong className='text-blue-600'> $1.4T total payment volume in 2024</strong>.
+                <strong className='text-blue-600'>
+                  {' '}
+                  $1.4T total payment volume in 2024
+                </strong>
+                .
               </span>
             </p>
 
@@ -823,8 +832,7 @@ export default function DigitalBrochurePage() {
                                 Additional Strategic Partners
                               </h4>
                               <p className='text-gray-600'>
-                                Other world-class institutions supporting
-                                Stripe
+                                Other world-class institutions supporting Stripe
                               </p>
                             </div>
 
@@ -1249,7 +1257,8 @@ export default function DigitalBrochurePage() {
             </p>
             <p className='mb-4 text-xs text-gray-500'>
               Stripe Private Market Investment Information presented by Managed
-              Portfolio Services Limited. Stripe is a private company. All information current as of{' '}
+              Portfolio Services Limited. Stripe is a private company. All
+              information current as of{' '}
               {new Date().toLocaleDateString('en-US', {
                 month: 'long',
                 year: 'numeric',

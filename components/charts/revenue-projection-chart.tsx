@@ -13,7 +13,7 @@ import {
 
 const paymentVolumeData = [
   { year: '2021', volume: 640 }, // $640B estimated
-  { year: '2022', volume: 817 }, // $817B estimated  
+  { year: '2022', volume: 817 }, // $817B estimated
   { year: '2023', volume: 1000 }, // ~$1T estimated
   { year: '2024', volume: 1400 }, // $1.4T confirmed
 ];
@@ -49,7 +49,10 @@ export function RevenueProjectionChart() {
               backgroundColor: 'hsl(var(--background))',
               borderColor: 'hsl(var(--border))',
             }}
-            formatter={(value: number) => [`$${value} Billion`, 'Payment Volume']}
+            formatter={(value: number) => [
+              `$${value} Billion`,
+              'Payment Volume',
+            ]}
           />
           <Legend />
           <Bar

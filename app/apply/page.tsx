@@ -78,8 +78,8 @@ export default function ApplyPage() {
               Stripe Private Market Investment Application
             </h1>
             <p className='mt-2 text-lg leading-relaxed text-gray-700 sm:mt-4 md:text-lg lg:text-xl'>
-              Access exclusive private market allocation in the leading fintech platform.
-              Stripe is private - no official stock price exists.
+              Access exclusive private market allocation in the leading fintech
+              platform. Stripe is private - no official stock price exists.
             </p>
             <div className='mt-4 flex items-center justify-center gap-2 text-xs text-blue-600 sm:text-sm'>
               <Shield className='h-4 w-4' />

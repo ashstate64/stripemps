@@ -15,7 +15,7 @@ const peerData = [
   { name: 'Shopify (Public)', valuation: 143.75, type: 'public' },
   { name: 'Stripe (Private)', valuation: 91.5, type: 'private' },
   { name: 'PayPal (Public)', valuation: 67.72, type: 'public' },
-  { name: 'Toast (Public)', valuation: 40.80, type: 'public' },
+  { name: 'Toast (Public)', valuation: 40.8, type: 'public' },
 ];
 
 export function PeerComparisonChart() {
@@ -50,8 +50,8 @@ export function PeerComparisonChart() {
               borderColor: 'hsl(var(--border))',
             }}
             formatter={(value: number, name: string, props: any) => [
-              `$${value}${props.payload.type === 'private' ? 'B Tender Offer' : ' Stock Price'}`, 
-              props.payload.type === 'private' ? 'Valuation' : 'Market Cap'
+              `$${value}${props.payload.type === 'private' ? 'B Tender Offer' : ' Stock Price'}`,
+              props.payload.type === 'private' ? 'Valuation' : 'Market Cap',
             ]}
           />
           <Legend />

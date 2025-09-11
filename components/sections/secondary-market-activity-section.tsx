@@ -283,8 +283,7 @@ export function SecondaryMarketActivitySection() {
 
           <div className='mb-6 text-center'>
             <p className='mx-auto max-w-4xl text-lg leading-relaxed text-gray-300'>
-              Stripe&apos;s secondary market activity demonstrates
-              exceptional{' '}
+              Stripe&apos;s secondary market activity demonstrates exceptional{' '}
               <span className='font-bold text-emerald-400'>
                 investor demand
               </span>{' '}
@@ -353,9 +352,9 @@ export function SecondaryMarketActivitySection() {
                 <div className='text-xs leading-relaxed text-gray-700'>
                   Secondary trading has been primarily through
                   company-facilitated events due to transfer restrictions and
-                  Stripe&apos;s governance structure. Official tender offers
-                  and sanctioned transactions have been the primary mechanisms
-                  for equity liquidity, ensuring controlled price discovery and
+                  Stripe&apos;s governance structure. Official tender offers and
+                  sanctioned transactions have been the primary mechanisms for
+                  equity liquidity, ensuring controlled price discovery and
                   regulatory compliance.
                 </div>
               </div>

@@ -15,7 +15,7 @@ const leaders = [
     name: 'Patrick Collison',
     title: 'Co-founder & CEO',
     bio: 'Irish entrepreneur who co-founded Stripe in 2010. Under his leadership, Stripe has grown to process $1.4T in payment volume during 2024 and achieved profitability, revolutionizing online payments infrastructure.',
-    note: 'Patrick has led Stripe from startup to becoming one of the world\'s most valuable private fintech companies.',
+    note: "Patrick has led Stripe from startup to becoming one of the world's most valuable private fintech companies.",
     imageUrl: '/leadership/patrick-collison.jpeg',
   },
   {
@@ -27,19 +27,19 @@ const leaders = [
   {
     name: 'Rahul Patil',
     title: 'Chief Technology Officer',
-    bio: 'Current CTO since August 2024. Patil leads Stripe\'s engineering and technical strategy, overseeing the platform that processes trillions in payment volume annually.',
+    bio: "Current CTO since August 2024. Patil leads Stripe's engineering and technical strategy, overseeing the platform that processes trillions in payment volume annually.",
     imageUrl: '/leadership/rahul-patil.jpeg',
   },
   {
     name: 'Steffan Tomlinson',
     title: 'Chief Financial Officer',
-    bio: 'CFO since August 2023. Tomlinson brings extensive financial leadership experience, guiding Stripe to profitability in 2024 and managing the company\'s strategic financial operations.',
+    bio: "CFO since August 2023. Tomlinson brings extensive financial leadership experience, guiding Stripe to profitability in 2024 and managing the company's strategic financial operations.",
     imageUrl: '/leadership/steffan-tomlinson.avif',
   },
   {
-    name: 'Eileen O\'Mara',
+    name: "Eileen O'Mara",
     title: 'Chief Revenue Officer',
-    bio: 'CRO appointed in October 2023. O\'Mara drives Stripe\'s global revenue strategy and enterprise customer growth across the company\'s expanding product portfolio.',
+    bio: "CRO appointed in October 2023. O'Mara drives Stripe's global revenue strategy and enterprise customer growth across the company's expanding product portfolio.",
     imageUrl: '/leadership/eileen-omara.webp',
   },
 ];
@@ -51,9 +51,12 @@ const boardMembers = [
   },
   { name: 'John Collison', role: 'President & Co-founder' },
   { name: 'Rahul Patil', role: 'Chief Technology Officer (since Aug 2024)' },
-  { name: 'Steffan Tomlinson', role: 'Chief Financial Officer (since Aug 2023)' },
   {
-    name: 'Eileen O\'Mara',
+    name: 'Steffan Tomlinson',
+    role: 'Chief Financial Officer (since Aug 2023)',
+  },
+  {
+    name: "Eileen O'Mara",
     role: 'Chief Revenue Officer (since Oct 2023)',
   },
 ];
@@ -121,8 +124,8 @@ export function LeadershipSection() {
         </h3>
         <div className='mb-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm'>
           <p className='mb-4 text-sm text-gray-700'>
-            Stripe&apos;s leadership team combines deep technical expertise
-            with proven business execution. The founding team created the modern
+            Stripe&apos;s leadership team combines deep technical expertise with
+            proven business execution. The founding team created the modern
             payments infrastructure and continues to drive innovation in fintech
             for enterprise customers worldwide.
           </p>
