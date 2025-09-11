@@ -16,31 +16,31 @@ const leaders = [
     title: 'Co-founder & CEO',
     bio: 'Irish entrepreneur who co-founded Stripe in 2010. Under his leadership, Stripe has grown to process $1.4T in payment volume during 2024 and achieved profitability, revolutionizing online payments infrastructure.',
     note: "Patrick has led Stripe from startup to becoming one of the world's most valuable private fintech companies.",
-    imageUrl: '/placeholder-user.jpg',
+    imageUrl: '/leadership/patrick-collison.webp',
   },
   {
     name: 'John Collison',
     title: 'Co-founder & President',
     bio: 'Co-founder and President of Stripe, John focuses on product development and business operations. Together with Patrick, he has built Stripe into the leading payments infrastructure company.',
-    imageUrl: '/placeholder-user.jpg',
+    imageUrl: '/leadership/john-collison.jpg',
   },
   {
     name: 'Rahul Patil',
     title: 'Chief Technology Officer',
     bio: "Current CTO since August 2024. Patil leads Stripe's engineering and technical strategy, overseeing the platform that processes trillions in payment volume annually.",
-    imageUrl: '/placeholder-user.jpg',
+    imageUrl: '/leadership/rahul-patil.jpg',
   },
   {
     name: 'Steffan Tomlinson',
     title: 'Chief Financial Officer',
     bio: "CFO since August 2023. Tomlinson brings extensive financial leadership experience, guiding Stripe to profitability in 2024 and managing the company's strategic financial operations.",
-    imageUrl: '/placeholder-user.jpg',
+    imageUrl: '/leadership/steffan-tomlinson.png',
   },
   {
     name: "Eileen O'Mara",
     title: 'Chief Revenue Officer',
     bio: "CRO appointed in October 2023. O'Mara drives Stripe's global revenue strategy and enterprise customer growth across the company's expanding product portfolio.",
-    imageUrl: '/placeholder-user.jpg',
+    imageUrl: '/leadership/eileen-omara.webp',
   },
 ];
 
