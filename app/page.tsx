@@ -1084,81 +1084,96 @@ export default function DigitalBrochurePage() {
             </p>
           </div>
 
-          {/* MPS Limited Information - Reorganized */}
-          <div className='mb-10 rounded-lg border border-gray-200 bg-white p-8 shadow-sm'>
-            <div className='mb-8 flex items-center'>
-              <Landmark className='mr-3 h-6 w-6 text-blue-600' />
-              <h3 className='text-xl font-semibold text-gray-900'>
+          {/* MPS Limited Information - Mobile Optimized */}
+          <div className='mb-10 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 lg:p-8'>
+            {/* Header */}
+            <div className='mb-6 flex items-center sm:mb-8'>
+              <Landmark className='mr-3 h-6 w-6 flex-shrink-0 text-blue-600' />
+              <h3 className='text-lg font-semibold text-gray-900 sm:text-xl'>
                 Managed Portfolio Services Limited
               </h3>
             </div>
 
-            <div className='grid gap-6 md:grid-cols-2'>
-              {/* Company Details */}
-              <div className='space-y-6'>
+            {/* Mobile-First Grid Layout */}
+            <div className='grid gap-4 sm:gap-6 lg:grid-cols-2'>
+              {/* Left Column - Company Details */}
+              <div className='space-y-4 sm:space-y-6'>
                 {/* Registered Office */}
-                <div className='rounded-lg border border-blue-200 bg-blue-50/30 p-6'>
-                  <div className='mb-4 flex items-center'>
-                    <MapPin className='mr-2 h-5 w-5 text-blue-600' />
-                    <h4 className='text-lg font-semibold text-gray-900'>
+                <div className='rounded-lg border border-blue-200 bg-blue-50/30 p-4 sm:p-6'>
+                  <div className='mb-3 flex items-center sm:mb-4'>
+                    <MapPin className='mr-2 h-5 w-5 flex-shrink-0 text-blue-600' />
+                    <h4 className='text-base font-semibold text-gray-900 sm:text-lg'>
                       Registered Office
                     </h4>
                   </div>
                   <div className='space-y-1 text-sm text-gray-700'>
-                    <p className='font-medium'>Level 1, 800 Bourke Street</p>
-                    <p>Docklands, Victoria 3008</p>
+                    <p className='font-medium leading-relaxed'>
+                      Level 1, 800 Bourke Street
+                    </p>
+                    <p className='leading-relaxed'>Docklands, Victoria 3008</p>
                     <p className='font-medium text-blue-600'>Australia</p>
                   </div>
                 </div>
 
                 {/* Contact Information */}
-                <div className='rounded-lg border border-green-200 bg-green-50/30 p-6'>
-                  <div className='mb-4 flex items-center'>
-                    <Phone className='mr-2 h-5 w-5 text-green-600' />
-                    <h4 className='text-lg font-semibold text-gray-900'>
+                <div className='rounded-lg border border-green-200 bg-green-50/30 p-4 sm:p-6'>
+                  <div className='mb-3 flex items-center sm:mb-4'>
+                    <Phone className='mr-2 h-5 w-5 flex-shrink-0 text-green-600' />
+                    <h4 className='text-base font-semibold text-gray-900 sm:text-lg'>
                       Contact Details
                     </h4>
                   </div>
-                  <div className='space-y-2 text-sm text-gray-700'>
-                    <p className='flex items-center'>
-                      <Phone className='mr-2 h-4 w-4 text-green-600' />
+                  <div className='space-y-3 text-sm text-gray-700'>
+                    {/* Phone - Mobile Clickable */}
+                    <a
+                      href='tel:+61385779534'
+                      className='flex items-center rounded-md p-2 transition-colors hover:bg-green-100 active:bg-green-200'
+                    >
+                      <Phone className='mr-2 h-4 w-4 flex-shrink-0 text-green-600' />
                       <span className='font-medium'>+61 3 8577 9534</span>
-                    </p>
-                    <p className='flex items-center'>
-                      <Mail className='mr-2 h-4 w-4 text-green-600' />
+                    </a>
+                    {/* Email - Mobile Clickable */}
+                    <a
+                      href='mailto:admin@mpsfc.com'
+                      className='flex items-center rounded-md p-2 transition-colors hover:bg-green-100 active:bg-green-200'
+                    >
+                      <Mail className='mr-2 h-4 w-4 flex-shrink-0 text-green-600' />
                       <span className='font-medium'>admin@mpsfc.com</span>
-                    </p>
-                    <p className='mt-3 text-xs text-gray-500'>
-                      Business Hours: Mon-Fri, 9 AM - 5 PM AEST
-                    </p>
+                    </a>
+                    {/* Business Hours */}
+                    <div className='mt-3 rounded-md bg-green-100/50 p-2'>
+                      <p className='text-xs text-gray-600'>
+                        <strong>Business Hours:</strong> Mon-Fri, 9 AM - 5 PM AEST
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Regulatory Information */}
-              <div className='space-y-6'>
+              {/* Right Column - Regulatory Information */}
+              <div className='space-y-4 sm:space-y-6'>
                 {/* Registration Numbers */}
-                <div className='rounded-lg border border-purple-200 bg-purple-50/30 p-6'>
-                  <div className='mb-4 flex items-center'>
-                    <FileText className='mr-2 h-5 w-5 text-purple-600' />
-                    <h4 className='text-lg font-semibold text-gray-900'>
+                <div className='rounded-lg border border-purple-200 bg-purple-50/30 p-4 sm:p-6'>
+                  <div className='mb-3 flex items-center sm:mb-4'>
+                    <FileText className='mr-2 h-5 w-5 flex-shrink-0 text-purple-600' />
+                    <h4 className='text-base font-semibold text-gray-900 sm:text-lg'>
                       Registration Details
                     </h4>
                   </div>
                   <div className='space-y-3'>
-                    <div className='flex justify-between border-b border-purple-200/50 pb-2'>
+                    <div className='flex items-center justify-between border-b border-purple-200/50 pb-2'>
                       <span className='text-sm text-gray-600'>ABN:</span>
                       <span className='text-sm font-semibold text-gray-900'>
                         77 009 549 697
                       </span>
                     </div>
-                    <div className='flex justify-between border-b border-purple-200/50 pb-2'>
+                    <div className='flex items-center justify-between border-b border-purple-200/50 pb-2'>
                       <span className='text-sm text-gray-600'>AFSL:</span>
                       <span className='text-sm font-semibold text-gray-900'>
                         00233761
                       </span>
                     </div>
-                    <div className='flex justify-between'>
+                    <div className='flex items-center justify-between'>
                       <span className='text-sm text-gray-600'>AFCA:</span>
                       <span className='text-sm font-semibold text-gray-900'>
                         #10872
@@ -1168,30 +1183,32 @@ export default function DigitalBrochurePage() {
                 </div>
 
                 {/* Regulatory Compliance */}
-                <div className='rounded-lg border border-orange-200 bg-orange-50/30 p-6'>
-                  <div className='mb-4 flex items-center'>
-                    <ShieldCheck className='mr-2 h-5 w-5 text-orange-600' />
-                    <h4 className='text-lg font-semibold text-gray-900'>
+                <div className='rounded-lg border border-orange-200 bg-orange-50/30 p-4 sm:p-6'>
+                  <div className='mb-3 flex items-center sm:mb-4'>
+                    <ShieldCheck className='mr-2 h-5 w-5 flex-shrink-0 text-orange-600' />
+                    <h4 className='text-base font-semibold text-gray-900 sm:text-lg'>
                       Regulatory Compliance
                     </h4>
                   </div>
-                  <div className='space-y-3 text-sm'>
-                    <div className='flex items-start'>
-                      <div className='mr-2 mt-1 h-2 w-2 rounded-full bg-orange-500'></div>
-                      <div>
+                  <div className='space-y-4 text-sm'>
+                    {/* ASIC Regulated */}
+                    <div className='flex items-start rounded-md bg-orange-100/50 p-3'>
+                      <div className='mr-2 mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-orange-500'></div>
+                      <div className='min-w-0 flex-1'>
                         <p className='font-medium text-gray-900'>
                           ASIC Regulated
                         </p>
-                        <p className='text-xs text-gray-600'>
+                        <p className='mt-1 text-xs leading-relaxed text-gray-600'>
                           Australian Securities and Investments Commission
                         </p>
                       </div>
                     </div>
-                    <div className='flex items-start'>
-                      <div className='mr-2 mt-1 h-2 w-2 rounded-full bg-orange-500'></div>
-                      <div>
+                    {/* AFCA Member */}
+                    <div className='flex items-start rounded-md bg-orange-100/50 p-3'>
+                      <div className='mr-2 mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-orange-500'></div>
+                      <div className='min-w-0 flex-1'>
                         <p className='font-medium text-gray-900'>AFCA Member</p>
-                        <p className='text-xs text-gray-600'>
+                        <p className='mt-1 text-xs leading-relaxed text-gray-600'>
                           Australian Financial Complaints Authority
                         </p>
                       </div>
@@ -1202,22 +1219,22 @@ export default function DigitalBrochurePage() {
             </div>
           </div>
 
-          {/* Regulatory & Company Information */}
-          <div className='mb-8 grid grid-cols-1 gap-4 text-xs text-gray-500 md:grid-cols-3'>
-            <div className='text-center md:text-left'>
-              <p className='font-medium'>Managed Portfolio Services Limited</p>
-              <p>Financial Advisory Services</p>
-              <p>Registered in Victoria, Australia</p>
+          {/* Regulatory & Company Information - Mobile Optimized */}
+          <div className='mb-8 grid grid-cols-1 gap-6 text-sm text-gray-600 sm:grid-cols-2 lg:grid-cols-3'>
+            <div className='text-center sm:text-left'>
+              <p className='font-semibold text-gray-900'>Managed Portfolio Services Limited</p>
+              <p className='mt-1'>Financial Advisory Services</p>
+              <p className='mt-1'>Registered in Victoria, Australia</p>
             </div>
             <div className='text-center'>
-              <p>
+              <p className='font-medium'>
                 Regulated by: Australian Securities and Investments Commission
               </p>
-              <p>ABN: 77 009 549 697 • AFSL: 00233761</p>
+              <p className='mt-1'>ABN: 77 009 549 697 • AFSL: 00233761</p>
             </div>
-            <div className='text-center md:text-right'>
-              <p>AFCA: #10872</p>
-              <p>Additional disclosures available upon request</p>
+            <div className='text-center sm:col-span-2 lg:col-span-1 lg:text-right'>
+              <p className='font-medium'>AFCA: #10872</p>
+              <p className='mt-1'>Additional disclosures available upon request</p>
             </div>
           </div>
 
