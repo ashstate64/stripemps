@@ -360,13 +360,13 @@ export default function DigitalBrochurePage() {
                       id: 'growth',
                       label: 'Overview',
                       icon: BarChart3,
-                      desc: '$300B Valuation',
+                      desc: '$91.5B Valuation',
                     },
                     {
                       id: 'investors',
                       label: 'Investors',
                       icon: UsersRound,
-                      desc: 'Microsoft, SoftBank+',
+                      desc: 'Andreessen Horowitz+',
                     },
                   ].map((item) => (
                     <a
